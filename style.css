@@ -11,3 +11,17 @@
 .case-hero img{display:block;width:100%;max-height:530px;object-fit:contain;background:#191923;border:1px solid var(--border);border-radius:12px}
 .case-hero figcaption{color:var(--muted);font-size:.9rem;margin-top:10px}
 @media(max-width:800px){.project-card__image img{height:190px}}
+
+/* Published research case study */
+.research-case>h2{margin-top:56px}
+.research-case .figure-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.research-case .figure-grid figure{margin:0}
+.research-case .figure-grid img{height:auto;aspect-ratio:auto;max-height:520px;object-fit:contain}
+.research-case figcaption{line-height:1.55}
+.research-figure--wide{max-width:940px;margin:28px auto 42px}
+.research-figure--wide img{display:block;width:100%;height:auto;background:#eee;border-radius:10px}
+.research-figure--wide figcaption{padding:14px 0;color:var(--muted);font-size:.95rem}
+.formula-note{border-left:3px solid var(--pink);background:var(--panel);padding:18px 22px;margin:22px 0}
+.formula{font-size:1.2rem;color:var(--cyan);margin-top:8px}
+.figure-missing{padding:22px;border:1px dashed var(--border);border-radius:10px}
+@media(max-width:700px){.research-case .figure-grid{grid-template-columns:1fr}}
