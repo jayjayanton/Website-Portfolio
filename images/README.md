@@ -11,3 +11,5 @@ I use these figures to show how the land-cover harmonization workflow connects t
 The [land-use case study](../projects/land-use-dynamics.html) references these filenames. The image assets need to be uploaded before they will display on GitHub Pages.
 
 Paper: [Scientific Data (2025)](https://www.nature.com/articles/s41597-025-04713-6). I retain the original figure attribution and applicable publication reuse terms.
+
+- `figure-06-mse-comparison.png` — Figure 6: two-panel spatial comparison of mean squared error (MSE). The supplied PDF has been converted to PNG for the case-study page; upload the PNG to this folder to enable the image.
