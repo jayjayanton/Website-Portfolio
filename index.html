@@ -7,7 +7,7 @@
     <title>
       Home | Jay Oliver
     </title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=home-experience-1">
   </head>
   <body>
     <header class="header">
@@ -89,6 +89,47 @@
           </div>
         </div>
       </section>
+      <section class="container section home-experience" id="experience">
+        <p class="eyebrow">MY BACKGROUND</p>
+        <h2>From environmental research to <em>geospatial data science.</em></h2>
+        <p class="lead">My work connects environmental science, geospatial analysis, and predictive modeling. I started building my data science experience at Baylor University, where I worked on land-use research, environmental flows, and machine learning. I later expanded that work at NETL through Leidos, developing national-scale geospatial models, data pipelines, and GIS applications.</p>
+        <p>My earlier work with WWF and NASA DEVELOP established the environmental and remote-sensing foundation that I brought into data science. Over time, I moved from research questions and spatial datasets toward reproducible modeling, large-scale processing, and tools that help researchers interpret results.</p>
+        <h3>Professional journey</h3>
+        <div class="career-timeline" aria-label="Professional timeline">
+          <a class="career-step" href="projects/colombia-deforestation.html"><span class="career-step__year">2020</span><strong>WWF</strong><small>Deforestation research</small><span class="career-step__detail">Colombia and Brazil</span></a>
+          <span class="career-arrow" aria-hidden="true">→</span>
+          <a class="career-step" href="projects/land-use-dynamics.html"><span class="career-step__year">2023–24</span><strong>Baylor University</strong><small>Data science foundation</small><span class="career-step__detail">Land use · Environmental flows · ML</span></a>
+          <span class="career-arrow" aria-hidden="true">→</span>
+          <a class="career-step" href="projects/orphaned-wells.html"><span class="career-step__year">2024–26</span><strong>Leidos / NETL</strong><small>Geospatial Data Scientist</small><span class="career-step__detail">Energy · ML · GIS engineering</span></a>
+        </div>
+        <p class="timeline-context">I also completed two NASA DEVELOP terms focused on environmental remote sensing. The timeline highlights selected professional roles, not every research appointment.</p>
+      </section>
+      <section class="container section home-skills" id="skills">
+        <p class="eyebrow">TOOLS & TECHNIQUES</p>
+        <h2>Skills developed <em>through real projects.</em></h2>
+        <p>Select a skill to highlight the projects where I've applied it. You can select more than one skill or reset to view everything.</p>
+        <div class="skill-filters" role="group" aria-label="Filter projects by skill">
+          <button type="button" class="skill-chip is-active" data-skill="all" aria-pressed="true">All projects</button>
+          <button type="button" class="skill-chip" data-skill="python" aria-pressed="false">Python</button>
+          <button type="button" class="skill-chip" data-skill="ml" aria-pressed="false">Machine learning</button>
+          <button type="button" class="skill-chip" data-skill="gis" aria-pressed="false">GIS & geospatial</button>
+          <button type="button" class="skill-chip" data-skill="remote" aria-pressed="false">Remote sensing</button>
+          <button type="button" class="skill-chip" data-skill="engineering" aria-pressed="false">Data engineering</button>
+          <button type="button" class="skill-chip" data-skill="r" aria-pressed="false">R & statistics</button>
+          <button type="button" class="skill-chip" data-skill="vision" aria-pressed="false">Computer vision</button>
+          <button type="button" class="skill-chip" data-skill="explain" aria-pressed="false">Model interpretation</button>
+        </div>
+        <p class="skill-status" data-skill-status aria-live="polite">Showing all projects</p>
+        <div class="skill-project-grid">
+          <a class="skill-project" data-skills="python gis remote engineering r" href="projects/land-use-dynamics.html"><span>01 / RESEARCH</span><strong>Multi-Sector Land-Use Dynamics</strong><small>30 m basemaps · classification · MSE</small></a>
+          <a class="skill-project" data-skills="python ml gis explain engineering" href="projects/orphaned-wells.html"><span>02 / ENERGY</span><strong>Orphaned Wells</strong><small>XGBoost · spatial features · SHAP</small></a>
+          <a class="skill-project" data-skills="r gis ml remote" href="projects/colombia-deforestation.html"><span>03 / CONSERVATION</span><strong>Deforestation Research</strong><small>Logistic regression · forest-cover change</small></a>
+          <a class="skill-project" data-skills="python gis engineering" href="projects/carbon-storage-atlas.html"><span>04 / GEOLOGY</span><strong>Carbon Storage Atlas</strong><small>Raster processing · ArcGIS Enterprise</small></a>
+          <a class="skill-project" data-skills="python ml explain" href="projects/coal-ash-modeling.html"><span>05 / ENERGY</span><strong>Coal Ash Modeling</strong><small>Multi-output predictive modeling</small></a>
+          <a class="skill-project" data-skills="python engineering" href="projects/epa-emissions.html"><span>06 / DATA</span><strong>EPA Emissions Automation</strong><small>ETL · data integration</small></a>
+          <a class="skill-project" data-skills="python vision engineering" href="projects/traffic-camera-pipeline.html"><span>07 / AUTOMATION</span><strong>Camera Frame Extraction</strong><small>OpenCV · web extraction</small></a>
+        </div>
+      </section>
       <section class='container section'>
         <p class='eyebrow'>
           FEATURED WORK
@@ -134,5 +175,6 @@
     </footer>
     <script src="script.js">
     </script>
+    <script src="home-skills.js?v=1" defer></script>
   </body>
 </html>
