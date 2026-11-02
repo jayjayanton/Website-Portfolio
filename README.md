@@ -29,6 +29,12 @@ The corresponding images belong in [images/](images/) and are referenced by the 
 
 The research was published in *Scientific Data* (Nature Portfolio, 2025): [read the paper](https://www.nature.com/articles/s41597-025-04713-6). The [research code](https://github.com/jayjayanton/oliver-mcmanamay_2025_scidata) is also available on GitHub.
 
+## Deforestation research in Colombia
+
+I also included a [Colombia deforestation case study](projects/colombia-deforestation.html) based on my WWF research examples. It includes a historical deforestation-risk map, the original GLM comparison table (Full, Stepwise, Naive and RAC), and my [R analysis script](research/colombia/wwf_Colombia_GLM_V3.R). The map is labeled as a Random Forest output in the source document, while the table and R script cover generalized linear models; I present them as related but distinct analyses.
+
+The wider [land-use dynamics page](projects/land-use-dynamics.html) now connects land-cover mapping, deforestation, water resources and vegetation health, and health and air quality. Each research stream has its own scientific context rather than being presented as one publication.
+
 ## Other featured projects
 
 My other case-study pages cover orphaned well prediction, carbon storage mapping, coal ash modeling, EPA greenhouse gas data automation, and webcam image extraction. Some of the underlying datasets and implementations are proprietary, so those projects focus on my technical contributions and permitted high-level descriptions.
