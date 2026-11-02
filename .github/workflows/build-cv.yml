@@ -1,0 +1,33 @@
+name: Publish printable CV PDF
+on:
+  push:
+    paths:
+      - cv.html
+      - .github/workflows/build-cv.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build-cv:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Render CV to PDF
+        run: |
+          mkdir -p assets
+          CHROME="$(command -v google-chrome || command -v chromium || command -v chromium-browser)"
+          if [ -z "$CHROME" ]; then
+            echo "Chrome/Chromium not found" >&2
+            exit 1
+          fi
+          "$CHROME" --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --no-pdf-header-footer --print-to-pdf="$PWD/assets/Jay_Antonio_Oliver_CV.pdf" "file://$PWD/cv.html"
+          test -s assets/Jay_Antonio_Oliver_CV.pdf
+      - name: Commit generated PDF
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/Jay_Antonio_Oliver_CV.pdf
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish printable CV PDF"
+            git push
+          fi
