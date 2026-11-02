@@ -255,3 +255,8 @@
 @media(max-width:850px){.skill-project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:680px){.career-timeline{flex-direction:column}.career-arrow{transform:rotate(90deg)}.skill-project-grid{grid-template-columns:1fr}.career-step{padding:20px}}
 @media(prefers-reduced-motion:reduce){.career-step,.skill-project,.skill-chip{transition:none}}
+
+/* Full-name site identity */
+.nav .logo{font-size:clamp(1rem,2vw,1.35rem);line-height:1.2;letter-spacing:-.025em;white-space:nowrap;flex-shrink:0}
+.nav .logo span{color:var(--pink)}
+@media(max-width:700px){.nav .logo{font-size:1.1rem}.nav{align-items:flex-start}.links{gap:10px 15px}}
