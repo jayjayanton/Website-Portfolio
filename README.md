@@ -31,7 +31,7 @@ The research was published in *Scientific Data* (Nature Portfolio, 2025): [read 
 
 ## Deforestation research in Colombia
 
-I also included a [Colombia deforestation case study](projects/colombia-deforestation.html) based on my WWF research examples. It includes a historical deforestation-risk map, the original GLM comparison table (Full, Stepwise, Naive and RAC), and my [R analysis script](research/colombia/wwf_Colombia_GLM_V3.R). The map is labeled as a Random Forest output in the source document, while the table and R script cover generalized linear models; I present them as related but distinct analyses.
+I also included a [Colombia deforestation case study](projects/colombia-deforestation.html) based on my WWF research examples. It includes a historical deforestation-risk map, the original GLM comparison table (Full, Stepwise, Naive and RAC), and my [portable R analysis script](scripts/colombia/colombia_glm_analysis.R). The map is labeled as a Random Forest output in the source document, while the table and R scripts cover generalized linear models; I present them as related but distinct analyses. I keep the [historical R source](scripts/colombia/wwf_Colombia_GLM_original.R) and [replication notes](scripts/colombia/README.md) alongside the portable version.
 
 The wider [land-use dynamics page](projects/land-use-dynamics.html) now connects land-cover mapping, deforestation, water resources and vegetation health, and health and air quality. Each research stream has its own scientific context rather than being presented as one publication.
 
