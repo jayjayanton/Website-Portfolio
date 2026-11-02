@@ -44,3 +44,11 @@
 .research-carousel__dots button[aria-current="true"]{background:var(--pink);color:#09090f;font-weight:800;border-color:var(--pink)}
 .research-carousel button:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
 @media(max-width:650px){.research-carousel{padding:12px}.research-carousel__controls{flex-wrap:wrap}.research-carousel__dots{order:-1;width:100%}.research-carousel__arrow{flex:1}.research-carousel__slide img{max-height:450px}}
+
+/* Carousel v2: horizontal track, one full slide at a time */
+.research-carousel__viewport{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;scrollbar-width:none;gap:0;align-items:stretch}
+.research-carousel__viewport::-webkit-scrollbar{display:none}
+.research-carousel__viewport>.research-carousel__slide,.research-carousel__viewport>.research-carousel__slide[hidden]{display:block!important;flex:0 0 100%;min-width:100%;scroll-snap-align:start;scroll-snap-stop:always;box-sizing:border-box}
+.research-carousel__slide>a{min-height:360px}
+.research-carousel__slide img{max-height:610px}
+@media(max-width:650px){.research-carousel__slide>a{min-height:200px}}
