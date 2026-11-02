@@ -25,3 +25,22 @@
 .formula{font-size:1.2rem;color:var(--cyan);margin-top:8px}
 .figure-missing{padding:22px;border:1px dashed var(--border);border-radius:10px}
 @media(max-width:700px){.research-case .figure-grid{grid-template-columns:1fr}}
+
+/* Unified six-figure research carousel */
+.research-carousel{margin:36px 0 52px;background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:20px}
+.research-carousel__toolbar,.research-carousel__controls{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.research-carousel__toolbar h2{margin:0 0 14px}
+.research-carousel__counter{color:var(--cyan);font-weight:700;white-space:nowrap}
+.research-carousel__viewport{width:100%}
+.research-carousel__slide{margin:0}
+.research-carousel__slide[hidden]{display:none!important}
+.research-carousel__slide>a{display:flex;align-items:center;justify-content:center;background:#ededed;border-radius:10px;min-height:250px;overflow:hidden}
+.research-carousel__slide img{display:block;width:100%;height:auto;max-height:650px;object-fit:contain}
+.research-carousel__slide figcaption{padding:16px 2px;color:var(--muted);min-height:66px}
+.research-carousel__controls{margin-top:12px}
+.research-carousel__arrow,.research-carousel__dots button{background:#222437;color:#fff;border:1px solid var(--border);border-radius:8px;padding:10px 14px;cursor:pointer;font:inherit}
+.research-carousel__dots{display:flex;flex-wrap:wrap;justify-content:center;gap:7px}
+.research-carousel__dots button{min-width:38px;padding:8px}
+.research-carousel__dots button[aria-current="true"]{background:var(--pink);color:#09090f;font-weight:800;border-color:var(--pink)}
+.research-carousel button:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+@media(max-width:650px){.research-carousel{padding:12px}.research-carousel__controls{flex-wrap:wrap}.research-carousel__dots{order:-1;width:100%}.research-carousel__arrow{flex:1}.research-carousel__slide img{max-height:450px}}
