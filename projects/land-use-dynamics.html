@@ -38,128 +38,41 @@
       </div>
     </header>
     <main>
-      <section class="container section">
-        <p class="eyebrow">
-          GEOSPATIAL RESEARCH · ENVIRONMENTAL DYNAMICS
-        </p>
-        <h1>
-          Multi-Sector Land-Use Dynamics
-          <em>
-            and environmental change.
-          </em>
-        </h1>
-        <p class="lead">
-          My research explores how land-use and land-cover patterns connect with forest loss, vegetation health, air quality, and water resources. These are distinct projects that share a common geospatial and environmental analysis foundation.
-        </p>
-        <div class="grid">
-          <a class="card" href="#land-cover">
-            <h3>
-              Land-use / land-cover change
-            </h3>
-            <p>
-              Harmonized classification systems and mapping for Earth system models.
-            </p>
-          </a>
-          <a class="card" href="colombia-deforestation.html">
-            <h3>
-              Deforestation
-            </h3>
-            <p>
-              WWF Colombia risk modeling, spatial predictors, and validation.
-            </p>
-          </a>
-          <a class="card" href="#water">
-            <h3>
-              Water resources & vegetation health
-            </h3>
-            <p>
-              NASA DEVELOP hydrologic and vegetation indicators in coastal Peru.
-            </p>
-          </a>
-          <a class="card" href="#air">
-            <h3>
-              Health & air quality
-            </h3>
-            <p>
-              Remote sensing of aerosols and particulate matter in Central America.
-            </p>
-          </a>
-        </div>
-        <h2 id="land-cover">
-          Land-use and land-cover mapping
-        </h2>
-        <p>
-          For my 2025
-          <i>
-            Scientific Data
-          </i>
-          publication, I worked on harmonizing 30-meter land-use and land-cover basemaps for MSD, GCAM, CLM, and LUH2 frameworks.
-        </p>
-        <div class="actions">
-          <a class="btn" href="https://www.nature.com/articles/s41597-025-04713-6">
-            Published paper
-          </a>
-          <a class="btn secondary" href="https://github.com/jayjayanton/oliver-mcmanamay_2025_scidata">
-            Research repository
-          </a>
-        </div>
-        <h2>
-          Land-cover classification example
-        </h2>
-        <p>
-          Figure 2 from my published research shows the distribution of MSD land-cover classes across the conterminous United States. I use it here as a visual example of the classification work; the full set of harmonization figures is available in the research publication.
-        </p>
-        <figure class="case-hero">
-          <a href="../images/figure-02-msd-classes.png">
-            <img src="../images/figure-02-msd-classes.png" alt="MSD land-cover classification map for the conterminous United States" loading="lazy">
-          </a>
-          <figcaption>
-            MSD land-cover classes ·
-            <a href="https://www.nature.com/articles/s41597-025-04713-6">
-              Published paper
-            </a>
-          </figcaption>
-        </figure>
-        <h2>
-          Deforestation modeling in Colombia
-        </h2>
-        <p>
-          As part of my WWF deforestation-drivers work, I investigated the relationship between observed deforestation and environmental, infrastructure, land-use, and accessibility variables. I used binomial generalized linear models, compared full, stepwise, elevation-only and residual-autocovariate specifications, and evaluated model discrimination and spatial generalization.
-        </p>
-        <p>
-          <a class="btn secondary" href="colombia-deforestation.html">
-            Explore the Colombia case study →
-          </a>
-        </p>
-        <h2 id="water">
-          Water resources and vegetation health
-        </h2>
-        <p>
-          In NASA DEVELOP work focused on coastal Peru, I analyzed precipitation, evapotranspiration, and NDVI to investigate hydrologic conditions and vegetation health in protected forest areas. These results are separate from the land-cover basemap publication.
-        </p>
-        <h2 id="air">
-          Health and air quality
-        </h2>
-        <p>
-          In NASA DEVELOP research in Central America, I worked with aerosol optical depth and particulate matter observations, including geographic comparisons with respiratory and cardiovascular health indicators. This is another distinct application of geospatial analysis and remote sensing.
-        </p>
-        <h2>
-          Why these comparisons matter
-        </h2>
-        <p>
-          Earth system modeling frameworks use different land-cover categories. Comparing their mapped classifications helps reveal where definitions align or diverge, providing a more transparent foundation for regional environmental modeling and future land-use analyses.
-        </p>
-        <h2>
-          Additional analysis
-        </h2>
-        <p>
-          My research repository also includes Sankey and Circos visualization work and model-comparison calculations. Those methods provide complementary ways to examine classification relationships and quantitative disagreement.
-        </p>
-        <p class="muted">
-          Original figures and captions should retain publication attribution and applicable reuse terms.
-        </p>
-      </section>
-    </main>
+  <article class="container section research-case">
+    <p class="eyebrow">SCIENTIFIC DATA · 2025 · PUBLISHED RESEARCH</p>
+    <h1>Multi-Sector <em>Land-Use Dynamics</em></h1>
+    <p class="lead">United States multi-sector land-use and land-cover base maps to support human and Earth system models.</p>
+    <p>In this research, I developed 30-meter land-use and land-cover basemaps for the conterminous United States, designed to support comparisons among GCAM, CLM, and LUH2. Each framework uses different land categories, so the challenge was to build a consistent spatial representation without losing important distinctions between crops, managed and unmanaged lands, and climate-related vegetation classes.</p>
+    <div class="actions">
+      <a class="btn" href="https://www.nature.com/articles/s41597-025-04713-6" target="_blank" rel="noopener noreferrer">Read the published paper</a>
+      <a class="btn secondary" href="https://github.com/jayjayanton/oliver-mcmanamay_2025_scidata" target="_blank" rel="noopener noreferrer">Research code on GitHub</a>
+      <a class="btn secondary" href="https://doi.org/10.57931/2246609" target="_blank" rel="noopener noreferrer">Research dataset</a>
+    </div>
+    <h2>How I developed the basemaps</h2>
+    <p>I started with existing land-cover datasets, including the National Land Cover Database and USDA Cropland Data Layer, then incorporated additional spatial information to refine land-use categories. The workflow distinguishes irrigated and rainfed crops, managed and unmanaged forests and pastures, and vegetation classes associated with different climatic regions. I used Python and R alongside ArcGIS Pro to process and organize the classifications.</p>
+    <p>The resulting land-cover classes could then be translated into the categories used by different modeling frameworks. Figure 1 illustrates this sequence; the maps that follow show the resulting spatial classifications.</p>
+    <div class="figure-grid">
+      <figure><a href="../images/figure-01-sankey-diagram.png"><img src="../images/figure-01-sankey-diagram.png" alt="Sankey diagram showing land-cover classes passing through classification and climate-region steps" loading="lazy"></a><figcaption><strong>Figure 1 — Classification workflow.</strong> The Sankey diagram traces how source classes were refined into the harmonized land-cover categories.</figcaption></figure>
+      <figure><a href="../images/figure-02-msd-classes.png"><img src="../images/figure-02-msd-classes.png" alt="MSD land-cover classification map of the conterminous United States" loading="lazy"></a><figcaption><strong>Figure 2 — MSD classes.</strong> The spatial distribution of the underlying land-cover classes used in the project.</figcaption></figure>
+      <figure><a href="../images/figure-03-gcam-msd.png"><img src="../images/figure-03-gcam-msd.png" alt="GCAM-MSD land-cover classification with national and regional maps" loading="lazy"></a><figcaption><strong>Figure 3 — GCAM–MSD.</strong> National and regional examples of land-cover categories represented for GCAM.</figcaption></figure>
+      <figure><a href="../images/figure-04-luh2-msd.png"><img src="../images/figure-04-luh2-msd.png" alt="LUH2-MSD land-cover classification map" loading="lazy"></a><figcaption><strong>Figure 4 — LUH2–MSD.</strong> The harmonized land-use representation for LUH2.</figcaption></figure>
+      <figure><a href="../images/figure-05-clm-msd.png"><img src="../images/figure-05-clm-msd.png" alt="CLM-MSD plant functional type classification map" loading="lazy"></a><figcaption><strong>Figure 5 — CLM–MSD.</strong> Plant functional types represented for the Community Land Model.</figcaption></figure>
+    </div>
+    <h2>Evaluating differences using mean squared error</h2>
+    <p>Mapping the same landscape into different classification systems introduces discrepancies. I used mean squared error (MSE) calculations to examine differences between the harmonized basemap outputs and the corresponding CLM and LUH2 values. The comparison matters because a visually consistent map does not necessarily mean that the underlying modeled land-use proportions agree.</p>
+    <p>MSE summarizes the average squared difference between paired values. Smaller values indicate closer agreement under the comparison being made; larger values indicate greater disagreement. Squaring also gives more weight to larger differences. The calculation depends on which variables, grid cells, and scales are being compared, so these maps should be read as spatial error patterns rather than universal measures of land-cover accuracy.</p>
+    <div class="formula-note"><strong>Mean squared error</strong><div class="formula">MSE = (1 / n) × Σ (reference value − modeled value)²</div></div>
+    <figure class="research-figure research-figure--wide">
+      <a href="../images/figure-06-mse-comparison.png"><img src="../images/figure-06-mse-comparison.png" alt="Two panels, A and B, showing spatial patterns of mean squared error across the conterminous United States, with yellow indicating higher MSE and dark blue lower MSE" loading="lazy" onerror="this.style.display='none';this.parentElement.nextElementSibling.hidden=false"></a>
+      <p class="figure-missing" hidden>Figure 6 has been converted from the supplied PDF; its PNG needs to be added to the images folder to display here.</p>
+      <figcaption><strong>Figure 6 — Spatial MSE comparison.</strong> Panels A and B show the geographic distribution of higher (yellow) and lower (dark blue) squared-error values. The supplied figure does not identify the panel-to-model mapping in its legend, so I have not assigned A or B to CLM or LUH2 here.</figcaption>
+    </figure>
+    <p>The project repository contains <a href="https://github.com/jayjayanton/oliver-mcmanamay_2025_scidata" target="_blank" rel="noopener noreferrer">the CLM and LUH2 MSE calculation notebooks</a>, along with scripts used to tabulate land-cover areas within model grid cells. Those calculations help show where the classification frameworks agree and where their differences deserve closer attention.</p>
+    <h2>Why the work matters</h2>
+    <p>Human and Earth system models often begin with different definitions of land use and land cover. A common, spatially detailed set of basemaps makes it easier to compare modeling frameworks, investigate regional patterns, and examine how classification differences could influence later environmental analysis. The MSE comparison adds a quantitative check to the mapped outputs instead of relying on visual inspection alone.</p>
+    <p class="muted">Oliver, J. and McManamay, R. (2025). <em>United States multi-sector land use and land cover base maps to support human and Earth system models.</em> Scientific Data. <a href="https://doi.org/10.1038/s41597-025-04713-6">DOI: 10.1038/s41597-025-04713-6</a>.</p>
+  </article>
+</main>
     <footer>
       <div class="container">
         ©
