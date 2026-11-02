@@ -51,23 +51,20 @@
           </em>
         </h1>
         <p class="lead">
-          I analyzed environmental and human-accessibility predictors associated with deforestation in Colombia, comparing alternative statistical specifications and evaluating how well they generalized beyond the fitted data.
+          I examined deforestation patterns in Colombia between 2000 and 2017 using Hansen forest-cover change data and geographic predictors, then compared logistic regression models to investigate factors associated with forest loss.
         </p>
         <div class="actions">
           <a class="btn secondary" href="https://github.com/jayjayanton/Deforestation-Research" target="_blank" rel="noopener noreferrer">
             Deforestation research repository
           </a>
-          <a class="btn secondary" href="../tables/colombia-glm-model-comparison.csv">
+          <a class="btn secondary" href="https://github.com/jayjayanton/Deforestation-Research/blob/main/tables/colombia-glm-model-comparison.csv">
             Model comparison CSV
-          </a>
-          <a class="btn secondary" href="land-use-dynamics.html">
-            Environmental dynamics overview
           </a>
         </div>
         <div class="case-accordion">
           <details class="case-panel" open>
             <summary><span class="case-panel__number">01</span><span>Project summary</span><span class="case-panel__hint">Study overview</span></summary>
-            <div class="case-panel__content"><p>I investigated geographic and land-use factors associated with deforestation in Colombia, using the original model comparison table and risk map to document the analysis.</p></div>
+            <div class="case-panel__content"><p>I investigated deforestation in Colombia over 2000–2017, combining forest-cover change information with geographic variables to examine conditions associated with forest loss. The model comparison table and risk map are historical outputs from that work.</p></div>
           </details>
           <details class="case-panel">
             <summary><span class="case-panel__number">02</span><span>Deforestation-risk map</span><span class="case-panel__hint">Map from WWF research</span></summary>
@@ -95,7 +92,7 @@
 <section class="case-section">
           
           <p>
-            I used binomial generalized linear models to examine how slope, elevation, distance to roads and cities, land-cover characteristics, and other variables related to observed deforestation. I compared a full model, a stepwise-selected model, a simple elevation-only baseline (naive), and a residual-autocovariate (RAC) specification designed to account for spatial dependence.
+            I used Hansen forest-cover change data covering 2000–2017 to examine deforestation patterns in Colombia. I combined the forest-loss observations with geographic predictors including slope, elevation, distance to roads and cities, rivers, protected areas, and land-cover and agricultural activity. I used binomial logistic regression to examine associations between those variables and deforestation, comparing Full, Stepwise, elevation-only (Naive), and residual-autocovariate (RAC) models. The historical R script documents the regression analysis; the original preprocessing workflow that derived deforestation labels from Hansen data is not included.
           </p>
           <p>
             The table below reproduces the coefficients and accompanying values from my original WWF work document. Significance symbols and blank entries are preserved as reported; the table should not be interpreted as a causal-effects analysis. The numerical values are historical outputs and have not been recalculated.
@@ -1081,20 +1078,33 @@
             </table>
           </div>
           <p>
-            <a href="../tables/colombia-glm-model-comparison.csv">
-              Download the full table as CSV
+            <a href="https://github.com/jayjayanton/Deforestation-Research/blob/main/tables/colombia-glm-model-comparison.csv">
+              View the historical model-comparison table
             </a>
           </p>
         </section>
             </div>
           </details>
           <details class="case-panel">
-            <summary><span class="case-panel__number">04</span><span>Data and results</span><span class="case-panel__hint">Historical outputs</span></summary>
+            <summary><span class="case-panel__number">04</span><span>Results — five notable drivers</span><span class="case-panel__hint">GLM comparison</span></summary>
             <div class="case-panel__content">
 <section class="case-section">
           
           <p>
-            The map and model comparison table are results from my original WWF work. The original datasets are not available to me at this time, so I cannot reproduce the historical model outputs.
+            The historical model-comparison table identifies several statistically significant associations with deforestation. Five notable variables that appear consistently in the Full, Stepwise and RAC specifications are:
+          </p>
+          <ol class="driver-list">
+            <li><strong>Slope</strong> — negative coefficient (−0.187 in the Full model).</li>
+            <li><strong>Distance to primary and secondary roads</strong> — negative coefficient (−0.024).</li>
+            <li><strong>Distance to main cities</strong> — negative coefficient (−0.004).</li>
+            <li><strong>Distance to rivers</strong> — positive coefficient (+0.016).</li>
+            <li><strong>Area of protected lands</strong> — negative coefficient (−0.097).</li>
+          </ol>
+          <p>
+            These are five notable predictors, not a verified ranking of the five most important drivers. Their raw coefficients have different units and scales, so they cannot be ranked by coefficient magnitude. The associations should not be interpreted as causal effects.
+          </p>
+          <p>
+            Original access to the data is not available at this time. I cannot rerun the historical models or calculate a standardized importance ranking. The risk map is a separate Random Forest result, not a map of the GLM coefficients.
           </p>
           <p>
             The underlying research code and documentation are available in the Deforestation-Research GitHub repository linked above.
