@@ -195,3 +195,32 @@
 .case-facts strong{display:block;color:var(--cyan);font-size:1.4rem}
 .case-facts span{display:block;color:var(--muted);font-size:.8rem}
 @media(max-width:700px){.case-panel>summary{padding:16px;gap:10px;font-size:1rem}.case-panel__hint{display:none}.case-panel__content{padding:4px 16px 20px}.case-facts{grid-template-columns:1fr}}
+
+/* Orphaned wells: three coordinated neon research galleries */
+.ow-carousel{margin:22px 0 40px;padding:clamp(12px,2.6vw,22px);border:1px solid #44344e;border-radius:18px;background:linear-gradient(145deg,#191525,#101019);box-shadow:0 14px 36px #0006}
+.ow-carousel__top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:14px}
+.ow-carousel__top h3{margin:0;color:var(--text);font-size:clamp(1.05rem,2.4vw,1.45rem)}
+.ow-carousel__top [data-count]{color:var(--cyan);border:1px solid #00f5ff66;border-radius:999px;padding:6px 12px;white-space:nowrap;font-weight:750;font-variant-numeric:tabular-nums}
+.ow-carousel__track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;border:1px solid #393649;border-radius:12px;background:#10121c}
+.ow-carousel__track::-webkit-scrollbar{display:none}
+.ow-carousel__slide{flex:0 0 100%;min-width:100%;scroll-snap-align:start;scroll-snap-stop:always;box-sizing:border-box}
+.ow-carousel__slide figure{margin:0}
+.ow-carousel__slide figure>a{display:flex;justify-content:center;align-items:center;min-height:230px;padding:12px;background:#171927}
+.ow-carousel__slide img{display:block;width:100%;height:auto;max-height:600px;object-fit:contain;border-radius:6px}
+.ow-carousel__slide figcaption{padding:15px 18px;color:var(--muted);border-top:1px solid #393649;line-height:1.55}
+.ow-carousel__slide figcaption strong{color:var(--text)}
+.ow-carousel__controls{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px}
+.ow-carousel__controls button{cursor:pointer;border:1px solid #6d496a;background:#292035;color:var(--text);padding:11px 17px;border-radius:9px;font:inherit;font-weight:750;transition:background .2s,border-color .2s}
+.ow-carousel__controls button:hover{border-color:var(--pink);background:#3b2741}
+.ow-carousel__controls button:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+.ow-carousel__controls [data-label]{font-size:.8rem;color:var(--muted);text-align:center}
+.ow-metric-card{padding:clamp(20px,4vw,40px);min-height:260px}
+.ow-metric-card h4{margin:0 0 5px;font-size:clamp(1.3rem,3vw,2rem);color:var(--cyan)}
+.ow-metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:25px 0}
+.ow-metric-grid>div{padding:15px 10px;background:#242134;border:1px solid #46394f;border-radius:10px;text-align:center}
+.ow-metric-grid strong{display:block;color:var(--pink);font-size:clamp(1.15rem,2.7vw,1.8rem);font-variant-numeric:tabular-nums}
+.ow-metric-grid span{display:block;color:var(--muted);font-size:.8rem;margin-top:5px}
+.ow-metric-card>a{color:var(--cyan);text-decoration:underline;text-underline-offset:4px}
+.case-panel__content>h2{margin-top:38px;font-size:clamp(1.3rem,2.7vw,1.9rem)}
+@media(max-width:700px){.ow-metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ow-carousel__controls [data-label]{display:none}.ow-carousel__controls button{flex:1}.ow-carousel__slide img{max-height:55vh}}
+@media(prefers-reduced-motion:reduce){.ow-carousel__track{scroll-behavior:auto}}
