@@ -48,12 +48,35 @@
       <a class="btn secondary" href="https://github.com/jayjayanton/oliver-mcmanamay_2025_scidata" target="_blank" rel="noopener noreferrer">Research code on GitHub</a>
       <a class="btn secondary" href="https://doi.org/10.57931/2246609" target="_blank" rel="noopener noreferrer">Research dataset</a>
     </div>
-    <h2>How I developed the basemaps</h2>
-    <p>I started with existing land-cover datasets, including the National Land Cover Database and USDA Cropland Data Layer, then incorporated additional spatial information to refine land-use categories. The workflow distinguishes irrigated and rainfed crops, managed and unmanaged forests and pastures, and vegetation classes associated with different climatic regions. I used Python and R alongside ArcGIS Pro to process and organize the classifications.</p>
-    <p>The resulting land-cover classes could then be translated into the categories used by different modeling frameworks. Figure 1 illustrates this sequence; the maps that follow show the resulting spatial classifications.</p>
+    <div class="case-accordion">
+      <details class="case-panel" open>
+        <summary><span class="case-panel__number">01</span><span>Project summary</span><span class="case-panel__hint">Scope and deliverables</span></summary>
+        <div class="case-panel__content">
+          <p>I developed a harmonized land-use and land-cover basemap series for the conterminous United States to support human and Earth system modeling. The goal was to provide a consistent spatial foundation across the MSD, GCAM, CLM and LUH2 classification frameworks, which otherwise describe the same landscape using different categories.</p>
+          <div class="case-facts">
+            <div><strong>30 m</strong><span>Raster resolution</span></div>
+            <div><strong>5 years</strong><span>2008, 2011, 2013, 2016, 2019</span></div>
+            <div><strong>4 systems</strong><span>MSD, GCAM, CLM, LUH2</span></div>
+          </div>
+          <p>The data products include a 259-class MSD system, 39 GCAM classes, 68 CLM classes and 12 LUH2 classes. These are classification counts, not model accuracy scores.</p>
+        </div>
+      </details>
+      <details class="case-panel">
+        <summary><span class="case-panel__number">02</span><span>Methodology</span><span class="case-panel__hint">Inputs and harmonization</span></summary>
+        <div class="case-panel__content">
+          <p>I combined empirical land-cover information, primarily from the National Land Cover Database and USDA Cropland Data Layer, with additional spatial datasets to distinguish land-use types that broader classification systems do not represent consistently.</p>
+          <p>The workflow included updating cultivated cropland classifications with CDL, distinguishing rainfed and irrigated crops, and refining managed and unmanaged forest and pasture classes. I also used climate zones, ecoregions and elevation to distinguish vegetation classes. The research code includes Python scripts for crop masking and irrigated/rainfed classification; some land-management and climate-class refinements were carried out in ArcGIS Pro.</p>
+          <p>I then translated the refined 30-meter classes into the categories required by GCAM, CLM and LUH2. This was not a simple renaming exercise: the models differ in thematic detail and in whether land types are stored as mutually exclusive classes or as fractions within larger grid cells.</p>
+          <p>The resulting basemap series supports regional analysis across multiple contemporary years without forcing each model to start from a different underlying land-cover interpretation.</p>
+        </div>
+      </details>
+      <details class="case-panel">
+        <summary><span class="case-panel__number">03</span><span>Figures</span><span class="case-panel__hint">Six-figure carousel</span></summary>
+        <div class="case-panel__content">
+          <p>The figures move from the classification workflow to the final MSD and model-specific maps, then to the spatial error comparison. Use the arrows or numbered controls to browse them.</p>
     <section class="research-carousel" aria-label="Research figures" data-research-carousel>
       <div class="research-carousel__toolbar">
-        <h2>Research figures</h2>
+        <h3>Classification maps and error comparison</h3>
         <span class="research-carousel__counter" aria-live="polite">1 / 6</span>
       </div>
       <div class="research-carousel__viewport" id="research-figure-slides">
@@ -108,13 +131,27 @@
       </div>
       <p class="muted">Select a figure or use the arrows. Click the image to open it at full size.</p>
     </section>
-    <h2>Evaluating differences using mean squared error</h2>
-    <p>Mapping the same landscape into different classification systems introduces discrepancies. I used mean squared error (MSE) calculations to examine differences between the harmonized basemap outputs and the corresponding CLM and LUH2 values. The comparison matters because a visually consistent map does not necessarily mean that the underlying modeled land-use proportions agree.</p>
-    <p>MSE summarizes the average squared difference between paired values. Smaller values indicate closer agreement under the comparison being made; larger values indicate greater disagreement. Squaring also gives more weight to larger differences. The calculation depends on which variables, grid cells, and scales are being compared, so these maps should be read as spatial error patterns rather than universal measures of land-cover accuracy.</p>
-    <div class="formula-note"><strong>Mean squared error</strong><div class="formula">MSE = (1 / n) × Σ (reference value − modeled value)²</div></div>
-    <p>The project repository contains <a href="https://github.com/jayjayanton/oliver-mcmanamay_2025_scidata" target="_blank" rel="noopener noreferrer">the CLM and LUH2 MSE calculation notebooks</a>, along with scripts used to tabulate land-cover areas within model grid cells. Those calculations help show where the classification frameworks agree and where their differences deserve closer attention.</p>
-    <h2>Why the work matters</h2>
-    <p>Human and Earth system models often begin with different definitions of land use and land cover. A common, spatially detailed set of basemaps makes it easier to compare modeling frameworks, investigate regional patterns, and examine how classification differences could influence later environmental analysis. The MSE comparison adds a quantitative check to the mapped outputs instead of relying on visual inspection alone.</p>
+
+        </div>
+      </details>
+      <details class="case-panel">
+        <summary><span class="case-panel__number">04</span><span>Validation and MSE</span><span class="case-panel__hint">Comparing model baselines</span></summary>
+        <div class="case-panel__content">
+          <p>One important part of the paper was evaluating the differences between the new MSD basemaps and existing CLM and LUH2 products. The comparisons required care because the MSD layer contains one class per 30-meter pixel, while the coarser CLM and LUH2 products can contain multiple land types expressed as fractional cover within a grid cell.</p>
+          <p>We assessed land-class associations and used spatial comparisons to identify geographic variation in agreement. The mean squared error (MSE) calculations helped quantify differences between comparable mapped fractions rather than relying only on the visual appearance of the classification maps.</p>
+          <div class="formula-note"><strong>Mean squared error</strong><div class="formula">MSE = (1 / n) × Σ (reference fraction − model fraction)²</div></div>
+          <p>Higher MSE indicates greater disagreement in the compared values; lower MSE indicates closer agreement. The paper compares the 2008 MSD basemap with LUH2 for 2008 and CLM for 2000, reflecting the available baseline products. The spatial MSE visualization is included as Figure 6 in the carousel.</p>
+          <p>The corresponding <a href="https://github.com/jayjayanton/oliver-mcmanamay_2025_scidata" target="_blank" rel="noopener noreferrer">research repository</a> contains the CLM and LUH2 MSE calculation notebooks and the scripts used to tabulate class areas within model grid cells.</p>
+        </div>
+      </details>
+      <details class="case-panel">
+        <summary><span class="case-panel__number">05</span><span>Research value</span><span class="case-panel__hint">Applications and limitations</span></summary>
+        <div class="case-panel__content">
+          <p>A common, spatially detailed basemap allows different human and Earth system models to be compared using more consistent land-use assumptions. The product can support regional studies of land-use change, land-atmosphere interactions and other environmental processes, while the validation analysis identifies where model baselines disagree.</p>
+          <p>These maps are not a substitute for a new field-based accuracy assessment. The paper treats existing high-resolution observational datasets as the reference for evaluating the coarser model baselines. The data series and code are linked above for anyone who wants to examine the methods in more detail.</p>
+        </div>
+      </details>
+    </div>
     <p class="muted">Oliver, J. and McManamay, R. (2025). <em>United States multi-sector land use and land cover base maps to support human and Earth system models.</em> Scientific Data. <a href="https://doi.org/10.1038/s41597-025-04713-6">DOI: 10.1038/s41597-025-04713-6</a>.</p>
   </article>
 </main>
