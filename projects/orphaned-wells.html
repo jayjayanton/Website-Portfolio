@@ -7,7 +7,7 @@
     <title>
       Orphaned Wells Prediction | Jay Oliver
     </title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style.css?v=case-panels-1">
   </head>
   <body>
     <header class="header">
@@ -48,14 +48,26 @@
         <p class="lead">
           National-scale geospatial modeling with XGBoost, well-record integration, cross-validation, and model explainability.
         </p>
-        <figure class="case-hero">
+        <div class="case-accordion">
+          <details class="case-panel" open>
+            <summary><span class="case-panel__number">01</span><span>Project summary</span><span class="case-panel__hint">Scope and context</span></summary>
+            <div class="case-panel__content">
+              <div class="notice">
+          This case study describes the methods and my contributions at a high level. Proprietary data and internal source code are not shared.
+        </div>
+            </div>
+          </details>
+          <details class="case-panel">
+            <summary><span class="case-panel__number">02</span><span>Figures</span><span class="case-panel__hint">Illustrative Appalachian Basin map</span></summary>
+            <div class="case-panel__content">
+              <figure class="case-hero">
           <img src="../images/Appalachian%20Basin%20Well%20Classification%20Map.png" alt="Illustrative synthetic Appalachian Basin well locations with example orphaned-well probabilities" loading="lazy">
           <figcaption>
             Illustrative map using synthetic well locations and probability categories. This is not a real model output.
           </figcaption>
         </figure>
-        <div class="notice">
-          This case study describes the methods and my contributions at a high level. Proprietary data and internal source code are not shared.
+            </div>
+          </details>
         </div>
         <a href="../projects.html">
           ← All projects
