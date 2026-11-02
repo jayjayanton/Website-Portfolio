@@ -1,1 +1,177 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Geospatial data science and environmental research portfolio"><title>Land-Use Dynamics | Jay Oliver</title><link rel="stylesheet" href="../style.css"></head><body><header class="header"><div class="container nav"><a class="logo" href="../index.html">JO<span>.</span></a><nav class="links" aria-label="Main navigation"><a href="../index.html">Home</a><a href="../projects.html">Projects</a><a href="../research.html">Research</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></nav></div></header><main><section class="container section"><p class="eyebrow">GEOSPATIAL RESEARCH · ENVIRONMENTAL DYNAMICS</p><h1>Land-use dynamics <em>and environmental change.</em></h1><p class="lead">My research explores how land-use and land-cover patterns connect with forest loss, vegetation health, air quality, and water resources. These are distinct projects that share a common geospatial and environmental analysis foundation.</p><div class="grid"><a class="card" href="#land-cover"><h3>Land-use / land-cover change</h3><p>Harmonized classification systems and mapping for Earth system models.</p></a><a class="card" href="colombia-deforestation.html"><h3>Deforestation</h3><p>WWF Colombia risk modeling, spatial predictors, and validation.</p></a><a class="card" href="#water"><h3>Water resources & vegetation health</h3><p>NASA DEVELOP hydrologic and vegetation indicators in coastal Peru.</p></a><a class="card" href="#air"><h3>Health & air quality</h3><p>Remote sensing of aerosols and particulate matter in Central America.</p></a></div><h2 id="land-cover">Land-use and land-cover mapping</h2><p>For my 2025 <i>Scientific Data</i> publication, I worked on harmonizing 30-meter land-use and land-cover basemaps for MSD, GCAM, CLM, and LUH2 frameworks.</p><div class="actions"><a class="btn" href="https://www.nature.com/articles/s41597-025-04713-6">Published paper</a><a class="btn secondary" href="https://github.com/jayjayanton/oliver-mcmanamay_2025_scidata">Research repository</a></div><h2>Land-cover classification example</h2><p>Figure 2 from my published research shows the distribution of MSD land-cover classes across the conterminous United States. I use it here as a visual example of the classification work; the full set of harmonization figures is available in the research publication.</p><figure class="case-hero"><a href="../images/figure-02-msd-classes.png"><img src="../images/figure-02-msd-classes.png" alt="MSD land-cover classification map for the conterminous United States" loading="lazy"></a><figcaption>MSD land-cover classes · <a href="https://www.nature.com/articles/s41597-025-04713-6">Published paper</a></figcaption></figure><h2>Deforestation modeling in Colombia</h2><p>As part of my WWF deforestation-drivers work, I investigated the relationship between observed deforestation and environmental, infrastructure, land-use, and accessibility variables. I used binomial generalized linear models, compared full, stepwise, elevation-only and residual-autocovariate specifications, and evaluated model discrimination and spatial generalization.</p><p><a class="btn secondary" href="colombia-deforestation.html">Explore the Colombia case study →</a></p><h2 id="water">Water resources and vegetation health</h2><p>In NASA DEVELOP work focused on coastal Peru, I analyzed precipitation, evapotranspiration, and NDVI to investigate hydrologic conditions and vegetation health in protected forest areas. These results are separate from the land-cover basemap publication.</p><h2 id="air">Health and air quality</h2><p>In NASA DEVELOP research in Central America, I worked with aerosol optical depth and particulate matter observations, including geographic comparisons with respiratory and cardiovascular health indicators. This is another distinct application of geospatial analysis and remote sensing.</p><h2>Why these comparisons matter</h2><p>Earth system modeling frameworks use different land-cover categories. Comparing their mapped classifications helps reveal where definitions align or diverge, providing a more transparent foundation for regional environmental modeling and future land-use analyses.</p><h2>Additional analysis</h2><p>My research repository also includes Sankey and Circos visualization work and model-comparison calculations. Those methods provide complementary ways to examine classification relationships and quantitative disagreement.</p><p class="muted">Original figures and captions should retain publication attribution and applicable reuse terms.</p></section></main><footer><div class="container">© <span data-year></span> Jay Oliver · HTML / CSS / JavaScript · <a href="https://github.com/jayjayanton">GitHub</a></div></footer><script src="../script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Geospatial data science and environmental research portfolio">
+    <title>
+      Land-Use Dynamics | Jay Oliver
+    </title>
+    <link rel="stylesheet" href="../style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container nav">
+        <a class="logo" href="../index.html">
+          JO
+          <span>
+            .
+          </span>
+        </a>
+        <nav class="links" aria-label="Main navigation">
+          <a href="../index.html">
+            Home
+          </a>
+          <a href="../projects.html">
+            Projects
+          </a>
+          <a href="../research.html">
+            Research
+          </a>
+          <a href="../about.html">
+            About
+          </a>
+          <a href="../contact.html">
+            Contact
+          </a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="container section">
+        <p class="eyebrow">
+          GEOSPATIAL RESEARCH · ENVIRONMENTAL DYNAMICS
+        </p>
+        <h1>
+          Land-use dynamics
+          <em>
+            and environmental change.
+          </em>
+        </h1>
+        <p class="lead">
+          My research explores how land-use and land-cover patterns connect with forest loss, vegetation health, air quality, and water resources. These are distinct projects that share a common geospatial and environmental analysis foundation.
+        </p>
+        <div class="grid">
+          <a class="card" href="#land-cover">
+            <h3>
+              Land-use / land-cover change
+            </h3>
+            <p>
+              Harmonized classification systems and mapping for Earth system models.
+            </p>
+          </a>
+          <a class="card" href="colombia-deforestation.html">
+            <h3>
+              Deforestation
+            </h3>
+            <p>
+              WWF Colombia risk modeling, spatial predictors, and validation.
+            </p>
+          </a>
+          <a class="card" href="#water">
+            <h3>
+              Water resources & vegetation health
+            </h3>
+            <p>
+              NASA DEVELOP hydrologic and vegetation indicators in coastal Peru.
+            </p>
+          </a>
+          <a class="card" href="#air">
+            <h3>
+              Health & air quality
+            </h3>
+            <p>
+              Remote sensing of aerosols and particulate matter in Central America.
+            </p>
+          </a>
+        </div>
+        <h2 id="land-cover">
+          Land-use and land-cover mapping
+        </h2>
+        <p>
+          For my 2025
+          <i>
+            Scientific Data
+          </i>
+          publication, I worked on harmonizing 30-meter land-use and land-cover basemaps for MSD, GCAM, CLM, and LUH2 frameworks.
+        </p>
+        <div class="actions">
+          <a class="btn" href="https://www.nature.com/articles/s41597-025-04713-6">
+            Published paper
+          </a>
+          <a class="btn secondary" href="https://github.com/jayjayanton/oliver-mcmanamay_2025_scidata">
+            Research repository
+          </a>
+        </div>
+        <h2>
+          Land-cover classification example
+        </h2>
+        <p>
+          Figure 2 from my published research shows the distribution of MSD land-cover classes across the conterminous United States. I use it here as a visual example of the classification work; the full set of harmonization figures is available in the research publication.
+        </p>
+        <figure class="case-hero">
+          <a href="../images/figure-02-msd-classes.png">
+            <img src="../images/figure-02-msd-classes.png" alt="MSD land-cover classification map for the conterminous United States" loading="lazy">
+          </a>
+          <figcaption>
+            MSD land-cover classes ·
+            <a href="https://www.nature.com/articles/s41597-025-04713-6">
+              Published paper
+            </a>
+          </figcaption>
+        </figure>
+        <h2>
+          Deforestation modeling in Colombia
+        </h2>
+        <p>
+          As part of my WWF deforestation-drivers work, I investigated the relationship between observed deforestation and environmental, infrastructure, land-use, and accessibility variables. I used binomial generalized linear models, compared full, stepwise, elevation-only and residual-autocovariate specifications, and evaluated model discrimination and spatial generalization.
+        </p>
+        <p>
+          <a class="btn secondary" href="colombia-deforestation.html">
+            Explore the Colombia case study →
+          </a>
+        </p>
+        <h2 id="water">
+          Water resources and vegetation health
+        </h2>
+        <p>
+          In NASA DEVELOP work focused on coastal Peru, I analyzed precipitation, evapotranspiration, and NDVI to investigate hydrologic conditions and vegetation health in protected forest areas. These results are separate from the land-cover basemap publication.
+        </p>
+        <h2 id="air">
+          Health and air quality
+        </h2>
+        <p>
+          In NASA DEVELOP research in Central America, I worked with aerosol optical depth and particulate matter observations, including geographic comparisons with respiratory and cardiovascular health indicators. This is another distinct application of geospatial analysis and remote sensing.
+        </p>
+        <h2>
+          Why these comparisons matter
+        </h2>
+        <p>
+          Earth system modeling frameworks use different land-cover categories. Comparing their mapped classifications helps reveal where definitions align or diverge, providing a more transparent foundation for regional environmental modeling and future land-use analyses.
+        </p>
+        <h2>
+          Additional analysis
+        </h2>
+        <p>
+          My research repository also includes Sankey and Circos visualization work and model-comparison calculations. Those methods provide complementary ways to examine classification relationships and quantitative disagreement.
+        </p>
+        <p class="muted">
+          Original figures and captions should retain publication attribution and applicable reuse terms.
+        </p>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        ©
+        <span data-year>
+        </span>
+        Jay Oliver · HTML / CSS / JavaScript ·
+        <a href="https://github.com/jayjayanton">
+          GitHub
+        </a>
+      </div>
+    </footer>
+    <script src="../script.js">
+    </script>
+  </body>
+</html>
