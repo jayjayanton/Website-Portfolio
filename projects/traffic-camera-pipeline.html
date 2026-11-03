@@ -84,6 +84,26 @@
           </details>
         </div>
         
+<section class="project-impact" aria-labelledby="future-applications-heading">
+  <p class="eyebrow">POTENTIAL NEXT STEPS</p>
+  <h2 id="future-applications-heading">Future Applications</h2>
+  <p class="project-impact__subtitle">From camera acquisition to computer vision</p>
+  <p>The next step would be to organize and label collected frames, then use them to train and evaluate object-detection models. Potential applications include identifying vehicles in traffic scenes, tracking changes in road activity, and identifying renewable-energy infrastructure where the camera coverage and image resolution are suitable.</p>
+  <figure style="margin:1.4rem 0;">
+    <div style="position:relative;width:100%;max-width:980px;overflow:hidden;border-radius:12px;line-height:0;">
+      <img src="../images/1.jpg" alt="Actual Austin traffic-camera snapshot at Rundberg Lane, with a conceptual bounding box drawn around a white SUV" loading="lazy" style="display:block;width:100%;height:auto;">
+      <div aria-hidden="true" style="position:absolute;left:56.7%;top:50.5%;width:17.3%;height:15.4%;border:3px solid #49e1c1;box-sizing:border-box;box-shadow:0 0 0 1px rgba(0,0,0,.4);">
+        <span style="position:absolute;bottom:100%;left:-3px;background:#49e1c1;color:#082b2b;font:700 clamp(9px,1.3vw,14px)/1.3 sans-serif;padding:3px 6px;white-space:nowrap;">Vehicle · conceptual label</span>
+      </div>
+    </div>
+    <figcaption>Conceptual object-detection annotation over an actual City of Austin camera snapshot. The bounding box was added manually to illustrate a potential CNN output; it is not a prediction from a trained model.</figcaption>
+  </figure>
+  <div class="project-impact__grid">
+    <div><h3>Proposed workflow</h3><p>Collect frames → label objects → split data by camera and time → train a detection model → evaluate on held-out scenes.</p></div>
+    <div><h3>Evaluation</h3><p>Compare precision, recall and mAP, review false detections, and test generalization across camera viewpoints, lighting and weather conditions.</p></div>
+  </div>
+</section>
+        
 <section class="project-impact" aria-labelledby="project-impact-heading"><p class="eyebrow">PROJECT TAKEAWAYS</p><h2 id="project-impact-heading">Why This Project Matters</h2><p class="project-impact__subtitle">Making recurring visual data usable</p><div class="project-impact__grid"><div><h3>Practical and scientific value</h3><p>Automating the acquisition of camera snapshots and video frames provides the foundation for building our own labeled image datasets. Once collected and organized, the imagery could be used to train and evaluate convolutional neural networks (CNNs) and other deep-learning models for object detection and identification. The extraction workflow itself did not train these models.</p></div><div><h3>What it demonstrates as a data scientist</h3><p>I developed repeatable Python workflows to collect and organize imagery from public camera sources. That work established the data-acquisition stage needed for future labeling, model training and evaluation, including potential detection of renewable-energy infrastructure where suitable imagery is available.</p></div></div></section>
 <a href="../projects.html">
           ← All projects
