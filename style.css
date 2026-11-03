@@ -303,3 +303,12 @@
 .nasa-gallery--original .nasa-figure-media.image-pending>a{display:none}
 .nasa-gallery--original .nasa-figure-media.image-pending .nasa-figure-fallback{display:flex}
 .nasa-gallery--original .nasa-figure-slot figcaption{border-top:1px solid #393349}
+
+/* NASA project hero: use existing uploaded research imagery as backdrop */
+.nasa-case-hero{position:relative;isolation:isolate;overflow:hidden;border:1px solid #3e3a50;border-radius:18px;padding:clamp(26px,5vw,64px);margin-bottom:30px;background:#121621}
+.nasa-case-hero::before{content:"";position:absolute;inset:0;z-index:-2;background-image:var(--nasa-cover);background-size:cover;background-position:center;opacity:.72}
+.nasa-case-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(9,12,22,.97) 0%,rgba(9,12,22,.86) 48%,rgba(9,12,22,.4) 100%)}
+.nasa-case-hero__content{max-width:780px}
+.nasa-case-hero h1{max-width:780px;text-shadow:0 2px 18px #000}
+.nasa-case-hero .lead{color:#e1e8ee}
+@media(max-width:700px){.nasa-case-hero::after{background:linear-gradient(90deg,rgba(9,12,22,.96),rgba(9,12,22,.76))}}
