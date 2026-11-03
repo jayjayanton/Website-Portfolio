@@ -58,7 +58,7 @@
           <details class="case-panel">
             <summary><span class="case-panel__number">02</span><span>Methodology</span><span class="case-panel__hint">How I approached the work</span></summary>
             <div class="case-panel__content">
-              <p>I used Selenium and BeautifulSoup to discover TxDOT camera image URLs and download still images. For Jackson Hole live streams, I used Streamlink and video-frame extraction to save images from camera feeds. The public GitHub repository includes the original scripts and updated versions with configurable paths.</p>
+              <p>For TxDOT roadway cameras, I used Selenium and BeautifulSoup to locate camera names and still-image URLs, then downloaded the snapshots. For Jackson Hole live streams, I used Streamlink to access video segments and OpenCV to decode the clips and save up to three JPEG frames per video. The reorganized script in the public repository now uses FFmpeg for frame extraction, while the original Baylor script preserves the OpenCV workflow.</p>
             </div>
           </details>
           <details class="case-panel">
