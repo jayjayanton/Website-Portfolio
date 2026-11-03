@@ -352,3 +352,15 @@
 .project-discipline-tabs button:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
 .project-discipline-description{max-width:850px;color:var(--muted);margin:0 0 24px}
 @media(max-width:650px){.project-discipline-tabs{grid-template-columns:1fr}.project-discipline-tabs button{padding:13px 12px;text-align:left}}
+
+/* Multidisciplinary expertise overview */
+.home-disciplines{border-top:1px solid var(--border)}
+.home-disciplines>p{max-width:950px}
+.expertise-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-top:25px}
+.expertise-item{display:flex;flex-direction:column;gap:12px;padding:22px;background:linear-gradient(145deg,#1d1829,#12141f);border:1px solid #40354f;border-radius:14px;color:var(--text);transition:border-color .2s,transform .2s}
+.expertise-item strong{font-size:1.05rem;line-height:1.3;color:var(--cyan)}
+.expertise-item span{font-size:.87rem;color:var(--muted);line-height:1.5}
+.expertise-item:hover{border-color:var(--pink);transform:translateY(-3px);color:var(--text)}
+.expertise-item:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+@media(max-width:850px){.expertise-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.expertise-grid{grid-template-columns:1fr}}
