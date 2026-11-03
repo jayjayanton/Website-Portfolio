@@ -8,7 +8,7 @@
       Featured Projects | Jay Oliver
     </title>
     <link rel="stylesheet" href="style.css?v=category-clean-1">
-    <link rel="stylesheet" href="projects-categories-v1.css">
+    <link rel="stylesheet" href="projects-categories-v2.css">
   
   </head>
   <body>
@@ -56,8 +56,7 @@
           <button type="button" id="tab-web" aria-pressed="false" aria-expanded="false" aria-controls="projects-grid" data-project-tab="web"><span>Web Development</span><span class="category-arrow" aria-hidden="true">⌄</span></button>
         </div>
         <p class="project-discipline-description" id="project-discipline-description" aria-live="polite">Choose a category to view its projects.</p>
-        <div class='grid' id='projects-grid' aria-label="Selected projects" hidden>
-        </div>
+        <div id="projects-reveal" class="projects-reveal" aria-hidden="true"><div class="projects-reveal__inner"><div class="grid" id="projects-grid" aria-label="Selected projects"></div></div></div>
         <noscript>
           <p>
             Enable JavaScript to load the project cards, or open the
@@ -80,7 +79,7 @@
         </a>
       </div>
     </footer>
-    <script src="projects-categories-v1.js">
+    <script src="projects-categories-v2.js">
     </script>
   </body>
 </html>
