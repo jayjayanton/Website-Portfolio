@@ -7,7 +7,28 @@
     <title>
       Featured Projects | Jay Oliver
     </title>
-    <link rel="stylesheet" href="style.css?v=multidisciplinary-layout-2">
+    <link rel="stylesheet" href="style.css?v=mobile-tabs-3">
+  <style>
+/* Critical mobile layout: keeps project tabs and navigation usable even with stale CSS */
+html{scroll-padding-top:110px}
+body{overflow-x:hidden}
+.header{position:relative!important;background:#09090f!important;z-index:20}
+.header .nav{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding-top:14px;padding-bottom:14px}
+.header .logo{display:block;max-width:100%;font-size:clamp(1.1rem,4.5vw,1.45rem);white-space:normal;line-height:1.3}
+.header .links{display:flex;flex-wrap:wrap;gap:10px 17px;width:auto}
+.header .links a{font-size:clamp(.7rem,2.5vw,.83rem)}
+main{position:relative;z-index:1}
+main>.section{padding-top:clamp(36px,7vw,75px)}
+main .lead{font-size:clamp(1rem,2.8vw,1.2rem);line-height:1.65}
+.project-discipline-tabs{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:8px!important;padding:6px!important;background:#171422!important;border:1px solid #40364e!important;border-radius:14px!important;margin:28px 0 16px!important}
+.project-discipline-tabs button{appearance:none;-webkit-appearance:none;display:flex;justify-content:center;align-items:center;text-align:center;min-width:0;width:100%;min-height:64px;padding:12px 10px;border-radius:10px;border:1px solid transparent;background:#211c2c;color:#d4d0df;font:700 clamp(.76rem,2.5vw,.95rem)/1.3 system-ui,Arial,sans-serif;white-space:normal;overflow-wrap:anywhere;cursor:pointer}
+.project-discipline-tabs button[aria-selected="true"]{background:#2d2038;color:#fff;border-color:#00f5ff;box-shadow:inset 0 -3px 0 #00f5ff}
+.project-discipline-tabs button:focus-visible{outline:3px solid #ff2d9a;outline-offset:2px}
+#projects-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+#projects-grid .project-card{min-width:0}
+@media(max-width:850px){#projects-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.header .nav{display:block}.header .links{margin-top:12px;gap:8px 15px}.project-discipline-tabs button{min-height:76px;padding:10px 6px}#projects-grid{grid-template-columns:minmax(0,1fr)}}
+</style>
   </head>
   <body>
     <header class="header">
@@ -78,7 +99,7 @@
         </a>
       </div>
     </footer>
-    <script src="script.js?v=multidisciplinary-tabs-1">
+    <script src="script.js?v=mobile-tabs-3">
     </script>
   </body>
 </html>
