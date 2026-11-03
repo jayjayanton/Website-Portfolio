@@ -61,17 +61,11 @@
               <p>For TxDOT roadway cameras, I used Selenium and BeautifulSoup to locate camera names and still-image URLs, then downloaded the snapshots. For Jackson Hole live streams, I used Streamlink to access video segments and OpenCV to decode the clips and save up to three JPEG frames per video. The reorganized script in the public repository now uses FFmpeg for frame extraction, while the original Baylor script preserves the OpenCV workflow.</p>
             </div>
           </details>
-          <details class="case-panel">
-            <summary><span class="case-panel__number">03</span><span>Figures</span><span class="case-panel__hint">Project visual</span></summary>
+          <details class="case-panel" open>
+            <summary><span class="case-panel__number">03</span><span>Figures</span><span class="case-panel__hint">Five camera snapshots</span></summary>
             <div class="case-panel__content">
-              <figure class="case-hero">
-          <img src="https://raw.githubusercontent.com/jayjayanton/Website-Portfolio/main/images/Automated%20Webcam%20Extraction%20.jpg" alt="Illustrative side-by-side TxDOT highway and Jackson Hole Town Square webcam frames" loading="eager">
-          <figcaption>
-            Illustrative examples of TxDOT highway and Jackson Hole Town Square camera frames. These are generated examples, not original extracted images or actual capture timestamps.
-          </figcaption>
-        </figure>
         <div class="traffic-camera-gallery" aria-label="Austin traffic camera snapshot examples">
-          <h3>Working Texas camera snapshots</h3>
+          <h3>Texas camera snapshot examples</h3>
           <p>These five snapshots were collected from the City of Austin's public traffic-camera system in November 2026. They demonstrate the still-image acquisition approach used in the Texas camera workflow. They are not archived outputs from the original TxDOT collection or CNN detection results.</p>
           <div class="traffic-camera-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
             <figure><a href="../images/1.jpg" target="_blank" rel="noopener noreferrer"><img src="../images/1.jpg" alt="Austin traffic camera snapshot at W Rundberg Lane" loading="lazy" style="width:100%;height:auto;border-radius:8px;"></a><figcaption>W Rundberg Lane</figcaption></figure>
