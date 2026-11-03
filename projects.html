@@ -7,7 +7,7 @@
     <title>
       Featured Projects | Jay Oliver
     </title>
-    <link rel="stylesheet" href="style.css?v=mobile-tabs-3">
+    <link rel="stylesheet" href="style.css?v=expand-projects-4">
   <style>
 /* Critical mobile layout: keeps project tabs and navigation usable even with stale CSS */
 html{scroll-padding-top:110px}
@@ -28,6 +28,11 @@ main .lead{font-size:clamp(1rem,2.8vw,1.2rem);line-height:1.65}
 #projects-grid .project-card{min-width:0}
 @media(max-width:850px){#projects-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.header .nav{display:block}.header .links{margin-top:12px;gap:8px 15px}.project-discipline-tabs button{min-height:76px;padding:10px 6px}#projects-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* Expand only on request; preserve side-by-side categories */
+#projects-grid[hidden]{display:none!important}
+.project-discipline-tabs button[aria-selected="false"]{background:#211c2c;color:#d4d0df;border-color:transparent;box-shadow:none}
+.project-discipline-tabs button[aria-selected="true"]{background:#2d2038;color:#fff;border-color:#00f5ff;box-shadow:inset 0 -3px 0 #00f5ff}
 </style>
   </head>
   <body>
@@ -71,11 +76,11 @@ main .lead{font-size:clamp(1rem,2.8vw,1.2rem);line-height:1.65}
           My work is multidisciplinary, combining environmental science, geospatial analysis, machine learning, data engineering, and web development. These projects span land-use and land-cover change, deforestation, water resources and environmental flows, oil and gas, carbon storage, greenhouse-gas data, air quality, and software interfaces. Select an area to explore the work and its methods.
         </p>
         <div class="project-discipline-tabs" role="tablist" aria-label="Project disciplines">
-          <button type="button" id="tab-data" role="tab" aria-selected="true" aria-controls="projects-grid" data-project-tab="data">Data Science, Geospatial &amp; Automation</button>
-          <button type="button" id="tab-web" role="tab" aria-selected="false" aria-controls="projects-grid" data-project-tab="web" tabindex="-1">Web Development &amp; Software Engineering</button>
+          <button type="button" id="tab-data" role="tab" aria-selected="false" aria-expanded="false" aria-controls="projects-grid" data-project-tab="data">Data Science, Geospatial &amp; Automation</button>
+          <button type="button" id="tab-web" role="tab" aria-selected="false" aria-expanded="false" aria-controls="projects-grid" data-project-tab="web">Web Development</button>
         </div>
-        <p class="project-discipline-description" id="project-discipline-description" aria-live="polite">Scientific computing, predictive modeling, GIS, Earth observations, environmental research and data pipelines.</p>
-        <div class='grid' id='projects-grid' role="tabpanel" aria-labelledby="tab-data">
+        <p class="project-discipline-description" id="project-discipline-description" aria-live="polite">Choose a category to view its projects.</p>
+        <div class='grid' id='projects-grid' role="tabpanel" aria-label="Selected projects" hidden>
         </div>
         <noscript>
           <p>
@@ -99,7 +104,7 @@ main .lead{font-size:clamp(1rem,2.8vw,1.2rem);line-height:1.65}
         </a>
       </div>
     </footer>
-    <script src="script.js?v=mobile-tabs-3">
+    <script src="script.js?v=expand-projects-4">
     </script>
   </body>
 </html>
