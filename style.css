@@ -388,3 +388,8 @@
 @media(max-width:950px){#projects-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){#projects-grid{grid-template-columns:1fr;gap:16px}#projects-grid .project-card__image{aspect-ratio:16/9}#projects-grid .project-card__body{padding:18px}.project-discipline-tabs{gap:5px;margin-top:25px}.project-discipline-tabs button{min-height:52px}.project-discipline-description{min-height:0}.home-disciplines .expertise-item{padding:19px}}
 @media(prefers-reduced-motion:reduce){#projects-grid .project-card,#projects-grid .project-card__image img{transition:none}}
+
+/* Mobile tabs fix: two columns at every viewport width */
+.project-discipline-tabs{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+.project-discipline-tabs button{display:flex;align-items:center;justify-content:center;white-space:normal;text-align:center;min-width:0;width:100%;overflow-wrap:anywhere;appearance:none;-webkit-appearance:none}
+@media(max-width:650px){.project-discipline-tabs{grid-template-columns:repeat(2,minmax(0,1fr))!important}.project-discipline-tabs button{font-size:clamp(.74rem,2.7vw,.91rem);padding:10px 6px}}
