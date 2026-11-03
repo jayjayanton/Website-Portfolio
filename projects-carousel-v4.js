@@ -20,7 +20,7 @@ const projects=[{"slug":"land-use-dynamics","title":"Multi-sector land-use dynam
     if(!selected)return;
     const n=groups[selected].length;
     index=Math.max(0,Math.min(to,n-1));
-    track.style.transform=`translate3d(-${index*100}%,0,0)`;
+    track.style.transform=`translate3d(-${index*100/n}%,0,0)`;
     counter.textContent=`${index+1} / ${n}`;
     prev.disabled=index===0;
     next.disabled=index===n-1;
