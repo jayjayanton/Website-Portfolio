@@ -6,7 +6,6 @@ const projects=[{"slug":"land-use-dynamics","title":"Multi-sector land-use dynam
   const status=document.getElementById("project-discipline-description");
   if(!grid||!panel||buttons.length!==2)return;
   let selected=null;
-  let closing=false;
   const card=p=>{
     const src=p.img.startsWith("https://")?p.img:"images/"+p.img;
     return `<article class="project-card"><a class="project-card__image" href="projects/${p.slug}.html"><img src="${src}" alt="${p.alt}" loading="lazy"></a><div class="project-card__body"><p class="eyebrow">${p.tag}</p><h3><a href="projects/${p.slug}.html">${p.title}</a></h3><p>${p.description}</p><div class="project-card__links"><a href="projects/${p.slug}.html">View case study</a>${p.repo?`<a href="${p.repo}" target="_blank" rel="noopener noreferrer">${p.label}</a>`:"<span class='muted'>Code not public</span>"}</div></div></article>`;
@@ -17,7 +16,7 @@ const projects=[{"slug":"land-use-dynamics","title":"Multi-sector land-use dynam
       b.setAttribute("aria-expanded",String(active));
       b.setAttribute("aria-pressed",String(active));
       const arrow=b.querySelector(".category-arrow");
-      if(arrow)arrow.textContent=active?"⌃":"⌄";
+      if(arrow)arrow.textContent="⌄";
     });
     if(status)status.textContent=selected===null?"Choose a category to view its projects.":selected==="web"?"Web development projects":"Data science, geospatial research and automation projects";
   };
