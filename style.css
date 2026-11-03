@@ -393,3 +393,8 @@
 .project-discipline-tabs{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
 .project-discipline-tabs button{display:flex;align-items:center;justify-content:center;white-space:normal;text-align:center;min-width:0;width:100%;overflow-wrap:anywhere;appearance:none;-webkit-appearance:none}
 @media(max-width:650px){.project-discipline-tabs{grid-template-columns:repeat(2,minmax(0,1fr))!important}.project-discipline-tabs button{font-size:clamp(.74rem,2.7vw,.91rem);padding:10px 6px}}
+
+/* Click-to-expand project categories */
+#projects-grid[hidden]{display:none!important}
+.project-discipline-tabs button[aria-expanded="true"]{border-color:var(--cyan);background:#2d2038;color:var(--text);box-shadow:inset 0 -3px 0 var(--cyan)}
+.project-discipline-tabs button[aria-expanded="false"]{background:#211c2c;color:#d4d0df;border-color:transparent;box-shadow:none}
