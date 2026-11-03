@@ -325,3 +325,14 @@
 .nasa-compare__range{position:absolute;inset:0;z-index:4;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;touch-action:pan-y}
 .nasa-compare:focus-within{outline:3px solid var(--cyan);outline-offset:-3px}
 @media(max-width:600px){.nasa-compare__handle{width:40px;height:40px;font-size:20px}.nasa-compare__year{top:8px;padding:6px 9px;font-size:.72rem}.nasa-compare__year--left{left:8px}.nasa-compare__year--right{right:8px}}
+
+/* Project-level scientific impact and data-science growth summaries */
+.project-impact{margin:42px 0 36px;padding:clamp(22px,4vw,38px);border:1px solid #50415f;border-radius:17px;background:linear-gradient(135deg,#231a32 0%,#151421 72%);box-shadow:0 12px 30px #0003}
+.project-impact>.eyebrow{margin:0 0 10px;color:var(--pink)}
+.project-impact>h2{margin:0 0 8px;font-size:clamp(1.45rem,3vw,2rem)}
+.project-impact__subtitle{margin:0 0 24px;color:var(--cyan);font-size:1.04rem;font-weight:700}
+.project-impact__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.project-impact__grid>div{padding:18px 20px;border:1px solid #42374f;border-radius:12px;background:#171522}
+.project-impact__grid h3{margin:0 0 12px;color:var(--text);font-size:1.08rem}
+.project-impact__grid p{margin:0;color:var(--muted);line-height:1.7;font-size:.94rem}
+@media(max-width:750px){.project-impact__grid{grid-template-columns:1fr;gap:12px}.project-impact__grid>div{padding:16px}}
