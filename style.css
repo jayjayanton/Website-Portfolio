@@ -294,3 +294,12 @@
 .nasa-figure-slot figcaption small{display:block;margin-top:7px;color:var(--cyan)}
 .nasa-source-links a{overflow-wrap:anywhere}
 @media(max-width:750px){.nasa-gallery{grid-template-columns:1fr}.nasa-figure-placeholder{min-height:220px}}
+
+/* Original NASA figure galleries, with accessible pending-image fallback */
+.nasa-gallery--original .nasa-figure-media{position:relative;min-height:180px;background:#10131e}
+.nasa-gallery--original .nasa-figure-media>a{display:flex;align-items:center;justify-content:center;min-height:180px}
+.nasa-gallery--original .nasa-figure-media img{display:block;width:100%;height:auto;max-height:480px;object-fit:contain;background:#f5f5f5}
+.nasa-gallery--original .nasa-figure-fallback{display:none}
+.nasa-gallery--original .nasa-figure-media.image-pending>a{display:none}
+.nasa-gallery--original .nasa-figure-media.image-pending .nasa-figure-fallback{display:flex}
+.nasa-gallery--original .nasa-figure-slot figcaption{border-top:1px solid #393349}
