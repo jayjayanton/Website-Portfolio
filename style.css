@@ -279,3 +279,18 @@
 .contact-method:hover{border-color:var(--cyan)}
 @media(max-width:980px){.career-timeline--five{flex-wrap:wrap;justify-content:center}.career-timeline--five .career-step{flex:1 1 30%;min-width:180px}.career-timeline--five .career-arrow{display:none}}
 @media(max-width:600px){.career-timeline--five{flex-direction:column}.career-timeline--five .career-step{flex:auto;width:100%}.contact-methods{grid-template-columns:1fr}}
+
+/* NASA DEVELOP case studies: reserved research figure gallery */
+.nasa-gallery-intro{max-width:850px;color:var(--muted)}
+.nasa-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin:24px 0}
+.nasa-figure-slot{margin:0;min-width:0;overflow:hidden;border:1px solid #3d354e;border-radius:15px;background:linear-gradient(145deg,#191626,#101019)}
+.nasa-figure-placeholder{position:relative;min-height:265px;padding:30px 22px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;border-bottom:1px solid #393349;background:radial-gradient(circle at 50% 40%,#00f5ff0d,transparent 70%),#11131f}
+.nasa-figure-placeholder__number{position:absolute;top:16px;left:18px;font-size:.78rem;font-weight:800;letter-spacing:.12em;color:var(--pink)}
+.nasa-figure-placeholder__icon{font-size:3rem;color:var(--cyan);line-height:1}
+.nasa-figure-placeholder strong{font-size:1.15rem;line-height:1.3;color:var(--text);max-width:300px}
+.nasa-figure-placeholder>span:last-child{font-size:.79rem;color:var(--muted);border:1px dashed #675570;border-radius:99px;padding:5px 12px}
+.nasa-figure-slot figcaption{padding:16px 18px;color:var(--muted);font-size:.88rem;line-height:1.55}
+.nasa-figure-slot figcaption strong{color:var(--text)}
+.nasa-figure-slot figcaption small{display:block;margin-top:7px;color:var(--cyan)}
+.nasa-source-links a{overflow-wrap:anywhere}
+@media(max-width:750px){.nasa-gallery{grid-template-columns:1fr}.nasa-figure-placeholder{min-height:220px}}
