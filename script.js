@@ -7,23 +7,31 @@ if(grid){
     web:"Frontend interfaces, responsive design, bilingual experiences and application development."
   };
   const card=p=>`<article class="project-card"><a href="projects/${p.slug}.html" class="project-card__image"><img src="${p.img.startsWith("https://")?p.img:"images/"+p.img+(p.slug.startsWith("nasa-")?"?v=nasa-20261102-3":"")}" alt="${p.alt}" loading="lazy"></a><div class="project-card__body"><p class="eyebrow">${p.tag}</p><h3><a href="projects/${p.slug}.html">${p.title}</a></h3><p>${p.description}</p><div class="project-card__links"><a href="projects/${p.slug}.html">View case study</a>${p.repo?`<a href="${p.repo}" target="_blank" rel="noopener noreferrer">${p.label}</a>`:"<span class='muted'>Code not public</span>"}</div></div></article>`;
-  const show=discipline=>{
-    const filtered=projects.filter(p=>discipline==="web"?p.slug==="raaz-borg":p.slug!=="raaz-borg");
-    grid.innerHTML=filtered.map(card).join("");
-    grid.setAttribute("aria-labelledby",discipline==="web"?"tab-web":"tab-data");
+  let expanded=null;
+  const render=discipline=>{
+    expanded=discipline;
+    const visible=discipline!==null;
+    grid.hidden=!visible;
+    grid.innerHTML=visible?projects.filter(p=>discipline==="web"?p.slug==="raaz-borg":p.slug!=="raaz-borg").map(card).join(""):"";
+    grid.setAttribute("aria-label",visible?(discipline==="web"?"Web Development projects":"Data Science, Geospatial and Automation projects"):"Selected projects");
     const desc=document.getElementById("project-discipline-description");
-    if(desc)desc.textContent=descriptions[discipline];
-    tabs.forEach(tab=>{const active=tab.dataset.projectTab===discipline;tab.setAttribute("aria-selected",String(active));tab.tabIndex=active?0:-1;});
+    if(desc)desc.textContent=visible?descriptions[discipline]:"Choose a category to view its projects.";
+    tabs.forEach(tab=>{
+      const active=tab.dataset.projectTab===discipline;
+      tab.setAttribute("aria-selected",String(active));
+      tab.setAttribute("aria-expanded",String(active));
+      tab.tabIndex=0;
+    });
   };
   tabs.forEach((tab,i)=>{
-    tab.addEventListener("click",()=>show(tab.dataset.projectTab));
+    tab.addEventListener("click",()=>render(expanded===tab.dataset.projectTab?null:tab.dataset.projectTab));
     tab.addEventListener("keydown",e=>{
       if(!["ArrowLeft","ArrowRight","Home","End"].includes(e.key))return;
       e.preventDefault();
       const next=e.key==="Home"?0:e.key==="End"?tabs.length-1:(i+(e.key==="ArrowRight"?1:-1)+tabs.length)%tabs.length;
-      tabs[next].focus();show(tabs[next].dataset.projectTab);
+      tabs[next].focus();
     });
   });
-  show("data");
+  render(null);
 }
 document.querySelectorAll("[data-year]").forEach(el=>el.textContent=new Date().getFullYear());
