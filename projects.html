@@ -7,7 +7,7 @@
     <title>
       Featured Projects | Jay Oliver
     </title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=multidisciplinary-tabs-1">
   </head>
   <body>
     <header class="header">
@@ -47,9 +47,14 @@
           </span>
         </h1>
         <p class='lead'>
-          Each project has a representative image and a dedicated case-study page. Where I can share code publicly, I've linked the research repository directly.
+          My work is multidisciplinary, combining environmental science, geospatial analysis, machine learning, data engineering, and web development. These projects span land-use and land-cover change, deforestation, water resources and environmental flows, oil and gas, carbon storage, greenhouse-gas data, air quality, and software interfaces. Select an area to explore the work and its methods.
         </p>
-        <div class='grid' id='projects-grid'>
+        <div class="project-discipline-tabs" role="tablist" aria-label="Project disciplines">
+          <button type="button" id="tab-data" role="tab" aria-selected="true" aria-controls="projects-grid" data-project-tab="data">Data Science, Geospatial &amp; Automation</button>
+          <button type="button" id="tab-web" role="tab" aria-selected="false" aria-controls="projects-grid" data-project-tab="web" tabindex="-1">Web Development &amp; Software Engineering</button>
+        </div>
+        <p class="project-discipline-description" id="project-discipline-description" aria-live="polite">Scientific computing, predictive modeling, GIS, Earth observations, environmental research and data pipelines.</p>
+        <div class='grid' id='projects-grid' role="tabpanel" aria-labelledby="tab-data">
         </div>
         <noscript>
           <p>
@@ -73,7 +78,7 @@
         </a>
       </div>
     </footer>
-    <script src="script.js?v=methods-20261102">
+    <script src="script.js?v=multidisciplinary-tabs-1">
     </script>
   </body>
 </html>
