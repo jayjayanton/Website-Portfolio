@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Geospatial data science and environmental research portfolio">
+    <title>
+      Texas RRC Wellbore Data Engineering | Jay Oliver
+    </title>
+    <link rel="stylesheet" href="../style.css?v=project-nav-20261104-3">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container nav">
+        <a class="logo" href="../index.html">
+          Jay Antonio Oliver
+          <span>.</span>
+        </a>
+        <nav class="links" aria-label="Main navigation">
+          <a href="../index.html">
+            Home
+          </a>
+          <a href="../projects.html">
+            Projects
+          </a>
+          <a href="../research.html">
+            Research
+          </a>
+          <a href="../about.html">
+            About
+          </a>
+          <a href="../contact.html">
+            Contact
+          </a>
+        </nav>
+      </div>
+    </header>
+    <main>
+  <div class="container project-back-nav"><a class="project-back-link" href="../projects.html">← Back to All Projects</a></div>
+  <section class="container section">
+    <p class="eyebrow">PROJECT CASE STUDY</p>
+    <h1>Texas RRC — Full Wellbore &amp; Production Data Integration</h1>
+    <p class="lead">Python and SQL data engineering for legacy ASCII wellbore records, spatial entity matching, and production-data integration.</p>
+    <div class="case-accordion">
+      <details class="case-panel" open>
+        <summary><span class="case-panel__number">01</span><span>Project summary</span><span class="case-panel__hint">Problem and context</span></summary>
+        <div class="case-panel__content">
+          <p>The Texas Railroad Commission (RRC) Full Wellbore dataset provides detailed regulatory records in a legacy ASCII flat-file format. Integrating those records with an existing team-provided Well Header dataset and separate production data required more than a straightforward table join: the datasets needed a reliable bridge between well identifiers and geographic locations.</p>
+          <p>I developed a Python- and SQL-based workflow to parse and organize the Full Wellbore records, associate identifiers with well locations, spatially match them to the existing Well Header data, and use the enriched headers to connect to production records.</p>
+          <div class="notice">This case study summarizes the engineering approach. Internal code and team datasets are not published. The quarterly update cadence was a design objective, not a claim that an automated scheduler was deployed.</div>
+        </div>
+      </details>
+      <details class="case-panel">
+        <summary><span class="case-panel__number">02</span><span>Methodology</span><span class="case-panel__hint">Legacy parsing, spatial joins, SQL</span></summary>
+        <div class="case-panel__content">
+          <h3>1. Extract and interpret legacy flat files</h3>
+          <p>I worked with the ASCII distribution of the Texas RRC Full Wellbore dataset. Although ASCII specifies the character encoding, the source also uses defined record layouts that must be interpreted to recover structured fields. Python-based parsing and transformation converted the relevant records into data suitable for subsequent joins and database-oriented processing.</p>
+          <h3>2. Connect record keys to identifiers and coordinates</h3>
+          <p>The workflow focused on RK02 records containing the district number, lease number, and well number—the three-part identifier used downstream—and RK13 records containing location information. Combining the relevant root-key information established a connection between the tripartite identifier and wellbore coordinates.</p>
+          <h3>3. Spatially enrich the existing Well Header data</h3>
+          <p>My team provided an existing Well Header dataset. I matched the wellbore location records against these headers using latitude/longitude proximity, enriching the header records with identifiers recovered from the Full Wellbore source. This geographic matching stage bridged datasets that could not initially be connected through a complete common key.</p>
+          <h3>4. Join enriched headers to production data</h3>
+          <p>Once the Well Header data contained the relevant district–lease–well identifier, I used SQL-based relational joins to associate those records with production data carrying the same tripartite key. Python supported the broader extraction, transformation, and spatial integration workflow, while SQL supported structured data management and integration.</p>
+          <h3>5. Design for repeatable updates</h3>
+          <p>The workflow was intended to be rerunnable as updated RRC data became available, with quarterly refreshes identified as a potential operating cadence. The design separates parsing, spatial matching, and relational integration so the stages can be repeated and checked rather than reconstructed manually each time.</p>
+          <h3>Data quality considerations</h3>
+          <p>Geographic proximity is useful for linking records but does not guarantee identity: multiple wellbores can be close together. Candidate matches therefore need validation, especially where nearby wells or inconsistent coordinates could introduce ambiguity. The exact matching tolerance and validation rules are not specified here pending review of the original scripts.</p>
+        </div>
+      </details>
+      <details class="case-panel">
+        <summary><span class="case-panel__number">03</span><span>Project visual</span><span class="case-panel__hint">Illustrative placeholder</span></summary>
+        <div class="case-panel__content">
+          <figure class="case-hero"><img src="../images/placeholder-data.svg" alt="Generic placeholder graphic for data engineering" loading="lazy"><figcaption>Temporary conceptual placeholder; not an image of RRC data or the implemented pipeline.</figcaption></figure>
+        </div>
+      </details>
+    </div>
+    <section class="project-impact" aria-labelledby="project-impact-heading">
+      <p class="eyebrow">PROJECT TAKEAWAYS</p>
+      <h2 id="project-impact-heading">Why This Project Matters</h2>
+      <p class="project-impact__subtitle">Bridging legacy records, spatial data, and relational databases</p>
+      <div class="project-impact__grid">
+        <div><h3>Practical value</h3><p>Linking regulatory wellbore records to existing well headers and production information creates a more usable foundation for oil and gas research. Repeatable extraction and integration also make it easier to incorporate future data releases without rebuilding the process from scratch.</p></div>
+        <div><h3>Engineering skills demonstrated</h3><p>This project combines legacy fixed-width flat-file interpretation, Python ETL, SQL relational joins, geospatial proximity matching, identifier reconciliation, and database-oriented workflow design. The central challenge was resolving entities across datasets that did not initially share a reliable direct join key.</p></div>
+      </div>
+    </section>
+  </section>
+</main>
+    <footer>
+      <div class="container">
+        ©
+        <span data-year>
+        </span>
+        Jay Oliver · HTML / CSS / JavaScript ·
+        <a href="https://github.com/jayjayanton">
+          GitHub
+        </a>
+      </div>
+    </footer>
+    <script src="../script.js?v=project-nav-20261104-3">
+    </script>
+  </body>
+</html>
