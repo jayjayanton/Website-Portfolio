@@ -12,6 +12,11 @@ const projects=[{"slug":"land-use-dynamics","title":"Multi-sector land-use dynam
   if(!track||!viewport||!panel||!controls||!prev||!next||!counter)return;
   const groups={data:projects.filter(p=>p.slug!=="raaz-borg"),web:projects.filter(p=>p.slug==="raaz-borg")};
   let selected=null,index=0,startX=null;
+  const stateKey="portfolio-projects-position";
+  function savePosition(){
+    try { sessionStorage.setItem(stateKey,JSON.stringify({category:selected,index,scrollY:window.scrollY})); } catch(e) {}
+  }
+  window.addEventListener("pagehide",savePosition);
   function card(p,i,n){
     const src=p.img.startsWith("https://")?p.img:"images/"+p.img;
     return `<article class="project-card project-carousel__slide" role="group" aria-roledescription="slide" aria-label="${i+1} of ${n}: ${p.title}"><a class="project-card__image" href="projects/${p.slug}.html"><img src="${src}" alt="${p.alt}" loading="lazy"></a><div class="project-card__body"><p class="eyebrow">${p.tag}</p><h3><a href="projects/${p.slug}.html">${p.title}</a></h3><p>${p.description}</p><div class="project-card__links"><a href="projects/${p.slug}.html">View case study</a>${p.repo?`<a href="${p.repo}" target="_blank" rel="noopener noreferrer">${p.label}</a>`:"<span class='muted'>Code not public</span>"}</div></div></article>`;
@@ -24,6 +29,7 @@ const projects=[{"slug":"land-use-dynamics","title":"Multi-sector land-use dynam
     counter.textContent=`${index+1} / ${n}`;
     prev.disabled=index===0;
     next.disabled=index===n-1;
+    savePosition();
   }
   function select(cat){
     selected=cat;
@@ -37,6 +43,7 @@ const projects=[{"slug":"land-use-dynamics","title":"Multi-sector land-use dynam
       panel.classList.remove("is-open");
       panel.inert=true;
       panel.setAttribute("aria-hidden","true");
+      savePosition();
       return;
     }
     const items=groups[cat];
@@ -50,6 +57,7 @@ const projects=[{"slug":"land-use-dynamics","title":"Multi-sector land-use dynam
     panel.inert=false;
     panel.setAttribute("aria-hidden","false");
     panel.classList.add("is-open");
+    savePosition();
   }
   buttons.forEach(b=>b.addEventListener("click",()=>select(selected===b.dataset.projectTab?null:b.dataset.projectTab)));
   prev.addEventListener("click",()=>go(index-1));
@@ -65,6 +73,14 @@ const projects=[{"slug":"land-use-dynamics","title":"Multi-sector land-use dynam
     if(e.key==="ArrowRight"||e.key==="ArrowLeft"){e.preventDefault();go(index+(e.key==="ArrowRight"?1:-1));}
   });
   panel.inert=true;
-  select(null);
+  let saved=null;
+  try { saved=JSON.parse(sessionStorage.getItem(stateKey)||"null"); } catch(e) {}
+  if(saved && (saved.category==="data" || saved.category==="web")){
+    select(saved.category);
+    go(Number.isInteger(saved.index)?saved.index:0);
+    requestAnimationFrame(()=>window.scrollTo(0,Math.max(0,Number(saved.scrollY)||0)));
+  } else {
+    select(null);
+  }
   document.querySelectorAll("[data-year]").forEach(el=>el.textContent=new Date().getFullYear());
 })();
