@@ -61,31 +61,11 @@
         </div>
         <div class="case-accordion">
           <details class="case-panel" open>
-            <summary><span class="case-panel__number">01</span><span>Project summary</span><span class="case-panel__hint">Study overview</span></summary>
+            <summary><span class="case-panel__number">01</span><span>Introduction</span><span class="case-panel__hint">Study overview</span></summary>
             <div class="case-panel__content"><p>I investigated deforestation in Colombia over 2000–2017, combining forest-cover change information with geographic variables to examine conditions associated with forest loss. The model comparison table and risk map are historical outputs from that work.</p></div>
           </details>
           <details class="case-panel">
-            <summary><span class="case-panel__number">02</span><span>Deforestation-risk map</span><span class="case-panel__hint">Map from WWF research</span></summary>
-            <div class="case-panel__content">
-<section class="case-section">
-          
-          <p>
-            The original WWF work document includes a Colombia deforestation-risk map labeled as a Random Forest analysis. This map is a separate model output from the GLM comparison table below; I do not treat the two as results from the same fitted model.
-          </p>
-          <figure>
-            <img class="research-map" src="../images/colombia-deforestation-risk.jpg" alt="Colombia deforestation risk map with high and low modeled risk, protected areas, and administrative boundaries" onerror="this.style.display='none';this.nextElementSibling.hidden=false">
-            <div class="figure-placeholder" hidden>
-              Image unavailable. See the Deforestation-Research repository for the source figure.
-            </div>
-            <figcaption>
-              Colombia deforestation risk map, from my WWF work examples. Original document labels this as a Random Forest risk analysis.
-            </figcaption>
-          </figure>
-        </section>
-            </div>
-          </details>
-          <details class="case-panel">
-            <summary><span class="case-panel__number">03</span><span>Model comparison and methodology</span><span class="case-panel__hint">Full, Stepwise, Naive, RAC</span></summary>
+            <summary><span class="case-panel__number">02</span><span>Methodology</span><span class="case-panel__hint">Full, Stepwise, Naive, RAC</span></summary>
             <div class="case-panel__content"><div class="method-flow" role="group" aria-label="Detailed methodology workflow"><p class="method-flow__eyebrow">Workflow at a glance</p><p class="method-flow__intro">Follow the stages below, then read the detailed methodology.</p><div class="method-flow__steps"><div class="method-flow__step"><span class="method-flow__icon" aria-hidden="true">🌳</span><strong>Forest change</strong><small>Hansen observations 2000–2017</small></div><div class="method-flow__step"><span class="method-flow__icon" aria-hidden="true">🗺️</span><strong>Geographic drivers</strong><small>Terrain, roads, protection and land use</small></div><div class="method-flow__step"><span class="method-flow__icon" aria-hidden="true">🗂️</span><strong>Analysis dataset</strong><small>Relate predictors and forest loss</small></div><div class="method-flow__step"><span class="method-flow__icon" aria-hidden="true">📉</span><strong>Binomial regression</strong><small>R-based GLM analysis</small></div><div class="method-flow__step"><span class="method-flow__icon" aria-hidden="true">🔀</span><strong>Compare specifications</strong><small>Full, Stepwise, Naive and RAC</small></div><div class="method-flow__step"><span class="method-flow__icon" aria-hidden="true">📍</span><strong>Interpret patterns</strong><small>Associations, not causality</small></div></div></div><h3 class="method-flow__detail-heading">Detailed methodology</h3>
 <section class="case-section">
           
@@ -1080,6 +1060,26 @@
               View the historical model-comparison table
             </a>
           </p>
+        </section>
+            </div>
+          </details>
+          <details class="case-panel">
+            <summary><span class="case-panel__number">03</span><span>Figures</span><span class="case-panel__hint">Map from WWF research</span></summary>
+            <div class="case-panel__content">
+<section class="case-section">
+          
+          <p>
+            The original WWF work document includes a Colombia deforestation-risk map labeled as a Random Forest analysis. This map is a separate model output from the GLM comparison table below; I do not treat the two as results from the same fitted model.
+          </p>
+          <figure>
+            <img class="research-map" src="../images/colombia-deforestation-risk.jpg" alt="Colombia deforestation risk map with high and low modeled risk, protected areas, and administrative boundaries" onerror="this.style.display='none';this.nextElementSibling.hidden=false">
+            <div class="figure-placeholder" hidden>
+              Image unavailable. See the Deforestation-Research repository for the source figure.
+            </div>
+            <figcaption>
+              Colombia deforestation risk map, from my WWF work examples. Original document labels this as a Random Forest risk analysis.
+            </figcaption>
+          </figure>
         </section>
             </div>
           </details>
