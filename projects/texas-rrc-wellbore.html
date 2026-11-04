@@ -7,7 +7,7 @@
     <title>
       Texas RRC Wellbore Data Engineering | Jay Oliver
     </title>
-    <link rel="stylesheet" href="../style.css?v=method-flow-20261104">
+    <link rel="stylesheet" href="../style.css?v=expanded-method-flow-20261104">
   </head>
   <body>
     <header class="header">
@@ -52,7 +52,7 @@
       </details>
       <details class="case-panel">
         <summary><span class="case-panel__number">02</span><span>Methodology</span><span class="case-panel__hint">Legacy parsing, spatial joins, SQL</span></summary>
-        <div class="case-panel__content"><div class="method-flow" role="group" aria-label="Methodology workflow"><p class="method-flow__eyebrow">Workflow at a glance</p><div class="method-flow__steps"><div class="method-flow__step"><strong>Full Wellbore ASCII</strong></div><div class="method-flow__step"><strong>RK02 + RK13</strong></div><div class="method-flow__step"><strong>Spatial Well Header match</strong></div><div class="method-flow__step"><strong>SQL production join</strong></div></div></div><h3 class="method-flow__detail-heading">Detailed methodology</h3>
+        <div class="case-panel__content"><div class="method-flow" role="group" aria-label="Detailed methodology workflow"><p class="method-flow__eyebrow">Workflow at a glance</p><p class="method-flow__intro">Follow the stages below, then read the detailed methodology.</p><div class="method-flow__steps"><div class="method-flow__step"><span class="method-flow__icon" aria-hidden="true">📄</span><strong>Full Wellbore ASCII</strong><small>Legacy record layouts</small></div><div class="method-flow__step"><span class="method-flow__icon" aria-hidden="true">🔎</span><strong>Parse root keys</strong><small>Structured Python extraction</small></div><div class="method-flow__step"><span class="method-flow__icon" aria-hidden="true">🔑</span><strong>RK02 tripartite key</strong><small>District, lease and well</small></div><div class="method-flow__step"><span class="method-flow__icon" aria-hidden="true">📍</span><strong>RK13 locations</strong><small>Wellbore coordinates</small></div><div class="method-flow__step"><span class="method-flow__icon" aria-hidden="true">🔗</span><strong>Combine record data</strong><small>Connect identifiers to locations</small></div><div class="method-flow__step"><span class="method-flow__icon" aria-hidden="true">🗺️</span><strong>Spatial join</strong><small>Match team-provided Well Header</small></div><div class="method-flow__step"><span class="method-flow__icon" aria-hidden="true">🧩</span><strong>Enriched headers</strong><small>Attach recovered identifiers</small></div><div class="method-flow__step"><span class="method-flow__icon" aria-hidden="true">🗄️</span><strong>SQL production join</strong><small>Use shared tripartite key</small></div><div class="method-flow__step"><span class="method-flow__icon" aria-hidden="true">🔄</span><strong>Refresh-ready design</strong><small>Quarterly updates as objective</small></div></div></div><h3 class="method-flow__detail-heading">Detailed methodology</h3>
           <h3>1. Extract and interpret legacy flat files</h3>
           <p>I worked with the ASCII distribution of the Texas RRC Full Wellbore dataset. Although ASCII specifies the character encoding, the source also uses defined record layouts that must be interpreted to recover structured fields. Python-based parsing and transformation converted the relevant records into data suitable for subsequent joins and database-oriented processing.</p>
           <h3>2. Connect record keys to identifiers and coordinates</h3>
