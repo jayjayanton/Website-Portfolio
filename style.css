@@ -428,7 +428,7 @@ body.research-overview .legacy-nasa-workflow{display:none!important}
 .method-flow{margin:0 0 28px;padding:20px;border:1px solid #403b61;border-radius:15px;background:linear-gradient(145deg,#111a2b,#201629)}
 .method-flow__eyebrow{margin:0 0 15px!important;color:#a9b7d4;font-size:.76rem;font-weight:750;letter-spacing:.1em;text-transform:uppercase}
 .method-flow__steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;align-items:stretch;counter-reset:workflow}
-.method-flow__step{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;min-height:100px;padding:14px 10px;text-align:center;border:1px solid #46617e;border-radius:11px;background:linear-gradient(145deg,#172a3c,#241c3a);color:#f5f7ff;overflow-wrap:anywhere}
+.method-flow__step{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;min-height:100px;padding:14px 10px;text-align:center;border:1px solid #46617e;border-radius:11px;background:linear-gradient(145deg,#172a3c,#241c3a);color:#f5f7ff;overflow-wrap:anywhere;overflow:visible}
 .method-flow__step::before{counter-increment:workflow;content:counter(workflow,decimal-leading-zero);font-size:.72rem;font-weight:800;color:#32dce9;letter-spacing:.06em}
 .method-flow__step:not(:last-child)::after{content:'→';position:absolute;left:calc(100% + 5px);top:50%;transform:translateY(-50%);font-size:20px;font-weight:800;color:#36d9ed;z-index:1}
 .method-flow__step strong{font-size:.91rem;line-height:1.35}
