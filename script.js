@@ -35,3 +35,24 @@ if(grid){
   render(null);
 }
 document.querySelectorAll("[data-year]").forEach(el=>el.textContent=new Date().getFullYear());
+
+/* Project pages: enforce primary repository action and accessible navigation. */
+(function(){
+  if(!location.pathname.includes("/projects/"))return;
+  const actions=[...document.querySelectorAll(".actions")];
+  const repo=actions.flatMap(a=>[...a.querySelectorAll("a")]).find(a=>a.textContent.trim()==="Project GitHub Repo");
+  const lead=document.querySelector("main .lead");
+  if(repo&&lead){
+    let bar=lead.nextElementSibling;
+    if(!bar||!bar.classList.contains("project-repo-actions")){
+      bar=document.createElement("div");
+      bar.className="actions project-repo-actions";
+      lead.insertAdjacentElement("afterend",bar);
+    }
+    bar.prepend(repo);
+    if(bar.children.length===1&&bar.nextElementSibling?.classList.contains("actions")){
+      [...bar.nextElementSibling.children].forEach(el=>bar.appendChild(el));
+      bar.nextElementSibling.remove();
+    }
+  }
+})();
