@@ -7,7 +7,7 @@
     <title>
       Multi-sector Land-Use Dynamics | Jay Oliver
     </title>
-    <link rel="stylesheet" href="../style.css?v=project-nav-20261104-3">
+    <link rel="stylesheet" href="../style.css?v=method-flow-20261104">
   </head>
   <body>
     <header class="header">
@@ -61,7 +61,7 @@
       </details>
       <details class="case-panel">
         <summary><span class="case-panel__number">02</span><span>Methodology</span><span class="case-panel__hint">Inputs and harmonization</span></summary>
-        <div class="case-panel__content">
+        <div class="case-panel__content"><div class="method-flow" role="group" aria-label="Methodology workflow"><p class="method-flow__eyebrow">Workflow at a glance</p><div class="method-flow__steps"><div class="method-flow__step"><strong>NLCD + other source layers</strong></div><div class="method-flow__step"><strong>Spatial harmonization</strong></div><div class="method-flow__step"><strong>Land-use classification</strong></div><div class="method-flow__step"><strong>Comparison + analysis</strong></div></div></div><h3 class="method-flow__detail-heading">Detailed methodology</h3>
           <p>I combined empirical land-cover information, primarily from the National Land Cover Database and USDA Cropland Data Layer, with additional spatial datasets to distinguish land-use types that broader classification systems do not represent consistently.</p>
           <p>The workflow included updating cultivated cropland classifications with CDL, distinguishing rainfed and irrigated crops, and refining managed and unmanaged forest and pasture classes. I also used climate zones, ecoregions and elevation to distinguish vegetation classes. The research code includes Python scripts for crop masking and irrigated/rainfed classification; some land-management and climate-class refinements were carried out in ArcGIS Pro.</p>
           <p>I then translated the refined 30-meter classes into the categories required by GCAM, CLM and LUH2. This was not a simple renaming exercise: the models differ in thematic detail and in whether land types are stored as mutually exclusive classes or as fractions within larger grid cells.</p>
