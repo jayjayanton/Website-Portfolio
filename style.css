@@ -408,3 +408,6 @@
 .project-repo-actions .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:44px}
 .project-repo-actions .btn svg{display:block;flex-shrink:0;margin-right:0!important;vertical-align:middle!important}
 @media(max-width:560px){.project-repo-actions .btn{max-width:100%}}
+
+/* Research overview: legacy shared NASA workflow callout is retired. */
+body.research-overview .legacy-nasa-workflow{display:none!important}
