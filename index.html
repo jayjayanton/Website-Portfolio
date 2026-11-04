@@ -128,6 +128,12 @@
         <div class="skill-filters" role="group" aria-label="Filter projects by skill">
           <button type="button" class="skill-chip is-active" data-skill="all" aria-pressed="true">All projects</button>
           <button type="button" class="skill-chip" data-skill="python" aria-pressed="false">Python</button>
+          <button type="button" class="skill-chip" data-skill="numpy" aria-pressed="false">NumPy</button>
+          <button type="button" class="skill-chip" data-skill="pandas" aria-pressed="false">pandas</button>
+          <button type="button" class="skill-chip" data-skill="sklearn" aria-pressed="false">scikit-learn</button>
+          <button type="button" class="skill-chip" data-skill="geopandas" aria-pressed="false">GeoPandas</button>
+          <button type="button" class="skill-chip" data-skill="rasterio" aria-pressed="false">Rasterio</button>
+          <button type="button" class="skill-chip" data-skill="shapely" aria-pressed="false">Shapely</button>
           <button type="button" class="skill-chip" data-skill="ml" aria-pressed="false">Machine learning</button>
           <button type="button" class="skill-chip" data-skill="gis" aria-pressed="false">GIS & geospatial</button>
           <button type="button" class="skill-chip" data-skill="remote" aria-pressed="false">Remote sensing</button>
@@ -139,17 +145,17 @@
         </div>
         <p class="skill-status" data-skill-status aria-live="polite">Showing all projects</p>
         <div class="skill-project-grid">
-          <a class="skill-project" data-skills="python gis remote engineering r" href="projects/land-use-dynamics.html"><span>01 / RESEARCH</span><strong>Multi-Sector Land-Use Dynamics</strong><small>30 m basemaps · classification · MSE</small></a>
-          <a class="skill-project" data-skills="python ml gis explain engineering" href="projects/orphaned-wells.html"><span>02 / ENERGY</span><strong>Orphaned Wells</strong><small>XGBoost · spatial features · SHAP</small></a>
+          <a class="skill-project" data-skills="python gis remote engineering r numpy pandas geopandas" href="projects/land-use-dynamics.html"><span>01 / RESEARCH</span><strong>Multi-Sector Land-Use Dynamics</strong><small>30 m basemaps · classification · MSE</small></a>
+          <a class="skill-project" data-skills="python ml gis explain engineering numpy pandas sklearn geopandas" href="projects/orphaned-wells.html"><span>02 / ENERGY</span><strong>Orphaned Wells</strong><small>XGBoost · spatial features · SHAP</small></a>
           <a class="skill-project" data-skills="r gis ml remote" href="projects/colombia-deforestation.html"><span>03 / CONSERVATION</span><strong>Deforestation Research</strong><small>Logistic regression · forest-cover change</small></a>
-          <a class="skill-project" data-skills="python gis engineering" href="projects/carbon-storage-atlas.html"><span>04 / GEOLOGY</span><strong>Carbon Storage Atlas</strong><small>Raster processing · ArcGIS Enterprise</small></a>
-          <a class="skill-project" data-skills="python ml explain" href="projects/coal-ash-modeling.html"><span>05 / ENERGY</span><strong>Coal Ash Modeling</strong><small>Multi-output predictive modeling</small></a>
-          <a class="skill-project" data-skills="python engineering" href="projects/epa-emissions.html"><span>06 / DATA</span><strong>EPA Emissions Automation</strong><small>ETL · data integration</small></a>
-          <a class="skill-project" data-skills="python gis engineering" href="projects/texas-rrc-wellbore.html"><span>12 / OIL &amp; GAS</span><strong>Texas RRC Wellbore Integration</strong><small>Legacy ASCII · SQL · spatial joins</small></a>
-          <a class="skill-project" data-skills="python r gis remote engineering" href="projects/nasa-air-quality.html"><span>08 / NASA DEVELOP</span><strong>Air Quality & Public Health</strong><small>El Salvador · AOD · PM2.5 · R regression</small></a>
-          <a class="skill-project" data-skills="python gis remote engineering" href="projects/nasa-water-resources.html"><span>09 / NASA DEVELOP</span><strong>Water Resources & Mesquite Forest Change</strong><small>Lambayeque · NDVI · precipitation · soil moisture</small></a>
-          <a class="skill-project" data-skills="python vision engineering" href="projects/traffic-camera-pipeline.html"><span>07 / AUTOMATION</span><strong>Camera Frame Extraction</strong><small>OpenCV · web extraction</small></a>
-          <a class="skill-project" data-skills="python r gis ml engineering" href="projects/environmental-flows.html"><span>11 / HYDROLOGY</span><strong>Texas Environmental Flows</strong><small>Watershed delineation · HIT metrics · stream classification</small></a>
+          <a class="skill-project" data-skills="python gis engineering numpy pandas geopandas rasterio shapely" href="projects/carbon-storage-atlas.html"><span>04 / GEOLOGY</span><strong>Carbon Storage Atlas</strong><small>Raster processing · ArcGIS Enterprise</small></a>
+          <a class="skill-project" data-skills="python ml explain numpy pandas sklearn" href="projects/coal-ash-modeling.html"><span>05 / ENERGY</span><strong>Coal Ash Modeling</strong><small>Multi-output predictive modeling</small></a>
+          <a class="skill-project" data-skills="python engineering pandas" href="projects/epa-emissions.html"><span>06 / DATA</span><strong>EPA Emissions Automation</strong><small>ETL · data integration</small></a>
+          <a class="skill-project" data-skills="python gis engineering pandas geopandas" href="projects/texas-rrc-wellbore.html"><span>12 / OIL &amp; GAS</span><strong>Texas RRC Wellbore Integration</strong><small>Legacy ASCII · SQL · spatial joins</small></a>
+          <a class="skill-project" data-skills="python r gis remote engineering numpy pandas" href="projects/nasa-air-quality.html"><span>08 / NASA DEVELOP</span><strong>Air Quality & Public Health</strong><small>El Salvador · AOD · PM2.5 · R regression</small></a>
+          <a class="skill-project" data-skills="python gis remote engineering numpy pandas" href="projects/nasa-water-resources.html"><span>09 / NASA DEVELOP</span><strong>Water Resources & Mesquite Forest Change</strong><small>Lambayeque · NDVI · precipitation · soil moisture</small></a>
+          <a class="skill-project" data-skills="python vision engineering numpy" href="projects/traffic-camera-pipeline.html"><span>07 / AUTOMATION</span><strong>Camera Frame Extraction</strong><small>OpenCV · web extraction</small></a>
+          <a class="skill-project" data-skills="python r gis ml engineering pandas sklearn" href="projects/environmental-flows.html"><span>11 / HYDROLOGY</span><strong>Texas Environmental Flows</strong><small>Watershed delineation · HIT metrics · stream classification</small></a>
           <a class="skill-project" data-skills="web" href="projects/raaz-borg.html"><span>10 / WEB DEVELOPMENT</span><strong>Ra'az Borg</strong><small>HTML · CSS · JavaScript · bilingual UI</small></a>
         </div>
       </section>
@@ -199,6 +205,6 @@
     </footer>
     <script src="script.js">
     </script>
-    <script src="home-skills.js?v=1" defer></script>
+    <script src="home-skills.js?v=libraries-20261104" defer></script>
   </body>
 </html>
