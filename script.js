@@ -56,3 +56,13 @@ document.querySelectorAll("[data-year]").forEach(el=>el.textContent=new Date().g
     }
   }
 })();
+
+// Remove obsolete shared NASA workflow callout on the research overview, if present.
+(function(){
+  if(!document.body.classList.contains("research-overview"))return;
+  document.querySelectorAll("h2").forEach(heading=>{
+    if(heading.textContent.trim()!=="Shared NASA Earth-observation workflow")return;
+    const section=heading.closest(".notice");
+    if(section) section.remove();
+  });
+})();
