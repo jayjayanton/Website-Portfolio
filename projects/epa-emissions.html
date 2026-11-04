@@ -7,7 +7,7 @@
     <title>
       EPA Greenhouse Gas Data Automation | Jay Oliver
     </title>
-    <link rel="stylesheet" href="../style.css?v=method-flow-20261104">
+    <link rel="stylesheet" href="../style.css?v=expanded-method-flow-20261104">
   </head>
   <body>
     <header class="header">
@@ -57,7 +57,7 @@
           </details>
           <details class="case-panel">
             <summary><span class="case-panel__number">02</span><span>Methodology</span><span class="case-panel__hint">How I approached the work</span></summary>
-            <div class="case-panel__content"><div class="method-flow" role="group" aria-label="Methodology workflow"><p class="method-flow__eyebrow">Workflow at a glance</p><div class="method-flow__steps"><div class="method-flow__step"><strong>EPA data sources</strong></div><div class="method-flow__step"><strong>Python extraction</strong></div><div class="method-flow__step"><strong>Cleaning + standardization</strong></div><div class="method-flow__step"><strong>Schema-based delivery</strong></div></div></div><h3 class="method-flow__detail-heading">Detailed methodology</h3>
+            <div class="case-panel__content"><div class="method-flow" role="group" aria-label="Detailed methodology workflow"><p class="method-flow__eyebrow">Workflow at a glance</p><p class="method-flow__intro">Follow the stages below, then read the detailed methodology.</p><div class="method-flow__steps"><div class="method-flow__step"><span class="method-flow__icon" aria-hidden="true">☁️</span><strong>EPA GHGRP / FLIGHT</strong><small>2010–2024 source records</small></div><div class="method-flow__step"><span class="method-flow__icon" aria-hidden="true">🐍</span><strong>Python extraction</strong><small>API and automated downloads</small></div><div class="method-flow__step"><span class="method-flow__icon" aria-hidden="true">📁</span><strong>Assemble years</strong><small>Multi-year records</small></div><div class="method-flow__step"><span class="method-flow__icon" aria-hidden="true">🧹</span><strong>Clean and harmonize</strong><small>Reporting years and fields</small></div><div class="method-flow__step"><span class="method-flow__icon" aria-hidden="true">🗃️</span><strong>Organize entities</strong><small>Facility, sector, gas and emissions</small></div><div class="method-flow__step"><span class="method-flow__icon" aria-hidden="true">🧱</span><strong>Schema-based tables</strong><small>Relational structure</small></div><div class="method-flow__step"><span class="method-flow__icon" aria-hidden="true">🔄</span><strong>Reusable updates</strong><small>Documented repeatable scripts</small></div></div></div><h3 class="method-flow__detail-heading">Detailed methodology</h3>
               <h3>Stage 1 — Automated data extraction</h3>
 <p>The workflow gathered EPA greenhouse gas reporting records using available EPA data access methods, including API-based retrieval and automated downloads from the FLIGHT reporting interface. Python scripts replaced repetitive manual acquisition steps and supported assembling a multi-year historical collection.</p>
 <h3>Stage 2 — Processing and standardization</h3>
