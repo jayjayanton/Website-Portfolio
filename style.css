@@ -411,3 +411,15 @@
 
 /* Research overview: legacy shared NASA workflow callout is retired. */
 body.research-overview .legacy-nasa-workflow{display:none!important}
+
+/* Expandable homepage expertise links */
+.home-disciplines details.expertise-item{display:block;min-width:0;height:auto}
+.home-disciplines .expertise-item summary{display:flex;flex-direction:column;gap:12px;cursor:pointer;list-style:none}
+.home-disciplines .expertise-item summary::-webkit-details-marker{display:none}
+.home-disciplines .expertise-item summary span{flex:initial}
+.home-disciplines .expertise-item .expertise-toggle{font-size:.8rem;font-weight:700;color:var(--cyan);margin-top:4px}
+.home-disciplines .expertise-item[open] .expertise-toggle{color:var(--pink)}
+.home-disciplines .expertise-links{display:flex;flex-direction:column;gap:8px;border-top:1px solid #40354f;margin-top:16px;padding-top:14px}
+.home-disciplines .expertise-links a{display:flex;justify-content:space-between;gap:10px;padding:9px 10px;border-radius:8px;background:#ffffff09;color:var(--cyan);font-size:.88rem;line-height:1.35;text-decoration:none}
+.home-disciplines .expertise-links a:hover,.home-disciplines .expertise-links a:focus-visible{background:#ffffff17;color:var(--pink)}
+.home-disciplines .expertise-item summary:focus-visible{outline:3px solid var(--cyan);outline-offset:5px;border-radius:6px}
