@@ -7,7 +7,7 @@
     <title>
       Traffic Camera Image Extraction | Jay Oliver
     </title>
-    <link rel="stylesheet" href="../style.css?v=project-nav-20261104-3">
+    <link rel="stylesheet" href="../style.css?v=method-flow-20261104">
   </head>
   <body>
     <header class="header">
@@ -59,7 +59,7 @@
           </details>
           <details class="case-panel">
             <summary><span class="case-panel__number">02</span><span>Methodology</span><span class="case-panel__hint">How I approached the work</span></summary>
-            <div class="case-panel__content">
+            <div class="case-panel__content"><div class="method-flow" role="group" aria-label="Methodology workflow"><p class="method-flow__eyebrow">Workflow at a glance</p><div class="method-flow__steps"><div class="method-flow__step"><strong>Camera / stream sources</strong></div><div class="method-flow__step"><strong>Automated retrieval</strong></div><div class="method-flow__step"><strong>OpenCV frame extraction</strong></div><div class="method-flow__step"><strong>Organized imagery</strong></div></div></div><h3 class="method-flow__detail-heading">Detailed methodology</h3>
               <p>For TxDOT roadway cameras, I used Selenium and BeautifulSoup to locate camera names and still-image URLs, then downloaded the snapshots. For Jackson Hole live streams, I used Streamlink to access video segments and OpenCV to decode the clips and save up to three JPEG frames per video. The reorganized script in the public repository now uses FFmpeg for frame extraction, while the original Baylor script preserves the OpenCV workflow.</p>
             </div>
           </details>
