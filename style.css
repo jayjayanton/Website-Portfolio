@@ -398,3 +398,13 @@
 #projects-grid[hidden]{display:none!important}
 .project-discipline-tabs button[aria-expanded="true"]{border-color:var(--cyan);background:#2d2038;color:var(--text);box-shadow:inset 0 -3px 0 var(--cyan)}
 .project-discipline-tabs button[aria-expanded="false"]{background:#211c2c;color:#d4d0df;border-color:transparent;box-shadow:none}
+
+
+/* Project case-study navigation and primary repository action */
+.project-back-nav{padding-top:24px}
+.project-back-link{display:inline-flex;align-items:center;gap:8px;padding:10px 15px;border:1px solid var(--border);border-radius:8px;color:var(--text);font-weight:700;transition:border-color .2s,color .2s}
+.project-back-link:hover,.project-back-link:focus-visible{border-color:var(--cyan);color:var(--cyan)}
+.project-repo-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:22px 0 32px}
+.project-repo-actions .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:44px}
+.project-repo-actions .btn svg{display:block;flex-shrink:0;margin-right:0!important;vertical-align:middle!important}
+@media(max-width:560px){.project-repo-actions .btn{max-width:100%}}
