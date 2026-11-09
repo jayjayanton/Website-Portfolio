@@ -5,7 +5,7 @@ const projects=[{"slug":"yuyay-analytics","title":"Yuyay Analytics — Consultin
   const buttons=[...document.querySelectorAll("[data-project-tab]")];
   const status=document.getElementById("project-discipline-description");
   if(!grid||!panel)return;
-  const groups={data:projects.filter(p=>p.slug!=="raaz-borg"),web:projects.filter(p=>p.slug==="raaz-borg"||p.slug==="yuyay-analytics")};
+  const groups={data:projects.filter(p=>p.slug!=="raaz-borg"&&p.slug!=="yuyay-analytics"),web:projects.filter(p=>p.slug==="raaz-borg"||p.slug==="yuyay-analytics")};
   let selected=null;
   function card(p){
     const src=p.img.startsWith("https://")?p.img:"images/"+p.img;
