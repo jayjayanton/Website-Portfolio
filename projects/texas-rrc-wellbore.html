@@ -40,14 +40,14 @@
   <section class="container section">
     <p class="eyebrow">PROJECT CASE STUDY</p>
     <h1>Texas RRC — Full Wellbore &amp; Production Data Integration</h1>
-    <p class="lead">Python and SQL data engineering for legacy ASCII wellbore records, spatial entity matching, and production-data integration.</p>
+    <p class="lead">Three-stage Python, geospatial, and SQL workflow: extract RK02-linked wellbore identifiers, enrich updated Well Header records, and join production data using district, well, and lease identifiers.</p>
     <div class="case-accordion">
       <details class="case-panel" open>
         <summary><span class="case-panel__number">01</span><span>Introduction</span><span class="case-panel__hint">Problem and context</span></summary>
         <div class="case-panel__content">
-          <p>The Texas Railroad Commission (RRC) Full Wellbore dataset provides detailed regulatory records in a legacy ASCII flat-file format. Integrating those records with an existing team-provided Well Header dataset and separate production data required more than a straightforward table join: the datasets needed a reliable bridge between well identifiers and geographic locations.</p>
-          <p>I developed a Python- and SQL-based workflow to parse and organize the Full Wellbore records, associate identifiers with well locations, spatially match them to the existing Well Header data, and use the enriched headers to connect to production records.</p>
-          <div class="notice">This case study summarizes the engineering approach. Internal code and team datasets are not published. The quarterly update cadence was a design objective, not a claim that an automated scheduler was deployed.</div>
+          <p>The Texas Railroad Commission (RRC) Full Wellbore dataset provides detailed regulatory records in a legacy fixed-width ASCII format. The project combined three distinct sources: RRC wellbore technical records, an updated team-provided Well Header dataset, and production data. The core challenge was to recover consistent completion identifiers and carry them into datasets that could be joined reliably.</p>
+          <p>I developed the RK02-centered Python extraction and identifier-propagation workflow, used the resulting information to enrich updated Well Header data, and subsequently integrated the enriched headers with production records using SQL and the composite district–well–lease key.</p>
+          <div class="notice">The original Well Header enrichment script is no longer available for review. The public repository contains a redacted historical RK02 extraction script and a separately labeled refactor; it does not contain the original Well Header merge or SQL join code. Quarterly updates were the intended refresh cadence, not a claim that an automated scheduler was deployed.</div>
         </div>
       </details>
       <details class="case-panel">
@@ -56,15 +56,15 @@
           <h3>1. Extract and interpret legacy flat files</h3>
           <p>I worked with the ASCII distribution of the Texas RRC Full Wellbore dataset. Although ASCII specifies the character encoding, the source also uses defined record layouts that must be interpreted to recover structured fields. Python-based parsing and transformation converted the relevant records into data suitable for subsequent joins and database-oriented processing.</p>
           <h3>2. Connect record keys to identifiers and coordinates</h3>
-          <p>The workflow focused on RK02 records containing the district number, lease number, and well number—the three-part identifier used downstream—and RK13 records containing location information. Combining the relevant root-key information established a connection between the tripartite identifier and wellbore coordinates.</p>
+          <p>RK02 (WBCOMPL) served as the primary identifier source. I standardized district, lease/RRC gas ID, and well number fields, retaining provenance in DISTRICT_NO_SOURCE, LEASE_NO_SOURCE, and WELL_NO_SOURCE. Copybook-driven parsing, zoned-decimal conversion, and binary-search RK02 interval association propagated those identifiers into separate technical root-key tables, including RK13 location records. RK01 was explored mainly for wellbore characteristics rather than as the integration key.</p>
           <h3>3. Spatially enrich the existing Well Header data</h3>
-          <p>My team provided an existing Well Header dataset. I matched the wellbore location records against these headers using latitude/longitude proximity, enriching the header records with identifiers recovered from the Full Wellbore source. This geographic matching stage bridged datasets that could not initially be connected through a complete common key.</p>
+          <p>The extracted root-key identifiers were merged into an updated, team-provided Well Header dataset. The earlier project description identifies geographic proximity matching as part of this enrichment step. However, the original merge script is unavailable, so its exact matching thresholds, implementation details, and validation logic cannot be independently reconstructed from the surviving extraction code.</p>
           <h3>4. Join enriched headers to production data</h3>
-          <p>Once the Well Header data contained the relevant district–lease–well identifier, I used SQL-based relational joins to associate those records with production data carrying the same tripartite key. Python supported the broader extraction, transformation, and spatial integration workflow, while SQL supported structured data management and integration.</p>
+          <p>With the Well Header dataset enriched, I used SQL to join it to production data on the three-part identifier (DISTRICT_NO, WELL_NO, LEASE_NO). This was a separate downstream SQL stage, not a feature of the surviving Python extraction script. Oil lease numbers and gas RRC IDs have different meanings, so record classification and source provenance matter when validating those joins.</p>
           <h3>5. Design for repeatable updates</h3>
-          <p>The workflow was intended to be rerunnable as updated RRC data became available, with quarterly refreshes identified as a potential operating cadence. The design separates parsing, spatial matching, and relational integration so the stages can be repeated and checked rather than reconstructed manually each time.</p>
-          <h3>Data quality considerations</h3>
-          <p>Geographic proximity is useful for linking records but does not guarantee identity: multiple wellbores can be close together. Candidate matches therefore need validation, especially where nearby wells or inconsistent coordinates could introduce ambiguity. The exact matching tolerance and validation rules are not specified here pending review of the original scripts.</p>
+          <p>The integrated workflow was intended to be updated every quarter as source records changed. Separating RK02 extraction, Well Header enrichment, and SQL production joins made recurring updates feasible; the available evidence does not establish that an automated quarterly scheduler was deployed.</p>
+          <p><strong>Source and code:</strong> <a href="https://github.com/jayjayanton/Texas-RRC-Wellbore-Integration" target="_blank" rel="noopener noreferrer">Texas RRC Wellbore Integration repository</a> · <a href="https://www.rrc.texas.gov/resource-center/research/data-sets-available-for-download/" target="_blank" rel="noopener noreferrer">Official RRC data downloads</a> · RRC WBA091 <em>Oil and Gas Well Bore System</em> guide (2019).</p><h3>Data quality considerations</h3>
+          <p>Geographic proximity is useful for linking records but does not guarantee identity: multiple wellbores can be close together. Candidate matches therefore need validation, especially where nearby wells or inconsistent coordinates could introduce ambiguity. The missing Well Header merge script prevents verification of its original matching tolerance and validation rules. The historical RK02 extraction also warrants oil/gas identifier and record-boundary checks.</p>
         </div>
       </details>
       <details class="case-panel">
@@ -80,7 +80,7 @@
       <p class="project-impact__subtitle">Bridging legacy records, spatial data, and relational databases</p>
       <div class="project-impact__grid">
         <div><h3>Practical value</h3><p>Linking regulatory wellbore records to existing well headers and production information creates a more usable foundation for oil and gas research. Repeatable extraction and integration also make it easier to incorporate future data releases without rebuilding the process from scratch.</p></div>
-        <div><h3>Engineering skills demonstrated</h3><p>This project combines legacy fixed-width flat-file interpretation, Python ETL, SQL relational joins, geospatial proximity matching, identifier reconciliation, and database-oriented workflow design. The central challenge was resolving entities across datasets that did not initially share a reliable direct join key.</p></div>
+        <div><h3>Engineering skills demonstrated</h3><p>This project combines legacy fixed-width flat-file interpretation, Python ETL, SQL relational joins, geospatial proximity matching, identifier reconciliation, and database-oriented workflow design. The central challenge was recovering consistent RK02 identifiers, enriching the updated Well Header dataset, and connecting it to production data using a three-column SQL join designed for quarterly refreshes.</p></div>
       </div>
     </section>
   </section>
