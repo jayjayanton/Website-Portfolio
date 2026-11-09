@@ -9,7 +9,7 @@ const projects=[{"slug":"yuyay-analytics","title":"Yuyay Analytics — Consultin
   let selected=null;
   function card(p){
     const src=p.img.startsWith("https://")?p.img:"images/"+p.img;
-    return `<article class="project-card"><a class="project-card__image" href="projects/${p.slug}.html"><img src="${src}" alt="${p.alt}" loading="lazy"></a><div class="project-card__body"><p class="eyebrow">${p.tag}</p><h3><a href="projects/${p.slug}.html">${p.title}</a></h3><p>${p.description}</p><div class="project-card__links"><a href="projects/${p.slug}.html">View case study</a>${p.repo?`<a href="${p.repo}" target="_blank" rel="noopener noreferrer">${p.label==="Private GitHub repository"?"Private repository":"View code"}</a>`:"<span class='muted'>Code not public</span>"}</div></div></article>`;
+    return `<article class="project-card"><a class="project-card__image" href="projects/${p.slug}.html"><img src="${src}" alt="${p.alt}" loading="lazy"></a><div class="project-card__body"><p class="eyebrow">${p.tag}</p><h3><a href="projects/${p.slug}.html">${p.title}</a></h3><p>${p.description}</p><div class="project-card__links"><a href="projects/${p.slug}.html">View case study</a>${p.repo?`<a href="${p.repo}" target="_blank" rel="noopener noreferrer">View Code</a>`:"<span class='muted'>Code not public</span>"}</div></div></article>`;
   }
   function select(category){
     selected=category;
