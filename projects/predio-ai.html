@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="PredioAI by Jay Oliver, creator and sole developer: a React, Leaflet and FastAPI application combining architectural plans, Quito property data, REST APIs and geospatial analytics.">
+    <title>PredioAI | Jay Oliver</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../predio-ai.css?v=20261118">
+  </head>
+  <body class="predio-case-study">
+    <header class="header">
+      <div class="container nav">
+        <a class="logo" href="../index.html">Jay Antonio Oliver<span>.</span></a>
+        <nav class="links" aria-label="Main navigation">
+          <a href="../index.html">Home</a>
+          <a href="../projects.html">Projects</a>
+          <a href="../research.html">Research</a>
+          <a href="../about.html">About</a>
+          <a href="../contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="container section">
+        <a href="../projects.html">Back to all projects</a>
+        <div class="predio-case-hero">
+          <p class="eyebrow">INDEPENDENT PRODUCT · CREATOR &amp; SOLE DEVELOPER</p>
+          <h1>PredioAI<span class="accent">.</span></h1>
+          <p class="predio-case-subtitle">Architectural plans &amp; geospatial property intelligence</p>
+          <p class="lead">I conceived, designed and developed PredioAI, a web application that brings architectural plans and Quito's property data into an interactive workspace. As its sole developer, I built the frontend, backend APIs, geospatial integrations and document tools, taking the product from concept through deployment.</p>
+          <div class="predio-stack-tags" aria-label="Core technologies">
+            <span>Python</span><span>FastAPI</span><span>REST APIs</span><span>React</span><span>Leaflet</span><span>Geospatial analytics</span><span>PDF / CAD</span>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://jayjayanton.github.io/Predio-AI/" target="_blank" rel="noopener noreferrer">Explore PredioAI</a>
+            <a class="btn secondary" href="../contact.html">Discuss a project</a>
+          </div>
+        </div>
+
+        <dl class="predio-project-facts">
+          <div><dt>My role</dt><dd>Creator &amp; sole developer</dd></div>
+          <div><dt>Application</dt><dd>Renovation, plans &amp; property analysis</dd></div>
+          <div><dt>Geographic focus</dt><dd>Quito, Ecuador</dd></div>
+        </dl>
+
+        <figure class="predio-product-image">
+          <a href="https://jayjayanton.github.io/Predio-AI/" target="_blank" rel="noopener noreferrer" aria-label="Explore the live PredioAI application">
+            <img src="../images/predioai-homepage.jpg" width="1348" height="926" alt="PredioAI homepage: Entiende tus planos. Prepara tu reforma., with an interactive demonstration of a floor plan and surface measurements">
+          </a>
+          <figcaption>The live PredioAI interface, with a fictional plan demonstrating how a drawing becomes a workspace for measurements and project planning.</figcaption>
+        </figure>
+
+        <div class="case-accordion">
+          <details class="case-panel" open>
+            <summary><span>The problem &amp; my contribution</span><span class="case-panel__hint">From idea to working product</span></summary>
+            <div class="case-panel__content">
+              <p>PredioAI began with a practical question: how can a homeowner make better use of a plan when preparing a renovation, changing a layout or exploring an extension? Relevant information is often spread across drawings, cadastral records, municipal planning documents and separate maps.</p>
+              <p>I designed a workflow that connects those sources and lets people inspect geometry, review measurements and place a proposed building footprint on a parcel map. I am responsible for the product design, responsive interface, Python services, data integration, analytical workflows, testing and deployment.</p>
+              <p>The intended users include homeowners, remodelers and construction professionals. Parcel discovery and comparison complement the plan workspace, connecting everyday home improvements with broader property decisions.</p>
+            </div>
+          </details>
+
+          <details class="case-panel" open>
+            <summary><span>What the application does</span><span class="case-panel__hint">Plans, properties &amp; decisions</span></summary>
+            <div class="case-panel__content">
+              <ul class="predio-capabilities">
+                <li><strong>Explore property data.</strong> Search and filter Quito parcels, inspect cadastral attributes and valuation data, compare selections and work with municipal map layers.</li>
+                <li><strong>Work with architectural plans.</strong> Inspect PDF/CAD geometry, confirm units or calibrate a known length, select elements and calculate measurements with manual review.</li>
+                <li><strong>Study a proposed layout or extension.</strong> Create scaled geometry, locate a footprint on the parcel map and compare it with reviewed municipal parameters, including available setback information.</li>
+                <li><strong>Carry the analysis forward.</strong> Organize property selections and export supported measurements and spatial data in formats such as CSV, JSON and GeoJSON.</li>
+              </ul>
+              <p>For business and geospatial analytics, this demonstrates the complete path from data acquisition to an interactive decision tool: integrating different sources, making comparisons understandable and producing outputs that can be reviewed or reused.</p>
+              <p>Measurements rely on confirmed scale and user review; planning comparisons rely on the property information and municipal parameters supplied. These outputs support project preparation and professional review.</p>
+            </div>
+          </details>
+
+          <details class="case-panel">
+            <summary><span>Technical approach</span><span class="case-panel__hint">Frontend, APIs &amp; spatial processing</span></summary>
+            <div class="case-panel__content">
+              <dl class="predio-technical-stack">
+                <div><dt>React · Vite · Leaflet</dt><dd>A responsive application interface, interactive parcel maps and a drawing workspace with linked selections and measurements.</dd></div>
+                <div><dt>Python · FastAPI · REST APIs</dt><dd>Backend services for property queries, document processing and spatial analysis, connected to the frontend through defined API endpoints.</dd></div>
+                <div><dt>ArcGIS REST · GeoJSON</dt><dd>Integration of municipal cadastral, zoning and valuation sources into searchable records and map layers.</dd></div>
+                <div><dt>Shapely · pyproj</dt><dd>Spatial intersections, geometric analysis and coordinate transformations for parcel overlays and footprint placement.</dd></div>
+                <div><dt>PyMuPDF · ezdxf · PDF / CAD</dt><dd>Extraction of native document text, vector paths and CAD entities for interactive inspection, with supported DWG conversion workflows.</dd></div>
+                <div><dt>Automated testing &amp; deployment</dt><dd>Backend and frontend checks, production builds and GitHub Actions workflows, with the frontend on GitHub Pages and the API on Render.</dd></div>
+              </dl>
+            </div>
+          </details>
+
+          <details class="case-panel">
+            <summary><span>Computer vision &amp; continued development</span><span class="case-panel__hint">Planned extensions</span></summary>
+            <div class="case-panel__content">
+              <p>The current plan workflow reads native PDF/CAD geometry. Further development explores targeted computer vision for scanned or image-based plans that need visual interpretation, with user review of the extracted elements.</p>
+              <p>Related work in my portfolio includes <a href="traffic-camera-pipeline.html">OpenCV-based image extraction</a> and <a href="quito-urban-expansion.html">Quito urban expansion research</a>, where satellite data preparation supports planned computer vision segmentation experiments.</p>
+            </div>
+          </details>
+        </div>
+
+        <section class="predio-case-outcome" aria-labelledby="predio-outcome-heading">
+          <p class="eyebrow">WHAT THIS PROJECT DEMONSTRATES</p>
+          <h2 id="predio-outcome-heading">Geospatial expertise, delivered as <em>usable software.</em></h2>
+          <p>PredioAI brings together my work in spatial data, Python engineering and application development. It shows how I translate an independently developed product idea into a deployed interface, connect public data services and document workflows, and make technical analysis usable for people planning real projects.</p>
+          <div class="actions">
+            <a class="btn" href="https://jayjayanton.github.io/Predio-AI/" target="_blank" rel="noopener noreferrer">Open PredioAI</a>
+            <a class="btn secondary" href="../projects.html">Explore more projects</a>
+          </div>
+        </section>
+      </section>
+    </main>
+    <footer><div class="container">Jay Oliver · Creator &amp; sole developer of PredioAI · <a href="../contact.html">Contact</a></div></footer>
+  </body>
+</html>

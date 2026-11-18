@@ -1,0 +1,27 @@
+/* PredioAI case study: scoped additions to the existing portfolio design. */
+.predio-case-hero{margin-top:26px;padding:clamp(24px,4vw,48px);border:1px solid var(--border);border-radius:18px;background:radial-gradient(ellipse at top right,#00f5ff10,transparent 65%),var(--panel)}
+.predio-case-hero h1{margin-bottom:14px}
+.predio-case-subtitle{max-width:800px;margin:0;font-size:clamp(1.3rem,3vw,1.9rem);line-height:1.35;color:var(--text)}
+.predio-stack-tags{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0}
+.predio-stack-tags span{border:1px solid #405364;border-radius:999px;padding:5px 12px;color:var(--cyan);font-size:.9rem}
+.predio-case-hero .actions{margin-bottom:0}
+.predio-project-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:24px 0}
+.predio-project-facts>div{padding:20px;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.predio-project-facts dt{color:var(--muted);font-size:.9rem}
+.predio-project-facts dd{margin:7px 0 0;color:var(--text);font-weight:750;line-height:1.5}
+.predio-product-image{margin:30px 0}
+.predio-product-image a{display:block}
+.predio-product-image img{display:block;width:100%;height:auto;border:1px solid var(--border);border-radius:14px}
+.predio-product-image figcaption{margin-top:12px;color:var(--muted);font-size:.9rem}
+.predio-case-study .case-panel__hint{font-size:.875rem}
+.predio-capabilities{padding-left:1.3rem;color:var(--muted)}
+.predio-capabilities li{padding-left:5px;margin:16px 0}
+.predio-capabilities strong{color:var(--text)}
+.predio-technical-stack{margin:10px 0 0}
+.predio-technical-stack>div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:22px;padding:20px 0;border-bottom:1px solid var(--border)}
+.predio-technical-stack>div:last-child{border-bottom:0}
+.predio-technical-stack dt{font-weight:750;color:var(--cyan)}
+.predio-technical-stack dd{margin:0;color:var(--muted)}
+.predio-case-outcome{max-width:900px}
+.predio-case-study a:focus-visible{outline:3px solid var(--cyan);outline-offset:4px}
+@media(max-width:700px){.predio-project-facts{grid-template-columns:1fr;gap:10px}.predio-project-facts>div{padding:16px}.predio-technical-stack>div{grid-template-columns:1fr;gap:8px}.predio-case-hero{padding:22px 18px}.predio-case-hero .eyebrow{font-size:.875rem;letter-spacing:.08em}.predio-case-study .lead{font-size:1.125rem}.predio-case-study .actions .btn{text-align:center;max-width:100%}}

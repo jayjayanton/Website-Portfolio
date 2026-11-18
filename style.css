@@ -455,3 +455,7 @@ body.research-overview .legacy-nasa-workflow{display:none!important}
 .method-flow__detail-heading{margin:27px 0 16px;padding-top:20px;border-top:1px solid #43516b;font-size:1.1rem;color:#e3edff}
 @media(max-width:900px){.method-flow__steps{grid-template-columns:repeat(2,minmax(0,1fr))}.method-flow__step:nth-child(3n)::after{content:'→';right:-19px;top:50%;transform:none}.method-flow__step:nth-child(2n)::after{content:'↓';right:50%;top:calc(100% + 2px);transform:translateX(50%)}}
 @media(max-width:600px){.method-flow{padding:16px}.method-flow__steps{grid-template-columns:minmax(0,1fr);gap:21px}.method-flow__step{min-height:0;padding:14px}.method-flow__step:not(:last-child)::after,.method-flow__step:nth-child(2n)::after,.method-flow__step:nth-child(3n)::after{content:'↓';right:50%;top:calc(100% + 2px);transform:translateX(50%)}}
+
+/* Featured work: four projects, including the independent PredioAI product. */
+.home-featured-work{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:560px){.home-featured-work{grid-template-columns:1fr}}

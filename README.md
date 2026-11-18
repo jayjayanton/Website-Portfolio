@@ -35,6 +35,12 @@ I also included a [Colombia deforestation case study](projects/colombia-deforest
 
 The wider [land-use dynamics page](projects/land-use-dynamics.html) now connects land-cover mapping, deforestation, water resources and vegetation health, and health and air quality. Each research stream has its own scientific context rather than being presented as one publication.
 
+## PredioAI: independent application development
+
+I am the creator and sole developer of [PredioAI](projects/predio-ai.html), a deployed application for architectural plans, renovation workflows and Quito property analysis. The case study covers React/Leaflet, Python/FastAPI, municipal REST API integration, geospatial analytics, native PDF/CAD geometry and user-reviewed measurements. Computer vision for image-based plans is described as a planned extension.
+
+The case study and project cards link to the public application only. Its screenshot is stored in this portfolio so it has no dependency on source-repository visibility.
+
 ## Other featured projects
 
 My other case-study pages cover orphaned well prediction, carbon storage mapping, coal ash modeling, EPA greenhouse gas data automation, and webcam image extraction. Some of the underlying datasets and implementations are proprietary, so those projects focus on my technical contributions and permitted high-level descriptions.
