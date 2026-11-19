@@ -1,0 +1,139 @@
+{
+  "id": "geospatial-data-specialist",
+  "label": {
+    "en": "Geospatial Data Specialist",
+    "es": "Especialista en datos geoespaciales"
+  },
+  "description": {
+    "en": "Spatial data quality, harmonization, source integration and delivery.",
+    "es": "Calidad, armonización, integración y entrega de datos espaciales."
+  },
+  "summary": {
+    "en": "Geospatial data specialist with 6+ years of experience integrating regulatory records, satellite products and large raster/vector datasets. Builds reproducible Python, R and SQL workflows for identifier reconciliation, classification harmonization, spatial preparation and delivery. Research experience spans NASA DEVELOP, USGS, WWF, Baylor University and Leidos/NETL; creator and sole developer of PredioAI.",
+    "es": "Especialista en datos geoespaciales con más de seis años integrando registros regulatorios, productos satelitales y grandes conjuntos ráster/vectoriales. Desarrolla flujos reproducibles en Python, R y SQL para conciliar identificadores, armonizar clasificaciones y preparar datos espaciales. Experiencia investigativa en NASA DEVELOP, USGS, WWF, Baylor University y Leidos/NETL; creador y único desarrollador de PredioAI."
+  },
+  "skills": [
+    {
+      "label": {
+        "en": "Data quality & integration",
+        "es": "Calidad e integración de datos"
+      },
+      "text": {
+        "en": "Schema harmonization, classification crosswalks, source identifiers, quality checks, coordinate reference systems and REST APIs.",
+        "es": "Armonización de estructuras, equivalencias de clasificación, identificadores de origen, controles de calidad, sistemas de referencia de coordenadas y API REST."
+      }
+    },
+    {
+      "label": {
+        "en": "Spatial processing",
+        "es": "Procesamiento espacial"
+      },
+      "text": {
+        "en": "ArcGIS Pro, ArcPy, QGIS, GeoPandas, Rasterio, GDAL, Shapely and pyproj; raster/vector transformations and spatial joins.",
+        "es": "ArcGIS Pro, ArcPy, QGIS, GeoPandas, Rasterio, GDAL, Shapely y pyproj; transformaciones ráster/vectoriales y uniones espaciales."
+      }
+    },
+    {
+      "label": {
+        "en": "Automation & delivery",
+        "es": "Automatización y entrega"
+      },
+      "text": {
+        "en": "Python, R, SQL, ETL, fixed-width records, pandas, ArcGIS Enterprise, Experience Builder, GeoJSON and CSV.",
+        "es": "Python, R, SQL, ETL, registros de ancho fijo, pandas, ArcGIS Enterprise, Experience Builder, GeoJSON y CSV."
+      }
+    }
+  ],
+  "experience": [
+    {
+      "id": "leidos",
+      "bullets": [
+        {
+          "en": "Automated conversion of more than 400 geologic rasters into polygons; standardized and quality-checked layers for basin-specific maps and NETL atlas delivery.",
+          "es": "Automaticé la conversión de más de 400 rásteres geológicos a polígonos; estandaricé y verifiqué capas para mapas por cuenca y su entrega al atlas de NETL."
+        },
+        {
+          "en": "Parsed Texas RRC fixed-width files, recovered completion identifiers, enriched Well Header records and joined production datasets through Python and SQL workflows.",
+          "es": "Procesé archivos de ancho fijo de Texas RRC, recuperé identificadores de completación, enriquecí registros Well Header e integré datos de producción mediante Python y SQL."
+        },
+        {
+          "en": "Reconciled state-specific orphan-well lists, identifiers and inconsistent attributes within a team-assembled national inventory exceeding 7 million records.",
+          "es": "Concilié listas estatales de pozos huérfanos, identificadores y atributos inconsistentes dentro de un inventario nacional del equipo de más de 7 millones de registros."
+        }
+      ]
+    },
+    {
+      "id": "baylor-lab",
+      "bullets": [
+        {
+          "en": "Served as primary Python developer for 30-meter U.S. land-use basemaps covering five observation years, harmonizing NLCD, crop, irrigation and environmental inputs.",
+          "es": "Fui el desarrollador principal en Python de mapas base de uso del suelo de Estados Unidos a 30 metros para cinco años de observación, armonizando NLCD, cultivos, riego y datos ambientales."
+        },
+        {
+          "en": "Implemented classification crosswalks and aggregation for GCAM, CLM and LUH2; integrated REST APIs, SQL databases, flat files and spatial layers for reproducible research outputs.",
+          "es": "Implementé equivalencias de clasificación y agregaciones para GCAM, CLM y LUH2; integré API REST, bases SQL, archivos planos y capas espaciales para generar resultados reproducibles."
+        }
+      ]
+    },
+    {
+      "id": "baylor-specialist",
+      "bullets": [
+        {
+          "en": "Automated watershed extraction from stream-gage coordinates using R and Model My Watershed; prepared boundaries and spatial attributes supporting reference-stream and environmental-flow research.",
+          "es": "Automaticé la extracción de cuencas desde coordenadas de estaciones hidrométricas con R y Model My Watershed; preparé límites y atributos para investigar ríos de referencia y caudales ambientales."
+        }
+      ]
+    },
+    {
+      "id": "usgs",
+      "bullets": [
+        {
+          "en": "Processed more than 20 years of Landsat imagery in R, Python and ArcGIS Pro, producing pixel-level change maps and datasets for environmental analysis.",
+          "es": "Procesé más de 20 años de imágenes Landsat en R, Python y ArcGIS Pro, generando mapas de cambio a escala de píxel y datos para análisis ambiental."
+        }
+      ]
+    },
+    {
+      "id": "wwf",
+      "bullets": [
+        {
+          "en": "Harmonized environmental, socioeconomic, land-use and biodiversity datasets for Colombia, Brazil and the Mekong region; prepared spatial predictors for deforestation analysis.",
+          "es": "Armonicé datos ambientales, socioeconómicos, de uso del suelo y biodiversidad de Colombia, Brasil y la región del Mekong; preparé predictores espaciales para analizar deforestación."
+        }
+      ]
+    },
+    {
+      "id": "nasa",
+      "bullets": [
+        {
+          "en": "Acquired and prepared more than 900 satellite/environmental datasets across two projects; reconciled MODIS, VIIRS and CALIOP resolutions and dates for Central America air-quality research.",
+          "es": "Adquirí y preparé más de 900 conjuntos de datos satelitales y ambientales entre dos proyectos; concilié resoluciones y fechas de MODIS, VIIRS y CALIOP para investigación de calidad del aire en Centroamérica."
+        },
+        {
+          "en": "Integrated vegetation, precipitation, evapotranspiration and soil-moisture observations for Lambayeque, Peru; prepared GIS layers, comparative maps and technical research outputs.",
+          "es": "Integré observaciones de vegetación, precipitación, evapotranspiración y humedad del suelo para Lambayeque, Perú; preparé capas SIG, mapas comparativos y productos técnicos de investigación."
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "predio",
+      "bullets": [
+        {
+          "en": "Creator and sole developer of PredioAI: integrated municipal REST data, coordinate transformations and native PDF/CAD geometry into searchable parcel workflows with CSV, JSON and GeoJSON exports.",
+          "es": "Creador y único desarrollador de PredioAI: integré datos municipales vía REST, transformaciones de coordenadas y geometría nativa PDF/CAD en consultas de predios con exportaciones CSV, JSON y GeoJSON."
+        }
+      ]
+    },
+    {
+      "id": "quito",
+      "bullets": [
+        {
+          "en": "Built repeatable Sentinel-2 acquisition, temporal-compositing and mosaicking workflows with Sentinel Hub and Copernicus S3; preparing consistent inputs for planned urban segmentation research.",
+          "es": "Desarrollé flujos repetibles de adquisición, composición temporal y mosaicos Sentinel-2 con Sentinel Hub y Copernicus S3; preparo insumos consistentes para futuros estudios de segmentación urbana."
+        }
+      ]
+    }
+  ]
+}

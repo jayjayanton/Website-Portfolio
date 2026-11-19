@@ -1,10 +1,17 @@
-name: Publish printable CV PDF
+name: Publish printable CV PDFs
 on:
   push:
     paths:
       - cv.html
+      - cv/**
+      - assets/css/site.css
+      - tools/render_cvs.py
+      - assets/cv/manifest.json
       - .github/workflows/build-cv.yml
   workflow_dispatch:
+concurrency:
+  group: cv-pdfs-${{ github.ref }}
+  cancel-in-progress: true
 permissions:
   contents: write
 jobs:
@@ -12,22 +19,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Render CV to PDF
-        run: |
-          mkdir -p assets
-          CHROME="$(command -v google-chrome || command -v chromium || command -v chromium-browser)"
-          if [ -z "$CHROME" ]; then
-            echo "Chrome/Chromium not found" >&2
-            exit 1
-          fi
-          "$CHROME" --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --no-pdf-header-footer --print-to-pdf="$PWD/assets/Jay_Antonio_Oliver_CV.pdf" "file://$PWD/cv.html"
-          test -s assets/Jay_Antonio_Oliver_CV.pdf
-      - name: Commit generated PDF
+      - name: Render CV catalogue
+        run: python3 tools/render_cvs.py
+      - name: Commit generated PDFs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/Jay_Antonio_Oliver_CV.pdf
+          git add assets/Jay_Antonio_Oliver_CV.pdf assets/cv/*.pdf assets/cv/render-state.json
           if ! git diff --cached --quiet; then
-            git commit -m "Publish printable CV PDF"
+            git commit -m "Publish bilingual CV PDFs"
             git push
           fi

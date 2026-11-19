@@ -9,7 +9,7 @@
   "phone_url": "tel:+15404069434",
   "linkedin": "https://www.linkedin.com/in/jay-oliver-b22552b4",
   "github": "https://github.com/jayjayanton",
-  "cv": "assets/Jay_Antonio_Oliver_CV.pdf",
+  "cv": "cv.html",
   "featured": [
     "predio-ai",
     "land-use-dynamics",
@@ -83,5 +83,6 @@
       "url": "https://onlinelibrary.wiley.com/doi/10.1002/rra.70172",
       "doi": "10.1002/rra.70172"
     }
-  ]
+  ],
+  "master_cv": "assets/Jay_Antonio_Oliver_CV.pdf"
 }

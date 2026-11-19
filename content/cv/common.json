@@ -1,0 +1,23 @@
+{
+  "default_profile": "geospatial-data-scientist",
+  "profile_order": ["data-scientist", "spatial-analyst", "geospatial-data-specialist", "geospatial-data-engineer", "geospatial-data-scientist", "master"],
+  "experience": {
+    "leidos": {"employer": "Leidos", "role": {"en": "Geospatial Data Scientist", "es": "Científico de Datos Geoespaciales"}, "location": {"en": "Morgantown, WV · NETL research", "es": "Morgantown, WV · Investigación para NETL"}, "dates": {"en": "Feb 2024 – May 2026", "es": "feb. 2024 – may. 2026"}},
+    "baylor-lab": {"employer": "Baylor University", "role": {"en": "Lab Manager / Geospatial Data Scientist", "es": "Responsable de Laboratorio / Científico de Datos Geoespaciales"}, "location": {"en": "Waco, TX", "es": "Waco, TX"}, "dates": {"en": "Apr 2023 – Feb 2024", "es": "abr. 2023 – feb. 2024"}},
+    "baylor-specialist": {"employer": "Baylor University", "role": {"en": "Geospatial Data Specialist", "es": "Especialista en Datos Geoespaciales"}, "location": {"en": "Waco, TX", "es": "Waco, TX"}, "dates": {"en": "Oct 2021 – Apr 2023", "es": "oct. 2021 – abr. 2023"}},
+    "usgs": {"employer": "U.S. Geological Survey", "role": {"en": "Spatial Analyst", "es": "Analista Espacial"}, "location": {"en": "Remote", "es": "Remoto"}, "dates": {"en": "Jan 2021 – Jul 2021", "es": "ene. 2021 – jul. 2021"}},
+    "wwf": {"employer": "World Wildlife Fund", "role": {"en": "Data Scientist / Statistical Analyst", "es": "Científico de Datos / Analista Estadístico"}, "location": {"en": "Remote / Washington, DC", "es": "Remoto / Washington, DC"}, "dates": {"en": "Jan 2020 – Dec 2020", "es": "ene. 2020 – dic. 2020"}},
+    "nasa": {"employer": "NASA DEVELOP", "role": {"en": "Remote Sensing Data Scientist", "es": "Científico de Datos de Teledetección"}, "location": {"en": "Hampton, VA / Remote", "es": "Hampton, VA / Remoto"}, "dates": {"en": "Sep 2019 – Apr 2020", "es": "sep. 2019 – abr. 2020"}}
+  },
+  "projects": {
+    "predio": {"name": "PredioAI", "role": {"en": "Creator & sole developer", "es": "Creador y único desarrollador"}, "url": "https://jayjayanton.github.io/Predio-AI/"},
+    "quito": {"name": "Quito Urban Expansion", "role": {"en": "Independent research in progress", "es": "Investigación independiente en desarrollo"}, "url": "https://jayjayanton.github.io/Website-Portfolio/projects/quito-urban-expansion.html"},
+    "expense": {"name": "Expense Analyzer", "role": {"en": "Application developer", "es": "Desarrollador de la aplicación"}, "url": "https://jayjayanton.github.io/Expense-Analyzer/"},
+    "freelance": {"name": "Freelance Web Development", "name_es": "Desarrollo Web Independiente", "role": {"en": "Combat-sports client application · Jun 2026–Present", "es": "Aplicación para cliente de deportes de combate · jun. 2026–actualidad"}},
+    "yuyay": {"name": "Yuyay Analytics", "role": {"en": "Website designer & frontend developer", "es": "Diseñador del sitio y desarrollador frontend"}, "url": "https://jayjayanton.github.io/Yuyay-Analytics-/"}
+  },
+  "education": [
+    {"institution": "University of York", "year": "2018", "degree": {"en": "MSc, Environmental Economics and Environmental Management", "es": "MSc en Economía Ambiental y Gestión Ambiental"}},
+    {"institution": "University of South Florida", "year": "2014", "degree": {"en": "BS, Environmental Science and Policy", "es": "BS en Ciencias Ambientales y Política Ambiental"}}
+  ]
+}

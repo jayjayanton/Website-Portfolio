@@ -2,7 +2,7 @@
 
 A professional portfolio of environmental research, predictive modeling, data engineering and independent software development. Each case study explains the problem, my contribution, the approach, the result and the evidence behind it. Technical progression is shown through the work: moving from observations and analysis to reusable data workflows and interactive applications.
 
-**[Explore the portfolio](https://jayjayanton.github.io/Website-Portfolio/)** · [Projects](projects.html) · [Research](research.html) · [About](about.html) · [Contact](contact.html) · [Master CV](cv.html) · [Download master CV](assets/Jay_Antonio_Oliver_CV.pdf)
+**[Explore the portfolio](https://jayjayanton.github.io/Website-Portfolio/)** · [Projects](projects.html) · [Research](research.html) · [About](about.html) · [Contact](contact.html) · [Choose a CV · English / Español](cv.html) · [Complete master CV](cv/master-en.html)
 
 ## Selected work
 
@@ -45,7 +45,10 @@ node --test tests/*.mjs
 | `images/` | Existing research figures, screenshots and labeled illustrations |
 | `index.html`, other root pages, `projects/*.html` | Generated public pages committed for GitHub Pages |
 | `tests/` | Offline checks for generated pages, links, content rules and filtering |
-| `content/cv.html`, `cv.html` and `assets/Jay_Antonio_Oliver_CV.pdf` | Canonical CV fragment, generated printable page and downloadable PDF |
+| `content/cv.html`, `content/cv/master-es.html` | Full English and Spanish master CVs |
+| `content/cv/profiles/*.json`, `content/cv/common.json` | Paired English/Spanish role profiles and shared career facts |
+| `tools/cv_collection.py`, `cv/*.html`, `assets/cv/manifest.json` | CV rendering, permanent language-specific pages and download catalogue |
+| `tools/render_cvs.py`, `assets/cv/*.pdf` | Chrome PDF generation, content fingerprints and focused CV page limits |
 
 Edit the canonical JSON and templates, then run `npm run build` and commit the regenerated HTML with the source changes. Direct changes to generated pages will be replaced by the next build. Keep the established case-study URLs and asset paths intact.
 
@@ -70,4 +73,14 @@ Case studies preserve the relevant reports, public code and research materials. 
 
 GitHub Pages continues to publish **the `main` branch from the repository root**. Commit the generated pages alongside canonical changes so deployment keeps the existing page and image URLs. No separate Pages deployment workflow is required for this build.
 
-Maintain the complete professional master CV in `content/cv.html` and run the build to regenerate `cv.html`. It includes detailed Leidos/NETL and NASA contributions, the full research history, independent web and software projects, earlier evaluation and teaching experience, publications, education and technical skills. The existing [printable CV workflow](.github/workflows/build-cv.yml) remains separate from site generation: changes to the generated `cv.html`, or a manual run, render and commit `assets/Jay_Antonio_Oliver_CV.pdf`. Keep that filename stable because the site’s download links use it, and inspect the resulting PDF pagination after changes.
+## Focused CVs and languages
+
+[Choose a CV](cv.html) opens the Geospatial Data Scientist version by default. Five focused profiles are available in English and Spanish: Data Scientist, Spatial Analyst, Geospatial Data Specialist, Geospatial Data Engineer and Geospatial Data Scientist. The complete master CV remains a sixth option in both languages. Focused PDFs have a maximum of two pages.
+
+The focus menu preserves the selected language; the language switch preserves the selected profile. Both use normal links and work without JavaScript. Every selection has a permanent `cv/<profile>-<language>.html` URL, its own matching PDF, document-language metadata and reciprocal language links. Spanish is reviewed content stored alongside English; no external translation API or runtime translation service is required. Official publication titles retain their original language.
+
+Maintain the full record in `content/cv.html` and `content/cv/master-es.html`. Edit focused summaries, skills and selected bullets in `content/cv/profiles/*.json`; shared employers, job titles, dates, project links and education live in `content/cv/common.json`. Profile headlines describe the target role while historical job titles remain unchanged. Preserve NASA work, first-author/coauthor credit and the second publication's contribution statement in every focused version.
+
+Run `npm run build`, then `python3 tools/render_cvs.py` where Chrome is available, and finally `npm run check`. The renderer reuses unchanged PDFs, using source and print-style fingerprints. `python3 tools/render_cvs.py --check` validates PDF presence and two-page limits without launching Chrome. Inspect the final PDF pages after editing; page-count checks alone do not verify layout.
+
+The [PDF workflow](.github/workflows/build-cv.yml) generates and commits the twelve downloads and their render-state file. The read-only validation workflow renders any changed or missing PDFs in its temporary checkout before checking page limits, links and content. Keep `assets/Jay_Antonio_Oliver_CV.pdf` as the English master download for existing external links.

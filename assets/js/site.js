@@ -8,7 +8,7 @@
     const setOpen = (open, returnFocus = false) => {
       navigation.classList.toggle('is-open', open);
       toggle.setAttribute('aria-expanded', String(open));
-      toggle.textContent = open ? 'Close' : 'Menu';
+      toggle.textContent = open ? (toggle.dataset.labelClose || 'Close') : (toggle.dataset.labelOpen || 'Menu');
       if (returnFocus) toggle.focus();
     };
 

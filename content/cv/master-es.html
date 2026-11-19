@@ -1,0 +1,259 @@
+<article class="cv-sheet" lang="es">
+  <header class="cv-header">
+    <p class="cv-kicker">CV completo</p>
+    <h1>Jay Antonio Oliver</h1>
+    <p class="cv-title">Científico de datos geoespaciales · Ingeniero de datos · Desarrollador de software y aplicaciones web</p>
+    <div class="cv-contact">
+      <span>Quito, Ecuador</span>
+      <a href="mailto:jayjayoliver@hotmail.com">jayjayoliver@hotmail.com</a>
+      <a href="tel:+15404069434">+1 (540) 406-9434</a>
+      <a href="https://www.linkedin.com/in/jay-oliver-b22552b4">LinkedIn</a>
+      <a href="https://jayjayanton.github.io/Website-Portfolio/">Portafolio y estudios de caso</a>
+    </div>
+  </header>
+
+  <section class="cv-section" aria-labelledby="cv-summary">
+    <h2 id="cv-summary">Perfil profesional</h2>
+    <p>Científico de datos geoespaciales y desarrollador con más de seis años de experiencia en investigación ambiental, energética y científica en NASA DEVELOP, WWF, USGS, Baylor University y Leidos/NETL. Desarrolla flujos reproducibles en Python, R y SQL, modelos interpretables de aprendizaje automático y productos analíticos a partir de observaciones satelitales, registros regulatorios y grandes conjuntos de datos espaciales. Creador y único desarrollador de PredioAI, una aplicación full-stack que integra análisis geoespacial mediante React, FastAPI, APIs REST y flujos interactivos con archivos PDF/CAD. Primer autor de una investigación publicada en <em>Scientific Data</em> y coautor en <em>River Research and Applications</em>. Bilingüe en inglés y español, con experiencia convirtiendo preguntas de investigación en procesos de datos, mapas, publicaciones y herramientas web funcionales.</p>
+  </section>
+
+  <section class="cv-section" aria-labelledby="cv-experience">
+    <h2 id="cv-experience">Experiencia profesional y de investigación</h2>
+
+    <div class="cv-entry">
+      <h3>Leidos — Científico de datos geoespaciales</h3>
+      <p class="cv-dates">Morgantown, WV | febrero de 2024 – mayo de 2026</p>
+      <p class="cv-scope">Investigación de apoyo al National Energy Technology Laboratory (NETL) del Departamento de Energía de Estados Unidos.</p>
+      <ul>
+        <li>Desarrollé flujos de aprendizaje automático geoespacial para detectar posibles pozos huérfanos en un inventario nacional de más de 7 millones de registros compilado por el equipo; concilié listas estatales, identificadores y atributos inconsistentes.</li>
+        <li>Construí predictores temporales, categóricos y espaciales con fechas, tipo, profundidad, estado, cobertura del suelo y ubicación; incluí indicadores de datos faltantes y distancias al pozo huérfano conocido más cercano, calculadas sobre registros de referencia de entrenamiento.</li>
+        <li>Entrené y ajusté clasificadores Random Forest y XGBoost, incluidos modelos por cuenca, búsqueda bayesiana de hiperparámetros, validación cruzada estratificada y umbrales de decisión derivados del entrenamiento; evalué precisión, sensibilidad y PR-AUC e interpreté los modelos con SHAP.</li>
+        <li>Desarrollé un estudio de enriquecimiento de datos para aproximadamente 900.000 pozos de la cuenca de los Apalaches, integrando atributos Enverus disponibles para investigar mejoras regionales de modelación y diferencias de cobertura.</li>
+        <li>Desarrollé flujos Python/SQL para Texas Railroad Commission: procesamiento de archivos de pozos de ancho fijo, recuperación y propagación de identificadores, enriquecimiento de registros Well Header y vinculación con datos de producción.</li>
+        <li>Automaticé la adquisición y preparación de 25 años de registros de pozos de Kentucky con Python, GeoPandas, Selenium y BeautifulSoup, reduciendo aproximadamente 80 % el esfuerzo de procesamiento de ese flujo.</li>
+        <li>Automaticé la extracción y estandarización del Greenhouse Gas Reporting Program de la EPA (2010–2024), combinando tablas de instalaciones obtenidas por API, clasificaciones FLIGHT, extracción mediante navegador y transformaciones pandas en salidas reutilizables por instalación.</li>
+        <li>Desarrollé flujos XGBoost multisalida para diez óxidos de cenizas de carbón; investigué estimadores separados, árboles compartidos, transformaciones log-ratio composicionales, validación por grupos y diagnósticos de error por constituyente.</li>
+        <li>Automaticé la conversión de más de 400 rásteres geológicos a polígonos vectoriales; estandaricé y verifiqué las capas y preparé mapas por cuenca para el atlas web de NETL mediante ArcGIS Enterprise, Experience Builder y Energy Data eXchange.</li>
+      </ul>
+    </div>
+
+    <div class="cv-entry cv-page-start">
+      <h3>Baylor University — Responsable de laboratorio / Científico de datos geoespaciales</h3>
+      <p class="cv-dates">Waco, TX | abril de 2023 – febrero de 2024</p>
+      <ul>
+        <li>Coordiné el desarrollo de flujos analíticos y soporte técnico para investigación ambiental multidisciplinaria, convirtiendo requisitos científicos en métodos reproducibles de procesamiento.</li>
+        <li>Fui el principal desarrollador Python de mapas base estadounidenses de uso y cobertura del suelo, a 30 metros y para cinco años de observación (2008–2019); resultaron en una publicación como primer autor en <em>Scientific Data</em>.</li>
+        <li>Integré NLCD, USDA Cropland Data Layer, riego y datos ambientales complementarios en una clasificación armonizada de manejo de cultivos, tierras gestionadas/no gestionadas y tipos de vegetación.</li>
+        <li>Implementé flujos Python/ArcGIS Pro para procesar rásteres, homologar clasificaciones y agregar datos para GCAM, CLM y LUH2; comparé representaciones fraccionarias de cobertura del suelo mediante error medio cuadrático espacial.</li>
+        <li>Desarrollé flujos analíticos y ETL con APIs REST, bases SQL, archivos planos y capas geoespaciales para desarrollar y validar modelos y producir resultados publicables.</li>
+      </ul>
+    </div>
+
+    <div class="cv-entry">
+      <h3>Baylor University — Especialista en datos geoespaciales</h3>
+      <p class="cv-dates">Waco, TX | octubre de 2021 – abril de 2023</p>
+      <ul>
+        <li>Automaticé la delimitación de cuencas desde coordenadas de estaciones de aforo con R y la API Model My Watershed, preparando límites y atributos espaciales para analizar caudales ecológicos.</li>
+        <li>Desarrollé Random Forest para identificar cursos de agua de referencia y regresiones con árboles de decisión que relacionan alteración hidrológica y respuesta de peces en ecorregiones de Texas.</li>
+        <li>Contribuí con procesamiento de cuencas y modelación a una investigación publicada posteriormente en <em>River Research and Applications</em>, comparando modelos según profundidad de árboles y agregación regional.</li>
+        <li>Desarrollé flujos Python/Selenium/BeautifulSoup/OpenCV para localizar fuentes de cámaras viales, capturar imágenes cada 15 minutos y extraer fotogramas para investigación en transporte y posterior análisis de imágenes.</li>
+      </ul>
+    </div>
+
+    <div class="cv-entry">
+      <h3>U.S. Geological Survey — Analista espacial</h3>
+      <p class="cv-dates">Remoto | enero de 2021 – julio de 2021</p>
+      <ul>
+        <li>Analicé más de 20 años de imágenes Landsat mediante índices tasseled-cap y matrices de transición, caracterizando patrones espaciotemporales de cambio de cobertura del suelo.</li>
+        <li>Desarrollé procesamiento y visualización ráster en R, Python y ArcGIS Pro: mapas de cambio por píxel y datos para análisis ambientales posteriores.</li>
+      </ul>
+    </div>
+
+    <div class="cv-entry">
+      <h3>World Wildlife Fund — Científico de datos / Analista estadístico</h3>
+      <p class="cv-dates">Remoto / Washington, DC | enero de 2020 – diciembre de 2020</p>
+      <ul>
+        <li>Recopilé y armonicé datos ambientales, socioeconómicos, de uso del suelo y biodiversidad para investigaciones de conservación en Colombia, Brasil y la región del Mekong.</li>
+        <li>Preparé predictores espaciales con cobertura forestal Hansen (2000–2017), relieve, acceso al transporte, ríos, áreas protegidas, agricultura y población.</li>
+        <li>Desarrollé y comparé regresiones logísticas en R sobre asociaciones entre pérdida de bosque, infraestructura y uso del suelo, con selecciones alternativas de variables y términos residuales espaciales.</li>
+        <li>Elaboré mapas y resultados estadísticos para investigación de conservación; colaboré con profesionales y actores regionales en inglés y español.</li>
+      </ul>
+    </div>
+
+    <div class="cv-entry cv-page-start">
+      <h3 id="cv-nasa">NASA DEVELOP — Científico de datos en teledetección</h3>
+      <p class="cv-dates">Hampton, VA / Remoto | septiembre de 2019 – abril de 2020</p>
+      <p class="cv-scope">Dos proyectos de observación de la Tierra aplicada: calidad del aire y salud pública en Centroamérica, y recursos hídricos en Lambayeque, Perú.</p>
+      <ul>
+        <li>Desarrollé flujos Python/Linux para adquirir, preprocesar e integrar más de 900 conjuntos de datos satelitales y ambientales multidimensionales entre ambos proyectos, preparando observaciones para GDAL, ArcGIS Pro y análisis estadístico.</li>
+      </ul>
+      <div class="cv-project-group">
+        <h4>Centroamérica — Calidad del aire y salud pública</h4>
+        <ul>
+          <li>Preparé observaciones MODIS, VIIRS y CALIPSO/CALIOP para analizar aerosoles, armonizando resoluciones espaciales, fechas y características de medición.</li>
+          <li>Comparé mediante regresión en R la profundidad óptica de aerosoles de MODIS04, MODIS08 y VIIRS con PM2.5 de San Salvador proporcionado por colaboradores, contrastando productos satelitales y períodos de observación.</li>
+          <li>Contribuí a comparar aerosoles de CALIOP y Aqua MODIS en 118 días de observaciones emparejadas (2009–2019), examinando concordancias entre mediciones lidar y estimaciones satelitales pasivas.</li>
+        </ul>
+      </div>
+      <div class="cv-project-group">
+        <h4>Lambayeque, Perú — Recursos hídricos y bosques de algarrobo</h4>
+        <ul>
+          <li>Integré vegetación, precipitación, evapotranspiración y humedad del suelo para investigar condiciones ambientales asociadas al deterioro de bosques de algarrobo.</li>
+          <li>Analicé series de NDVI, precipitación y humedad del suelo, examinando coincidencias entre cambios de disponibilidad hídrica y estado de la vegetación en las áreas de estudio.</li>
+          <li>Preparé observaciones satelitales y ambientales para cartografía y análisis comparativos en ArcGIS Pro, apoyando mapas de vegetación e hidrología y la evaluación del equipo sobre patrones hídricos.</li>
+        </ul>
+      </div>
+      <ul>
+        <li>Contribuí a informes técnicos, mapas, geodatabases, pósteres y presentaciones, comunicando métodos y hallazgos a colaboradores en inglés y español.</li>
+      </ul>
+      <p class="cv-links"><a href="https://jayjayanton.github.io/Website-Portfolio/projects/nasa-air-quality.html">Caso de estudio: calidad del aire</a><a href="https://jayjayanton.github.io/Website-Portfolio/projects/nasa-water-resources.html">Caso de estudio: recursos hídricos</a></p>
+    </div>
+  </section>
+
+  <section class="cv-section" aria-labelledby="cv-software">
+    <h2 id="cv-software">Desarrollo independiente de software y aplicaciones web</h2>
+
+    <div class="cv-entry">
+      <h3>PredioAI — Creador y único desarrollador</h3>
+      <ul>
+        <li>Concebí, diseñé y desarrollé una aplicación full-stack que conecta planos arquitectónicos con información predial de Quito: interfaz React/Vite/Leaflet y backend Python/FastAPI.</li>
+        <li>Integré servicios municipales ArcGIS REST con registros catastrales, zonificación, avalúos y capas cartográficas para buscar, explorar y comparar predios.</li>
+        <li>Desarrollé procesamiento nativo PDF/CAD con PyMuPDF/ezdxf: conversión de DWG compatibles, selección interactiva de geometrías, calibración de escala, mediciones y correcciones manuales.</li>
+        <li>Implementé intersecciones espaciales, transformaciones de coordenadas y ubicación de huellas de edificaciones con Shapely/pyproj; vinculé geometrías propuestas con parámetros municipales IRM revisados e información disponible sobre retiros.</li>
+        <li>Desarrollé interacciones vinculadas entre planos, predios y mediciones, con exportaciones CSV/JSON/GeoJSON para análisis y preparación de proyectos.</li>
+        <li>Implementé verificaciones frontend/backend automatizadas y validación de compilaciones de producción con GitHub Actions; publiqué el frontend en GitHub Pages y desplegué la API en Render.</li>
+      </ul>
+      <p class="cv-links"><a href="https://jayjayanton.github.io/Predio-AI/">Abrir PredioAI</a><a href="https://jayjayanton.github.io/Website-Portfolio/projects/predio-ai.html">Caso de estudio: desarrollo</a></p>
+    </div>
+
+    <div class="cv-entry cv-page-start">
+      <h3>Desarrollador web independiente — Aplicación de deportes de combate</h3>
+      <p class="cv-dates">Quito, Ecuador / Remoto | junio de 2026 – Actualidad</p>
+      <ul>
+        <li>Desarrollo una aplicación web full-stack para un cliente de deportes de combate con Node.js/JavaScript/HTML/CSS/PostgreSQL, interfaces adaptables, componentes interactivos y persistencia backend.</li>
+        <li>Recopilo requisitos directamente con el cliente, itero el diseño e implemento nuevas funcionalidades.</li>
+      </ul>
+    </div>
+
+    <div class="cv-entry">
+      <h3>Yuyay Analytics — Diseñador web y desarrollador frontend</h3>
+      <ul>
+        <li>Diseñé y desarrollé un sitio de consultoría adaptable con HTML/CSS/JavaScript para servicios de evaluación ambiental, investigación y análisis, con navegación consistente, imágenes regionales y contenido bilingüe.</li>
+        <li>Implementé tarjetas de proyectos interactivas, filtros por país/temática, búsqueda por palabras clave, enlaces a investigaciones/CV y muestras de software aplicado; mantuve y publiqué el sitio en GitHub Pages.</li>
+      </ul>
+      <p class="cv-links"><a href="https://jayjayanton.github.io/Yuyay-Analytics-/">Sitio web de Yuyay Analytics</a></p>
+    </div>
+
+    <div class="cv-entry">
+      <h3>Expense Analyzer — Desarrollador de aplicaciones en Python y JavaScript</h3>
+      <ul>
+        <li>Desarrollé análisis en navegador con Python/Pyodide para procesar CSV, normalizar fechas, categorizar transacciones y manejar importes decimales; usé JavaScript/Plotly para resúmenes interactivos de gastos y mensuales.</li>
+        <li>Implementé filtros por comercio/categoría, tablas ordenables, recategorización masiva, totales visibles, descargas CSV filtradas y exportaciones ZIP por categoría, manteniendo el procesamiento de estados de cuenta dentro del navegador.</li>
+      </ul>
+      <p class="cv-links"><a href="https://jayjayanton.github.io/Expense-Analyzer/">Aplicación Expense Analyzer</a></p>
+    </div>
+
+    <div class="cv-entry">
+      <h3>Clothing &amp; Beauty Store — Desarrollador de prototipos frontend y backend</h3>
+      <ul>
+        <li>Desarrollé un catálogo bilingüe con HTML/CSS/JavaScript: filtros por categoría, metadatos, múltiples vistas de prendas e imágenes alojadas en el repositorio.</li>
+        <li>Desarrollé un prototipo local de inventario con FastAPI/SQLAlchemy/SQLite, CRUD de productos y carga validada de imágenes, además de solicitudes de compra copiables para ventas individuales confirmadas por el vendedor.</li>
+      </ul>
+      <p class="cv-links"><a href="https://jayjayanton.github.io/AI-Clothing-Store/">Catálogo Clothing &amp; Beauty</a></p>
+    </div>
+
+    <div class="cv-entry">
+      <h3>Portafolio personal — Desarrollador del sitio web y sus herramientas</h3>
+      <ul>
+        <li>Desarrollé un portafolio con casos JSON como fuente única, plantillas HTML reutilizables y un generador Python para organizar evidencia de investigación, contribuciones a proyectos, publicaciones y un CV imprimible.</li>
+        <li>Desarrollé diseños adaptables, búsqueda de proyectos y filtros por categoría/etapa con mejora progresiva, cuyo estado puede compartirse por URL; añadí validación Python/Node para páginas generadas, enlaces y filtros.</li>
+      </ul>
+    </div>
+
+    <div class="cv-entry">
+      <h3>Ra’az Borg — Desarrollo frontend en una bifurcación existente</h3>
+      <ul>
+        <li>Trabajé en una bifurcación de daveeedlr/raaz-borg: sitio de cinco páginas sobre deportes de combate con HTML/CSS/JavaScript, estilos compartidos, navegación adaptable, selector inglés/español y efectos visuales interactivos.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cv-section cv-page-start" aria-labelledby="cv-ongoing">
+    <h2 id="cv-ongoing">Investigación independiente y desarrollo continuo</h2>
+    <div class="cv-entry">
+      <h3>Expansión urbana de Quito — Investigación de teledetección en curso</h3>
+      <ul>
+        <li>Desarrollé adquisición Sentinel-2, composición temporal y mosaicos espaciales para los valles orientales de Quito mediante Sentinel Hub y S3 de Copernicus Data Space, con extracción reproducible y composiciones de muestra para un piloto en Tumbaco.</li>
+        <li>Preparo próximas etapas sobre cuadrículas consistentes, etiquetas candidatas de áreas construidas, segmentación por visión computacional y evaluación independiente de precisión; los resultados de segmentación y tasas cuantificadas de crecimiento siguen planificados.</li>
+      </ul>
+    </div>
+    <p>Entre los próximos intereses de desarrollo se encuentra la visión por computador para planos arquitectónicos escaneados en PredioAI, ampliando los flujos existentes de la aplicación para geometría nativa de PDF/CAD.</p>
+  </section>
+
+  <section class="cv-section" aria-labelledby="cv-additional">
+    <h2 id="cv-additional">Experiencia profesional adicional</h2>
+    <div class="cv-entry">
+      <h3>Asistente de investigación bilingüe — Evaluación de adaptación basada en ecosistemas</h3>
+      <p class="cv-dates">Perú / Ecuador | septiembre de 2016 – enero de 2017</p>
+      <p class="cv-scope">Apoyo a la evaluación del Programa de Adaptación Basada en Ecosistemas para Ecosistemas de Montaña de UNEP / UNDP / IUCN, estudio de caso de Perú.</p>
+      <ul>
+        <li>Apoyé al evaluador principal con recopilación de datos cualitativos, consultas a actores y análisis documental en Nor Yauyos Cochas.</li>
+        <li>Contribuí a informes de evaluación y entregables técnicos en inglés y español sobre servicios ecosistémicos, adaptación climática y seguridad alimentaria e hídrica.</li>
+      </ul>
+    </div>
+    <div class="cv-entry">
+      <h3>Asistente de investigación bilingüe — Evaluación de biodiversidad y manejo forestal comunitario</h3>
+      <p class="cv-dates">México / Ecuador | agosto de 2016 – enero de 2017</p>
+      <p class="cv-scope">Apoyo a la evaluación final del proyecto GEF / UNDP 00071603 sobre bosques comunitarios ricos en biodiversidad y herramientas de gestión basadas en el mercado.</p>
+      <ul>
+        <li>Asistí al evaluador principal con entrevistas a actores, grupos focales, revisión documental y recolección de datos de campo en comunidades participantes.</li>
+        <li>Contribuí a informes técnicos de evaluación y entregables de apoyo en inglés/español.</li>
+      </ul>
+    </div>
+    <div class="cv-entry">
+      <h3>Berlitz — Profesor de inglés</h3>
+      <p class="cv-dates">Quito, Ecuador | enero de 2015 – junio de 2015</p>
+      <ul>
+        <li>Enseñé inglés a ejecutivos, personal de oficina y estudiantes particulares, en clases individuales y grupales adaptadas a distintos niveles y necesidades de comunicación profesional.</li>
+      </ul>
+    </div>
+    <div class="cv-entry">
+      <h3>Asistente de investigación bilingüe — Gestión integrada en tres ecorregiones prioritarias</h3>
+      <p class="cv-dates">México / Ecuador | octubre de 2010 – enero de 2011</p>
+      <p class="cv-scope">Apoyo a la evaluación final del proyecto UNDP / GEF México–CONANP–SEMARNAT 00013563.</p>
+      <ul>
+        <li>Apoyé al evaluador principal con consultas a actores, evaluaciones de campo y recopilación/análisis de datos cualitativos para un proyecto de desarrollo sostenible y conservación.</li>
+        <li>Contribuí a elaborar, revisar y traducir informes técnicos y entregables de evaluación en inglés/español.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cv-section cv-page-start" aria-labelledby="cv-publications">
+    <h2 id="cv-publications">Publicaciones con revisión por pares</h2>
+    <div class="cv-publication">
+      <p><strong>Oliver, J.</strong>, &amp; McManamay, R. A. (2025). <span lang="en">United States multi-sector land use and land cover base maps to support human and Earth system models.</span> <em>Scientific Data</em>, 12, 455. <strong>Primer autor.</strong> <a href="https://doi.org/10.1038/s41597-025-04713-6">doi:10.1038/s41597-025-04713-6</a></p>
+    </div>
+    <div class="cv-publication">
+      <p>Lueders, M. B., McManamay, R. A., <strong>Oliver, J. A.</strong>, Young, D., Bean, P., &amp; Mayes, K. (2026). <span lang="en">Reconstructing Long-Term Historical Hydrologic Alteration to Support Environmental Flows in Texas.</span> <em>River Research and Applications</em>. <strong>Coautor.</strong> <a href="https://doi.org/10.1002/rra.70172">doi:10.1002/rra.70172</a></p>
+      <p><strong>Contribución:</strong> Automaticé la delimitación de cuencas y la preparación de datos espaciales; desarrollé clasificación de cursos de agua de referencia para la investigación colaborativa sobre caudales ecológicos.</p>
+    </div>
+  </section>
+
+  <section class="cv-section cv-keep" aria-labelledby="cv-education">
+    <h2 id="cv-education">Formación académica</h2>
+    <p><strong>University of York</strong> — MSc, Economía Ambiental y Gestión Ambiental<br>York, Reino Unido | 2018</p>
+    <p><strong>University of South Florida</strong> — BS, Ciencias Ambientales y Política Ambiental<br>Tampa, Florida | 2014</p>
+  </section>
+
+  <section class="cv-section" aria-labelledby="cv-skills">
+    <h2 id="cv-skills">Competencias técnicas</h2>
+    <div class="cv-skills-grid">
+      <dl><dt>Programación e ingeniería de datos</dt><dd>Python, R, SQL, JavaScript, pandas, NumPy, ETL, APIs REST, PostgreSQL, bases de datos relacionales, archivos de ancho fijo, Selenium, BeautifulSoup, Linux, Bash, Git y almacenamiento en la nube de Azure.</dd></dl>
+      <dl><dt>Análisis geoespacial y teledetección</dt><dd>ArcGIS Pro, ArcGIS Enterprise, ArcGIS Online, Experience Builder, ArcPy, QGIS, GDAL, Rasterio, GeoPandas, Shapely, pyproj, PostGIS, procesamiento ráster/vectorial, uniones espaciales, transformaciones de coordenadas y series temporales satelitales.</dd></dl>
+      <dl><dt>Aprendizaje automático y estadística</dt><dd>scikit-learn, XGBoost, Random Forest, árboles de decisión, clasificación, regresión, ingeniería de variables, aprendizaje con clases desbalanceadas, validación cruzada, ajuste bayesiano, selección de umbrales, SHAP y evaluación espacial de modelos.</dd></dl>
+      <dl><dt>Aplicaciones web y despliegue</dt><dd>React, Vite, Node.js, HTML, CSS, Leaflet, FastAPI, SQLAlchemy, SQLite, Pyodide, GitHub Pages, Render, GitHub Actions, diseño adaptable y validación automatizada.</dd></dl>
+      <dl><dt>Herramientas documentales, de imagen y de análisis</dt><dd>PyMuPDF, ezdxf, extracción de geometría PDF/CAD, calibración de escala, procesamiento de imágenes y fotogramas con OpenCV, Plotly, matplotlib, Power BI y Excel.</dd></dl>
+      <dl><dt>Investigación y comunicación</dt><dd>Documentación técnica, redacción de artículos con revisión por pares, visualización de datos, presentaciones a actores involucrados, recopilación de requisitos y colaboración bilingüe en inglés y español.</dd></dl>
+    </div>
+  </section>
+</article>

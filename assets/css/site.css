@@ -315,8 +315,29 @@ a.contact-card:hover { border-color: #a99dce; box-shadow: var(--shadow); }
 .copyright { grid-column: 1 / -1; margin: 0; padding-top: 1.15rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.8125rem; }
 
 /* Master CV: one reading order, with long experience sections allowed to flow. */
+.cv-picker { max-width: 58rem; padding-top: 2.75rem; }
+.cv-picker-heading .eyebrow { margin-bottom: 0.5rem; }
+.cv-picker-heading .cv-picker-title { margin-bottom: 0.65rem; color: var(--ink); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 720; line-height: 1.25; letter-spacing: -0.025em; }
+.cv-picker-heading > p:last-child { max-width: 62ch; color: var(--muted); font-size: 1rem; }
+.cv-picker-controls { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: 1.25rem; }
+.cv-role-picker { margin: 0; border-color: var(--control-line); background: white; }
+.cv-role-picker summary { display: list-item; padding: 0.75rem 1rem; }
+.cv-role-picker summary > span { display: block; margin-bottom: 0.2rem; color: var(--muted); font-size: 0.8125rem; font-weight: 500; }
+.cv-role-picker summary > strong { font-size: 1rem; }
+.cv-role-picker > nav { display: grid; gap: 0.25rem; margin: 0; padding: 0.5rem; }
+.cv-role-picker > nav a { display: block; min-height: 3rem; padding: 0.7rem; border-radius: 0.4rem; text-decoration: none; }
+.cv-role-picker > nav strong, .cv-role-picker > nav span { display: block; }
+.cv-role-picker > nav strong { font-size: 0.9375rem; }
+.cv-role-picker > nav span { margin-top: 0.2rem; color: var(--muted); font-size: 0.8125rem; line-height: 1.45; }
+.cv-role-picker > nav a:hover, .cv-role-picker > nav a[aria-current="page"] { background: var(--accent-soft); }
+.cv-role-picker > nav a[aria-current="page"] strong { color: var(--accent-dark); }
+.cv-language-picker > span { display: block; margin-bottom: 0.5rem; color: var(--muted); font-size: 0.8125rem; }
+.cv-language-picker nav { display: flex; padding: 0.25rem; border: 1px solid var(--control-line); border-radius: 0.5rem; background: white; }
+.cv-language-picker a { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0.5rem 0.85rem; border-radius: 0.3rem; font-size: 0.9375rem; font-weight: 650; text-decoration: none; }
+.cv-language-picker a[aria-current="page"] { color: white; background: var(--accent); }
+.cv-picker .cv-actions { margin-top: 1rem; padding-top: 0; }
 .cv-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; padding-top: 2rem; }
-.cv-index { display: flex; flex-wrap: wrap; gap: 0.35rem 1.5rem; padding-top: 1.25rem; }
+.cv-index { display: flex; flex-wrap: wrap; gap: 0.35rem 1.5rem; max-width: 58rem; padding-top: 1.25rem; }
 .cv-index a { display: inline-flex; align-items: center; min-height: 2.75rem; font-size: 0.9375rem; font-weight: 600; }
 .cv-sheet { max-width: 58rem; margin: 2.5rem auto 5rem; padding: 3rem; border: 1px solid var(--line); border-radius: 1rem; background: white; }
 .cv-header { padding-bottom: 1.5rem; border-bottom: 1px solid var(--line); }
@@ -348,6 +369,8 @@ a.contact-card:hover { border-color: #a99dce; box-shadow: var(--shadow); }
 .cv-skills-grid dt, .cv-skills-grid h3 { margin: 0 0 0.25rem; color: var(--ink); font-size: 1rem; font-weight: 700; }
 .cv-skills-grid dd { margin: 0; color: var(--muted); }
 .cv-skills-grid p:last-child { margin-bottom: 0; }
+.cv-compact-skills > p { margin-bottom: 0.6rem; }
+.cv-targeted .cv-entry h3 a { color: inherit; }
 
 @media (max-width: 68rem) {
   .header-inner { gap: 1rem; }
@@ -467,6 +490,10 @@ a.contact-card:hover { border-color: #a99dce; box-shadow: var(--shadow); }
   .contact-band { padding: 1.6rem; }
   .cv-sheet { padding: 1.4rem; }
   .cv-sheet h1 { font-size: 2rem; }
+  .cv-picker-controls { grid-template-columns: 1fr; gap: 1rem; }
+  .cv-language-picker { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .cv-language-picker > span { margin: 0; }
+  .cv-picker .cv-actions .button { flex: 1 1 12rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -482,9 +509,19 @@ a.contact-card:hover { border-color: #a99dce; box-shadow: var(--shadow); }
     @bottom-left { content: "Jay Antonio Oliver · Master CV"; color: #555; font: 8.5pt Arial, sans-serif; }
     @bottom-right { content: counter(page) " / " counter(pages); color: #555; font: 8.5pt Arial, sans-serif; }
   }
+  @page focused-cv {
+    size: letter; margin: 0.55in;
+    @bottom-left { content: "Jay Antonio Oliver · CV"; color: #555; font: 8.5pt Arial, sans-serif; }
+    @bottom-right { content: counter(page) " / " counter(pages); color: #555; font: 8.5pt Arial, sans-serif; }
+  }
+  @page spanish-cv {
+    size: letter; margin: 0.55in;
+    @bottom-left { content: "Jay Antonio Oliver · Currículum"; color: #555; font: 8.5pt Arial, sans-serif; }
+    @bottom-right { content: counter(page) " / " counter(pages); color: #555; font: 8.5pt Arial, sans-serif; }
+  }
   html { scroll-behavior: auto; }
   body { display: block; background: white; color: #111; font: 10pt/1.4 Arial, sans-serif; }
-  .site-header, .site-footer, .skip-link, .nav-toggle, .contact-band, .case-index, .cv-actions, .cv-index, [data-print], .project-filters, .related-work { display: none !important; }
+  .site-header, .site-footer, .skip-link, .nav-toggle, .contact-band, .case-index, .cv-actions, .cv-index, .cv-picker, [data-print], .project-filters, .related-work { display: none !important; }
   .container { width: 100%; max-width: none; }
   .section, .page-heading, .case-heading, .case-section { padding-block: 0.8rem; }
   h1 { font-size: 24pt; }
@@ -527,4 +564,19 @@ a.contact-card:hover { border-color: #a99dce; box-shadow: var(--shadow); }
   .cv-skills-grid > * { margin-bottom: 6pt; break-inside: avoid; page-break-inside: avoid; }
   .cv-skills-grid dt, .cv-skills-grid h3 { margin: 0 0 2pt; font-size: 10pt; break-after: avoid; page-break-after: avoid; }
   .cv-skills-grid dd { margin: 0; color: #222; }
+  .cv-sheet[lang="es"] { page: spanish-cv; }
+  .cv-targeted { page: focused-cv; }
+  .cv-targeted p, .cv-targeted li { font-size: 10pt; line-height: 1.35; }
+  .cv-targeted .cv-header { padding-bottom: 6pt; }
+  .cv-targeted .cv-header .cv-kicker { font-size: 8.5pt; margin-bottom: 3pt; }
+  .cv-targeted .cv-header .cv-title { font-size: 12pt; margin-bottom: 5pt; }
+  .cv-targeted h2 { margin-top: 11pt; margin-bottom: 5pt; }
+  .cv-targeted .cv-entry { break-inside: avoid; page-break-inside: avoid; }
+  .cv-targeted .cv-entry + .cv-entry { margin-top: 8pt; }
+  .cv-targeted .cv-dates { margin-bottom: 3pt; font-weight: 400; }
+  .cv-targeted ul { margin-block: 3pt 4pt; }
+  .cv-targeted li + li { margin-top: 2pt; }
+  .cv-targeted p { margin-bottom: 4pt; }
+  .cv-targeted .cv-publication { margin-block: 5pt; }
+  .cv-targeted .cv-compact-skills p { margin-bottom: 3pt; }
 }

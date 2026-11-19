@@ -1,0 +1,152 @@
+{
+  "id": "geospatial-data-engineer",
+  "label": {
+    "en": "Geospatial Data Engineer",
+    "es": "Ingeniero de datos geoespaciales"
+  },
+  "description": {
+    "en": "Geospatial data engineering, reproducible Python/SQL pipelines and API-backed software.",
+    "es": "Ingeniería geoespacial, procesos reproducibles Python/SQL y software con APIs."
+  },
+  "summary": {
+    "en": "Geospatial data scientist and developer with 6+ years of experience turning satellite observations, regulatory records and large spatial datasets into reproducible analytical workflows. Builds Python and SQL pipelines across APIs, databases and legacy files, with attention to identifiers, coordinate systems and data quality. Creator and sole developer of PredioAI. Bilingual in English and Spanish, with research experience spanning NASA DEVELOP, WWF, USGS, Baylor University and Leidos/NETL.",
+    "es": "Científico de datos geoespaciales y desarrollador con más de seis años de experiencia en observaciones satelitales, registros regulatorios y datos espaciales. Desarrolla flujos reproducibles Python/SQL con APIs, bases de datos y archivos heredados, cuidando identificadores, coordenadas y calidad. Creador y único desarrollador de PredioAI. Bilingüe inglés/español, con experiencia en NASA DEVELOP, WWF, USGS, Baylor University y Leidos/NETL."
+  },
+  "skills": [
+    {
+      "label": {
+        "en": "Data engineering",
+        "es": "Ingeniería de datos"
+      },
+      "text": {
+        "en": "Python, SQL, R, pandas, NumPy, ETL, REST APIs, PostgreSQL, fixed-width files, Linux, Bash and Git.",
+        "es": "Python, SQL, R, pandas, NumPy, ETL, APIs REST, PostgreSQL, archivos de ancho fijo, Linux, Bash y Git."
+      }
+    },
+    {
+      "label": {
+        "en": "Geospatial processing",
+        "es": "Procesamiento geoespacial"
+      },
+      "text": {
+        "en": "GeoPandas, GDAL, Rasterio, ArcGIS Pro, ArcGIS Enterprise, Experience Builder, Shapely, pyproj; raster/vector processing, spatial joins, coordinate transformations and satellite time series.",
+        "es": "GeoPandas, GDAL, Rasterio, ArcGIS Pro, ArcGIS Enterprise, Experience Builder, Shapely, pyproj; procesamiento ráster/vectorial, uniones espaciales, transformaciones de coordenadas y series temporales satelitales."
+      }
+    },
+    {
+      "label": {
+        "en": "Software and validation",
+        "es": "Software y validación"
+      },
+      "text": {
+        "en": "FastAPI, React, Leaflet, PyMuPDF, ezdxf, GitHub Actions, automated checks, data standardization and technical documentation.",
+        "es": "FastAPI, React, Leaflet, PyMuPDF, ezdxf, GitHub Actions, verificaciones automatizadas, estandarización de datos y documentación técnica."
+      }
+    }
+  ],
+  "experience": [
+    {
+      "id": "leidos",
+      "bullets": [
+        {
+          "en": "Reconciled well identifiers, state-specific orphan lists and inconsistent source attributes for machine learning workflows using a team-assembled national inventory of more than 7 million well records.",
+          "es": "Concilié identificadores, listas estatales de pozos huérfanos y atributos inconsistentes para aprendizaje automático sobre un inventario nacional de más de 7 millones de registros compilado por el equipo."
+        },
+        {
+          "en": "Built Python/SQL workflows for Texas Railroad Commission fixed-width wellbore files, recovering identifiers, enriching Well Header records and connecting production datasets.",
+          "es": "Desarrollé flujos Python/SQL para archivos de pozos de ancho fijo de Texas Railroad Commission: recuperación de identificadores, enriquecimiento de Well Header y vinculación con producción."
+        },
+        {
+          "en": "Automated 25 years of Kentucky well records, reducing processing effort by approximately 80%; standardized EPA facility data for 2010–2024 through APIs, browser extraction and pandas.",
+          "es": "Automaticé 25 años de registros de pozos de Kentucky, reduciendo aproximadamente 80 % el esfuerzo; estandaricé datos EPA de instalaciones (2010–2024) mediante APIs, navegador y pandas."
+        },
+        {
+          "en": "Converted more than 400 geologic rasters to quality-checked vector layers and prepared basin-specific web maps for NETL atlas publication.",
+          "es": "Convertí más de 400 rásteres geológicos a capas vectoriales con control de calidad; preparé mapas web por cuenca para el atlas de NETL."
+        }
+      ]
+    },
+    {
+      "id": "baylor-lab",
+      "bullets": [
+        {
+          "en": "Primary Python developer for 30-meter U.S. land-use basemaps across five observation years; harmonized raster classifications and model-specific aggregations for a first-author Scientific Data publication.",
+          "es": "Fui el principal desarrollador Python de mapas base de uso del suelo de EE. UU. a 30 metros para cinco años; armonicé clasificaciones ráster y agregaciones por modelo. Primer autor en Scientific Data."
+        },
+        {
+          "en": "Integrated REST APIs, SQL databases, flat files and geospatial layers into reproducible analytical and ETL workflows.",
+          "es": "Integré APIs REST, bases SQL, archivos planos y capas geoespaciales en flujos analíticos y ETL reproducibles."
+        }
+      ]
+    },
+    {
+      "id": "baylor-specialist",
+      "bullets": [
+        {
+          "en": "Automated watershed delineation with R and the Model My Watershed API; built Python/Selenium/OpenCV workflows for roadway-camera discovery, scheduled image collection and video-frame extraction.",
+          "es": "Automaticé la delimitación de cuencas (R, API Model My Watershed) y la localización de cámaras viales, captura periódica y extracción de fotogramas (Python/Selenium/OpenCV)."
+        }
+      ]
+    },
+    {
+      "id": "usgs",
+      "bullets": [
+        {
+          "en": "Processed more than 20 years of Landsat imagery in R, Python and ArcGIS Pro, producing pixel-level land-cover change maps and analytical datasets.",
+          "es": "Procesé más de 20 años de Landsat con R, Python y ArcGIS Pro; generé mapas de cambio de cobertura por píxel y datos analíticos."
+        }
+      ]
+    },
+    {
+      "id": "wwf",
+      "bullets": [
+        {
+          "en": "Harmonized environmental, socioeconomic and biodiversity datasets across Colombia, Brazil and the Mekong region; prepared spatial predictors and maps for conservation research.",
+          "es": "Armonicé datos ambientales, socioeconómicos y de biodiversidad de Colombia, Brasil y el Mekong; preparé predictores espaciales y mapas para conservación."
+        }
+      ]
+    },
+    {
+      "id": "nasa",
+      "bullets": [
+        {
+          "en": "Built Python/Linux acquisition and preprocessing workflows for more than 900 multidimensional satellite and environmental datasets across Central America air-quality and Peru water-resources projects.",
+          "es": "Desarrollé flujos Python/Linux para adquirir y preprocesar más de 900 conjuntos de datos satelitales y ambientales multidimensionales entre ambos proyectos: calidad del aire en Centroamérica y recursos hídricos en Perú."
+        },
+        {
+          "en": "Aligned aerosol observations for product comparisons and integrated vegetation, precipitation and soil-moisture time series for Lambayeque, Peru; delivered maps, geodatabases and technical reports.",
+          "es": "Armonicé aerosoles para comparar productos e integré series de vegetación, precipitación y humedad del suelo en Lambayeque, Perú; elaboré mapas, geodatabases e informes técnicos."
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "predio",
+      "bullets": [
+        {
+          "en": "Creator and sole developer: built React/FastAPI services combining municipal ArcGIS REST data, PDF/CAD geometry, Shapely/pyproj spatial operations and GeoJSON exports; implemented automated frontend/backend checks.",
+          "es": "Como creador y único desarrollador, integré React/FastAPI, datos municipales ArcGIS REST, geometría PDF/CAD, operaciones Shapely/pyproj y exportaciones GeoJSON, con verificaciones frontend/backend automatizadas."
+        }
+      ]
+    },
+    {
+      "id": "quito",
+      "bullets": [
+        {
+          "en": "Developed Sentinel-2 acquisition, temporal compositing and spatial mosaicking workflows for Quito’s eastern valleys; segmentation and quantified urban-growth results remain planned research outputs.",
+          "es": "Desarrollé adquisición Sentinel-2, composición temporal y mosaicos para los valles orientales de Quito; la segmentación y cuantificación del crecimiento urbano permanecen planificadas."
+        }
+      ]
+    },
+    {
+      "id": "expense",
+      "bullets": [
+        {
+          "en": "Built a browser-based expense analytics application with Python/Pyodide for CSV parsing, date normalization and transaction categorization, plus interactive spending summaries, filtering, bulk recategorization and downloadable analytical outputs.",
+          "es": "Desarrollé análisis de gastos en navegador con Python/Pyodide: CSV, normalización de fechas, categorización, resúmenes interactivos, filtros, recategorización masiva y exportaciones."
+        }
+      ]
+    }
+  ]
+}

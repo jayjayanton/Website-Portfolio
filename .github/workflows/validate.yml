@@ -28,6 +28,11 @@ jobs:
       - name: Check generated pages
         run: python3 tools/build.py --check
 
+      - name: Prepare and validate CV downloads
+        run: |
+          python3 tools/render_cvs.py
+          python3 tools/render_cvs.py --check
+
       - name: Check pages and content rules
         run: python3 -m unittest discover -s tests -v
 

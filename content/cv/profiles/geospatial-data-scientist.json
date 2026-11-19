@@ -1,0 +1,147 @@
+{
+  "id": "geospatial-data-scientist",
+  "label": {
+    "en": "Geospatial Data Scientist",
+    "es": "Científico de datos geoespaciales"
+  },
+  "description": {
+    "en": "Spatial modeling, remote sensing and environmental applications.",
+    "es": "Modelación espacial, teledetección y aplicaciones ambientales."
+  },
+  "summary": {
+    "en": "Geospatial data scientist with 6+ years of experience linking satellite observations, environmental records and spatial models. Develops reproducible Python and R workflows for land-cover mapping, watershed analysis and energy research. Combines peer-reviewed research with interactive geospatial application development, translating complex spatial datasets into model inputs, maps and tools for scientific and practical use.",
+    "es": "Científico de datos geoespaciales con más de 6 años de experiencia integrando observaciones satelitales, registros ambientales y modelos espaciales. Desarrolla flujos reproducibles en Python y R para cartografía de coberturas, análisis de cuencas e investigación energética. Combina publicaciones científicas y aplicaciones geoespaciales interactivas para convertir datos complejos en insumos de modelación, mapas y herramientas."
+  },
+  "skills": [
+    {
+      "label": {
+        "en": "Geospatial analysis",
+        "es": "Análisis geoespacial"
+      },
+      "text": {
+        "en": "ArcGIS Pro, ArcGIS Enterprise, ArcPy, QGIS, GDAL, Rasterio, GeoPandas, Shapely, pyproj; raster/vector processing, coordinate transformations and spatial joins.",
+        "es": "ArcGIS Pro, ArcGIS Enterprise, ArcPy, QGIS, GDAL, Rasterio, GeoPandas, Shapely, pyproj; procesamiento ráster/vectorial, transformaciones de coordenadas y uniones espaciales."
+      }
+    },
+    {
+      "label": {
+        "en": "Remote sensing and modeling",
+        "es": "Teledetección y modelación"
+      },
+      "text": {
+        "en": "Python, R, Landsat, Sentinel-2, MODIS, VIIRS; spatial feature engineering, Random Forest, XGBoost, cross-validation and SHAP.",
+        "es": "Python, R, Landsat, Sentinel-2, MODIS, VIIRS; variables predictoras espaciales, Random Forest, XGBoost, validación cruzada y SHAP."
+      }
+    },
+    {
+      "label": {
+        "en": "Data and delivery",
+        "es": "Datos y productos"
+      },
+      "text": {
+        "en": "SQL, REST APIs, pandas, Leaflet, FastAPI, Git; reproducible pipelines, web maps and technical communication.",
+        "es": "SQL, API REST, pandas, Leaflet, FastAPI, Git; flujos reproducibles, mapas web y comunicación técnica."
+      }
+    }
+  ],
+  "experience": [
+    {
+      "id": "leidos",
+      "bullets": [
+        {
+          "en": "Engineered spatial, temporal and categorical predictors for orphaned-well screening across a team-assembled inventory exceeding 7 million records, including nearest-known-orphan distances calculated from training-reference data.",
+          "es": "Diseñé variables espaciales, temporales y categóricas para identificar posibles pozos huérfanos en un inventario del equipo con más de 7 millones de registros, incluidas distancias al pozo huérfano conocido más cercano usando datos de entrenamiento."
+        },
+        {
+          "en": "Trained basin-specific Random Forest and XGBoost workflows using Bayesian search, stratified validation, training-derived thresholds and SHAP; investigated Enverus enrichment across approximately 900,000 Appalachian Basin wells.",
+          "es": "Entrené modelos Random Forest y XGBoost por cuenca con búsqueda bayesiana, validación estratificada, umbrales de entrenamiento y SHAP; investigué el enriquecimiento de datos con Enverus para aproximadamente 900.000 pozos de los Apalaches."
+        },
+        {
+          "en": "Converted more than 400 geologic rasters to standardized polygon datasets and prepared basin-specific web maps for NETL atlas publication using ArcGIS Enterprise and Experience Builder.",
+          "es": "Convertí más de 400 rásteres geológicos en conjuntos de polígonos estandarizados y preparé mapas web por cuenca para el atlas de NETL con ArcGIS Enterprise y Experience Builder."
+        },
+        {
+          "en": "Automated acquisition and preparation of 25 years of Kentucky well records using Python, GeoPandas, Selenium and BeautifulSoup, reducing processing effort by approximately 80% for that workflow.",
+          "es": "Automaticé la adquisición y preparación de 25 años de registros de pozos de Kentucky con Python, GeoPandas, Selenium y BeautifulSoup, reduciendo aproximadamente un 80% el esfuerzo de procesamiento de ese flujo."
+        }
+      ]
+    },
+    {
+      "id": "baylor-lab",
+      "bullets": [
+        {
+          "en": "Served as primary Python developer for 30-meter U.S. land-use and land-cover basemaps covering five observation years from 2008 to 2019; published the research as first author in Scientific Data.",
+          "es": "Fui desarrollador principal en Python de mapas de uso y cobertura del suelo de Estados Unidos a 30 metros para cinco años entre 2008 y 2019; publiqué como primer autor en Scientific Data."
+        },
+        {
+          "en": "Harmonized NLCD, USDA Cropland Data Layer and irrigation data; implemented GCAM, CLM and LUH2 crosswalks and assessed fractional land-cover differences with spatial mean squared error.",
+          "es": "Armonicé NLCD, USDA Cropland Data Layer y datos de riego; implementé correspondencias para GCAM, CLM y LUH2 y evalué fracciones de cobertura mediante error cuadrático medio espacial."
+        }
+      ]
+    },
+    {
+      "id": "baylor-specialist",
+      "bullets": [
+        {
+          "en": "Automated watershed delineation through the Model My Watershed API in R and developed reference-stream identification workflows supporting coauthored environmental-flow research.",
+          "es": "Automaticé la delimitación de cuencas mediante la API Model My Watershed en R y desarrollé flujos para identificar cauces de referencia, contribuyendo como coautor a investigación sobre caudales ambientales."
+        }
+      ]
+    },
+    {
+      "id": "usgs",
+      "bullets": [
+        {
+          "en": "Produced pixel-level land-cover change maps from more than 20 years of Landsat imagery, using R/Python raster workflows, tasseled-cap indices and transition matrices.",
+          "es": "Produje mapas de cambio de cobertura por píxel con más de 20 años de imágenes Landsat, procesamiento ráster en R/Python, índices tasseled-cap y matrices de transición."
+        }
+      ]
+    },
+    {
+      "id": "wwf",
+      "bullets": [
+        {
+          "en": "Built spatial predictors from Hansen forest-cover and environmental data for 2000–2017; compared logistic models linking forest loss with infrastructure, land use and socioeconomic conditions.",
+          "es": "Construí variables espaciales con datos forestales Hansen y ambientales de 2000–2017; comparé modelos logísticos sobre asociaciones entre pérdida forestal, infraestructura, uso del suelo y condiciones socioeconómicas."
+        }
+      ]
+    },
+    {
+      "id": "nasa",
+      "bullets": [
+        {
+          "en": "Processed more than 900 multidimensional datasets across Central America air-quality and Peru water-resource projects using Python, Linux and GDAL, preparing observations for ArcGIS Pro and statistical analysis.",
+          "es": "Procesé más de 900 conjuntos multidimensionales entre ambos proyectos de calidad del aire en Centroamérica y recursos hídricos en Perú con Python, Linux y GDAL, preparando observaciones para ArcGIS Pro y análisis estadístico."
+        },
+        {
+          "en": "Compared MODIS/VIIRS aerosol optical depth with San Salvador PM2.5, and analyzed NDVI, precipitation, evapotranspiration and soil moisture to investigate mesquite forest decline in Lambayeque.",
+          "es": "Comparé profundidad óptica de aerosoles MODIS/VIIRS con PM2.5 de San Salvador y analicé NDVI, precipitación, evapotranspiración y humedad del suelo para estudiar el deterioro de bosques de algarrobo en Lambayeque."
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "predio",
+      "bullets": [
+        {
+          "en": "Created PredioAI as its sole developer, connecting Quito cadastral, zoning and valuation data through municipal ArcGIS REST services, React/Leaflet maps and Python/FastAPI endpoints.",
+          "es": "Creé PredioAI como único desarrollador, integrando catastro, zonificación y avalúos de Quito mediante servicios municipales ArcGIS REST, mapas React/Leaflet y endpoints Python/FastAPI."
+        },
+        {
+          "en": "Implemented native PDF/CAD geometry selection, calibrated measurements, coordinate transformations and footprint placement using PyMuPDF, ezdxf, Shapely and pyproj, with CSV/JSON/GeoJSON exports.",
+          "es": "Implementé selección de geometría nativa PDF/CAD, mediciones calibradas, transformaciones de coordenadas y ubicación de huellas de edificación con PyMuPDF, ezdxf, Shapely y pyproj, con exportaciones CSV/JSON/GeoJSON."
+        }
+      ]
+    },
+    {
+      "id": "quito",
+      "bullets": [
+        {
+          "en": "Developed Sentinel-2 acquisition, temporal composites and mosaics for a Tumbaco pilot using Sentinel Hub and Copernicus Data Space; segmentation and independent accuracy assessment remain planned research stages.",
+          "es": "Desarrollé adquisición Sentinel-2, composiciones temporales y mosaicos para un piloto en Tumbaco con Sentinel Hub y Copernicus Data Space; la segmentación y evaluación independiente de exactitud son etapas previstas."
+        }
+      ]
+    }
+  ]
+}

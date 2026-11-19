@@ -1,0 +1,139 @@
+{
+  "id": "spatial-analyst",
+  "label": {
+    "en": "Spatial Analyst",
+    "es": "Analista espacial"
+  },
+  "description": {
+    "en": "GIS, environmental mapping, remote sensing and watershed analysis.",
+    "es": "SIG, cartografía ambiental, teledetección y análisis de cuencas."
+  },
+  "summary": {
+    "en": "Spatial analyst with 6+ years of experience turning satellite observations and geographic data into environmental maps, watershed analyses and decision-support tools. Combines ArcGIS, Python and R with research across NASA DEVELOP, USGS, WWF, Baylor University and Leidos/NETL. Creator and sole developer of PredioAI; bilingual in English and Spanish.",
+    "es": "Analista espacial con más de seis años de experiencia en cartografía ambiental, análisis de cuencas y teledetección. Combina ArcGIS, Python y R con investigación en NASA DEVELOP, USGS, WWF, Baylor University y Leidos/NETL para transformar observaciones satelitales y datos geográficos en productos útiles. Creador y único desarrollador de PredioAI; bilingüe en inglés y español."
+  },
+  "skills": [
+    {
+      "label": {
+        "en": "GIS & mapping",
+        "es": "SIG y cartografía"
+      },
+      "text": {
+        "en": "ArcGIS Pro, QGIS, ArcGIS Enterprise, Experience Builder; raster/vector analysis, spatial joins and coordinate transformations.",
+        "es": "ArcGIS Pro, QGIS, ArcGIS Enterprise, Experience Builder; análisis ráster/vectorial, uniones espaciales y transformación de coordenadas."
+      }
+    },
+    {
+      "label": {
+        "en": "Remote sensing",
+        "es": "Teledetección"
+      },
+      "text": {
+        "en": "Landsat, Sentinel-2, MODIS, VIIRS, CALIOP; land-cover change, NDVI, satellite time series and watershed delineation.",
+        "es": "Landsat, Sentinel-2, MODIS, VIIRS, CALIOP; cambios de cobertura, NDVI, series temporales satelitales y delimitación de cuencas."
+      }
+    },
+    {
+      "label": {
+        "en": "Automation & analysis",
+        "es": "Automatización y análisis"
+      },
+      "text": {
+        "en": "Python, R, SQL, ArcPy, GeoPandas, Rasterio, GDAL, Shapely and pyproj; reproducible spatial processing.",
+        "es": "Python, R, SQL, ArcPy, GeoPandas, Rasterio, GDAL, Shapely y pyproj; procesamiento espacial reproducible."
+      }
+    }
+  ],
+  "experience": [
+    {
+      "id": "leidos",
+      "bullets": [
+        {
+          "en": "Converted more than 400 geologic rasters into standardized polygon layers and prepared basin-specific web maps for NETL atlas publication through ArcGIS Enterprise and Experience Builder.",
+          "es": "Convertí más de 400 rásteres geológicos en capas poligonales estandarizadas y preparé mapas web por cuenca para el atlas de NETL mediante ArcGIS Enterprise y Experience Builder."
+        },
+        {
+          "en": "Engineered spatial predictors from well locations, land cover and basin context for orphaned-well screening within a team-assembled national inventory exceeding 7 million records.",
+          "es": "Generé predictores espaciales a partir de ubicaciones de pozos, cobertura del suelo y cuencas para detectar posibles pozos huérfanos en un inventario nacional del equipo de más de 7 millones de registros."
+        }
+      ]
+    },
+    {
+      "id": "baylor-lab",
+      "bullets": [
+        {
+          "en": "Developed 30-meter U.S. land-use basemaps for five observation years spanning 2008–2019; combined land-cover, crop and irrigation data and compared fractional land-cover representations.",
+          "es": "Desarrollé mapas base de uso del suelo de Estados Unidos a 30 metros para cinco años entre 2008 y 2019; integré cobertura, cultivos y riego, y comparé representaciones fraccionales de cobertura."
+        }
+      ]
+    },
+    {
+      "id": "baylor-specialist",
+      "bullets": [
+        {
+          "en": "Automated watershed delineation from stream-gage coordinates using R and the Model My Watershed API; prepared boundaries and attributes supporting Texas environmental-flow and reference-stream analyses.",
+          "es": "Automaticé la delimitación de cuencas desde coordenadas de estaciones hidrométricas mediante R y la API Model My Watershed; preparé límites y atributos para estudiar caudales ambientales y ríos de referencia en Texas."
+        }
+      ]
+    },
+    {
+      "id": "usgs",
+      "bullets": [
+        {
+          "en": "Analyzed more than 20 years of Landsat imagery using tasseled-cap indices and transition matrices to characterize land-cover change.",
+          "es": "Analicé más de 20 años de imágenes Landsat mediante índices tasseled cap y matrices de transición para caracterizar cambios de cobertura del suelo."
+        },
+        {
+          "en": "Produced pixel-level change maps and analytical datasets with R, Python and ArcGIS Pro.",
+          "es": "Generé mapas de cambio a escala de píxel y conjuntos de datos analíticos con R, Python y ArcGIS Pro."
+        }
+      ]
+    },
+    {
+      "id": "wwf",
+      "bullets": [
+        {
+          "en": "Integrated forest cover, terrain, infrastructure, protected areas and socioeconomic predictors; developed maps and logistic-regression analyses of deforestation patterns for conservation research.",
+          "es": "Integré cobertura forestal, relieve, infraestructura, áreas protegidas y predictores socioeconómicos; elaboré mapas y análisis de regresión logística sobre patrones de deforestación para investigación en conservación."
+        }
+      ]
+    },
+    {
+      "id": "nasa",
+      "bullets": [
+        {
+          "en": "Processed more than 900 satellite/environmental datasets across two projects; prepared MODIS, VIIRS and CALIOP observations for Central America air-quality analysis and comparisons with San Salvador PM2.5.",
+          "es": "Procesé más de 900 conjuntos de datos satelitales y ambientales entre dos proyectos; preparé observaciones MODIS, VIIRS y CALIOP para analizar calidad del aire en Centroamérica y comparar con PM2.5 de San Salvador."
+        },
+        {
+          "en": "Mapped vegetation and hydrologic conditions in Lambayeque, Peru, integrating NDVI, precipitation, evapotranspiration and soil-moisture observations to investigate mesquite forest decline.",
+          "es": "Cartografié condiciones de vegetación e hidrología en Lambayeque, Perú, integrando NDVI, precipitación, evapotranspiración y humedad del suelo para investigar el deterioro de bosques de algarrobo."
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "predio",
+      "bullets": [
+        {
+          "en": "Created PredioAI as sole developer, integrating Quito cadastral, zoning and valuation records through REST APIs into interactive parcel maps and comparison tools.",
+          "es": "Creé PredioAI como único desarrollador, integrando catastro, zonificación y avalúos de Quito mediante API REST en mapas interactivos y herramientas de comparación de predios."
+        },
+        {
+          "en": "Implemented Shapely/pyproj spatial operations, footprint placement and reviewed IRM comparisons linked to user-calibrated PDF/CAD measurements.",
+          "es": "Implementé operaciones espaciales con Shapely/pyproj, ubicación de huellas de edificaciones y comparación con parámetros revisados del IRM, vinculadas a mediciones PDF/CAD calibradas por el usuario."
+        }
+      ]
+    },
+    {
+      "id": "quito",
+      "bullets": [
+        {
+          "en": "Prepared Sentinel-2 composites and mosaics for a Tumbaco pilot; developing the validation framework for planned urban segmentation and change analysis.",
+          "es": "Preparé composiciones y mosaicos Sentinel-2 para un piloto en Tumbaco; desarrollo el marco de validación para futuros modelos de segmentación urbana y análisis de cambios."
+        }
+      ]
+    }
+  ]
+}

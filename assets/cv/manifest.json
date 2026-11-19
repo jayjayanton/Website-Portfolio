@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "default_profile": "geospatial-data-scientist",
+  "documents": [
+    {
+      "profile": "data-scientist",
+      "language": "en",
+      "label": "Data Scientist",
+      "page": "cv/data-scientist-en.html",
+      "pdf": "assets/cv/Jay_Antonio_Oliver_Data_Scientist_EN.pdf",
+      "max_pages": 2
+    },
+    {
+      "profile": "data-scientist",
+      "language": "es",
+      "label": "Científico de datos",
+      "page": "cv/data-scientist-es.html",
+      "pdf": "assets/cv/Jay_Antonio_Oliver_Data_Scientist_ES.pdf",
+      "max_pages": 2
+    },
+    {
+      "profile": "spatial-analyst",
+      "language": "en",
+      "label": "Spatial Analyst",
+      "page": "cv/spatial-analyst-en.html",
+      "pdf": "assets/cv/Jay_Antonio_Oliver_Spatial_Analyst_EN.pdf",
+      "max_pages": 2
+    },
+    {
+      "profile": "spatial-analyst",
+      "language": "es",
+      "label": "Analista espacial",
+      "page": "cv/spatial-analyst-es.html",
+      "pdf": "assets/cv/Jay_Antonio_Oliver_Spatial_Analyst_ES.pdf",
+      "max_pages": 2
+    },
+    {
+      "profile": "geospatial-data-specialist",
+      "language": "en",
+      "label": "Geospatial Data Specialist",
+      "page": "cv/geospatial-data-specialist-en.html",
+      "pdf": "assets/cv/Jay_Antonio_Oliver_Geospatial_Data_Specialist_EN.pdf",
+      "max_pages": 2
+    },
+    {
+      "profile": "geospatial-data-specialist",
+      "language": "es",
+      "label": "Especialista en datos geoespaciales",
+      "page": "cv/geospatial-data-specialist-es.html",
+      "pdf": "assets/cv/Jay_Antonio_Oliver_Geospatial_Data_Specialist_ES.pdf",
+      "max_pages": 2
+    },
+    {
+      "profile": "geospatial-data-engineer",
+      "language": "en",
+      "label": "Geospatial Data Engineer",
+      "page": "cv/geospatial-data-engineer-en.html",
+      "pdf": "assets/cv/Jay_Antonio_Oliver_Geospatial_Data_Engineer_EN.pdf",
+      "max_pages": 2
+    },
+    {
+      "profile": "geospatial-data-engineer",
+      "language": "es",
+      "label": "Ingeniero de datos geoespaciales",
+      "page": "cv/geospatial-data-engineer-es.html",
+      "pdf": "assets/cv/Jay_Antonio_Oliver_Geospatial_Data_Engineer_ES.pdf",
+      "max_pages": 2
+    },
+    {
+      "profile": "geospatial-data-scientist",
+      "language": "en",
+      "label": "Geospatial Data Scientist",
+      "page": "cv/geospatial-data-scientist-en.html",
+      "pdf": "assets/cv/Jay_Antonio_Oliver_Geospatial_Data_Scientist_EN.pdf",
+      "max_pages": 2
+    },
+    {
+      "profile": "geospatial-data-scientist",
+      "language": "es",
+      "label": "Científico de datos geoespaciales",
+      "page": "cv/geospatial-data-scientist-es.html",
+      "pdf": "assets/cv/Jay_Antonio_Oliver_Geospatial_Data_Scientist_ES.pdf",
+      "max_pages": 2
+    },
+    {
+      "profile": "master",
+      "language": "en",
+      "label": "Master CV",
+      "page": "cv/master-en.html",
+      "pdf": "assets/Jay_Antonio_Oliver_CV.pdf",
+      "max_pages": null
+    },
+    {
+      "profile": "master",
+      "language": "es",
+      "label": "CV completo",
+      "page": "cv/master-es.html",
+      "pdf": "assets/cv/Jay_Antonio_Oliver_Master_ES.pdf",
+      "max_pages": null
+    }
+  ]
+}

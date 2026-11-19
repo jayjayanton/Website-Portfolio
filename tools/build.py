@@ -17,6 +17,7 @@ import re
 import sys
 from string import Template
 from urllib.parse import quote, urlsplit
+from cv_collection import CVCollection, LANGUAGES
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -75,6 +76,7 @@ class Site:
         self.images = read_json(CONTENT / "image-dimensions.json")
         self.records = {p.stem: read_json(p) for p in sorted((CONTENT / "case-studies").glob("*.json"))}
         self.order = self.data["project_order"]
+        self.cvs = CVCollection(self.data)
         self.validate()
         self.css_version = asset_version("assets/css/site.css")
         self.js_version = asset_version("assets/js/site.js")
@@ -148,18 +150,22 @@ class Site:
             for i, item in enumerate(self.data["progression"], 1)
         )
 
-    def page(self, file_name: str, title: str, description: str, body: str, active: str = "", og_image: str = "images/predioai-homepage.jpg") -> str:
-        prefix = "../" if file_name.startswith("projects/") else ""
+    def page(self, file_name: str, title: str, description: str, body: str, active: str = "", og_image: str = "images/predioai-homepage.jpg", language: str = "en", extra_head: str = "", canonical_path: str | None = None) -> str:
+        prefix = "../" * (len(Path(file_name).parts) - 1)
+        ui = ({"skip": "Saltar al contenido", "home": "Inicio de Jay Oliver", "brand": "Ciencia de datos y desarrollo geoespacial", "menu": "Menú", "close": "Cerrar", "nav": "Navegación principal", "cv": "Elegir CV", "footer": "Ciencia de datos, análisis geoespacial y software útil.", "email": "Correo", "code": "Código público", "contact": "Contacto"} if language == "es" else
+              {"skip": "Skip to content", "home": "Jay Oliver home", "brand": "Data science & geospatial development", "menu": "Menu", "close": "Close", "nav": "Main navigation", "cv": "Choose CV", "footer": "Data science, geospatial analysis & useful software.", "email": "Email", "code": "Public code", "contact": "Contact"})
+        labels = ("Proyectos", "Investigación", "Perfil", "Contacto") if language == "es" else ("Work", "Research", "About", "Contact")
         navigation = "".join(
             f'<a href="{prefix}{path}"' + (' aria-current="page"' if key == active else "") + f'>{label}</a>'
-            for key, path, label in (("work", "projects.html", "Work"), ("research", "research.html", "Research"), ("about", "about.html", "About"), ("contact", "contact.html", "Contact"))
+            for (key, path), label in zip((("work", "projects.html"), ("research", "research.html"), ("about", "about.html"), ("contact", "contact.html")), labels)
         )
         return render("base.html", title=esc(title), description=esc(description),
-                      canonical=esc(self.data["base_url"] + file_name),
+                      canonical=esc(self.data["base_url"] + (canonical_path or file_name)),
                       og_image=esc(og_image if og_image.startswith("https://") else self.data["base_url"] + quote(og_image.lstrip("/"), safe="/")),
                       prefix=prefix, css_version=self.css_version, js_version=self.js_version,
-                      extra_head="", body_class="page-" + ("case" if prefix else Path(file_name).stem),
-                      navigation=navigation, body=body)
+                      extra_head=extra_head, body_class="page-" + ("case" if file_name.startswith("projects/") else "cv" if file_name.startswith("cv/") else Path(file_name).stem),
+                      language=language, cv_current=' aria-current="page"' if active == "cv" else "",
+                      navigation=navigation, body=body, **{f"ui_{key}": esc(value) for key, value in ui.items()})
 
     def homepage(self) -> str:
         capability_data = [
@@ -238,11 +244,14 @@ class Site:
         body = render("research.html", publications="".join(publications), nasa_cards=self.card("nasa-air-quality") + self.card("nasa-water-resources"), contact_band=self.contact_band())
         return self.page("research.html", "Research & Publications | Jay Oliver", "First-author Scientific Data research, coauthored environmental-flows research, NASA DEVELOP studies and ongoing remote-sensing work by Jay Oliver.", body, "research")
 
-    def cv(self) -> str:
-        article = (CONTENT / "cv.html").read_text(encoding="utf-8")
-        actions = '<div class="container cv-actions actions"><a class="button" href="assets/Jay_Antonio_Oliver_CV.pdf" download>Download master CV</a><button class="button button-secondary" type="button" data-print>Print / Save as PDF</button><a class="text-link" href="contact.html">Contact Jay</a></div>'
-        sections = '<nav class="container cv-index" aria-label="Master CV sections"><a href="#cv-experience">Experience</a><a href="#cv-nasa">NASA DEVELOP</a><a href="#cv-software">Software &amp; web</a><a href="#cv-additional">Earlier experience</a><a href="#cv-publications">Publications</a><a href="#cv-education">Education</a><a href="#cv-skills">Skills</a></nav>'
-        return self.page("cv.html", "Master CV | Jay Antonio Oliver", "Jay Antonio Oliver’s full professional experience, including Leidos/NETL, NASA DEVELOP, research publications, geospatial analytics, data engineering and independent software development.", actions + sections + article, "about")
+    def cv(self, profile: str | None = None, language: str = "en", file_name: str = "cv.html") -> str:
+        profile = profile or self.cvs.default
+        prefix = "../" if file_name.startswith("cv/") else ""
+        body = self.cvs.controls(profile, language, prefix) + self.cvs.article(profile, language)
+        alternatives = "\n".join(f'<link rel="alternate" hreflang="{lang}" href="{self.data["base_url"]}{self.cvs.page_path(profile, lang)}">' for lang in LANGUAGES)
+        alternatives += f'\n<link rel="alternate" hreflang="x-default" href="{self.data["base_url"]}{self.cvs.page_path(profile, "en")}">'
+        title = f'{self.cvs.label(profile, language)} · {"Español" if language == "es" else "English"} | Jay Antonio Oliver'
+        return self.page(file_name, title, self.cvs.description(profile, language), body, "cv", language=language, extra_head=alternatives, canonical_path=self.cvs.page_path(profile, language))
 
     def outputs(self) -> dict[str, str]:
         pages = {
@@ -251,9 +260,10 @@ class Site:
             "contact.html": self.page("contact.html", "Contact | Jay Oliver", "Contact Jay Oliver about data science, geospatial analytics, research and application development. Email, professional profiles and CV.", render("contact.html"), "contact"),
             "cv.html": self.cv(),
         }
+        pages.update({self.cvs.page_path(profile, language): self.cv(profile, language, self.cvs.page_path(profile, language)) for profile in self.cvs.order for language in LANGUAGES})
         pages.update({f"projects/{slug}.html": self.case(slug) for slug in self.order})
         sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f'  <url><loc>{esc(self.data["base_url"] + path)}</loc></url>\n' for path in pages) + "</urlset>\n"
-        return {**pages, "sitemap.xml": sitemap}
+        return {**pages, "sitemap.xml": sitemap, "assets/cv/manifest.json": json.dumps(self.cvs.manifest(), ensure_ascii=False, indent=2) + "\n"}
 
 
 def main() -> int:
@@ -276,7 +286,7 @@ def main() -> int:
     if args.check and stale:
         print("Generated output is stale; run python3 tools/build.py:\n" + "\n".join(stale), file=sys.stderr)
         return 1
-    print(f'{"Checked" if args.check else "Built"} {len(outputs) - 1} pages and sitemap.xml ({len(stale)} {"stale" if args.check else "updated"}).')
+    print(f'{"Checked" if args.check else "Built"} {sum(path.endswith(".html") for path in outputs)} pages, sitemap.xml and CV manifest ({len(stale)} {"stale" if args.check else "updated"}).')
     return 0
 
 

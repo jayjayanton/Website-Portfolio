@@ -30,7 +30,8 @@ Use neutral borders for decoration and the stronger `--control-line` for input b
 | --- | --- | --- |
 | Site content | `content/site.json` | Identity, navigation-related metadata, featured projects, categories, project ordering and publications |
 | Project content | `content/case-studies/<slug>.json` | One canonical record for each project |
-| CV content | `content/cv.html` | Canonical master CV: professional history, independent software, ongoing research, publications, education and skills |
+| Master CV content | `content/cv.html`, `content/cv/master-es.html` | Full professional record in English and Spanish |
+| Focused CV content | `content/cv/profiles/*.json`, `content/cv/common.json` | Five paired role profiles, shared career facts and selected development evidence |
 | Presentation | `templates/` | Base document, page layouts and consistent case-study structure |
 | Visual system | `assets/css/site.css` | Typography, spacing, color, components and responsive behavior |
 | Interaction | `assets/js/site.js`, `assets/js/projects.js`, `assets/js/filtering.mjs` | Site navigation, project controls and filter logic |
@@ -123,4 +124,12 @@ The print layout uses a single reading column with 10-point body text and allows
 
 GitHub Pages serves `main` from the repository root. Generated root pages and case-study pages remain committed to preserve the existing publication setup. The validation workflow has `contents: read`, runs on push, pull request and manual dispatch, and neither deploys nor writes repository content.
 
-Maintain CV text in the canonical `content/cv.html` fragment and rebuild the generated `cv.html` page. Keep career dates, qualifications and historical metrics intact unless a content update explicitly covers them. The existing `build-cv.yml` action renders the generated page with Chrome/Chromium and commits the PDF to `assets/Jay_Antonio_Oliver_CV.pdf`. Its write permission belongs to that separate PDF job; the validation workflow does not need it. Preserve the PDF path, download links and existing case-study/image URLs.
+### Focused and bilingual CV collection
+
+The default `cv.html` page displays the English Geospatial Data Scientist profile. Five focused profiles and the complete master are available through `cv/<profile>-<language>.html` for `en` and `es`. Each page exposes a focus menu, English/Spanish links and its matching PDF. Changing focus preserves language; changing language preserves focus. These controls work as native links without JavaScript. Site CV calls to action open the chooser rather than automatically downloading the long master.
+
+Store focused text as paired `en`/`es` values in `content/cv/profiles/*.json`. Shared career facts and qualifications are in `content/cv/common.json`. The generator validates language completeness and known experience/project IDs, then escapes text into common templates. The source record and translations must agree on dates, quantities, scope and completed versus planned work. Keep official publication titles in English, with `lang="en"` markup in Spanish documents. Preserve first-author/coauthor labels and the specific contribution under the second publication.
+
+The generated `assets/cv/manifest.json` maps all twelve pages to PDF paths. `tools/render_cvs.py` renders changed documents with Chrome, checks PDF structure and records source/style/renderer fingerprints in `assets/cv/render-state.json`. Its `--check` option enforces the two-page maximum for focused profiles. Master versions retain their full detail and have no artificial page limit. Review every changed PDF page after rendering.
+
+The PDF workflow commits all downloads. The separate validation workflow has read-only permissions and can render changed or missing PDFs into its temporary checkout before checking page limits and links. For a new collection, render and review on a working branch before publishing its pages and PDFs together. The original English master path `assets/Jay_Antonio_Oliver_CV.pdf` remains stable; preserve all existing case-study and image URLs.

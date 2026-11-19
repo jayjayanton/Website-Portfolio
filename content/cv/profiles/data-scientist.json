@@ -1,0 +1,147 @@
+{
+  "id": "data-scientist",
+  "label": {
+    "en": "Data Scientist",
+    "es": "Científico de datos"
+  },
+  "description": {
+    "en": "Machine learning, statistical analysis and model validation.",
+    "es": "Aprendizaje automático, análisis estadístico y validación de modelos."
+  },
+  "summary": {
+    "en": "Data scientist with 6+ years of experience turning environmental and energy datasets into reproducible analyses and interpretable models. Builds Python, R and SQL workflows for feature engineering, imbalanced classification, multi-output regression and validation. Combines research published as first author and coauthor with independent development of analytical applications that make data accessible to users.",
+    "es": "Científico de datos con más de 6 años de experiencia en análisis reproducible y modelos interpretables para investigación ambiental y energética. Desarrolla flujos en Python, R y SQL para variables predictoras, clasificación desbalanceada, regresión multisalida y validación. Combina publicaciones como primer autor y coautor con desarrollo independiente de aplicaciones analíticas orientadas al usuario."
+  },
+  "skills": [
+    {
+      "label": {
+        "en": "Modeling and validation",
+        "es": "Modelación y validación"
+      },
+      "text": {
+        "en": "scikit-learn, XGBoost, Random Forest, classification, regression, Bayesian tuning, cross-validation, threshold selection, SHAP and spatial residual analysis.",
+        "es": "scikit-learn, XGBoost, Random Forest, clasificación, regresión, ajuste bayesiano, validación cruzada, selección de umbrales, SHAP y análisis de residuos espaciales."
+      }
+    },
+    {
+      "label": {
+        "en": "Data engineering",
+        "es": "Ingeniería de datos"
+      },
+      "text": {
+        "en": "Python, R, SQL, pandas, NumPy, ETL, REST APIs, relational databases and reproducible processing.",
+        "es": "Python, R, SQL, pandas, NumPy, ETL, API REST, bases de datos relacionales y procesamiento reproducible."
+      }
+    },
+    {
+      "label": {
+        "en": "Analytical applications",
+        "es": "Aplicaciones analíticas"
+      },
+      "text": {
+        "en": "FastAPI, JavaScript, Pyodide, Plotly, Git; interactive analysis, technical reporting and bilingual communication.",
+        "es": "FastAPI, JavaScript, Pyodide, Plotly, Git; análisis interactivo, informes técnicos y comunicación bilingüe."
+      }
+    }
+  ],
+  "experience": [
+    {
+      "id": "leidos",
+      "bullets": [
+        {
+          "en": "Developed Random Forest and XGBoost classifiers to screen for likely orphaned wells in a team-assembled inventory exceeding 7 million records, reconciling state labels and engineering temporal, categorical and spatial predictors from well history, depth, land cover and location.",
+          "es": "Desarrollé clasificadores Random Forest y XGBoost para identificar posibles pozos huérfanos en un inventario del equipo con más de 7 millones de registros; armonicé etiquetas estatales y diseñé variables temporales, categóricas y espaciales a partir del historial, profundidad, cobertura del suelo y ubicación."
+        },
+        {
+          "en": "Tuned basin-specific models with Bayesian search and stratified cross-validation; selected training-derived thresholds, evaluated precision, recall and PR-AUC, and interpreted predictions with SHAP. Calculated nearest-known-orphan distances from training records and included missing-data indicators during feature preparation.",
+          "es": "Ajusté modelos por cuenca mediante búsqueda bayesiana y validación cruzada estratificada; seleccioné umbrales con datos de entrenamiento, evalué precisión, sensibilidad y PR-AUC e interpreté predicciones con SHAP. Calculé distancias al pozo huérfano conocido más cercano usando registros de entrenamiento e incorporé indicadores de datos faltantes."
+        },
+        {
+          "en": "Modeled ten coal-ash oxide constituents with multi-output XGBoost, comparing separate-estimator and shared-tree approaches, log-ratio transformations, grouped validation and constituent-level error diagnostics.",
+          "es": "Modelé diez óxidos de cenizas de carbón con XGBoost multisalida, comparando estimadores separados y árboles compartidos, transformaciones logarítmicas de cocientes, validación por grupos y errores por constituyente."
+        },
+        {
+          "en": "Built Python/SQL pipelines for Texas wellbore and production records and standardized EPA greenhouse-gas reporting data for 2010–2024 into reusable facility-level datasets.",
+          "es": "Desarrollé flujos Python/SQL para registros de pozos y producción de Texas y estandaricé datos de emisiones de gases de efecto invernadero de la EPA, 2010–2024, en conjuntos reutilizables por instalación."
+        }
+      ]
+    },
+    {
+      "id": "baylor-lab",
+      "bullets": [
+        {
+          "en": "Served as primary Python developer for 30-meter U.S. land-use basemaps across five observation years (2008–2019), harmonizing source classifications and producing research published as first author in Scientific Data.",
+          "es": "Fui desarrollador principal en Python de mapas de uso del suelo de Estados Unidos a 30 metros para cinco años entre 2008 y 2019; armonicé clasificaciones y publiqué como primer autor en Scientific Data."
+        },
+        {
+          "en": "Compared fractional land-cover representations using spatial mean squared error and built reproducible ETL workflows integrating REST APIs, SQL databases and geospatial layers.",
+          "es": "Comparé fracciones de cobertura mediante error cuadrático medio espacial y desarrollé flujos ETL reproducibles integrando API REST, bases SQL y capas geoespaciales."
+        }
+      ]
+    },
+    {
+      "id": "baylor-specialist",
+      "bullets": [
+        {
+          "en": "Automated watershed delineation in R and developed Random Forest workflows for reference-stream identification, contributing spatial preparation methods to published environmental-flow research.",
+          "es": "Automaticé la delimitación de cuencas en R y desarrollé flujos Random Forest para identificar cauces de referencia, aportando preparación espacial a investigación publicada sobre caudales ambientales."
+        },
+        {
+          "en": "Evaluated decision-tree regressions of hydrologic alteration and fish response across tree depths and regional aggregations, examining model behavior in exploratory ecological analysis.",
+          "es": "Evalué regresiones con árboles de decisión sobre alteración hidrológica y respuesta de peces, comparando profundidades y agregaciones regionales en análisis ecológicos exploratorios."
+        }
+      ]
+    },
+    {
+      "id": "usgs",
+      "bullets": [
+        {
+          "en": "Analyzed more than 20 years of Landsat imagery with R and Python, generating pixel-level land-cover change maps using tasseled-cap indices and transition matrices.",
+          "es": "Analicé más de 20 años de imágenes Landsat con R y Python, generando mapas de cambio de cobertura por píxel mediante índices tasseled-cap y matrices de transición."
+        }
+      ]
+    },
+    {
+      "id": "wwf",
+      "bullets": [
+        {
+          "en": "Compared logistic-regression models in R to examine forest-loss associations, alternative predictor selections and spatial residual terms, using environmental and socioeconomic data covering 2000–2017.",
+          "es": "Comparé regresiones logísticas en R sobre pérdida forestal, selecciones alternativas de variables y residuos espaciales, utilizando datos ambientales y socioeconómicos de 2000–2017."
+        }
+      ]
+    },
+    {
+      "id": "nasa",
+      "bullets": [
+        {
+          "en": "Processed more than 900 multidimensional datasets across air-quality and water-resource projects with Python and Linux; compared MODIS/VIIRS aerosol optical depth with San Salvador PM2.5 observations using R.",
+          "es": "Procesé más de 900 conjuntos multidimensionales entre ambos proyectos de calidad del aire y recursos hídricos con Python y Linux; comparé profundidad óptica de aerosoles MODIS/VIIRS con PM2.5 de San Salvador mediante R."
+        },
+        {
+          "en": "Integrated NDVI, precipitation, evapotranspiration and soil moisture for Lambayeque, Peru, analyzing temporal associations between water availability and vegetation condition and contributing maps and technical reports.",
+          "es": "Integré NDVI, precipitación, evapotranspiración y humedad del suelo para Lambayeque, Perú; analicé asociaciones temporales entre disponibilidad hídrica y vegetación y aporté mapas e informes técnicos."
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "predio",
+      "bullets": [
+        {
+          "en": "Created PredioAI as its sole developer, combining React and FastAPI with municipal REST APIs, native PDF/CAD geometry processing, spatial calculations and CSV/JSON/GeoJSON exports.",
+          "es": "Creé PredioAI como único desarrollador, integrando React y FastAPI con API REST municipales, procesamiento nativo de geometría PDF/CAD, cálculos espaciales y exportaciones CSV/JSON/GeoJSON."
+        }
+      ]
+    },
+    {
+      "id": "expense",
+      "bullets": [
+        {
+          "en": "Built browser-based analytics in Python/Pyodide and JavaScript, adding transaction categorization, interactive Plotly summaries, filtering and CSV/ZIP exports with local statement processing.",
+          "es": "Desarrollé análisis en el navegador con Python/Pyodide y JavaScript: categorización de transacciones, resúmenes interactivos Plotly, filtros y exportaciones CSV/ZIP con procesamiento local de estados de cuenta."
+        }
+      ]
+    }
+  ]
+}
