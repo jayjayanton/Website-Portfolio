@@ -1,0 +1,50 @@
+{
+  "data-scientist:en": {
+    "fingerprint": "17455194e8395cb6aa74d31c0cb2d204c7c1b418451682ad2d232521e1641385",
+    "pages": 2
+  },
+  "data-scientist:es": {
+    "fingerprint": "186d84f00ec125e4d2672d46e893b6525a4a0b19c6d4bb831fe325c715eddb10",
+    "pages": 2
+  },
+  "geospatial-data-engineer:en": {
+    "fingerprint": "62c5d74261058f7bf6f8f55ea584be21c869cf4bcc560ff3b8174d087278ef52",
+    "pages": 2
+  },
+  "geospatial-data-engineer:es": {
+    "fingerprint": "084e7a8e08d8074880a54d79c79bdbd3d05f41ec1a889c4a840015b42efdcf51",
+    "pages": 2
+  },
+  "geospatial-data-scientist:en": {
+    "fingerprint": "833767e52bcbda7bc4c818065bac5347a81215ee2da0554a320df658b03c2708",
+    "pages": 2
+  },
+  "geospatial-data-scientist:es": {
+    "fingerprint": "58ab002899dcb480ebe1cdc6d23b3a2ff7cf157dcb0f997c5b927fc3129c63df",
+    "pages": 2
+  },
+  "geospatial-data-specialist:en": {
+    "fingerprint": "ec1f45f4ca3887e344972bd2a8bf4baf492867594e38273ebeaca9444f97511a",
+    "pages": 2
+  },
+  "geospatial-data-specialist:es": {
+    "fingerprint": "caac943b93ce6073f55317809d51ed7860861a283df7a3a3ddde1ad0ad550731",
+    "pages": 2
+  },
+  "master:en": {
+    "fingerprint": "a167712fc579702b7001d73751ed070b9cc32187a06441e745d0cd40ed2437bd",
+    "pages": 6
+  },
+  "master:es": {
+    "fingerprint": "6f119e1325cb8444762a253b180f81414d17df9516106e02cb73dc400a7361f7",
+    "pages": 7
+  },
+  "spatial-analyst:en": {
+    "fingerprint": "172e843d6bd5d7c89cb3380aa7a6a49ed21a6c6e7c961378e5a1f64500e50758",
+    "pages": 2
+  },
+  "spatial-analyst:es": {
+    "fingerprint": "71a5ca406c70b50f83b647f947afef49fb218dff8618327123e95612c86ea408",
+    "pages": 2
+  }
+}
