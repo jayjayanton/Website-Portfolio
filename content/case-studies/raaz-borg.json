@@ -1,7 +1,7 @@
 {
   "slug": "raaz-borg",
   "title": "Ra’az Borg",
-  "summary": "A static, bilingual combat-sports website organized around a cyberpunk-inspired grappling identity. My public repository is a fork with shared styling, responsive navigation and JavaScript interactions across five pages. The case study distinguishes visible frontend features from contributions that still need to be documented.",
+  "summary": "A bilingual combat-sports website built around a cyberpunk-inspired grappling identity. Five pages share responsive navigation, typography and JavaScript interactions. Maintained as a fork of an existing project, it provides a frontend case study in keeping a visual system coherent across an established codebase.",
   "categories": [
     "web"
   ],

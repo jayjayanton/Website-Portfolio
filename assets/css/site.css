@@ -410,6 +410,10 @@ a.contact-card:hover { border-color: #8ebcb6; box-shadow: var(--shadow); }
 
 @media (max-width: 38rem) {
   .container { width: min(calc(100% - 2rem), var(--content-width)); }
+  .brand { min-width: 0; max-width: calc(100% - 5rem); }
+  .brand > span:last-child { min-width: 0; }
+  .brand small { max-width: 19ch; }
+  .nav-toggle { flex-shrink: 0; }
   .home-hero { padding-block: 3rem; }
   .hero-copy h1 { font-size: clamp(2.65rem, 9vw, 3.35rem); }
   .hero-copy .eyebrow { font-size: 0.75rem; }
