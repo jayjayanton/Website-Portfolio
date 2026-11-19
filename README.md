@@ -2,7 +2,7 @@
 
 A professional portfolio of environmental research, predictive modeling, data engineering and independent software development. Each case study explains the problem, my contribution, the approach, the result and the evidence behind it. Technical progression is shown through the work: moving from observations and analysis to reusable data workflows and interactive applications.
 
-**[Explore the portfolio](https://jayjayanton.github.io/Website-Portfolio/)** · [Projects](projects.html) · [Research](research.html) · [About](about.html) · [Contact](contact.html) · [Download CV](assets/Jay_Antonio_Oliver_CV.pdf)
+**[Explore the portfolio](https://jayjayanton.github.io/Website-Portfolio/)** · [Projects](projects.html) · [Research](research.html) · [About](about.html) · [Contact](contact.html) · [Master CV](cv.html) · [Download master CV](assets/Jay_Antonio_Oliver_CV.pdf)
 
 ## Selected work
 
@@ -70,4 +70,4 @@ Case studies preserve the relevant reports, public code and research materials. 
 
 GitHub Pages continues to publish **the `main` branch from the repository root**. Commit the generated pages alongside canonical changes so deployment keeps the existing page and image URLs. No separate Pages deployment workflow is required for this build.
 
-Maintain CV text in `content/cv.html` and run the build to regenerate `cv.html`. The existing [printable CV workflow](.github/workflows/build-cv.yml) remains separate from site generation: changes to the generated `cv.html`, or a manual run, render and commit `assets/Jay_Antonio_Oliver_CV.pdf`. Keep that filename stable because the site’s download links use it.
+Maintain the complete professional master CV in `content/cv.html` and run the build to regenerate `cv.html`. It includes detailed Leidos/NETL and NASA contributions, the full research history, independent web and software projects, earlier evaluation and teaching experience, publications, education and technical skills. The existing [printable CV workflow](.github/workflows/build-cv.yml) remains separate from site generation: changes to the generated `cv.html`, or a manual run, render and commit `assets/Jay_Antonio_Oliver_CV.pdf`. Keep that filename stable because the site’s download links use it, and inspect the resulting PDF pagination after changes.

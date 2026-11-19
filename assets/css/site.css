@@ -314,16 +314,40 @@ a.contact-card:hover { border-color: #a99dce; box-shadow: var(--shadow); }
 .footer-links a:hover { color: var(--accent); }
 .copyright { grid-column: 1 / -1; margin: 0; padding-top: 1.15rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.8125rem; }
 
-/* The HTML CV remains readable on screen and printable without navigation. */
+/* Master CV: one reading order, with long experience sections allowed to flow. */
 .cv-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; padding-top: 2rem; }
+.cv-index { display: flex; flex-wrap: wrap; gap: 0.35rem 1.5rem; padding-top: 1.25rem; }
+.cv-index a { display: inline-flex; align-items: center; min-height: 2.75rem; font-size: 0.9375rem; font-weight: 600; }
 .cv-sheet { max-width: 58rem; margin: 2.5rem auto 5rem; padding: 3rem; border: 1px solid var(--line); border-radius: 1rem; background: white; }
+.cv-header { padding-bottom: 1.5rem; border-bottom: 1px solid var(--line); }
 .cv-sheet h1 { max-width: none; margin-bottom: 0.5rem; font-size: 2.6rem; }
 .cv-sheet h2 { margin-top: 2.2rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--line); font-size: 1.25rem; }
 .cv-sheet h3 { margin: 1.4rem 0 0.35rem; font-size: 1.0625rem; letter-spacing: -0.015em; }
-.cv-sheet p, .cv-sheet li { font-size: 0.9375rem; line-height: 1.7; }
+.cv-sheet h4 { margin: 1.1rem 0 0.45rem; font-size: 1rem; letter-spacing: -0.01em; }
+.cv-sheet p, .cv-sheet li, .cv-sheet dt, .cv-sheet dd { font-size: 1rem; line-height: 1.65; }
 .cv-sheet ul { padding-left: 1.25rem; }
-.cv-contact { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; font-size: 0.9375rem; }
-.cv-dates { color: var(--accent-dark); font-weight: 600; }
+.cv-sheet .cv-kicker { margin-bottom: 0.6rem; color: var(--accent); font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.cv-sheet .cv-title { margin-bottom: 1rem; color: var(--ink); font-size: 1.125rem; font-weight: 650; line-height: 1.5; }
+.cv-contact, .cv-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; font-size: 1rem; }
+.cv-sheet a { overflow-wrap: anywhere; }
+.cv-contact > *, .cv-links > * { min-width: 0; max-width: 100%; }
+.cv-links { margin-top: 0.75rem; }
+.cv-section + .cv-section { margin-top: 2rem; }
+.cv-entry + .cv-entry { margin-top: 1.9rem; }
+.cv-entry > h3 { margin-top: 0; }
+.cv-dates { margin: 0 0 0.75rem; color: var(--accent-dark); font-weight: 600; }
+.cv-scope { margin: 0.25rem 0 0.85rem; color: var(--muted); }
+.cv-entry ul, .cv-project-group ul { margin-block: 0.5rem 0.75rem; }
+.cv-project-group { margin-top: 1.1rem; }
+.cv-project-group > h4 { margin-top: 0; }
+.cv-publication { margin-block: 1rem; }
+.cv-publication > p { margin-bottom: 0.5rem; }
+.cv-skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 1.75rem; margin-block: 1rem; }
+.cv-skills-grid > * { min-width: 0; margin: 0; }
+.cv-skills-grid dl { margin: 0; }
+.cv-skills-grid dt, .cv-skills-grid h3 { margin: 0 0 0.25rem; color: var(--ink); font-size: 1rem; font-weight: 700; }
+.cv-skills-grid dd { margin: 0; color: var(--muted); }
+.cv-skills-grid p:last-child { margin-bottom: 0; }
 
 @media (max-width: 68rem) {
   .header-inner { gap: 1rem; }
@@ -406,6 +430,7 @@ a.contact-card:hover { border-color: #a99dce; box-shadow: var(--shadow); }
   .footer-inner { grid-template-columns: 1fr; }
   .footer-links { gap: 0.25rem 1.25rem; }
   .cv-sheet { padding: 2rem; margin-block: 2rem 3.75rem; }
+  .cv-skills-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 38rem) {
@@ -451,9 +476,15 @@ a.contact-card:hover { border-color: #a99dce; box-shadow: var(--shadow); }
 
 @media print {
   @page { size: letter; margin: 0.55in; }
+  @page master-cv {
+    size: letter;
+    margin: 0.55in;
+    @bottom-left { content: "Jay Antonio Oliver · Master CV"; color: #555; font: 8.5pt Arial, sans-serif; }
+    @bottom-right { content: counter(page) " / " counter(pages); color: #555; font: 8.5pt Arial, sans-serif; }
+  }
   html { scroll-behavior: auto; }
   body { display: block; background: white; color: #111; font: 10pt/1.4 Arial, sans-serif; }
-  .site-header, .site-footer, .skip-link, .nav-toggle, .contact-band, .case-index, .cv-actions, [data-print], .project-filters, .related-work { display: none !important; }
+  .site-header, .site-footer, .skip-link, .nav-toggle, .contact-band, .case-index, .cv-actions, .cv-index, [data-print], .project-filters, .related-work { display: none !important; }
   .container { width: 100%; max-width: none; }
   .section, .page-heading, .case-heading, .case-section { padding-block: 0.8rem; }
   h1 { font-size: 24pt; }
@@ -465,14 +496,33 @@ a.contact-card:hover { border-color: #a99dce; box-shadow: var(--shadow); }
   .case-body, .case-heading-grid { display: block; }
   .project-card, figure, table, .case-facts { break-inside: avoid; box-shadow: none; }
   .evidence-figure img { max-height: 5.5in; }
-  .cv-sheet { max-width: none; margin: 0; padding: 0; border: 0; border-radius: 0; background: white; }
-  .cv-sheet h1 { font-size: 19pt; }
-  .cv-sheet h2 { margin: 14px 0 5px; padding-bottom: 3px; font-size: 11pt; }
-  .cv-sheet h3 { margin: 9px 0 2px; font-size: 10pt; }
-  .cv-sheet p, .cv-sheet li { font-size: 10pt; line-height: 1.4; }
-  .cv-sheet p { margin-bottom: 5px; }
-  .cv-sheet ul { margin: 3px 0; padding-left: 17px; }
-  .cv-sheet li + li { margin-top: 2px; }
-  .cv-contact { gap: 8px; font-size: 9pt; }
-  .cv-dates { color: #444; }
+  .cv-sheet { page: master-cv; max-width: none; margin: 0; padding: 0; border: 0; border-radius: 0; background: white; color: #222; font: 10pt/1.4 Arial, sans-serif; }
+  .cv-sheet h1, .cv-sheet h2, .cv-sheet h3, .cv-sheet h4 { color: #111; text-wrap: wrap; break-after: avoid; page-break-after: avoid; }
+  .cv-sheet h1 { margin-bottom: 4pt; font-size: 20pt; }
+  .cv-sheet h2 { margin: 15pt 0 6pt; padding-bottom: 3pt; border-color: #b7b4bd; font-size: 11.5pt; }
+  .cv-sheet h3 { margin: 10pt 0 3pt; font-size: 10.5pt; }
+  .cv-sheet h4 { margin: 8pt 0 3pt; font-size: 10pt; }
+  .cv-sheet p, .cv-sheet li, .cv-sheet dt, .cv-sheet dd { font-size: 10pt; line-height: 1.4; orphans: 2; widows: 2; }
+  .cv-sheet p { margin-bottom: 6pt; }
+  .cv-sheet ul { margin: 4pt 0 6pt; padding-left: 14pt; break-inside: auto; page-break-inside: auto; }
+  .cv-sheet li { break-inside: avoid; page-break-inside: avoid; }
+  .cv-sheet li + li { margin-top: 3pt; }
+  .cv-header { padding-bottom: 9pt; border-color: #b7b4bd; break-inside: avoid; page-break-inside: avoid; }
+  .cv-sheet .cv-kicker { margin-bottom: 4pt; color: #444; font-size: 10pt; }
+  .cv-sheet .cv-title { margin-bottom: 7pt; color: #222; font-size: 10.5pt; line-height: 1.4; }
+  .cv-section, .cv-entry, .cv-project-group { break-inside: auto; page-break-inside: auto; }
+  .cv-section + .cv-section { margin-top: 0; }
+  .cv-entry + .cv-entry { margin-top: 12pt; }
+  .cv-entry > h3 { margin-top: 0; }
+  .cv-dates, .cv-scope { color: #444; margin: 0 0 5pt; break-after: avoid; page-break-after: avoid; }
+  .cv-project-group { margin-top: 8pt; }
+  .cv-project-group > h4 { margin-top: 0; }
+  .cv-publication { margin-block: 7pt; break-inside: avoid; page-break-inside: avoid; }
+  .cv-contact, .cv-links { display: block; margin-top: 5pt; font-size: 10pt; line-height: 1.4; }
+  .cv-contact > *, .cv-links > * { display: block; margin: 0 0 2pt; }
+  .cv-sheet a { color: #222; overflow-wrap: anywhere; }
+  .cv-skills-grid { display: block; margin-block: 7pt; }
+  .cv-skills-grid > * { margin-bottom: 6pt; break-inside: avoid; page-break-inside: avoid; }
+  .cv-skills-grid dt, .cv-skills-grid h3 { margin: 0 0 2pt; font-size: 10pt; break-after: avoid; page-break-after: avoid; }
+  .cv-skills-grid dd { margin: 0; color: #222; }
 }

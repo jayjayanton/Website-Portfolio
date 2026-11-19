@@ -30,7 +30,7 @@ Use neutral borders for decoration and the stronger `--control-line` for input b
 | --- | --- | --- |
 | Site content | `content/site.json` | Identity, navigation-related metadata, featured projects, categories, project ordering and publications |
 | Project content | `content/case-studies/<slug>.json` | One canonical record for each project |
-| CV content | `content/cv.html` | Canonical CV fragment, with existing career and education details preserved |
+| CV content | `content/cv.html` | Canonical master CV: professional history, independent software, ongoing research, publications, education and skills |
 | Presentation | `templates/` | Base document, page layouts and consistent case-study structure |
 | Visual system | `assets/css/site.css` | Typography, spacing, color, components and responsive behavior |
 | Interaction | `assets/js/site.js`, `assets/js/projects.js`, `assets/js/filtering.mjs` | Site navigation, project controls and filter logic |
@@ -110,6 +110,16 @@ node --test tests/*.mjs
 The freshness check detects output that no longer matches the canonical source. The offline checks cover local links, page structure and designated content constraints; they do not establish that external municipal services, research hosts or applications are currently available. Verify an external destination when changing its link or its claim.
 
 ## Deployment and stable URLs
+
+### Master CV
+
+The online CV and downloadable PDF are comprehensive professional records. Keep detailed Leidos/NETL contributions and separate NASA air-quality and water-resources subsections, alongside both Baylor roles, USGS, WWF, independent software development, earlier evaluation support and teaching. Individual projects may have different dates from the freelance practice; do not assign the practice start date to every project. Identify evaluation assignments as project support rather than direct employment by the named partner agencies.
+
+Use supported contribution and method statements rather than unqualified performance claims. Keep future computer vision work explicitly planned, distinguish local prototypes from deployed services, and preserve PredioAI’s creator and sole-developer attribution and application-only links. Maintain full publication citations. Shorter application-specific CVs can be derived from this source without removing the master record’s detail.
+
+The print layout uses a single reading column with 10-point body text and allows long roles to continue across pages. Headings, dates and scope introductions stay with following content, while individual bullets avoid page splits. Review every rendered PDF page whenever content or print styling changes; a successful HTML build does not verify pagination.
+
+### Publication workflow
 
 GitHub Pages serves `main` from the repository root. Generated root pages and case-study pages remain committed to preserve the existing publication setup. The validation workflow has `contents: read`, runs on push, pull request and manual dispatch, and neither deploys nor writes repository content.
 

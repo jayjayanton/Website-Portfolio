@@ -240,8 +240,9 @@ class Site:
 
     def cv(self) -> str:
         article = (CONTENT / "cv.html").read_text(encoding="utf-8")
-        actions = '<div class="container cv-actions actions"><a class="button" href="assets/Jay_Antonio_Oliver_CV.pdf" download>Download PDF</a><button class="button button-secondary" type="button" data-print>Print / Save as PDF</button><a class="text-link" href="contact.html">Contact Jay</a></div>'
-        return self.page("cv.html", "Curriculum Vitae | Jay Antonio Oliver", "Jay Antonio Oliver’s professional experience, education and skills in applied data science, geospatial analysis and data engineering.", actions + article, "about")
+        actions = '<div class="container cv-actions actions"><a class="button" href="assets/Jay_Antonio_Oliver_CV.pdf" download>Download master CV</a><button class="button button-secondary" type="button" data-print>Print / Save as PDF</button><a class="text-link" href="contact.html">Contact Jay</a></div>'
+        sections = '<nav class="container cv-index" aria-label="Master CV sections"><a href="#cv-experience">Experience</a><a href="#cv-nasa">NASA DEVELOP</a><a href="#cv-software">Software &amp; web</a><a href="#cv-additional">Earlier experience</a><a href="#cv-publications">Publications</a><a href="#cv-education">Education</a><a href="#cv-skills">Skills</a></nav>'
+        return self.page("cv.html", "Master CV | Jay Antonio Oliver", "Jay Antonio Oliver’s full professional experience, including Leidos/NETL, NASA DEVELOP, research publications, geospatial analytics, data engineering and independent software development.", actions + sections + article, "about")
 
     def outputs(self) -> dict[str, str]:
         pages = {
