@@ -117,7 +117,7 @@ The online CV and downloadable PDF are comprehensive professional records. Keep 
 
 Use supported contribution and method statements rather than unqualified performance claims. Keep future computer vision work explicitly planned, distinguish local prototypes from deployed services, and preserve PredioAI’s creator and sole-developer attribution and application-only links. Maintain full publication citations. Shorter application-specific CVs can be derived from this source without removing the master record’s detail.
 
-The print layout uses a single reading column with 10-point body text and allows long roles to continue across pages. Headings, dates and scope introductions stay with following content, while individual bullets avoid page splits. Review every rendered PDF page whenever content or print styling changes; a successful HTML build does not verify pagination.
+The print layout uses a single reading column with 10-point body text and allows long roles to continue across pages. Headings, dates and scope introductions stay with following content, while individual bullets avoid page splits. Selected `cv-page-start` boundaries give the master CV coherent page openings; the short education section uses `cv-keep`. Named print-page margins add the CV name and page numbers in the Chrome-generated PDF. Review every rendered PDF page whenever content or print styling changes; a successful HTML build does not verify pagination.
 
 ### Publication workflow
 
