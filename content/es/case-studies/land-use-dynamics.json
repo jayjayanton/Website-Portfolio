@@ -1,0 +1,166 @@
+{
+  "slug": "land-use-dynamics",
+  "title": "Una base común de uso del suelo para los modelos del sistema Tierra",
+  "summary": "Desarrollé mapas base de uso del suelo a 30 metros que representan un mismo territorio de Estados Unidos en varios sistemas de modelado. Esta publicación en Scientific Data, de la que soy primer autor, combina procesamiento geoespacial, diseño de clasificaciones y comparación cuantitativa para integrar datos ambientales heterogéneos en GCAM, CLM y LUH2.",
+  "categories": [
+    "geospatial",
+    "engineering"
+  ],
+  "status": "Investigación publicada",
+  "status_key": "published",
+  "role": "Primer autor e investigador geoespacial",
+  "context": "Baylor University · Investigación en colaboración con Ryan A. McManamay",
+  "period": "Publicado en marzo de 2025",
+  "image": {
+    "src": "images/figure-02-msd-classes.png",
+    "alt": "Figura 2: clases de cobertura del suelo de MSD",
+    "caption": "Figura original de la investigación: distribución espacial de las clases detalladas de uso y cobertura del suelo de MSD.",
+    "kind": "research"
+  },
+  "technologies": [
+    "Python",
+    "ArcGIS Pro",
+    "Procesamiento ráster",
+    "NLCD",
+    "USDA Cropland Data Layer",
+    "Tablas de equivalencia entre clasificaciones",
+    "Validación espacial"
+  ],
+  "problem": "Los modelos de los sistemas humanos y del sistema Tierra describen un mismo territorio con distintas clases, resoluciones espaciales y estructuras de datos. Un estudio regional puede heredar esas inconsistencias antes de iniciar su propio análisis. El proyecto necesitaba una base empírica con detalle espacial que pudiera adaptarse a distintos marcos de modelado.",
+  "contribution": "Desarrollé la serie de mapas base armonizados, combiné datos de cobertura del suelo y otras capas espaciales, implementé scripts de procesamiento en Python y ajustes en ArcGIS, y contribuí a las comparaciones espaciales documentadas en el artículo. Soy el primer autor de la publicación resultante en Scientific Data de 2025, junto con Ryan A. McManamay.",
+  "approach": [
+    {
+      "title": "Construir una clasificación común",
+      "body": "Combiné información de National Land Cover Database y USDA Cropland Data Layer en una clasificación jerárquica que conserva las distinciones necesarias para los sistemas de modelado de destino."
+    },
+    {
+      "title": "Incorporar el contexto de uso del suelo",
+      "body": "Refiné las clases de cultivos con CDL, separé la agricultura de riego y de secano, y distinguí bosques y pastizales manejados y no manejados. Las zonas climáticas, las ecorregiones y la elevación permitieron afinar las clases de vegetación."
+    },
+    {
+      "title": "Producir resultados espaciales consistentes",
+      "body": "Utilicé Python para las máscaras de cultivos y la clasificación del riego, con ajustes adicionales de manejo del suelo y clima en ArcGIS Pro. Generé productos a 30 metros para 2008, 2011, 2013, 2016 y 2019 en los Estados Unidos contiguos."
+    },
+    {
+      "title": "Establecer equivalencias entre sistemas de modelado",
+      "body": "Relacioné las clases detalladas de MSD con las categorías de GCAM, CLM y LUH2. La conversión consideró tanto las diferencias temáticas como la distinción entre píxeles de clase única y coberturas fraccionales en celdas de menor resolución."
+    },
+    {
+      "title": "Comparar magnitudes equivalentes",
+      "body": "Calculé las áreas de cada clase dentro de las cuadrículas de los modelos y comparé las fracciones representadas mediante el error cuadrático medio. Esto mostró dónde las bases existentes de los modelos coincidían con los mapas empíricos y dónde diferían."
+    }
+  ],
+  "outcome": "El conjunto de datos publicado ofrece cinco mapas base contemporáneos a 30 metros y representaciones intercambiables para varios marcos de modelado. El código y las figuras documentan cómo se construyeron las clases y cómo se evaluaron las diferencias entre las bases de referencia de los modelos. Esta base espacial puede reutilizarse en análisis regionales y comparaciones entre modelos.",
+  "learning": "Este trabajo muestra cómo el procesamiento espacial conduce al diseño de sistemas de datos: interpretar el significado de distintos esquemas, reconocer cuándo una equivalencia directa resulta insuficiente y evaluar las transformaciones resultantes. Los mismos métodos permiten integrar datos operativos incompatibles o preparar variables geoespaciales para modelos posteriores.",
+  "limitations": [
+    "La concordancia con productos de observación existentes no constituye una evaluación independiente de exactitud basada en trabajo de campo.",
+    "La comparación de referencia empareja el producto MSD de 2008 con LUH2 de 2008 y CLM de 2000; estas diferencias de año deben considerarse al interpretar las discrepancias.",
+    "El número de clases describe el detalle temático, no la capacidad predictiva. Los posibles usos en aprendizaje automático son aplicaciones posteriores, no modelos entrenados en esta publicación."
+  ],
+  "evidence": [
+    {
+      "title": "Productos de datos publicados",
+      "body": "La investigación abarca los Estados Unidos contiguos a una resolución de 30 metros para 2008, 2011, 2013, 2016 y 2019. Los números de clases que se presentan a continuación describen las representaciones entregadas; no son métricas de exactitud.",
+      "images": [],
+      "table": {
+        "headers": [
+          "Representación",
+          "Clases",
+          "Propósito"
+        ],
+        "rows": [
+          [
+            "MSD",
+            "259",
+            "Sistema armonizado y detallado de uso y cobertura del suelo"
+          ],
+          [
+            "GCAM",
+            "39",
+            "Categorías de suelo compatibles con GCAM"
+          ],
+          [
+            "CLM",
+            "68",
+            "Representación compatible con CLM en este producto"
+          ],
+          [
+            "LUH2",
+            "12",
+            "Estados de uso del suelo compatibles con LUH2"
+          ]
+        ]
+      }
+    },
+    {
+      "title": "Proceso de clasificación y mapas",
+      "body": "Las figuras originales muestran el proceso desde los datos de origen hasta las clases, así como los mapas base detallados y las versiones específicas para cada modelo.",
+      "images": [
+        {
+          "src": "images/figure-01-sankey-diagram.png",
+          "alt": "Figura 1: proceso de clasificación",
+          "caption": "Figura original de la investigación: proceso de clasificación desde los datos empíricos de cobertura del suelo hasta las categorías armonizadas de MSD.",
+          "kind": "research"
+        },
+        {
+          "src": "images/figure-02-msd-classes.png",
+          "alt": "Figura 2: clases de cobertura del suelo de MSD",
+          "caption": "Figura original de la investigación: distribución espacial de las clases detalladas de uso y cobertura del suelo de MSD.",
+          "kind": "research"
+        },
+        {
+          "src": "images/figure-03-gcam-msd.png",
+          "alt": "Figura 3: comparación GCAM–MSD",
+          "caption": "Figura original de la investigación: ejemplos nacionales y regionales de la representación armonizada de GCAM.",
+          "kind": "research"
+        },
+        {
+          "src": "images/figure-04-luh2-msd.png",
+          "alt": "Figura 4: comparación LUH2–MSD",
+          "caption": "Figura original de la investigación: representación del uso del suelo adaptada a las categorías de LUH2.",
+          "kind": "research"
+        },
+        {
+          "src": "images/figure-05-clm-msd.png",
+          "alt": "Figura 5: comparación CLM–MSD",
+          "caption": "Figura original de la investigación: tipos funcionales de plantas representados para Community Land Model.",
+          "kind": "research"
+        }
+      ]
+    },
+    {
+      "title": "Discrepancias espaciales entre bases de referencia",
+      "body": "El error cuadrático medio compara fracciones equivalentes: MSE = (1 / n) × Σ(fracción de referencia − fracción del modelo)². Los valores menores indican mayor concordancia entre los productos comparados, sin demostrar que todas las clases de suelo sean correctas.",
+      "images": [
+        {
+          "src": "images/figure-06-mse-comparison.png",
+          "alt": "Figura 6: comparación espacial del MSE",
+          "caption": "Comparación espacial original del MSE. El amarillo indica mayor discrepancia y el azul oscuro, mayor concordancia. La imagen disponible no identifica qué modelo corresponde a cada panel; aquí se mantienen sin atribuirles etiquetas no documentadas.",
+          "kind": "research"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": "Leer el artículo en Scientific Data",
+      "url": "https://www.nature.com/articles/s41597-025-04713-6",
+      "kind": "publication"
+    },
+    {
+      "label": "Explorar el conjunto de datos de la investigación",
+      "url": "https://doi.org/10.57931/2246609",
+      "kind": "report"
+    },
+    {
+      "label": "Consultar el código de la investigación",
+      "url": "https://github.com/jayjayanton/oliver-mcmanamay_2025_scidata",
+      "kind": "code"
+    }
+  ],
+  "related": [
+    "colombia-deforestation",
+    "environmental-flows",
+    "quito-urban-expansion"
+  ]
+}

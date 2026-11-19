@@ -1,0 +1,123 @@
+{
+  "slug": "yuyay-analytics",
+  "title": "Yuyay Analytics",
+  "summary": "Diseñé y desarrollé un sitio web adaptable para una consultora de evaluación ambiental y análisis de datos. El trabajo convierte experiencia multidisciplinaria en servicios claros, proyectos filtrables e investigaciones vinculadas a evidencia, mediante un sistema visual consistente, contenido bilingüe y una implementación ligera en HTML, CSS y JavaScript.",
+  "categories": [
+    "web"
+  ],
+  "status": "Sitio web en línea",
+  "status_key": "published",
+  "role": "Diseñador web y desarrollador frontend",
+  "context": "Sitio de consultoría que reúne la experiencia internacional de Clemencia Vela en evaluación ambiental y el trabajo de Jay Oliver en ciencia de datos, investigación geoespacial y software.",
+  "period": "2026",
+  "image": {
+    "src": "https://raw.githubusercontent.com/jayjayanton/Yuyay-Analytics-/main/images/yuyay_cotopaxi_clean_hero.jpg",
+    "alt": "Paisaje andino del Cotopaxi utilizado en la página de inicio de Yuyay Analytics",
+    "caption": "Fotografía principal de la página de inicio. El sitio utiliza paisajes regionales en sus páginas interiores.",
+    "kind": "site-asset"
+  },
+  "technologies": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Interfaz adaptable",
+    "Filtros de proyectos",
+    "Contenido en inglés y español",
+    "Git",
+    "GitHub Pages"
+  ],
+  "problem": "Una consultora multidisciplinaria necesita explicar sus servicios sin diluir sus distintas especialidades. Los visitantes deben poder identificar trabajos relevantes, comprender quién contribuyó y consultar las investigaciones, los informes de evaluación o las aplicaciones que respaldan cada descripción.",
+  "contribution": "Diseñé la estructura del sitio, su presentación visual y las interacciones frontend; organicé contenidos de investigación y evaluación, integré recursos y enlaces de respaldo, y publiqué el sitio. También incorporé ejemplos de software aplicado que conectan las capacidades analíticas con herramientas concretas y mantienen clara la atribución de cada trabajo.",
+  "approach": [
+    {
+      "title": "Crear una estructura de contenido coherente",
+      "body": "Organizar Inicio, Servicios y análisis, Proyectos, Países, Publicaciones y Contacto con una navegación consistente. Presentar al equipo cerca del final de la página de inicio, con información biográfica complementaria en la página Acerca de."
+    },
+    {
+      "title": "Facilitar la exploración de la experiencia",
+      "body": "Usar tarjetas de proyectos en JavaScript, filtros por país y temática, y búsqueda por palabras clave para explorar trabajos relevantes. Distinguir encargos de evaluación, contribuciones de investigación y software independiente, sin dar a entender que todos los ejemplos corresponden al mismo tipo de participación."
+    },
+    {
+      "title": "Vincular las afirmaciones con evidencia",
+      "body": "Enlazar las descripciones de proyectos con informes técnicos públicos, materiales de NASA DEVELOP, documentos de evaluación, la publicación de 2025 en Scientific Data y aplicaciones en línea cuando corresponda. Incluir CV descargables y referencias de investigación."
+    },
+    {
+      "title": "Crear una presentación adaptable y consistente",
+      "body": "Combinar fotografías panorámicas de cabecera, imágenes regionales, colores y tipografía reutilizables, diseños para móviles e interacciones ligeras. El contenido bilingüe de inicio y de las muestras de proyectos atiende a visitantes de habla inglesa y española."
+    },
+    {
+      "title": "Publicar un sitio web público ligero",
+      "body": "Gestionar las versiones de los archivos estáticos con Git y publicar mediante GitHub Pages. El formulario de consulta prepara un correo en la aplicación del visitante, sin sugerir que existe un servicio backend de envío de mensajes."
+    }
+  ],
+  "outcome": "El sitio de consultoría pone a disposición del público los servicios del equipo, su trayectoria de proyectos, investigaciones y ejemplos de software. Los visitantes pueden explorar proyectos, filtrarlos por tema o ubicación, consultar evidencia, descargar CV e iniciar una consulta desde su aplicación de correo.",
+  "learning": "La arquitectura del contenido plantea un problema de diseño técnico y editorial. La atribución clara, los filtros previsibles y los enlaces consistentes facilitan la navegación y la confianza en un portafolio amplio de consultoría.",
+  "limitations": [
+    "El formulario de contacto prepara un mensaje en la aplicación de correo del visitante; no es un servicio backend de envío ni un sistema de gestión de clientes.",
+    "El contenido bilingüe está implementado en la página de inicio y en la muestra de aplicaciones analíticas; este caso de estudio no afirma que todas las páginas interiores estén traducidas.",
+    "El proyecto demuestra diseño web y desarrollo frontend. Su categoría en el portafolio es Desarrollo web, aunque la consultora presente servicios analíticos."
+  ],
+  "evidence": [
+    {
+      "title": "Identidad geográfica con un sistema visual compartido",
+      "body": "La fotografía principal del Cotopaxi sitúa la página de inicio en un contexto andino. Los paisajes regionales mantienen el mismo enfoque visual en las páginas interiores del sitio.",
+      "images": [
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Yuyay-Analytics-/main/images/yuyay_cotopaxi_clean_hero.jpg",
+          "alt": "Paisaje andino del Cotopaxi utilizado en la página de inicio de Yuyay Analytics",
+          "caption": "Fotografía principal de la página de inicio. El sitio utiliza paisajes regionales en sus páginas interiores.",
+          "kind": "site-asset"
+        }
+      ]
+    },
+    {
+      "title": "Interacciones que responden a las necesidades del visitante",
+      "body": "Las funciones frontend ayudan al visitante a pasar de una descripción general del servicio a evidencia relevante o a un siguiente paso.",
+      "images": [],
+      "table": {
+        "headers": [
+          "Necesidad del visitante",
+          "Función del sitio"
+        ],
+        "rows": [
+          [
+            "Encontrar experiencia relevante",
+            "Filtros por país y temática, búsqueda de proyectos y tarjetas interactivas"
+          ],
+          [
+            "Comprender la responsabilidad de cada persona",
+            "Colaboradores identificados y descripciones diferenciadas de evaluaciones, investigaciones y productos"
+          ],
+          [
+            "Consultar trabajos de respaldo",
+            "Informes, publicaciones, CV descargables y enlaces a aplicaciones en línea"
+          ],
+          [
+            "Explorar herramientas aplicadas",
+            "Muestra bilingüe de PredioAI y Expense Analyzer"
+          ],
+          [
+            "Iniciar una conversación",
+            "Formulario de contacto que prepara una consulta por correo"
+          ]
+        ]
+      }
+    }
+  ],
+  "links": [
+    {
+      "label": "Explorar Yuyay Analytics",
+      "url": "https://jayjayanton.github.io/Yuyay-Analytics-/",
+      "kind": "live"
+    },
+    {
+      "label": "Explorar el repositorio del sitio web",
+      "url": "https://github.com/jayjayanton/Yuyay-Analytics-",
+      "kind": "code"
+    }
+  ],
+  "related": [
+    "raaz-borg",
+    "predio-ai"
+  ]
+}

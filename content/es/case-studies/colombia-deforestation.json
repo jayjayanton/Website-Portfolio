@@ -1,0 +1,534 @@
+{
+  "slug": "colombia-deforestation",
+  "title": "Investigación de los factores geográficos asociados a la deforestación",
+  "summary": "Combiné observaciones de pérdida de bosque en Colombia con variables de relieve, acceso, uso del suelo y protección para comparar explicaciones estadísticas de la deforestación. El trabajo conecta la preparación de variables en SIG con modelos interpretables y mantiene la distinción entre los resultados históricos de regresión logística y un mapa de riesgo de Random Forest documentado por separado.",
+  "categories": [
+    "data-science",
+    "geospatial"
+  ],
+  "status": "Investigación aplicada",
+  "status_key": "delivered",
+  "role": "Colaborador de investigación geoespacial y estadística",
+  "context": "WWF · Investigación sobre pérdida de bosque en Colombia",
+  "image": {
+    "src": "images/colombia-deforestation-risk.jpg",
+    "alt": "Mapa de riesgo de deforestación en Colombia con riesgo modelado alto y bajo, áreas protegidas y límites administrativos",
+    "caption": "Resultado histórico del trabajo para WWF. El documento original identifica este mapa de riesgo en Colombia como un análisis de Random Forest; es independiente de la tabla de coeficientes de regresión logística.",
+    "kind": "research"
+  },
+  "technologies": [
+    "R",
+    "Python",
+    "SIG",
+    "Cambio de cobertura forestal de Hansen",
+    "Regresión logística binomial",
+    "Predictores espaciales",
+    "Comparación de modelos"
+  ],
+  "problem": "Un mapa de pérdida de bosque muestra dónde ocurrió el cambio, pero comprender su contexto geográfico requiere integrar variables ambientales y de acceso humano. Esta investigación examinó qué condiciones observadas se asociaban con la pérdida de bosque en Colombia durante 2000–2017.",
+  "contribution": "Investigué patrones de pérdida de bosque, combiné predictores geográficos y comparé especificaciones de regresión logística binomial. El análisis en R que se conserva y el documento histórico de trabajo mantienen la tabla de comparación de modelos y un mapa de riesgo identificado por separado como Random Forest. El preprocesamiento original de las etiquetas de Hansen y los datos de entrada de los modelos no están disponibles en su totalidad.",
+  "approach": [
+    {
+      "title": "Convertir la pregunta de conservación en predictores",
+      "body": "Combiné observaciones de cambio de cobertura forestal de Hansen con pendiente, elevación, proximidad a carreteras y ciudades, ríos, áreas protegidas y variables de cobertura del suelo y agricultura."
+    },
+    {
+      "title": "Comparar explicaciones alternativas",
+      "body": "Comparé un modelo completo, otro con selección por pasos, un modelo simple basado solo en elevación y otro con una autocovariable de los residuos. El propósito era examinar cómo variaban las asociaciones estimadas entre especificaciones."
+    },
+    {
+      "title": "Interpretar los coeficientes en su contexto",
+      "body": "Comparé signos y significancia estadística conservando las unidades y convenciones originales de presentación. No utilicé la magnitud de los coeficientes sin estandarizar para ordenar variables medidas en escalas distintas."
+    },
+    {
+      "title": "Distinguir los resultados de cada modelo",
+      "body": "Presenté el mapa histórico de riesgo de Random Forest como un resultado independiente junto a la tabla del GLM, sin tratarlo como una representación espacial de los coeficientes de regresión."
+    }
+  ],
+  "outcome": "Los resultados históricos identifican asociaciones recurrentes con la pendiente, el acceso, los ríos y la superficie protegida, y ofrecen un mapa de riesgo para continuar la investigación en conservación. La documentación permite mostrar la preparación de variables espaciales y la interpretación estadística; no establece un pronóstico operativo actual de deforestación.",
+  "learning": "El proyecto muestra cómo la preparación de datos espaciales se convierte en un proceso de modelado estadístico: las preguntas geográficas se expresan como variables, se comparan distintas especificaciones y los resultados se interpretan en sus unidades originales. Conservar la procedencia de cada modelo forma parte de esta capacidad, especialmente cuando varios análisis aparecen en la misma documentación de investigación.",
+  "limitations": [
+    "Los datos originales de modelado no están disponibles, por lo que no se han vuelto a ejecutar los análisis históricos ni se puede calcular un ordenamiento estandarizado de la importancia de las variables a partir de esta documentación.",
+    "Las asociaciones de regresión no son efectos causales. Las distintas escalas de los coeficientes impiden ordenar válidamente la importancia de las variables a partir de sus magnitudes sin estandarizar.",
+    "El mapa de Random Forest y la tabla del GLM corresponden a resultados de modelos distintos; sus métricas e interpretaciones deben mantenerse separadas.",
+    "El repositorio conserva el análisis de regresión, pero no el proceso original que generó las etiquetas de deforestación a partir de los datos de Hansen."
+  ],
+  "evidence": [
+    {
+      "title": "Comparación histórica de modelos",
+      "body": "Los valores se reproducen del documento original de trabajo para WWF, sin recalcularlos. Cada fila de coeficientes identificada por una variable va seguida de la fila de valores complementarios que la acompañaba originalmente. Se conservan los símbolos de significancia, las entradas vacías y los signos; los valores complementarios no se reinterpretan como un estadístico de incertidumbre verificado posteriormente.",
+      "images": [],
+      "table": {
+        "headers": [
+          "Variable",
+          "Completo",
+          "Por pasos",
+          "Simple",
+          "RAC"
+        ],
+        "rows": [
+          [
+            "Pendiente",
+            "-0.187***",
+            "-0.184***",
+            "—",
+            "-0.185***"
+          ],
+          [
+            "—",
+            "-0.008",
+            "-0.007",
+            "—",
+            "-0.007"
+          ],
+          [
+            "Elevación",
+            "0.0001*",
+            "0.0001*",
+            "-0.001***",
+            "0.0001*"
+          ],
+          [
+            "—",
+            "-0.0001",
+            "-0.0001",
+            "-0.00003",
+            "-0.0001"
+          ],
+          [
+            "Universal_Mills_Dist",
+            "-0.002***",
+            "-0.002***",
+            "—",
+            "-0.003***"
+          ],
+          [
+            "—",
+            "-0.0003",
+            "-0.0002",
+            "—",
+            "-0.0002"
+          ],
+          [
+            "Main_Cities_Dist",
+            "-0.004***",
+            "-0.004***",
+            "—",
+            "-0.004***"
+          ],
+          [
+            "—",
+            "-0.001",
+            "-0.001",
+            "—",
+            "-0.001"
+          ],
+          [
+            "Rivers_Dist",
+            "0.016***",
+            "0.016***",
+            "—",
+            "0.017***"
+          ],
+          [
+            "—",
+            "-0.003",
+            "-0.003",
+            "—",
+            "-0.003"
+          ],
+          [
+            "Rd_Prim_Sec_Dist",
+            "-0.024***",
+            "-0.024***",
+            "—",
+            "-0.025***"
+          ],
+          [
+            "—",
+            "-0.001",
+            "-0.001",
+            "—",
+            "-0.001"
+          ],
+          [
+            "PAs_Dist",
+            "-0.001",
+            "—",
+            "—",
+            "—"
+          ],
+          [
+            "—",
+            "-0.001",
+            "—",
+            "—",
+            "—"
+          ],
+          [
+            "Tr_Oil_Palm_Dist",
+            "-0.0002",
+            "—",
+            "—",
+            "—"
+          ],
+          [
+            "—",
+            "-0.0001",
+            "—",
+            "—",
+            "—"
+          ],
+          [
+            "Ld_Woodland_Mosaic_Dist",
+            "0.012***",
+            "0.010***",
+            "—",
+            "0.010***"
+          ],
+          [
+            "—",
+            "-0.003",
+            "-0.003",
+            "—",
+            "-0.003"
+          ],
+          [
+            "Ld_Grasslan_Dist",
+            "-0.001",
+            "—",
+            "—",
+            "—"
+          ],
+          [
+            "—",
+            "-0.002",
+            "—",
+            "—",
+            "—"
+          ],
+          [
+            "Ld_Savanna_Dist",
+            "0.023***",
+            "0.024***",
+            "—",
+            "0.024***"
+          ],
+          [
+            "—",
+            "-0.003",
+            "-0.002",
+            "—",
+            "-0.002"
+          ],
+          [
+            "Ld_Dryland_Cropland_Pasture_Dist",
+            "-0.006***",
+            "-0.007***",
+            "—",
+            "-0.007***"
+          ],
+          [
+            "—",
+            "-0.002",
+            "-0.002",
+            "—",
+            "-0.002"
+          ],
+          [
+            "Ld_Cropland_Grassland_Mosaic_Dist",
+            "0.0003",
+            "—",
+            "—",
+            "—"
+          ],
+          [
+            "—",
+            "-0.014",
+            "—",
+            "—",
+            "—"
+          ],
+          [
+            "Rd_Prim_Sec_Km",
+            "0.038",
+            "0.041",
+            "—",
+            "0.039"
+          ],
+          [
+            "—",
+            "-0.026",
+            "-0.026",
+            "—",
+            "-0.026"
+          ],
+          [
+            "Riv_Km",
+            "-0.002",
+            "—",
+            "—",
+            "—"
+          ],
+          [
+            "—",
+            "-0.007",
+            "—",
+            "—",
+            "—"
+          ],
+          [
+            "Operated_Contracts_SqKm",
+            "0.048***",
+            "0.048***",
+            "—",
+            "0.048***"
+          ],
+          [
+            "—",
+            "-0.007",
+            "-0.006",
+            "—",
+            "-0.006"
+          ],
+          [
+            "PAs_SqKm",
+            "-0.097***",
+            "-0.093***",
+            "—",
+            "-0.091***"
+          ],
+          [
+            "—",
+            "-0.01",
+            "-0.009",
+            "—",
+            "-0.009"
+          ],
+          [
+            "Tr_Banana_SqKm",
+            "-0.302***",
+            "-0.295***",
+            "—",
+            "-0.294***"
+          ],
+          [
+            "—",
+            "-0.094",
+            "-0.093",
+            "—",
+            "-0.093"
+          ],
+          [
+            "Tr_Gr_Palms_SqKm",
+            "-0.125*",
+            "-0.116*",
+            "—",
+            "-0.120*"
+          ],
+          [
+            "—",
+            "-0.065",
+            "-0.065",
+            "—",
+            "-0.064"
+          ],
+          [
+            "Tr_Oil_Palm_SqKm",
+            "0.061",
+            "—",
+            "—",
+            "—"
+          ],
+          [
+            "—",
+            "-0.108",
+            "—",
+            "—",
+            "—"
+          ],
+          [
+            "Ld_Irrigated_Cropland_and_Pasture_SqKm",
+            "-0.329***",
+            "-0.343***",
+            "—",
+            "-0.342***"
+          ],
+          [
+            "—",
+            "-0.1",
+            "-0.101",
+            "—",
+            "-0.102"
+          ],
+          [
+            "Ld_Cropland_Grassland_Mosaic_SqKm",
+            "0.061**",
+            "0.060**",
+            "—",
+            "0.061**"
+          ],
+          [
+            "—",
+            "-0.024",
+            "-0.024",
+            "—",
+            "-0.024"
+          ],
+          [
+            "Ld_Cropland_Woodland_Mosaic_SqKm",
+            "0.003",
+            "—",
+            "—",
+            "—"
+          ],
+          [
+            "—",
+            "-0.013",
+            "—",
+            "—",
+            "—"
+          ],
+          [
+            "Ld_Grassland_SqKm",
+            "-0.102***",
+            "-0.100***",
+            "—",
+            "-0.099***"
+          ],
+          [
+            "—",
+            "-0.03",
+            "-0.03",
+            "—",
+            "-0.03"
+          ],
+          [
+            "Ld_Savanna_SqKm",
+            "-0.019",
+            "—",
+            "—",
+            "—"
+          ],
+          [
+            "—",
+            "-0.013",
+            "—",
+            "—",
+            "—"
+          ],
+          [
+            "Clust_150km",
+            "0.005",
+            "—",
+            "—",
+            "0.001"
+          ],
+          [
+            "—",
+            "-0.017",
+            "—",
+            "—",
+            "-0.015"
+          ],
+          [
+            "Col_ac",
+            "—",
+            "—",
+            "—",
+            "0.002"
+          ],
+          [
+            "—",
+            "—",
+            "—",
+            "—",
+            "-0.001"
+          ],
+          [
+            "Constante",
+            "2.118***",
+            "2.056***",
+            "0.262***",
+            "2.069***"
+          ],
+          [
+            "—",
+            "-0.157",
+            "-0.103",
+            "-0.023",
+            "-0.124"
+          ]
+        ]
+      }
+    },
+    {
+      "title": "Patrones recurrentes entre especificaciones",
+      "body": "Cinco ejemplos aparecen de forma consistente en los modelos completo, por pasos y RAC. Son ejemplos de asociaciones reportadas, no una clasificación verificada de las cinco variables más importantes.",
+      "images": [],
+      "table": {
+        "headers": [
+          "Predictor",
+          "Coeficiente del modelo completo",
+          "Interpretación en este modelo"
+        ],
+        "rows": [
+          [
+            "Pendiente",
+            "−0.187***",
+            "Asociación negativa"
+          ],
+          [
+            "Distancia a carreteras principales y secundarias",
+            "−0.024***",
+            "Asociación negativa"
+          ],
+          [
+            "Distancia a las principales ciudades",
+            "−0.004***",
+            "Asociación negativa"
+          ],
+          [
+            "Distancia a ríos",
+            "0.016***",
+            "Asociación positiva"
+          ],
+          [
+            "Superficie de áreas protegidas",
+            "−0.097***",
+            "Asociación negativa"
+          ]
+        ]
+      }
+    },
+    {
+      "title": "Mapa independiente de Random Forest",
+      "body": "El documento original de trabajo identifica este mapa como un análisis de riesgo con Random Forest. Se conserva como resultado histórico de investigación y no se presenta como una salida de la tabla del GLM.",
+      "images": [
+        {
+          "src": "images/colombia-deforestation-risk.jpg",
+          "alt": "Mapa de riesgo de deforestación en Colombia con riesgo modelado alto y bajo, áreas protegidas y límites administrativos",
+          "caption": "Resultado histórico del trabajo para WWF. El documento original identifica este mapa de riesgo en Colombia como un análisis de Random Forest; es independiente de la tabla de coeficientes de regresión logística.",
+          "kind": "research"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": "Consultar el código y la documentación de la investigación",
+      "url": "https://github.com/jayjayanton/Deforestation-Research",
+      "kind": "code"
+    },
+    {
+      "label": "Ver la tabla histórica de comparación de modelos",
+      "url": "https://github.com/jayjayanton/Deforestation-Research/blob/main/tables/colombia-glm-model-comparison.csv",
+      "kind": "report"
+    }
+  ],
+  "related": [
+    "land-use-dynamics",
+    "orphaned-wells",
+    "nasa-water-resources"
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "slug": "carbon-storage-atlas",
+  "title": "Conversión de colecciones de rásteres geológicos en capas SIG accesibles",
+  "summary": "Desarrollé un flujo en Python para convertir más de 400 rásteres geológicos en conjuntos de polígonos destinados a publicación en SIG web. El trabajo conectó el procesamiento espacial repetible con el atlas interactivo de NETL, preparando datos científicos para que investigadores pudieran explorar capas por cuenca mediante una interfaz cartográfica de fácil acceso.",
+  "categories": [
+    "geospatial",
+    "engineering"
+  ],
+  "status": "Flujo SIG entregado",
+  "status_key": "delivered",
+  "role": "Científico de datos geoespaciales · Automatización de conversión ráster a vector y preparación de datos",
+  "context": "Investigación de Leidos en apoyo a DOE/NETL · Visualización de datos geológicos",
+  "image": {
+    "src": "images/carbon-atlas-appalachian-basin.webp",
+    "alt": "Mapa interactivo de la cuenca de los Apalaches con ubicaciones de sismos, lineamientos estructurales y capas ráster geofísicas",
+    "caption": "Captura del atlas de NETL: la vista de la cuenca de los Apalaches combina registros sísmicos, rasgos estructurales y capas geofísicas. La aplicación es un producto colaborativo; mi contribución fue automatizar el procesamiento de datos.",
+    "kind": "screenshot"
+  },
+  "technologies": [
+    "Python",
+    "Procesamiento de ráster a vector",
+    "SIG",
+    "ArcGIS Online",
+    "ArcGIS Enterprise",
+    "Cartografía web"
+  ],
+  "problem": "Cientos de archivos ráster geológicos debían convertirse en capas utilizables en mapas web. Repetir manualmente la conversión y preparación dificultaría procesar la colección de forma coherente y mantenerla para visualización.",
+  "contribution": "Desarrollé la automatización en Python que procesó más de 400 archivos ráster y los convirtió en conjuntos de polígonos vectoriales, y preparé los resultados para publicación en SIG. Mi contribución se centró en el flujo de procesamiento y entrega de datos, sin atribuirme la autoría exclusiva del atlas de NETL ni de todas las capas que muestra.",
+  "approach": [
+    {
+      "title": "Procesar de forma repetible una colección extensa de rásteres",
+      "body": "Apliqué un flujo programado de conversión ráster a vector a la colección de archivos geológicos, sustituyendo conversiones manuales repetidas por una secuencia de procesamiento coherente."
+    },
+    {
+      "title": "Preparar los resultados SIG para su entrega",
+      "body": "Generé archivos de polígonos vectoriales adecuados para cargarlos y utilizarlos en el entorno SIG web. La preparación de datos conectó los rásteres de origen con capas que podían organizarse y explorarse en línea."
+    },
+    {
+      "title": "Apoyar la visualización por cuenca",
+      "body": "Preparé resultados para el atlas interactivo de NETL, donde los controles temáticos permiten examinar información geológica y estructural en mapas específicos de cada cuenca."
+    }
+  ],
+  "outcome": "El flujo preparó cientos de conjuntos de datos geológicos para su uso en SIG web y apoyó su presentación en el atlas de NETL. La aplicación pública muestra el contexto de entrega: permite explorar mapas de cuencas, categorías temáticas de capas y datos de formaciones individuales. Los scripts originales de procesamiento no son públicos.",
+  "learning": "El proyecto demuestra el paso de ejecutar una operación espacial a entregar un flujo reproducible de preparación y servicio de datos. Conecta procesamiento por lotes, resultados espaciales coherentes y requisitos de publicación: un patrón transferible para incorporar datos de investigación en interfaces que otras personas pueden utilizar sin ejecutar el código subyacente.",
+  "limitations": [
+    "Los scripts originales de conversión no están disponibles públicamente, por lo que el caso documenta la contribución y el contexto de entrega, no una implementación ejecutable.",
+    "Las capturas del atlas muestran una aplicación colaborativa y múltiples fuentes de datos; no demuestran que yo sea autor de todos los conjuntos mostrados ni de la aplicación completa.",
+    "El trabajo prepara y visualiza información geológica. Por sí solo, no certifica la idoneidad de un sitio para almacenamiento de carbono."
+  ],
+  "evidence": [
+    {
+      "title": "Contexto de entrega del atlas público",
+      "body": "Estas capturas muestran cómo aparecen los mapas de cuencas, las categorías temáticas y las capas geológicas detalladas en la aplicación de NETL. Documentan el entorno al que dio soporte el flujo de preparación de ráster a vector.",
+      "images": [
+        {
+          "src": "images/carbon-atlas-appalachian-basin.webp",
+          "alt": "Mapa interactivo de la cuenca de los Apalaches con ubicaciones de sismos, lineamientos estructurales y capas ráster geofísicas",
+          "caption": "Captura del atlas de NETL: la vista de la cuenca de los Apalaches combina registros sísmicos, rasgos estructurales y capas geofísicas. La aplicación es un producto colaborativo; mi contribución fue automatizar el procesamiento de datos.",
+          "kind": "screenshot"
+        },
+        {
+          "src": "images/carbon-atlas-map-layer-categories.webp",
+          "alt": "Menú de capas del mapa con categorías de sismos, fallas y pliegues, curvas estructurales, geofísica, densidad de rasgos estructurales y topografía",
+          "caption": "Captura del atlas de NETL: los grupos temáticos de capas organizan los conjuntos de datos por cuenca. Las categorías disponibles varían entre cuencas.",
+          "kind": "screenshot"
+        },
+        {
+          "src": "images/carbon-atlas-appalachian-layer-details.webp",
+          "alt": "Árbol de capas desplegado de la cuenca de los Apalaches con lineamientos de fallas y conjuntos de datos de profundidad y espesor de formaciones geológicas",
+          "caption": "Captura del atlas de NETL: las capas desplegadas de los Apalaches incluyen lineamientos estructurales y datos de profundidad y espesor de formaciones.",
+          "kind": "screenshot"
+        }
+      ]
+    },
+    {
+      "title": "Escala de la contribución de procesamiento",
+      "body": "El flujo documentado procesó más de 400 rásteres geológicos y los convirtió en archivos de polígonos vectoriales para publicación en SIG. Ese número no se acompaña de estimaciones no medidas de ahorro de tiempo ni de impacto comercial.",
+      "images": []
+    }
+  ],
+  "links": [
+    {
+      "label": "Explorar el atlas interactivo de NETL",
+      "url": "https://arcgis.netl.doe.gov/portal/apps/experiencebuilder/experience/?id=4153c92efedd49a09ad5de9a042075fb",
+      "kind": "live"
+    }
+  ],
+  "related": [
+    "land-use-dynamics",
+    "predio-ai",
+    "epa-emissions"
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "slug": "nasa-water-resources",
+  "title": "Relación entre cambios de vegetación y disponibilidad de agua en Perú",
+  "summary": "Contribuí a la preparación de datos satelitales y al análisis de series temporales ambientales en un estudio de NASA DEVELOP sobre el deterioro de bosques de algarrobo en Lambayeque, Perú. El equipo combinó información de vegetación, precipitación, evapotranspiración y humedad del suelo para investigar los cambios ambientales, distinguiendo las asociaciones observadas de una causa demostrada de mortalidad forestal.",
+  "categories": [
+    "geospatial",
+    "engineering",
+    "data-science"
+  ],
+  "status": "Investigación de NASA DEVELOP",
+  "status_key": "delivered",
+  "role": "Investigador del equipo NASA DEVELOP · Preparación de datos y análisis de series temporales",
+  "context": "Lambayeque, Perú · Bosques de algarrobo y recursos hídricos",
+  "image": {
+    "src": "images/water_resources_2015_maps.png",
+    "alt": "Mapas de precipitación, evapotranspiración, NDVI y anomalías de vegetación de 2015",
+    "caption": "Mapas originales de NASA DEVELOP de 2015 sobre precipitación, evapotranspiración, verdor y anomalías de la vegetación. Compare el contexto del estudio y las leyendas con la figura de 2017.",
+    "kind": "research"
+  },
+  "technologies": [
+    "Python",
+    "Linux",
+    "ArcGIS Pro",
+    "Procesamiento de observaciones de la Tierra",
+    "NDVI",
+    "CHIRPS",
+    "Series temporales ambientales"
+  ],
+  "problem": "El deterioro de los bosques de algarrobo en Lambayeque requería investigar varios procesos ambientales. Un solo índice de vegetación o una serie de precipitación no podían explicar todo el sistema, por lo que el equipo necesitaba comparar la disponibilidad de agua y el estado de la vegetación en el espacio y el tiempo.",
+  "contribution": "Colaboré en la construcción del flujo de adquisición y preprocesamiento que preparó observaciones de NASA y otros datos ambientales para ArcGIS Pro. También contribuí al análisis de series temporales de NDVI, precipitación y humedad del suelo, integrando distintos conjuntos de datos en un flujo común para examinar patrones de vegetación y recursos hídricos.",
+  "approach": [
+    {
+      "title": "Adquirir y preparar las observaciones",
+      "body": "Utilicé el enfoque compartido de procesamiento de datos de NASA para automatizar la adquisición y preparar datos satelitales y ambientales para el análisis espacial. Los estudios de calidad del aire y recursos hídricos utilizaron productos distintos, aunque compartieron métodos de procesamiento."
+    },
+    {
+      "title": "Comparar las condiciones de vegetación e hidrología",
+      "body": "Examiné el NDVI y las anomalías de vegetación junto con la precipitación, la evapotranspiración y la humedad del suelo. Cada variable aporta una parte diferente de la relación entre agua y vegetación."
+    },
+    {
+      "title": "Examinar los patrones a lo largo del tiempo",
+      "body": "Comparé totales de precipitación, evapotranspiración y series de humedad del suelo a distintas profundidades, incluidas las figuras originales de series temporales de 2001–2019. Consideré cómo el momento y la persistencia de la disponibilidad de agua coincidían con las condiciones de la vegetación."
+    },
+    {
+      "title": "Interpretar la evidencia teniendo en cuenta las limitaciones",
+      "body": "Comparé los mapas originales de 2015 y 2017 como evidencia visual, considerando la cobertura temporal incompleta, los píxeles de baja resolución y las diferencias entre los patrones derivados de satélites y las observaciones locales."
+    }
+  ],
+  "outcome": "El equipo produjo mapas, figuras de series temporales y un informe técnico que documentan cambios en las condiciones del agua y la vegetación. El póster reporta una disminución de la precipitación durante el período de estudio, mejoras de la vegetación en períodos más húmedos y patrones de humedad del suelo y evapotranspiración específicos de cada cuenca. El análisis no estableció la hidrología como causa única de la mortalidad de los algarrobos.",
+  "learning": "Este proyecto muestra cómo reutilizar una base de procesamiento de observaciones para un problema científico diferente. Añade el criterio de compatibilizar cobertura temporal, resolución espacial y significado físico antes de comparar datos, y muestra cómo un flujo técnico puede apoyar la interpretación ambiental sin convertir una correlación en una afirmación causal.",
+  "limitations": [
+    "El análisis identifica asociaciones ambientales y no determina de forma independiente la causa de la mortalidad de los algarrobos.",
+    "La cobertura temporal incompleta y los píxeles mixtos de baja resolución limitan las comparaciones; las observaciones de colaboradores locales no siempre coincidieron con los patrones de NDVI.",
+    "Los mapas de múltiples paneles de 2015 y 2017 presentan diferencias de composición y leyendas. La comparación visual no constituye una detección de cambios a escala de píxel.",
+    "La humedad del suelo modelada no mide directamente la absorción de agua por las raíces de los algarrobos, y la precipitación por sí sola no describe el agua retenida en el suelo."
+  ],
+  "evidence": [
+    {
+      "title": "Mapas originales: 2015 y 2017",
+      "body": "Las dos figuras históricas de NASA DEVELOP muestran precipitación, evapotranspiración, NDVI y anomalías de vegetación. Se conservan como resultados originales de investigación, sin recrearlos.",
+      "images": [
+        {
+          "src": "images/water_resources_2015_maps.png",
+          "alt": "Mapas de precipitación, evapotranspiración, NDVI y anomalías de vegetación de 2015",
+          "caption": "Mapas originales de NASA DEVELOP de 2015 sobre precipitación, evapotranspiración, verdor y anomalías de la vegetación. Compare el contexto del estudio y las leyendas con la figura de 2017.",
+          "kind": "research"
+        },
+        {
+          "src": "images/water_resources_2017_maps.png",
+          "alt": "Mapas de precipitación, evapotranspiración, NDVI y anomalías de vegetación de 2017",
+          "caption": "Mapas originales de NASA DEVELOP de 2017 sobre precipitación, evapotranspiración, verdor y anomalías de la vegetación. La presentación conjunta permite una comparación visual, no una detección de cambios con píxeles alineados.",
+          "kind": "research"
+        }
+      ]
+    },
+    {
+      "title": "Evapotranspiración y humedad del suelo",
+      "body": "La evapotranspiración combina la evaporación superficial y la transpiración de las plantas. Compararla con la humedad a varias profundidades del suelo ayuda a examinar cómo cambia la disponibilidad de agua en el tiempo; ninguna de las dos variables establece por sí sola la causa del deterioro de la vegetación.",
+      "images": [
+        {
+          "src": "images/water_evapotranspiration_2001_2019.png",
+          "alt": "Evapotranspiración, 2001–2019",
+          "caption": "Informe técnico original de NASA DEVELOP, apéndice A, figura A3: series temporales de evapotranspiración de 2001–2019 en las áreas protegidas examinadas por el equipo.",
+          "kind": "research"
+        },
+        {
+          "src": "images/water_soil_moisture_2001_2019.png",
+          "alt": "Humedad del suelo por profundidad, 2001–2019",
+          "caption": "Informe técnico original de NASA DEVELOP, apéndice A, figura A4: humedad del suelo modelada a distintas profundidades durante 2001–2019. Estas estimaciones no son mediciones directas de absorción de agua por las raíces.",
+          "kind": "research"
+        }
+      ]
+    },
+    {
+      "title": "Referencia de precipitación",
+      "body": "El gráfico de precipitación de CHIRPS identifica períodos más húmedos y más secos para interpretarlos junto con las series de vegetación y humedad del suelo.",
+      "images": [
+        {
+          "src": "images/water_chirps_precipitation_sum_excel.jpg",
+          "alt": "Totales de precipitación",
+          "caption": "Análisis original de precipitación y NDVI del equipo: los totales de lluvia de CHIRPS proporcionan una referencia para comparar la variabilidad de la vegetación y la humedad del suelo.",
+          "kind": "research"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": "Leer el informe técnico de NASA",
+      "url": "https://ntrs.nasa.gov/api/citations/20205000987/downloads/2020Spring_LaRC_LambayequeWater_TechPaper_FD-final.pdf",
+      "kind": "report"
+    },
+    {
+      "label": "Ver el póster del equipo",
+      "url": "https://docs.google.com/presentation/d/1_GbGiPBTeLXAhpkhE5sdQCej6jyOUGg8/edit",
+      "kind": "report"
+    },
+    {
+      "label": "Ver la presentación del equipo",
+      "url": "https://docs.google.com/presentation/d/15yqCWtJ0nR1L4MKz6mujwWHKWB_G_EIy/edit",
+      "kind": "report"
+    },
+    {
+      "label": "Leer las reflexiones sobre el proyecto",
+      "url": "https://docs.google.com/document/d/1lZo7d9DaEBFEZW-yXgez1TenCQtEdRdV/edit",
+      "kind": "report"
+    },
+    {
+      "label": "Consultar los materiales de investigación sobre recursos hídricos",
+      "url": "https://github.com/jayjayanton/NASA-Projects/tree/main/water-resources-lambayeque",
+      "kind": "code"
+    },
+    {
+      "label": "Consultar el flujo compartido de procesamiento de observaciones",
+      "url": "https://github.com/jayjayanton/NASA-Projects/tree/main/eo-data-extraction-and-processing",
+      "kind": "code"
+    }
+  ],
+  "related": [
+    "nasa-air-quality",
+    "environmental-flows",
+    "colombia-deforestation"
+  ]
+}

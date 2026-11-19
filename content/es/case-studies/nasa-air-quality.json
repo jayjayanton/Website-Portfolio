@@ -1,0 +1,185 @@
+{
+  "slug": "nasa-air-quality",
+  "title": "Comparación de observaciones satelitales de aerosoles con mediciones en tierra",
+  "summary": "Contribuí a la automatización del procesamiento de observaciones de la Tierra y al análisis de regresión en un estudio de NASA DEVELOP sobre calidad del aire en Centroamérica. Los registros de PM2.5 proporcionados por colaboradores en El Salvador permitieron comparar productos satelitales en detalle, mientras que un análisis independiente de CALIOP–Aqua MODIS examinó la concordancia entre mediciones lidar y pasivas de aerosoles atmosféricos.",
+  "categories": [
+    "data-science",
+    "geospatial",
+    "engineering"
+  ],
+  "status": "Investigación de NASA DEVELOP",
+  "status_key": "delivered",
+  "role": "Investigador del equipo NASA DEVELOP · Procesamiento de datos y análisis de regresión",
+  "context": "Centroamérica · Comparaciones detalladas con estaciones terrestres en El Salvador",
+  "image": {
+    "src": "images/AOD_Regression.jpg",
+    "alt": "Regresiones originales entre AOD de MODIS04 y MODIS08 y PM2.5 en El Salvador, 2009–2019",
+    "caption": "Análisis original de NASA DEVELOP, figura 5 del informe técnico. Las regresiones de MODIS04 y MODIS08 en El Salvador comparan AOD satelital con PM2.5 de estaciones terrestres durante 2009–2019; los valores de R² reportados son 0.47 y 0.30, respectivamente.",
+    "kind": "research"
+  },
+  "technologies": [
+    "Python",
+    "Linux",
+    "R",
+    "ArcGIS Pro",
+    "MODIS",
+    "VIIRS",
+    "CALIPSO / CALIOP",
+    "Regresión lineal"
+  ],
+  "problem": "Los productos satelitales de aerosoles pueden ampliar la investigación de calidad del aire más allá de las estaciones de monitoreo, pero miden los aerosoles atmosféricos de forma distinta al material particulado a nivel del suelo. El equipo necesitaba comparar los productos con los registros disponibles de estaciones y comprender dónde las mediciones coincidían, diferían o carecían de cobertura.",
+  "contribution": "Colaboré en el desarrollo y la automatización de la adquisición, el procesamiento y la extracción de productos de observación de la Tierra de NASA para ArcGIS Pro. También contribuí al análisis de regresión en R con mediciones de PM2.5 proporcionadas por colaboradores en El Salvador. El procesamiento compartido de los dos proyectos de NASA abarcó más de 900 archivos multidimensionales; ese total no se atribuye únicamente a este proyecto.",
+  "approach": [
+    {
+      "title": "Preparar distintos productos de observación",
+      "body": "Automaticé la adquisición y el preprocesamiento de archivos satelitales y ambientales para analizarlos en ArcGIS Pro y mediante métodos estadísticos. Los productos y sus características de medición eran específicos del estudio de calidad del aire."
+    },
+    {
+      "title": "Utilizar observaciones terrestres para evaluar asociaciones",
+      "body": "Comparé la profundidad óptica de aerosoles de MODIS04, MODIS08 y VIIRS con PM2.5 medido in situ. El registro relativamente completo de la estación de San Salvador, en El Salvador, permitió realizar comparaciones detalladas mediante regresión."
+    },
+    {
+      "title": "Especificar los períodos de comparación",
+      "body": "Separé las regresiones de productos de 2009–2019 del análisis emparejado de tres productos durante 47 meses y de los resúmenes del póster regional. Los resultados obtenidos con muestras y períodos distintos se mantuvieron diferenciados."
+    },
+    {
+      "title": "Comparar mediciones satelitales independientes",
+      "body": "El equipo emparejó observaciones lidar de CALIOP con observaciones pasivas de Aqua MODIS en 118 días durante 2009–2019. Esta comparación examinó la consistencia de AOD entre sensores de manera separada de las regresiones con PM2.5 de estaciones terrestres."
+    }
+  ],
+  "outcome": "El estudio produjo figuras originales de regresión y una serie temporal de observaciones satelitales emparejadas que muestran la utilidad y las limitaciones de las mediciones de aerosoles para investigar la calidad del aire regional. Las comparaciones de El Salvador para el período completo reportaron R² de 0.47 para MODIS04 y de 0.30 para MODIS08; son resultados de investigación del equipo para la muestra indicada.",
+  "learning": "El trabajo muestra que la ingeniería de datos y la comparación estadística deben adaptarse a lo que se mide: un perfil lidar, una estimación de aerosoles en la columna atmosférica y una concentración registrada en tierra son observaciones relacionadas, pero no variables equivalentes. Este mismo cuidado al compatibilizar resolución, tiempo y significado de las mediciones se aplica a otros problemas de teledetección y análisis con múltiples fuentes.",
+  "limitations": [
+    "La profundidad óptica de aerosoles medida por satélite no es una medición directa de PM2.5 en superficie. Las relaciones son estadísticas y dependen del contexto de observación.",
+    "La nubosidad, los registros faltantes de las estaciones y las condiciones meteorológicas no modeladas limitaron el análisis.",
+    "Las figuras detalladas de regresión de tres productos corresponden a El Salvador; no son modelos de regresión para cada país de Centroamérica.",
+    "Las regresiones del período completo, la comparación emparejada de 47 meses y los resultados del póster regional utilizan muestras distintas. Sus valores de R² no deben combinarse ni atribuirse exclusivamente a un integrante del equipo."
+  ],
+  "evidence": [
+    {
+      "title": "El Salvador: comparaciones entre productos",
+      "body": "Estos son análisis separados del informe final. Ambas relaciones de MODIS para el período completo se reportaron como estadísticamente significativas con p < 0.001. R² describe la variación explicada en cada comparación indicada, no una calificación universal de exactitud.",
+      "images": [
+        {
+          "src": "images/AOD_Regression.jpg",
+          "alt": "Regresiones originales entre AOD de MODIS04 y MODIS08 y PM2.5 en El Salvador, 2009–2019",
+          "caption": "Análisis original de NASA DEVELOP, figura 5 del informe técnico. Las regresiones de MODIS04 y MODIS08 en El Salvador comparan AOD satelital con PM2.5 de estaciones terrestres durante 2009–2019; los valores de R² reportados son 0.47 y 0.30, respectivamente.",
+          "kind": "research"
+        },
+        {
+          "src": "images/NASA_MODIS04_MODIS08_VIIRS_Regression_Comparison.jpg",
+          "alt": "Comparación de regresiones de MODIS04, MODIS08 y VIIRS",
+          "caption": "Comparación original de tres productos de NASA DEVELOP, figura 7 y tabla 3 del informe. En el análisis emparejado de 47 meses, R² es 0.36 para MODIS04, 0.40 para MODIS08 y 0.39 para VIIRS; la muestra es distinta de la comparación del período completo.",
+          "kind": "research"
+        }
+      ],
+      "table": {
+        "headers": [
+          "Comparación",
+          "Producto",
+          "R² reportado"
+        ],
+        "rows": [
+          [
+            "Comparación de 2009–2019",
+            "MODIS04",
+            "0.47"
+          ],
+          [
+            "Comparación de 2009–2019",
+            "MODIS08",
+            "0.30"
+          ],
+          [
+            "Comparación emparejada de 47 meses",
+            "MODIS04",
+            "0.36"
+          ],
+          [
+            "Comparación emparejada de 47 meses",
+            "MODIS08",
+            "0.40"
+          ],
+          [
+            "Comparación emparejada de 47 meses",
+            "VIIRS",
+            "0.39"
+          ]
+        ]
+      }
+    },
+    {
+      "title": "Contexto del póster regional",
+      "body": "El póster del equipo presenta los siguientes resúmenes de regresión lineal simple por país. Son independientes de las comparaciones detalladas entre productos en El Salvador. El equipo también observó valores elevados de AOD y PM2.5 alrededor de abril y mayo.",
+      "images": [],
+      "table": {
+        "headers": [
+          "País",
+          "R² reportado",
+          "n reportado"
+        ],
+        "rows": [
+          [
+            "El Salvador",
+            "0.3043",
+            "111"
+          ],
+          [
+            "Guatemala",
+            "0.09274",
+            "59"
+          ],
+          [
+            "Panamá",
+            "0.4376",
+            "35"
+          ]
+        ]
+      }
+    },
+    {
+      "title": "Consistencia entre CALIOP y Aqua MODIS",
+      "body": "Las series temporales emparejadas siguieron patrones similares en general, con diferencias en algunas fechas. Comparan estimaciones satelitales de aerosoles mediante lidar y sensores pasivos, en lugar de estimar directamente PM2.5 a nivel del suelo.",
+      "images": [
+        {
+          "src": "images/air_caliop_aqua_modis_comparison.png",
+          "alt": "Comparación de CALIOP y Aqua MODIS",
+          "caption": "Figura 8 original del informe técnico de NASA DEVELOP. Se comparan las estimaciones de AOD de CALIOP y Aqua MODIS en 118 días con observaciones emparejadas durante 2009–2019. Es una comparación de consistencia entre satélites, no una regresión de PM2.5 en superficie.",
+          "kind": "research"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": "Leer el informe técnico del equipo",
+      "url": "https://docs.google.com/document/d/11F3Qrp4sL9wof5Jk86SBD4Td6z2AOCwZ/edit",
+      "kind": "report"
+    },
+    {
+      "label": "Ver la presentación final",
+      "url": "https://docs.google.com/presentation/d/1Ld3EMtaWho0oGPEFmDX1h_A9AngoHsRy/edit",
+      "kind": "report"
+    },
+    {
+      "label": "Ver el póster del equipo",
+      "url": "https://docs.google.com/presentation/d/1nepUS0tPo1rKZeQ4-si2ZBX3wJqunH45/edit",
+      "kind": "report"
+    },
+    {
+      "label": "Consultar los materiales de investigación sobre calidad del aire",
+      "url": "https://github.com/jayjayanton/NASA-Projects/tree/main/air-quality-el-salvador",
+      "kind": "code"
+    },
+    {
+      "label": "Consultar el flujo compartido de procesamiento de observaciones",
+      "url": "https://github.com/jayjayanton/NASA-Projects/tree/main/eo-data-extraction-and-processing",
+      "kind": "code"
+    }
+  ],
+  "related": [
+    "nasa-water-resources",
+    "land-use-dynamics",
+    "epa-emissions"
+  ]
+}

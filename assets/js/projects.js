@@ -34,15 +34,19 @@ function initializeProjectFilters() {
   const resets = [...document.querySelectorAll('[data-reset-filters]')];
   let state = readFilterState(window.location.search);
   let editingQuery = false;
+  const spanish = document.documentElement.lang.toLowerCase().startsWith('es');
 
   function render(syncControls = true) {
     const matches = filterProjects(projects, state);
     const visibleSlugs = new Set(matches.map(project => project.slug));
     for (const card of cards) card.hidden = !visibleSlugs.has(card.dataset.projectSlug);
     const filtered = Boolean(state.q || state.category !== 'all' || state.stage !== 'all');
+    const noun = spanish
+      ? (projects.length === 1 ? 'proyecto' : 'proyectos')
+      : (projects.length === 1 ? 'project' : 'projects');
     count.textContent = filtered
-      ? `${matches.length} of ${projects.length} projects`
-      : `${projects.length} ${projects.length === 1 ? 'project' : 'projects'}`;
+      ? `${matches.length} ${spanish ? 'de' : 'of'} ${projects.length} ${noun}`
+      : `${projects.length} ${noun}`;
     empty.hidden = matches.length !== 0;
     for (const button of resets) button.hidden = !filtered;
     for (const button of categories) {
@@ -58,6 +62,7 @@ function initializeProjectFilters() {
     const url = buildFilterUrl(window.location.href, state);
     if (url.href !== window.location.href) {
       window.history[method](window.history.state, '', url.href);
+      window.dispatchEvent(new Event('portfolio:locationchange'));
     }
   }
 

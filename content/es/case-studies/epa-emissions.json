@@ -1,0 +1,116 @@
+{
+  "slug": "epa-emissions",
+  "title": "Automatización de datos de gases de efecto invernadero de la EPA",
+  "summary": "Desarrollé flujos en Python para extraer y estandarizar datos de reporte de gases de efecto invernadero de la EPA correspondientes a 2010–2024. Combiné tablas de instalaciones obtenidas mediante API, clasificaciones de FLIGHT y conciliación por identificadores en archivos CSV reutilizables, avanzando de la automatización exploratoria del navegador hacia una preparación repetible de datos por instalación.",
+  "categories": [
+    "engineering"
+  ],
+  "status": "Flujo de datos aplicado",
+  "status_key": "delivered",
+  "role": "Desarrollador de flujos de datos en Python",
+  "context": "Preparación de datos de instalaciones del Greenhouse Gas Reporting Program de la EPA para investigación ambiental y energética posterior.",
+  "period": "Años de reporte 2010–2024",
+  "image": {
+    "src": "/images/EPA_ETL_Pipeline.png",
+    "alt": "Diagrama conceptual de extracción, transformación y entrega de datos de gases de efecto invernadero de la EPA",
+    "caption": "Diagrama conceptual del flujo ETL; no es un gráfico de registros reales de emisiones.",
+    "kind": "workflow-diagram"
+  },
+  "technologies": [
+    "Python",
+    "pandas",
+    "Selenium",
+    "BeautifulSoup",
+    "EPA Envirofacts",
+    "EPA FLIGHT",
+    "Procesamiento de CSV y Excel",
+    "Conciliación de identificadores de instalaciones"
+  ],
+  "problem": "Los registros históricos de emisiones por instalación y las clasificaciones sectoriales se distribuyen entre tablas de la EPA, descargas por año de reporte y la interfaz FLIGHT. Integrarlos de forma coherente exige repetir la adquisición, reorganización y conciliación de los datos antes de utilizarlos en análisis.",
+  "contribution": "Desarrollé scripts complementarios y un cuaderno exploratorio para identificar tablas, extraer datos por año, integrar información por instalación, incorporar clasificaciones de FLIGHT y estandarizar exportaciones. Convertí gran parte del trabajo exploratorio en el navegador en funciones reutilizables con directorios estructurados, registro de ejecución y manejo de excepciones.",
+  "approach": [
+    {
+      "title": "Identificar tablas e integrar datos por instalación",
+      "body": "EPA_API_Automation.py examinó metadatos de gases de efecto invernadero de Envirofacts, recopiló identificadores de tablas y utilizó Selenium para descargar CSV de años específicos mediante los servicios de datos de la EPA. Las transformaciones con pandas generaron tablas pivote por instalación y gas, y por instalación y proceso; incorporaron descriptores sectoriales y vincularon metadatos por facility_id, produciendo Public_Facilities_{year}.csv y tablas intermedias."
+    },
+    {
+      "title": "Explorar clasificaciones de FLIGHT",
+      "body": "EPA_Flight_Webscrape_11122024.ipynb utilizó Selenium para navegar por filtros de año de reporte y sector/subsector y descargar exportaciones Excel. BeautifulSoup facilitó la inspección de elementos de la página. Los diccionarios con identificadores de instalaciones GHGRP como claves vincularon las clasificaciones industriales de FLIGHT con las tablas de instalaciones."
+    },
+    {
+      "title": "Convertir la exploración en extracción reutilizable",
+      "body": "EPA_Flight_Database_Automation.py incorporó descargas configurables, funciones reutilizables, directorios de salida estructurados, manejo de archivos, registro de ejecución y excepciones. También descargó hojas de cálculo de resumen, identificó registros de emisores directos y vinculó campos seleccionados mediante el identificador de instalación."
+    },
+    {
+      "title": "Conciliar fuentes y estandarizar resultados",
+      "body": "Dar prioridad a los valores de sector y subsector disponibles en FLIGHT y utilizar las clasificaciones de la API de la EPA como alternativa cuando sea necesario. Conservar comentarios sobre la procedencia, normalizar nombres de campos y orden de columnas, y exportar CSV por instalación para análisis posteriores."
+    },
+    {
+      "title": "Hacer repetibles los años de reporte",
+      "body": "Organizar extracción, transformación y exportación en torno a años seleccionables. Los archivos documentan etapas complementarias y la evolución del flujo; no demuestran que los tres scripts se hayan ejecutado secuencialmente bajo un único orquestador de producción."
+    }
+  ],
+  "outcome": "El trabajo generó archivos CSV estandarizados por instalación y documentó la evolución desde la extracción web exploratoria hacia una automatización más reutilizable. Facilitó la integración coherente de información histórica de reporte para investigación ambiental, sin atribuirle una mejora de velocidad medida ni una base de datos desplegada en producción.",
+  "learning": "Las tablas de API y las exportaciones web pueden describir de forma diferente una misma instalación. La conciliación por identificadores y las reglas explícitas de fuentes alternativas hacen visibles esas diferencias y conservan el motivo por el que se eligió una clasificación.",
+  "limitations": [
+    "Los scripts proporcionados generan archivos CSV; no establecen una carga en una base SQL de producción ni un programador unificado de orquestación.",
+    "No se informan ahorros de tiempo de procesamiento medidos.",
+    "El caso de estudio describe métodos y comportamientos verificados de los scripts; aquí no se publican los archivos internos de implementación ni los productos de datos específicos del proyecto.",
+    "La imagen conceptual del flujo describe el proceso y no debe interpretarse como datos de emisiones ni como un resultado ambiental medido."
+  ],
+  "evidence": [
+    {
+      "title": "De la identificación de fuentes a resultados reutilizables",
+      "body": "El flujo conecta adquisición, transformaciones por instalación y entrega. La figura es explicativa, no una visualización empírica de emisiones.",
+      "images": [
+        {
+          "src": "/images/EPA_ETL_Pipeline.png",
+          "alt": "Diagrama conceptual de extracción, transformación y entrega de datos de gases de efecto invernadero de la EPA",
+          "caption": "Diagrama conceptual del flujo ETL; no es un gráfico de registros reales de emisiones.",
+          "kind": "workflow-diagram"
+        }
+      ]
+    },
+    {
+      "title": "Qué aporta cada archivo verificado",
+      "body": "Los archivos originales documentan una evolución de la implementación, con responsabilidades diferenciadas de adquisición y enriquecimiento de datos.",
+      "images": [],
+      "table": {
+        "headers": [
+          "Archivo o etapa",
+          "Función verificada"
+        ],
+        "rows": [
+          [
+            "EPA_API_Automation.py",
+            "Identificación de metadatos, descargas CSV por año, tablas pivote por instalación y archivos Public_Facilities"
+          ],
+          [
+            "EPA_Flight_Webscrape_11122024.ipynb",
+            "Filtros exploratorios de FLIGHT, exportaciones Excel y diccionarios de clasificación de instalaciones"
+          ],
+          [
+            "EPA_Flight_Database_Automation.py",
+            "Descargas reutilizables, registro de ejecución, manejo de archivos y enriquecimiento de instalaciones"
+          ],
+          [
+            "Estandarización final",
+            "Reglas de fuentes alternativas FLIGHT/API, comentarios de procedencia, normalización de campos y exportación CSV"
+          ]
+        ]
+      }
+    }
+  ],
+  "links": [
+    {
+      "label": "Explorar el repositorio público del proyecto",
+      "url": "https://github.com/jayjayanton/EPA-GHG-Data-Pipeline",
+      "kind": "code"
+    }
+  ],
+  "related": [
+    "texas-rrc-wellbore",
+    "traffic-camera-pipeline",
+    "orphaned-wells"
+  ]
+}

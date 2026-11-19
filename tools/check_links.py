@@ -113,7 +113,7 @@ class DocumentParser(HTMLParser):
 
 def public_pages(root: Path) -> list[Path]:
     """Return complete public documents, never template/content HTML fragments."""
-    return sorted([*root.glob("*.html"), *(root / "projects").glob("*.html"), *(root / "cv").glob("*.html")])
+    return sorted([*root.glob("*.html"), *(root / "projects").glob("*.html"), *(root / "cv").glob("*.html"), *(root / "es").rglob("*.html")])
 
 
 def read_document(path: Path) -> Document:

@@ -80,6 +80,40 @@ test('optional display labels are searchable', () => {
   assert.deepEqual(slugs(filterProjects(records, { q: 'data science' })), ['quito-urban-expansion']);
 });
 
+test('the same English or Spanish query matches both localized records through aliases', () => {
+  const english = [{
+    ...records[0],
+    search_aliases: ['Planos y análisis de predios', 'Creador y único desarrollador'],
+  }];
+  const spanish = [{
+    ...records[0], summary: 'Planos y análisis de predios', role: 'Creador y único desarrollador',
+    search_aliases: ['Plans and property analysis', 'Creator & sole developer'],
+  }];
+  for (const q of ['property sole', 'PREDIOS único', 'planos Python']) {
+    const state = { q, category: 'geospatial', stage: 'published' };
+    assert.deepEqual(slugs(filterProjects(english, state)), ['predio-ai']);
+    assert.deepEqual(slugs(filterProjects(spanish, state)), ['predio-ai']);
+  }
+});
+
+test('search aliases never change declared capabilities or delivery stage', () => {
+  const projects = [{ ...records[3], search_aliases: ['Computer vision and data science research'] }];
+  assert.deepEqual(slugs(filterProjects(projects, { q: 'computer vision' })), ['yuyay-analytics']);
+  assert.deepEqual(filterProjects(projects, { q: 'computer vision', category: 'vision' }), []);
+  assert.deepEqual(filterProjects(projects, { q: 'research', stage: 'development' }), []);
+});
+
+test('optional alias strings and arrays normalize accents while ignoring non-text values', () => {
+  const projects = [
+    { ...records[0], search_aliases: 'Análisis de geometría' },
+    { ...records[1], search_aliases: [['Investigación urbana'], null, 12, { text: 'not searchable' }] },
+    { ...records[2], search_aliases: null },
+  ];
+  assert.deepEqual(slugs(filterProjects(projects, { q: 'analisis GEOMETRIA' })), ['predio-ai']);
+  assert.deepEqual(slugs(filterProjects(projects, { q: 'investigacion urbana' })), ['quito-urban-expansion']);
+  assert.deepEqual(filterProjects(projects, { q: 'not searchable' }), []);
+});
+
 test('regex syntax is treated as literal user text', () => {
   assert.deepEqual(filterProjects(records, { q: '.*' }), []);
   assert.deepEqual(filterProjects(records, { q: '[' }), []);

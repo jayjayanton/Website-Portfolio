@@ -1,0 +1,140 @@
+{
+  "slug": "traffic-camera-pipeline",
+  "title": "Extracción de imágenes de cámaras de tránsito",
+  "summary": "Desarrollé flujos en Python para recopilar capturas de cámaras viales públicas y extraer fotogramas de transmisiones de video en directo. El trabajo combina búsqueda de fuentes mediante navegador, descargas y decodificación de video para organizar imágenes que posteriormente podrían apoyar el etiquetado y la investigación en visión por computador.",
+  "categories": [
+    "engineering"
+  ],
+  "status": "Flujo de datos aplicado",
+  "status_key": "delivered",
+  "role": "Desarrollador de flujos de datos en Python",
+  "context": "Adquisición de imágenes de cámaras viales de TxDOT y extracción de fotogramas de transmisiones en directo de Jackson Hole. Las capturas de Austin ilustran el método de recopilación de imágenes fijas.",
+  "image": {
+    "src": "/images/1.jpg",
+    "alt": "Captura de una cámara de tránsito de Austin en W Rundberg Lane",
+    "caption": "W Rundberg Lane · Captura de una cámara pública de Austin obtenida en noviembre de 2026.",
+    "kind": "camera-image"
+  },
+  "technologies": [
+    "Python",
+    "Selenium",
+    "BeautifulSoup",
+    "Streamlink",
+    "OpenCV",
+    "FFmpeg — refactorización pública"
+  ],
+  "problem": "Las imágenes de cámaras resultan útiles para el análisis cuando sus fuentes pueden localizarse, consultarse y organizarse de forma consistente. Los endpoints de imágenes fijas y las transmisiones de video en directo requieren métodos de adquisición diferentes; antes de etiquetar o entrenar modelos, hace falta una colección de imágenes utilizable.",
+  "contribution": "Desarrollé los flujos de adquisición en Python para imágenes fijas y fotogramas de video. En las fuentes de TxDOT, localicé nombres de cámaras y URLs de capturas con Selenium y BeautifulSoup. Para las transmisiones de Jackson Hole, utilicé Streamlink para obtener segmentos de video y OpenCV para decodificar los clips y guardar hasta tres fotogramas JPEG por video.",
+  "approach": [
+    {
+      "title": "Localizar fuentes de imágenes fijas",
+      "body": "Usar Selenium y BeautifulSoup para revisar listados de cámaras, recuperar sus nombres e identificar URLs públicas de capturas. Conservar el contexto de origen al descargar las imágenes en una colección organizada."
+    },
+    {
+      "title": "Procesar las transmisiones como video",
+      "body": "Utilizar Streamlink para acceder a segmentos de video en directo, en lugar de tratar la transmisión como un endpoint de imagen fija. Decodificar los clips obtenidos con OpenCV y extraer hasta tres fotogramas JPEG de cada video."
+    },
+    {
+      "title": "Distinguir los flujos original y público",
+      "body": "El script original de Baylor conserva el método de extracción con OpenCV. El script reorganizado del repositorio público utiliza FFmpeg para extraer fotogramas; por ello, la refactorización pública y la implementación original se describen por separado."
+    },
+    {
+      "title": "Definir el camino hacia datos aptos para modelos",
+      "body": "Un futuro flujo de detección organizaría y etiquetaría los fotogramas, separaría los datos por cámara y momento, entrenaría un modelo y evaluaría escenas reservadas para prueba. La evaluación incluiría precisión, exhaustividad (recall), mAP y generalización entre puntos de vista, condiciones de iluminación y clima."
+    }
+  ],
+  "outcome": "Los flujos repetibles en Python establecieron la etapa de adquisición necesaria para crear un conjunto de imágenes etiquetadas. El proyecto demuestra recopilación y organización de imágenes; no reporta un detector de vehículos entrenado ni resultados de detección de objetos.",
+  "learning": "La adquisición de datos y la evaluación de modelos deben diseñarse conjuntamente. Los identificadores de las fuentes y el contexto de captura permiten preparar futuras pruebas separadas por cámara y momento. Distinguir imágenes fijas y transmisiones evita forzar fuentes diferentes dentro de un único método de recopilación frágil.",
+  "limitations": [
+    "Las cinco imágenes mostradas se obtuvieron de cámaras públicas de Austin en noviembre de 2026. Son ejemplos actuales, no resultados archivados del trabajo original con TxDOT.",
+    "La detección de vehículos y otras aplicaciones de visión por computador son próximos pasos propuestos; no se presentan predicciones de modelos entrenados ni rendimiento de detección medido.",
+    "Las posibles aplicaciones de detección de infraestructura dependen de una cobertura de cámaras y una resolución de imagen adecuadas."
+  ],
+  "evidence": [
+    {
+      "title": "Cinco ejemplos de cámaras públicas",
+      "body": "Cada imagen muestra una vía o intersección distinta de Austin. En conjunto, ilustran la variedad de escenas que debe manejar un flujo de recopilación de imágenes fijas.",
+      "images": [
+        {
+          "src": "/images/1.jpg",
+          "alt": "Captura de una cámara de tránsito de Austin en W Rundberg Lane",
+          "caption": "W Rundberg Lane · Captura de una cámara pública de Austin obtenida en noviembre de 2026.",
+          "kind": "camera-image"
+        },
+        {
+          "src": "/images/2.jpg",
+          "alt": "Captura de una cámara de tránsito de Austin en Airport Boulevard y Oak Springs Drive",
+          "caption": "Airport Blvd / Oak Springs Dr · Captura de una cámara pública de Austin obtenida en noviembre de 2026.",
+          "kind": "camera-image"
+        },
+        {
+          "src": "/images/3.jpg",
+          "alt": "Captura de una cámara de tránsito de Austin en Staked Plains Drive y Lakeline Boulevard",
+          "caption": "Staked Plains / Lakeline Blvd · Captura de una cámara pública de Austin obtenida en noviembre de 2026.",
+          "kind": "camera-image"
+        },
+        {
+          "src": "/images/4.jpg",
+          "alt": "Captura de una cámara de tránsito de Austin en 35th Street y Pecos Street",
+          "caption": "35th St / Pecos St · Captura de una cámara pública de Austin obtenida en noviembre de 2026.",
+          "kind": "camera-image"
+        },
+        {
+          "src": "/images/5.jpg",
+          "alt": "Captura de una cámara de tránsito de Austin en Martin Luther King Jr Boulevard y Rio Grande Street",
+          "caption": "MLK Jr Blvd / Rio Grande St · Captura de una cámara pública de Austin obtenida en noviembre de 2026.",
+          "kind": "camera-image"
+        }
+      ]
+    },
+    {
+      "title": "Métodos de adquisición y sus resultados",
+      "body": "Los métodos cambian según el formato de la fuente y la etapa de implementación.",
+      "images": [],
+      "table": {
+        "headers": [
+          "Fuente o versión",
+          "Método de adquisición",
+          "Resultado"
+        ],
+        "rows": [
+          [
+            "Fuentes de imágenes fijas de TxDOT",
+            "Localización con Selenium y BeautifulSoup, seguida de descarga de imágenes",
+            "Capturas identificadas por nombre de cámara"
+          ],
+          [
+            "Flujo original de Jackson Hole",
+            "Segmentos con Streamlink y decodificación con OpenCV",
+            "Hasta tres fotogramas JPEG por video"
+          ],
+          [
+            "Script público reorganizado",
+            "Extracción de fotogramas con FFmpeg",
+            "Fotogramas extraídos como imágenes"
+          ]
+        ]
+      }
+    },
+    {
+      "title": "Propuesta de un flujo de detección",
+      "body": "Recopilar fotogramas, etiquetar objetos, separar datos por cámara y momento, entrenar un detector y revisar errores en escenas reservadas para prueba. Cualquier recuadro delimitador conceptual mostrado en materiales anteriores del proyecto se añadió manualmente para explicar este flujo futuro; no fue generado por un modelo entrenado.",
+      "images": []
+    }
+  ],
+  "links": [
+    {
+      "label": "Explorar el repositorio de extracción de imágenes",
+      "url": "https://github.com/jayjayanton/Webcam-Data-Extraction",
+      "kind": "code"
+    }
+  ],
+  "related": [
+    "quito-urban-expansion",
+    "epa-emissions",
+    "predio-ai"
+  ],
+  "topics": [
+    "vision"
+  ]
+}

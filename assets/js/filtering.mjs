@@ -56,6 +56,7 @@ function searchableText(project) {
     ...capabilities.map(value => CATEGORY_LABELS[value] || ''),
     ...strings(project.category_labels),
     ...strings(project.categoryLabels),
+    ...strings(project.search_aliases),
     STAGE_LABELS[project.status_key] || '',
   ].filter(value => typeof value === 'string').join(' '));
 }

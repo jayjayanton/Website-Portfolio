@@ -1,0 +1,123 @@
+{
+  "slug": "quito-urban-expansion",
+  "title": "Expansión urbana de Quito",
+  "summary": "Desarrollo un flujo reproducible con Sentinel-2 para estudiar el crecimiento urbano en los valles orientales de Quito. El trabajo actual abarca adquisición de imágenes, composición temporal y generación de mosaicos espaciales; un piloto en Tumbaco sirve de base para las siguientes etapas de segmentación de áreas construidas, análisis de cambios y validación independiente.",
+  "categories": [
+    "geospatial",
+    "engineering",
+    "data-science"
+  ],
+  "status": "Investigación en desarrollo",
+  "status_key": "development",
+  "role": "Investigador y desarrollador independiente",
+  "context": "Investigación exploratoria de teledetección sobre el desarrollo urbano en Nayón, Cumbayá, Tumbaco y Puembo, comenzando con un piloto cerca de Tumbaco.",
+  "period": "Imágenes de 2016–2025; investigación en curso",
+  "image": {
+    "src": "https://raw.githubusercontent.com/jayjayanton/Urban-Expansion-Quito/main/assets/sentinel2_2025_rgb.png",
+    "alt": "Composición anual Sentinel-2 de 2025 en color natural del área piloto de Tumbaco",
+    "caption": "Composición anual de 2025 de la misma área piloto. Los cambios aparentes requieren revisar nubosidad, estacionalidad y condiciones de adquisición.",
+    "kind": "satellite-imagery"
+  },
+  "technologies": [
+    "Python",
+    "Sentinel-2 L2A",
+    "Sentinel Hub",
+    "Copernicus Data Space",
+    "S3",
+    "Procesamiento ráster",
+    "Generación de mosaicos espaciales",
+    "PyTorch — previsto"
+  ],
+  "problem": "El desarrollo de los valles orientales de Quito plantea la necesidad de examinar dónde se expanden las áreas construidas y cómo cambia el paisaje circundante. Un análisis útil requiere observaciones comparables a lo largo del tiempo antes de interpretar las diferencias entre imágenes como cambios urbanos.",
+  "contribution": "Desarrollé flujos de adquisición y procesamiento, con pruebas comparativas por período, descarga alternativa desde S3 de Copernicus Data Space, extracción por teselas, mosaicos espaciales, pruebas y composiciones de muestra. Estoy definiendo las siguientes etapas analíticas: cuadrículas consistentes, etiquetas candidatas, experimentos de segmentación y análisis independiente de errores.",
+  "approach": [
+    {
+      "title": "Adquirir observaciones satelitales repetidas",
+      "body": "Obtener imágenes Sentinel-2 L2A mediante Sentinel Hub o S3 de Copernicus Data Space. Organizar la extracción por períodos repetibles y un área de interés definida, con una vía alternativa de adquisición que mantiene la continuidad cuando la ruta preferida no está disponible."
+    },
+    {
+      "title": "Preparar imágenes comparables",
+      "body": "Filtrar observaciones inadecuadas, construir composiciones temporales y alinear las teselas antes de generar mosaicos. Comparar extracciones anuales, trimestrales y mensuales para comprender el equilibrio entre disponibilidad de observaciones y detalle temporal."
+    },
+    {
+      "title": "Desarrollar cartografía preliminar de áreas construidas",
+      "body": "El análisis previsto calculará índices espectrales como NDVI y NDBI, evaluará posibles etiquetas de referencia —incluida la clase de áreas construidas de ESA WorldCover— e investigará si la segmentación con redes CNN en PyTorch mejora la cartografía de estas áreas."
+    },
+    {
+      "title": "Distinguir el cambio visible del cambio medido",
+      "body": "El plan de validación contempla muestras de referencia independientes, conjuntos de prueba separados espacial y temporalmente, y análisis de errores. Solo después de esa etapa, las máscaras de áreas construidas y los resúmenes de cambios podrán sustentar estimaciones defendibles de expansión urbana."
+    }
+  ],
+  "outcome": "El repositorio contiene una base funcional de preparación de datos y vistas previas reales de composiciones anuales del piloto de Tumbaco. Estos resultados aportan las entradas para la siguiente etapa de investigación; aún no se han establecido la precisión de la segmentación ni las tasas de expansión urbana.",
+  "learning": "La consistencia temporal es un requisito de investigación, además de facilitar el preprocesamiento. La nubosidad, la estacionalidad, la densidad de observaciones y la alineación de cuadrículas pueden generar diferencias aparentes que un modelo de cambios podría confundir con crecimiento urbano.",
+  "limitations": [
+    "El piloto mostrado se ubica cerca de Tumbaco y no constituye un mapa validado de todo Quito ni de sus valles.",
+    "Las imágenes de 2016 y 2025 son comparaciones ilustrativas; aún deben validarse los efectos de nubosidad, estacionalidad y adquisición.",
+    "La segmentación mediante visión por computador, la evaluación independiente de precisión y las tasas cuantificadas de expansión siguen siendo resultados de investigación previstos.",
+    "Las imágenes Sentinel-2 permiten analizar el paisaje; su finalidad aquí no es el levantamiento catastral, la medición arquitectónica ni la aprobación de construcciones."
+  ],
+  "evidence": [
+    {
+      "title": "Dos composiciones satelitales reales",
+      "body": "Estas exportaciones en color natural proceden de las composiciones anuales Sentinel-2 del proyecto. La comparación muestra los datos de partida de la investigación, sin atribuir cada diferencia visible a un cambio confirmado de uso del suelo.",
+      "images": [
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Urban-Expansion-Quito/main/assets/sentinel2_2016_rgb.png",
+          "alt": "Composición anual Sentinel-2 de 2016 en color natural del área piloto de Tumbaco",
+          "caption": "Composición anual de 2016, mostrada con la combinación de bandas B04/B03/B02 en color natural.",
+          "kind": "satellite-imagery"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Urban-Expansion-Quito/main/assets/sentinel2_2025_rgb.png",
+          "alt": "Composición anual Sentinel-2 de 2025 en color natural del área piloto de Tumbaco",
+          "caption": "Composición anual de 2025 de la misma área piloto. Los cambios aparentes requieren revisar nubosidad, estacionalidad y condiciones de adquisición.",
+          "kind": "satellite-imagery"
+        }
+      ]
+    },
+    {
+      "title": "Qué está disponible y qué sigue",
+      "body": "El proyecto distingue la ingeniería de datos implementada de los análisis que todavía requieren desarrollo y validación.",
+      "images": [],
+      "table": {
+        "headers": [
+          "Etapa",
+          "Estado actual"
+        ],
+        "rows": [
+          [
+            "Adquisición y mosaicos",
+            "Scripts implementados, adquisición alternativa, comparaciones por período, pruebas y composiciones de muestra"
+          ],
+          [
+            "Análisis espectral y de etiquetas",
+            "Previstos: índices con cuadrículas consistentes y etiquetas candidatas de referencia para áreas construidas"
+          ],
+          [
+            "Visión por computador",
+            "Experimentos de segmentación previstos; aún no se reporta precisión validada"
+          ],
+          [
+            "Interpretación de cambios",
+            "Verificaciones independientes previstas antes de calcular tasas de expansión"
+          ]
+        ]
+      }
+    }
+  ],
+  "links": [
+    {
+      "label": "Explorar el repositorio de investigación",
+      "url": "https://github.com/jayjayanton/Urban-Expansion-Quito",
+      "kind": "code"
+    }
+  ],
+  "related": [
+    "predio-ai",
+    "land-use-dynamics",
+    "traffic-camera-pipeline"
+  ],
+  "topics": [
+    "vision"
+  ]
+}

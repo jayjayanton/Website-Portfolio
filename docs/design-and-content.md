@@ -114,7 +114,7 @@ The freshness check detects output that no longer matches the canonical source. 
 
 ### Master CV
 
-The online CV and downloadable PDF are comprehensive professional records. Keep detailed Leidos/NETL contributions and separate NASA air-quality and water-resources subsections, alongside both Baylor roles, USGS, WWF, independent software development, earlier evaluation support and teaching. Individual projects may have different dates from the freelance practice; do not assign the practice start date to every project. Identify evaluation assignments as project support rather than direct employment by the named partner agencies.
+The master CV pages and downloadable master PDFs are comprehensive professional records. Keep detailed Leidos/NETL contributions and separate NASA air-quality and water-resources subsections, alongside both Baylor roles, USGS, WWF, independent software development, earlier evaluation support and teaching. Individual projects may have different dates from the freelance practice; do not assign the practice start date to every project. Identify evaluation assignments as project support rather than direct employment by the named partner agencies.
 
 Use supported contribution and method statements rather than unqualified performance claims. Keep future computer vision work explicitly planned, distinguish local prototypes from deployed services, and preserve PredioAI’s creator and sole-developer attribution and application-only links. Maintain full publication citations. Shorter application-specific CVs can be derived from this source without removing the master record’s detail.
 
@@ -133,3 +133,16 @@ Store focused text as paired `en`/`es` values in `content/cv/profiles/*.json`. S
 The generated `assets/cv/manifest.json` maps all twelve pages to PDF paths. `tools/render_cvs.py` renders changed documents with Chrome, checks PDF structure and records source/style/renderer fingerprints in `assets/cv/render-state.json`. Its `--check` option enforces the two-page maximum for focused profiles. Master versions retain their full detail and have no artificial page limit. Review every changed PDF page after rendering.
 
 The PDF workflow commits all downloads. The separate validation workflow has read-only permissions and can render changed or missing PDFs into its temporary checkout before checking page limits and links. For a new collection, render and review on a working branch before publishing its pages and PDFs together. The original English master path `assets/Jay_Antonio_Oliver_CV.pdf` remains stable; preserve all existing case-study and image URLs.
+
+
+### Complete Spanish and English routes
+
+Existing English pages retain their URLs. Spanish copies of the six general pages and fifteen case studies use `es/`; explicit CV language URLs remain under `cv/`. Generate all 54 pages together. A global header control links each document to its corresponding language version, including the same focused CV when applicable. Navigation and internal case-study links preserve the selected language, while assets and external sources remain shared.
+
+`tools/localization.py` resolves body links from their logical source page into the destination route. Keep the two language links explicit and outside that rewrite so they remain language choices. The resolver also localizes absolute portfolio links in Spanish CVs while retaining absolute URLs for PDF portability. Do not redirect external application, repository or publication URLs.
+
+The browser enhancement preserves query strings and fragment identifiers when switching language, including active project filters. Both English and Spanish source text is indexed for search so the carried query remains useful after switching. Native links and static translations continue to work without JavaScript. Avoid automatic language redirects: an explicit shared English or Spanish URL should always open that version.
+
+Maintain matching `content/case-studies/*.json` and `content/es/case-studies/*.json` records, `content/site.json` and `content/es/site.json`, and the six body templates in `templates/` and `templates/es/`. Source URLs, image paths, metrics, project ordering, category/topic keys and responsibility claims must agree. Translate visible labels, captions, alt text, metadata, filter messages and summaries. Keep official publication titles and technical source-variable codes in their original wording; preserve original research figures with translated explanations.
+
+The language tests check counterpart routes, navigation continuity, complete translations, provenance and nested asset links. Node tests cover search aliases and URL state preservation. Include `assets/js/navigation.mjs` in the shared JavaScript cache version. Review the live header, project filters, case studies and CV transitions after deployment.

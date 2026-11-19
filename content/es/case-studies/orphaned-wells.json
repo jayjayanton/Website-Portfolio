@@ -1,0 +1,341 @@
+{
+  "slug": "orphaned-wells",
+  "title": "Evaluación preliminar de millones de registros de pozos con aprendizaje automático geoespacial",
+  "summary": "Desarrollé un flujo de aprendizaje automático geoespacial para identificar posibles pozos huérfanos en un inventario nacional de aproximadamente 7–8 millones de registros. Los modelos XGBoost por cuenca, la selección de umbrales basada en entrenamiento y el análisis SHAP revelaron diferencias regionales y orientaron un experimento separado en los Apalaches con atributos adicionales de Enverus.",
+  "categories": [
+    "data-science",
+    "geospatial",
+    "engineering"
+  ],
+  "status": "Investigación aplicada",
+  "status_key": "delivered",
+  "role": "Científico de datos geoespaciales · Conciliación de etiquetas, diseño de variables predictoras y modelación",
+  "context": "Investigación de Leidos en apoyo a DOE/NETL",
+  "image": {
+    "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/threshold_plots/threshold_curve_OOF_TRAIN_APPALACHIAN_HC.jpeg",
+    "alt": "Curvas de precisión, sensibilidad y F1 frente al umbral con predicciones fuera de pliegue para Apalaches",
+    "caption": "Apalaches: precisión, sensibilidad y F1 del entrenamiento, obtenidas con predicciones fuera de pliegue, frente al umbral de decisión. El umbral seleccionado se eligió con datos de entrenamiento.",
+    "kind": "research"
+  },
+  "technologies": [
+    "Python",
+    "XGBoost",
+    "scikit-learn",
+    "BayesSearchCV",
+    "SHAP",
+    "BallTree",
+    "Diseño de variables predictoras geoespaciales",
+    "Validación cruzada"
+  ],
+  "problem": "Un inventario nacional de pozos contenía información incompleta e inconsistente, mientras que la prevalencia de pozos huérfanos y la calidad de los registros variaban entre regiones. Se necesitaba un método de evaluación preliminar que priorizara pozos candidatos para revisión posterior y mostrara dónde existía incertidumbre sobre el rendimiento del modelo.",
+  "contribution": "Partiendo de un inventario nacional elaborado por otro equipo, concilié registros e identificadores estatales de pozos huérfanos conocidos, diseñé variables predictoras y desarrollé los flujos de modelación nacional y por cuenca. Ajusté XGBoost, seleccioné umbrales de decisión, evalué el rendimiento regional y generé resúmenes SHAP; después investigué un modelo para los Apalaches enriquecido con datos de Enverus.",
+  "approach": [
+    {
+      "title": "Conciliar etiquetas antes de modelar",
+      "body": "Consulté registros e identificadores estatales para asociar etiquetas de pozos huérfanos conocidos con el inventario general. Estandaricé fechas y categorías, tratando atributos faltantes o inconsistentes."
+    },
+    {
+      "title": "Diseñar variables operativas y espaciales",
+      "body": "Utilicé tipo de pozo, fechas, estado, profundidad, cobertura del suelo y ubicación. Un BallTree con distancia haversine calculó la distancia a pozos huérfanos conocidos utilizando un inventario de referencia de la partición de entrenamiento, junto con variables adicionales de distancia y ausencia de datos."
+    },
+    {
+      "title": "Adaptar el modelo a las diferencias regionales",
+      "body": "Después de explorar regresión logística y Random Forest, me centré en XGBoost y modelos separados para las cuencas que cumplían los criterios. Una partición estratificada 70/30 reservó registros para prueba; la validación cruzada por cuenca utilizó tres o cinco pliegues."
+    },
+    {
+      "title": "Ajustar probabilidades y umbrales por separado",
+      "body": "Utilicé BayesSearchCV para ajustar XGBoost según la precisión media y luego predicciones de entrenamiento fuera de pliegue para seleccionar un umbral basado en F1. La evaluación del conjunto de prueba incluyó precisión, sensibilidad, F1, ROC-AUC y PR-AUC."
+    },
+    {
+      "title": "Examinar errores y orientar el enriquecimiento de datos",
+      "body": "Utilicé SHAP para examinar las contribuciones de las variables y comparé las métricas con el número de casos de la clase positiva. La variabilidad regional motivó un estudio separado de enriquecimiento en los Apalaches, dentro de un universo de aproximadamente 900,000 pozos con cobertura desigual de Enverus."
+    }
+  ],
+  "outcome": "Los informes históricos documentan diferencias sustanciales entre cuencas. En la línea base de marzo, la precisión y la sensibilidad de los Apalaches fueron 68.0% y 61.2%; en Fort Worth, la sensibilidad fue 28.1% con solo 32 registros positivos en el conjunto de prueba. Estas diferencias ayudaron a orientar el análisis posterior hacia el enriquecimiento de datos regionales, en lugar de depender de una única puntuación nacional.",
+  "learning": "La evolución documentada va desde la conciliación de etiquetas y la comparación de modelos base hasta la modelación regional, las decisiones de umbral y el enriquecimiento dirigido de datos. Demuestra adaptación a la evidencia: el rendimiento se evalúa según la prevalencia de clases, los atributos disponibles y la tarea de revisión prevista, utilizando la interpretación del modelo para orientar la siguiente investigación.",
+  "limitations": [
+    "El inventario de investigación subyacente no es público. Las figuras y métricas históricas son resultados conservados, no resultados reproducidos durante esta actualización del portafolio.",
+    "Los informes de la línea base de marzo, los resultados preliminares presentados anteriormente y el trabajo posterior de los Apalaches enriquecido con Enverus corresponden a momentos distintos. Aquí no se dispone de una comparación numérica completa del modelo enriquecido.",
+    "Una precisión muy alta y muestras pequeñas de la clase positiva requieren validación independiente y controles de registros duplicados, dependencia espacial y fuga de información a través de las variables. Por sí solos, los informes no demuestran ni descartan el sobreajuste.",
+    "Las referencias al pozo huérfano más cercano basadas solo en entrenamiento excluyen el conjunto de prueba, pero el preprocesamiento y las variables derivadas de etiquetas aún requieren revisar posibles fugas de información en cada pliegue antes de reutilizar el script histórico.",
+    "Las predicciones apoyan la selección preliminar de candidatos. No determinan la condición legal de pozo huérfano, no establecen contaminación ni miden emisiones de metano."
+  ],
+  "evidence": [
+    {
+      "title": "Línea base de marzo: los 11 informes por cuenca",
+      "body": "La precisión, la sensibilidad, F1 y el número de casos positivos de la clase 1 se transcriben de los informes originales de clasificación _HC de marzo. Los porcentajes se redondean tal como aparecen en los informes. Son resultados de los conjuntos de prueba por cuenca, no del modelo enriquecido de los Apalaches ni de los resultados preliminares presentados anteriormente.",
+      "images": [],
+      "table": {
+        "headers": [
+          "Cuenca",
+          "Precisión",
+          "Sensibilidad",
+          "F1",
+          "Casos positivos"
+        ],
+        "rows": [
+          [
+            "Apalaches",
+            "68.0%",
+            "61.2%",
+            "64.4%",
+            "21,342"
+          ],
+          [
+            "Plataforma Cherokee",
+            "70.5%",
+            "73.2%",
+            "71.9%",
+            "10,098"
+          ],
+          [
+            "Denver",
+            "97.0%",
+            "93.5%",
+            "95.2%",
+            "4,446"
+          ],
+          [
+            "Fort Worth",
+            "69.2%",
+            "28.1%",
+            "40.0%",
+            "32"
+          ],
+          [
+            "Illinois",
+            "40.7%",
+            "55.1%",
+            "46.8%",
+            "4,189"
+          ],
+          [
+            "Michigan",
+            "81.8%",
+            "83.7%",
+            "82.8%",
+            "215"
+          ],
+          [
+            "Pérmica",
+            "99.4%",
+            "90.8%",
+            "94.9%",
+            "184"
+          ],
+          [
+            "Powder River",
+            "97.7%",
+            "95.9%",
+            "96.8%",
+            "15,776"
+          ],
+          [
+            "Cuenca salina Tx–La–Ms",
+            "90.4%",
+            "85.7%",
+            "88.0%",
+            "2,182"
+          ],
+          [
+            "Nombre de cuenca desconocido",
+            "77.7%",
+            "69.6%",
+            "73.4%",
+            "7,226"
+          ],
+          [
+            "Golfo occidental",
+            "92.7%",
+            "81.3%",
+            "86.6%",
+            "546"
+          ]
+        ]
+      }
+    },
+    {
+      "title": "Umbrales de decisión basados en entrenamiento",
+      "body": "Once curvas originales de entrenamiento con predicciones fuera de pliegue muestran cómo cambian precisión, sensibilidad y F1 al variar el umbral. La selección del umbral se realizó sobre predicciones de entrenamiento antes de evaluar el conjunto de prueba.",
+      "images": [
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/threshold_plots/threshold_curve_OOF_TRAIN_APPALACHIAN_HC.jpeg",
+          "alt": "Curvas de precisión, sensibilidad y F1 frente al umbral con predicciones fuera de pliegue para Apalaches",
+          "caption": "Apalaches: precisión, sensibilidad y F1 del entrenamiento, obtenidas con predicciones fuera de pliegue, frente al umbral de decisión. El umbral seleccionado se eligió con datos de entrenamiento.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/threshold_plots/threshold_curve_OOF_TRAIN_CHEROKEE_PLATFORM_HC.jpeg",
+          "alt": "Curvas de precisión, sensibilidad y F1 frente al umbral con predicciones fuera de pliegue para Plataforma Cherokee",
+          "caption": "Plataforma Cherokee: precisión, sensibilidad y F1 del entrenamiento, obtenidas con predicciones fuera de pliegue, frente al umbral de decisión. El umbral seleccionado se eligió con datos de entrenamiento.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/threshold_plots/threshold_curve_OOF_TRAIN_DENVER_HC.jpeg",
+          "alt": "Curvas de precisión, sensibilidad y F1 frente al umbral con predicciones fuera de pliegue para Denver",
+          "caption": "Denver: precisión, sensibilidad y F1 del entrenamiento, obtenidas con predicciones fuera de pliegue, frente al umbral de decisión. El umbral seleccionado se eligió con datos de entrenamiento.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/threshold_plots/threshold_curve_OOF_TRAIN_FORT_WORTH_HC.jpeg",
+          "alt": "Curvas de precisión, sensibilidad y F1 frente al umbral con predicciones fuera de pliegue para Fort Worth",
+          "caption": "Fort Worth: precisión, sensibilidad y F1 del entrenamiento, obtenidas con predicciones fuera de pliegue, frente al umbral de decisión. El umbral seleccionado se eligió con datos de entrenamiento.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/threshold_plots/threshold_curve_OOF_TRAIN_ILLINOIS_HC.jpeg",
+          "alt": "Curvas de precisión, sensibilidad y F1 frente al umbral con predicciones fuera de pliegue para Illinois",
+          "caption": "Illinois: precisión, sensibilidad y F1 del entrenamiento, obtenidas con predicciones fuera de pliegue, frente al umbral de decisión. El umbral seleccionado se eligió con datos de entrenamiento.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/threshold_plots/threshold_curve_OOF_TRAIN_MICHIGAN_HC.jpeg",
+          "alt": "Curvas de precisión, sensibilidad y F1 frente al umbral con predicciones fuera de pliegue para Michigan",
+          "caption": "Michigan: precisión, sensibilidad y F1 del entrenamiento, obtenidas con predicciones fuera de pliegue, frente al umbral de decisión. El umbral seleccionado se eligió con datos de entrenamiento.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/threshold_plots/threshold_curve_OOF_TRAIN_PERMIAN_HC.jpeg",
+          "alt": "Curvas de precisión, sensibilidad y F1 frente al umbral con predicciones fuera de pliegue para Pérmica",
+          "caption": "Pérmica: precisión, sensibilidad y F1 del entrenamiento, obtenidas con predicciones fuera de pliegue, frente al umbral de decisión. El umbral seleccionado se eligió con datos de entrenamiento.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/threshold_plots/threshold_curve_OOF_TRAIN_POWDER_RIVER_HC.jpeg",
+          "alt": "Curvas de precisión, sensibilidad y F1 frente al umbral con predicciones fuera de pliegue para Powder River",
+          "caption": "Powder River: precisión, sensibilidad y F1 del entrenamiento, obtenidas con predicciones fuera de pliegue, frente al umbral de decisión. El umbral seleccionado se eligió con datos de entrenamiento.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/threshold_plots/threshold_curve_OOF_TRAIN_TX-LA-MS_SALT_HC.jpeg",
+          "alt": "Curvas de precisión, sensibilidad y F1 frente al umbral con predicciones fuera de pliegue para Cuenca salina Tx–La–Ms",
+          "caption": "Cuenca salina Tx–La–Ms: precisión, sensibilidad y F1 del entrenamiento, obtenidas con predicciones fuera de pliegue, frente al umbral de decisión. El umbral seleccionado se eligió con datos de entrenamiento.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/threshold_plots/threshold_curve_OOF_TRAIN_UNKNOWN_BASIN_NAME_HC.jpeg",
+          "alt": "Curvas de precisión, sensibilidad y F1 frente al umbral con predicciones fuera de pliegue para Nombre de cuenca desconocido",
+          "caption": "Nombre de cuenca desconocido: precisión, sensibilidad y F1 del entrenamiento, obtenidas con predicciones fuera de pliegue, frente al umbral de decisión. El umbral seleccionado se eligió con datos de entrenamiento.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/threshold_plots/threshold_curve_OOF_TRAIN_WESTERN_GULF_HC.jpeg",
+          "alt": "Curvas de precisión, sensibilidad y F1 frente al umbral con predicciones fuera de pliegue para Golfo occidental",
+          "caption": "Golfo occidental: precisión, sensibilidad y F1 del entrenamiento, obtenidas con predicciones fuera de pliegue, frente al umbral de decisión. El umbral seleccionado se eligió con datos de entrenamiento.",
+          "kind": "research"
+        }
+      ]
+    },
+    {
+      "title": "Interpretación de modelos por cuenca",
+      "body": "Once resúmenes SHAP originales explican las contribuciones de las variables a los modelos base por cuenca. SHAP explica el comportamiento del modelo, pero no establece efectos causales.",
+      "images": [
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/shap_plots/shap_summary_APPALACHIAN_HC.jpeg",
+          "alt": "Resumen SHAP de contribuciones de las variables para Apalaches",
+          "caption": "Apalaches. Contribuciones SHAP de las variables al modelo de la cuenca.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/shap_plots/shap_summary_CHEROKEE_PLATFORM_HC.jpeg",
+          "alt": "Resumen SHAP de contribuciones de las variables para Plataforma Cherokee",
+          "caption": "Plataforma Cherokee. Contribuciones SHAP de las variables al modelo de la cuenca.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/shap_plots/shap_summary_DENVER_HC.jpeg",
+          "alt": "Resumen SHAP de contribuciones de las variables para Denver",
+          "caption": "Denver. Contribuciones SHAP de las variables al modelo de la cuenca.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/shap_plots/shap_summary_FORT_WORTH_HC.jpeg",
+          "alt": "Resumen SHAP de contribuciones de las variables para Fort Worth",
+          "caption": "Fort Worth. Contribuciones SHAP de las variables al modelo de la cuenca.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/shap_plots/shap_summary_ILLINOIS_HC.jpeg",
+          "alt": "Resumen SHAP de contribuciones de las variables para Illinois",
+          "caption": "Illinois. Contribuciones SHAP de las variables al modelo de la cuenca.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/shap_plots/shap_summary_MICHIGAN_HC.jpeg",
+          "alt": "Resumen SHAP de contribuciones de las variables para Michigan",
+          "caption": "Michigan. Contribuciones SHAP de las variables al modelo de la cuenca.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/shap_plots/shap_summary_PERMIAN_HC.jpeg",
+          "alt": "Resumen SHAP de contribuciones de las variables para Pérmica",
+          "caption": "Pérmica. Contribuciones SHAP de las variables al modelo de la cuenca.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/shap_plots/shap_summary_POWDER_RIVER_HC.jpeg",
+          "alt": "Resumen SHAP de contribuciones de las variables para Powder River",
+          "caption": "Powder River. Contribuciones SHAP de las variables al modelo de la cuenca.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/shap_plots/shap_summary_TX-LA-MS_SALT_HC.jpeg",
+          "alt": "Resumen SHAP de contribuciones de las variables para Cuenca salina Tx–La–Ms",
+          "caption": "Cuenca salina Tx–La–Ms. Contribuciones SHAP de las variables al modelo de la cuenca.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/shap_plots/shap_summary_UNKNOWN_BASIN_NAME_HC.jpeg",
+          "alt": "Resumen SHAP de contribuciones de las variables para Nombre de cuenca desconocido",
+          "caption": "Nombre de cuenca desconocido. Contribuciones SHAP de las variables al modelo de la cuenca.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/shap_plots/shap_summary_WESTERN_GULF_HC.jpeg",
+          "alt": "Resumen SHAP de contribuciones de las variables para Golfo occidental",
+          "caption": "Golfo occidental. Contribuciones SHAP de las variables al modelo de la cuenca.",
+          "kind": "research"
+        }
+      ]
+    },
+    {
+      "title": "Por qué la precisión no era suficiente",
+      "body": "El conjunto de prueba informado para la cuenca Pérmica contenía 184 registros positivos entre 175,286 pozos; el del Golfo occidental contenía 546 entre 181,806. Estas diferencias de prevalencia y los 32 casos positivos de Fort Worth hacen que la sensibilidad, F1 y el número de casos sean contexto esencial para interpretar la precisión destacada.",
+      "images": []
+    },
+    {
+      "title": "Concepto de enriquecimiento de datos en los Apalaches",
+      "body": "Esta visualización separada representa la siguiente fase de investigación. Los puntos y las probabilidades mostrados son sintéticos y no se utilizan como evidencia cuantitativa.",
+      "images": [
+        {
+          "src": "images/Appalachian%20Basin%20Well%20Classification%20Map.png",
+          "alt": "Mapa ilustrativo y sintético de clasificación de pozos en la cuenca de los Apalaches",
+          "caption": "Ilustración conceptual de la fase de enriquecimiento de datos en los Apalaches. Las ubicaciones de pozos y las probabilidades son sintéticas; no es un mapa de pozos medidos ni de predicciones del modelo.",
+          "kind": "illustration"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": "Revisar el flujo histórico de investigación",
+      "url": "https://github.com/jayjayanton/Orphaned-Wells-",
+      "kind": "code"
+    },
+    {
+      "label": "Consultar los informes originales de clasificación de marzo",
+      "url": "https://github.com/jayjayanton/Orphaned-Wells-/tree/main/validation/classification_reports",
+      "kind": "report"
+    },
+    {
+      "label": "Consultar los resultados preliminares por separado",
+      "url": "https://github.com/jayjayanton/Orphaned-Wells-/blob/main/validation/early_basin_holdout_metrics.csv",
+      "kind": "report"
+    }
+  ],
+  "related": [
+    "texas-rrc-wellbore",
+    "coal-ash-modeling",
+    "colombia-deforestation"
+  ]
+}

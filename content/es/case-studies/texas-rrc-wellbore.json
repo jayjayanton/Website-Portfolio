@@ -1,0 +1,124 @@
+{
+  "slug": "texas-rrc-wellbore",
+  "title": "Integración de registros de pozos y producción de Texas RRC",
+  "summary": "Desarrollé un flujo de trabajo con Python, análisis geoespacial y SQL para recuperar identificadores de registros de pozos en formato heredado de Texas RRC, enriquecer un conjunto actualizado de datos Well Header y vincularlo con datos de producción. El reto principal fue mantener identificadores coherentes de distrito, pozo y arrendamiento entre distintas fuentes.",
+  "categories": [
+    "engineering",
+    "geospatial"
+  ],
+  "status": "Flujo de datos aplicado",
+  "status_key": "delivered",
+  "role": "Ingeniero de datos y científico de datos geoespaciales",
+  "context": "Integración de registros técnicos Full Wellbore de la Texas Railroad Commission, un conjunto actualizado de datos Well Header proporcionado por el equipo y registros de producción.",
+  "image": {
+    "src": "/images/Texas RRC Wellbore Integration Workflow.png",
+    "alt": "Diagrama que conecta la extracción de registros de pozos de Texas RRC, el enriquecimiento de Well Header y la integración de producción",
+    "caption": "Flujo ilustrativo de integración en tres etapas. El código de extracción conservado no contiene la integración original de Well Header ni la unión SQL posterior.",
+    "kind": "workflow-diagram"
+  },
+  "technologies": [
+    "Python",
+    "Lectura estructurada de ASCII de ancho fijo",
+    "Esquemas de registros RRC (copybooks)",
+    "Conversión de decimales zonificados",
+    "Uniones geoespaciales",
+    "SQL",
+    "Conciliación de identificadores"
+  ],
+  "problem": "La distribución Full Wellbore de la RRC almacena información regulatoria detallada en registros de formato heredado y ancho fijo. Los identificadores y las ubicaciones relevantes se distribuyen entre varios tipos de registro, mientras que los datos generales de pozos y los registros de producción utilizan estructuras diferentes. Su integración requiere interpretar las estructuras de los registros y conciliar cuidadosamente las claves.",
+  "contribution": "Desarrollé el flujo de extracción y propagación de identificadores centrado en RK02, utilicé sus resultados para enriquecer registros Well Header actualizados y posteriormente vinculé esos registros enriquecidos con datos de producción mediante SQL. El flujo se diseñó para facilitar actualizaciones recurrentes, manteniendo separadas la extracción, el enriquecimiento espacial y las uniones relacionales.",
+  "approach": [
+    {
+      "title": "Interpretar registros de formato heredado",
+      "body": "Leer la distribución ASCII de ancho fijo según las estructuras de registros publicadas. La interpretación de campos basada en copybooks y la conversión de decimales zonificados permiten recuperar valores estructurados adecuados para integrar posteriormente las tablas."
+    },
+    {
+      "title": "Propagar los identificadores RK02",
+      "body": "Utilizar RK02/WBCOMPL como fuente principal de distrito, número de arrendamiento o identificador RRC de gas y número de pozo. Conservar la procedencia en DISTRICT_NO_SOURCE, LEASE_NO_SOURCE y WELL_NO_SOURCE, y utilizar la asociación por intervalos RK02 mediante búsqueda binaria para trasladar esos identificadores a las tablas técnicas por clave raíz, incluidos los registros de ubicación RK13. RK01 se exploró para obtener características del pozo, no como clave central de integración."
+    },
+    {
+      "title": "Enriquecer el conjunto actualizado Well Header",
+      "body": "Combinar los identificadores recuperados con las ubicaciones de los pozos para enriquecer espacialmente el conjunto de datos generales proporcionado por el equipo. La documentación previa del proyecto describe coincidencias por proximidad geográfica, pero el script original de integración no está disponible; por ello, sus umbrales precisos y reglas de validación no pueden verificarse a partir del código de extracción conservado."
+    },
+    {
+      "title": "Vincular registros de producción mediante SQL",
+      "body": "Utilizar los datos generales enriquecidos en una etapa SQL posterior y separada, con uniones sobre DISTRICT_NO, WELL_NO y LEASE_NO. Validar la clasificación de los registros y su procedencia, porque los números de arrendamientos petroleros y los identificadores RRC de gas no tienen significados idénticos."
+    },
+    {
+      "title": "Diseñar actualizaciones repetibles",
+      "body": "Separar extracción, enriquecimiento de datos generales e integración de producción para procesar nuevas versiones sin reconstruir todo el flujo. Se preveían actualizaciones trimestrales; la evidencia disponible no demuestra la existencia de un programador de tareas desplegado."
+    }
+  ],
+  "outcome": "El flujo vinculó registros técnicos de formato heredado, ubicaciones de pozos, datos generales actualizados y datos de producción para crear una base más útil para la investigación. Los materiales públicos conservan un script histórico de extracción RK02 con información suprimida y una versión refactorizada identificada por separado, además de documentar las etapas generales de integración y los límites del código disponible.",
+  "learning": "Una clave solo es útil si su significado se conserva en cada transformación. Los límites entre registros, las diferencias semánticas entre identificadores de petróleo y gas, la procedencia y las coincidencias espaciales ambiguas importan más que lograr un alto número de registros vinculados.",
+  "limitations": [
+    "El script original de enriquecimiento de Well Header no está disponible. Su tolerancia de coincidencia, implementación exacta y lógica de validación no pueden reconstruirse de forma independiente a partir del script de extracción.",
+    "El repositorio público no incluye el código original de integración de Well Header ni el de la unión SQL posterior.",
+    "La proximidad entre coordenadas no garantiza la identidad de un pozo; las posibles coincidencias por cercanía requieren validación.",
+    "La semántica de los identificadores de petróleo y gas y las asociaciones de límites de registros RK02 requieren controles explícitos de calidad. La automatización trimestral es un objetivo, no un programador de tareas desplegado y verificado."
+  ],
+  "evidence": [
+    {
+      "title": "Tres etapas de integración diferenciadas",
+      "body": "El diagrama explica cómo los identificadores de completación extraídos alimentan el enriquecimiento de datos generales y, después, la integración de producción. Son etapas conectadas, no funcionalidades contenidas en su totalidad en un único script Python conservado.",
+      "images": [
+        {
+          "src": "/images/Texas RRC Wellbore Integration Workflow.png",
+          "alt": "Diagrama que conecta la extracción de registros de pozos de Texas RRC, el enriquecimiento de Well Header y la integración de producción",
+          "caption": "Flujo ilustrativo de integración en tres etapas. El código de extracción conservado no contiene la integración original de Well Header ni la unión SQL posterior.",
+          "kind": "workflow-diagram"
+        }
+      ]
+    },
+    {
+      "title": "Función de los identificadores y registros",
+      "body": "Las funciones de cada tipo de registro explican por qué la procedencia y la validación son fundamentales en este flujo.",
+      "images": [],
+      "table": {
+        "headers": [
+          "Registro o etapa",
+          "Función en la integración"
+        ],
+        "rows": [
+          [
+            "RK02 / WBCOMPL",
+            "Fuente principal de distrito, número de arrendamiento o identificador de gas y número de pozo"
+          ],
+          [
+            "RK13",
+            "Registros de ubicación enriquecidos con los identificadores de completación asociados"
+          ],
+          [
+            "RK01",
+            "Explorado para obtener características del pozo, no como clave principal de integración"
+          ],
+          [
+            "Enriquecimiento de Well Header",
+            "Vinculación espacial con el conjunto actualizado del equipo; código original de integración no disponible"
+          ],
+          [
+            "Unión SQL de producción",
+            "Unión posterior y separada mediante identificadores de distrito, pozo y arrendamiento"
+          ]
+        ]
+      }
+    }
+  ],
+  "links": [
+    {
+      "label": "Explorar el repositorio de integración de registros de pozos",
+      "url": "https://github.com/jayjayanton/Texas-RRC-Wellbore-Integration",
+      "kind": "code"
+    },
+    {
+      "label": "Descargas oficiales de datos de la RRC",
+      "url": "https://www.rrc.texas.gov/resource-center/research/data-sets-available-for-download/",
+      "kind": "report"
+    }
+  ],
+  "related": [
+    "orphaned-wells",
+    "epa-emissions",
+    "carbon-storage-atlas"
+  ]
+}

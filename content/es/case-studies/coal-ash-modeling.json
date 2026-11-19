@@ -1,0 +1,108 @@
+{
+  "slug": "coal-ash-modeling",
+  "title": "Modelación de la química de cenizas de carbón como problema multisalida",
+  "summary": "Desarrollé flujos de investigación con XGBoost multisalida para estimar componentes relacionados de las cenizas de carbón a partir de variables predictoras comunes. El trabajo avanzó desde estimadores separados por óxido hasta un experimento con árboles compartidos, transformación composicional, particiones por grupos y diagnósticos por constituyente, abordando cómo modelar y evaluar conjuntamente las variables químicas objetivo.",
+  "categories": [
+    "data-science"
+  ],
+  "status": "Investigación aplicada en modelación",
+  "status_key": "delivered",
+  "role": "Científico de datos · Diseño de variables predictoras, modelación multisalida y evaluación",
+  "context": "Investigación de Leidos en apoyo a DOE/NETL · Caracterización de cenizas de carbón",
+  "image": {
+    "src": "images/Coal_Ash_Concept.png",
+    "alt": "Ilustración conceptual de portada sobre cenizas de carbón y sus diversos constituyentes minerales",
+    "caption": "Ilustración conceptual de portada que representa cenizas de carbón y la diversidad de sus constituyentes. No es una imagen de una muestra, una medición de laboratorio ni un resultado del modelo.",
+    "kind": "illustration"
+  },
+  "technologies": [
+    "Python",
+    "XGBoost",
+    "MultiOutputRegressor",
+    "BayesSearchCV",
+    "GroupKFold",
+    "Análisis de datos composicionales",
+    "Diagnósticos de regresión"
+  ],
+  "problem": "Las cenizas de carbón presentan composiciones químicas variables y los porcentajes de óxidos relacionados no son variables objetivo independientes. Un flujo predictivo útil debe considerar múltiples constituyentes, muestras relacionadas y la interpretación de resultados porcentuales, manteniendo las mediciones de laboratorio como referencia.",
+  "contribution": "Exploré dos enfoques de XGBoost con múltiples variables objetivo: estimadores separados mediante MultiOutputRegressor y, posteriormente, un experimento multisalida con árboles compartidos. El análisis completo documentado combina preprocesamiento de óxidos, diseño de variables predictoras, transformación composicional, selección de modelos por grupos y diagnósticos tanto en el espacio transformado como en porcentajes.",
+  "approach": [
+    {
+      "title": "Definir las variables químicas objetivo",
+      "body": "Modelé los porcentajes de diez óxidos: SiO₂, Al₂O₃, Fe₂O₃, CaO, MgO, Na₂O, K₂O, TiO₂, P₂O₅ y SO₃. Las variables predictoras incluyeron tipo de mina, tipo de energía, estado donde se encuentra la mina de carbón y variables fraccionales y Jin_ seleccionadas."
+    },
+    {
+      "title": "Preparar valores para el análisis composicional",
+      "body": "Representé las mediciones inferiores al límite de detección mediante la mitad del límite informado y sustituí los valores no positivos por una constante positiva pequeña para calcular logaritmos de cocientes. Las medianas de los datos de entrenamiento completaron los valores objetivo faltantes antes de la transformación."
+    },
+    {
+      "title": "Avanzar de estimadores separados a una estructura compartida",
+      "body": "El flujo inicial ajustó estimadores XGBoost separados para cada óxido. El experimento posterior utilizó una estructura de árboles compartida con salidas vectoriales y una transformación logarítmica de cocientes centrada, basada en la media geométrica de los componentes."
+    },
+    {
+      "title": "Respetar la agrupación de muestras durante la evaluación",
+      "body": "Utilicé una partición 70/30 por grupos basada en Plant_Name_State_Year y GroupKFold de cinco pliegues para el ajuste bayesiano. Un subconjunto de validación separado por grupos permitió la parada temprana. El objetivo de MAE ponderado dio mayor importancia a determinados constituyentes de menor concentración, incluidos SO₃, Na₂O y P₂O₅."
+    },
+    {
+      "title": "Evaluar en las unidades relevantes",
+      "body": "Calculé MAE, RMSE y R² por óxido en el espacio transformado y luego apliqué la transformación inversa a las predicciones para obtener porcentajes normalizados. Los diagnósticos incluyeron distancia de Aitchison, cierre composicional, error porcentual ponderado y error logarítmico absoluto medio."
+    }
+  ],
+  "outcome": "El resultado es un flujo de investigación documentado para comparar estrategias multisalida y examinar errores por constituyente químico. Proporciona una base para investigar la composición del material y la idoneidad de los modelos. Este caso de estudio no incorpora afirmaciones numéricas de rendimiento sin verificar, y la implementación de investigación y los datos permanecen privados.",
+  "learning": "El avance desde modelos independientes por variable objetivo hacia la modelación composicional con árboles compartidos demuestra cómo adaptar un algoritmo conocido a una nueva restricción científica. El trabajo también vincula la selección del modelo con la estructura de los datos: las muestras relacionadas necesitan evaluación por grupos, mientras que los resultados porcentuales requieren definir explícitamente el conjunto composicional.",
+  "limitations": [
+    "La composición química predicha requiere confirmación mediante mediciones de laboratorio; no establece la viabilidad económica de la recuperación ni la idoneidad del material.",
+    "La implementación y los datos de origen son privados, por lo que este caso público presenta el método, no una evaluación comparativa reproducible.",
+    "La imputación de variables objetivo dentro de los pliegues de validación cruzada sigue siendo un aspecto pendiente de revisión metodológica.",
+    "La transformación inversa normaliza los diez componentes modelados para que sumen 100%. Esa normalización debe corresponder al conjunto composicional previsto antes de interpretar las predicciones porcentuales."
+  ],
+  "evidence": [
+    {
+      "title": "Dos estrategias de modelación documentadas",
+      "body": "Los enfoques inicial y posterior son configuraciones de investigación distintas. La comparación describe su diseño; no afirma que uno haya logrado un mejor rendimiento independiente.",
+      "images": [],
+      "table": {
+        "headers": [
+          "Enfoque",
+          "Representación de las variables objetivo",
+          "Estructura del modelo"
+        ],
+        "rows": [
+          [
+            "Flujo inicial",
+            "Variables objetivo separadas por óxido",
+            "MultiOutputRegressor con estimadores XGBoost separados"
+          ],
+          [
+            "Experimento posterior",
+            "Composición mediante logaritmos de cocientes centrados",
+            "XGBoost multisalida con árboles compartidos y predicciones vectoriales"
+          ]
+        ]
+      }
+    },
+    {
+      "title": "Diseño de la evaluación",
+      "body": "El análisis completo documenta particiones por grupos de planta, estado y año, validación cruzada por grupos, un subconjunto de validación para parada temprana y evaluación de errores por constituyente. El tratamiento de valores faltantes y el cierre composicional elegido siguen siendo aspectos explícitos de revisión.",
+      "images": []
+    },
+    {
+      "title": "Portada ilustrativa del proyecto",
+      "body": "La portada comunica únicamente el tema de la investigación; no constituye evidencia empírica.",
+      "images": [
+        {
+          "src": "images/Coal_Ash_Concept.png",
+          "alt": "Ilustración conceptual de portada sobre cenizas de carbón y sus diversos constituyentes minerales",
+          "caption": "Ilustración conceptual de portada que representa cenizas de carbón y la diversidad de sus constituyentes. No es una imagen de una muestra, una medición de laboratorio ni un resultado del modelo.",
+          "kind": "illustration"
+        }
+      ]
+    }
+  ],
+  "links": [],
+  "related": [
+    "orphaned-wells",
+    "environmental-flows",
+    "epa-emissions"
+  ]
+}

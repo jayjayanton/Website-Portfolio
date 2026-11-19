@@ -6,18 +6,6 @@
   <url><loc>https://jayjayanton.github.io/Website-Portfolio/research.html</loc></url>
   <url><loc>https://jayjayanton.github.io/Website-Portfolio/contact.html</loc></url>
   <url><loc>https://jayjayanton.github.io/Website-Portfolio/cv.html</loc></url>
-  <url><loc>https://jayjayanton.github.io/Website-Portfolio/cv/data-scientist-en.html</loc></url>
-  <url><loc>https://jayjayanton.github.io/Website-Portfolio/cv/data-scientist-es.html</loc></url>
-  <url><loc>https://jayjayanton.github.io/Website-Portfolio/cv/spatial-analyst-en.html</loc></url>
-  <url><loc>https://jayjayanton.github.io/Website-Portfolio/cv/spatial-analyst-es.html</loc></url>
-  <url><loc>https://jayjayanton.github.io/Website-Portfolio/cv/geospatial-data-specialist-en.html</loc></url>
-  <url><loc>https://jayjayanton.github.io/Website-Portfolio/cv/geospatial-data-specialist-es.html</loc></url>
-  <url><loc>https://jayjayanton.github.io/Website-Portfolio/cv/geospatial-data-engineer-en.html</loc></url>
-  <url><loc>https://jayjayanton.github.io/Website-Portfolio/cv/geospatial-data-engineer-es.html</loc></url>
-  <url><loc>https://jayjayanton.github.io/Website-Portfolio/cv/geospatial-data-scientist-en.html</loc></url>
-  <url><loc>https://jayjayanton.github.io/Website-Portfolio/cv/geospatial-data-scientist-es.html</loc></url>
-  <url><loc>https://jayjayanton.github.io/Website-Portfolio/cv/master-en.html</loc></url>
-  <url><loc>https://jayjayanton.github.io/Website-Portfolio/cv/master-es.html</loc></url>
   <url><loc>https://jayjayanton.github.io/Website-Portfolio/projects/predio-ai.html</loc></url>
   <url><loc>https://jayjayanton.github.io/Website-Portfolio/projects/land-use-dynamics.html</loc></url>
   <url><loc>https://jayjayanton.github.io/Website-Portfolio/projects/orphaned-wells.html</loc></url>
@@ -33,4 +21,37 @@
   <url><loc>https://jayjayanton.github.io/Website-Portfolio/projects/traffic-camera-pipeline.html</loc></url>
   <url><loc>https://jayjayanton.github.io/Website-Portfolio/projects/yuyay-analytics.html</loc></url>
   <url><loc>https://jayjayanton.github.io/Website-Portfolio/projects/raaz-borg.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/es/index.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/es/projects.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/es/about.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/es/research.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/es/contact.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/es/cv.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/es/projects/predio-ai.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/es/projects/land-use-dynamics.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/es/projects/orphaned-wells.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/es/projects/texas-rrc-wellbore.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/es/projects/environmental-flows.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/es/projects/quito-urban-expansion.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/es/projects/nasa-air-quality.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/es/projects/nasa-water-resources.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/es/projects/carbon-storage-atlas.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/es/projects/coal-ash-modeling.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/es/projects/epa-emissions.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/es/projects/colombia-deforestation.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/es/projects/traffic-camera-pipeline.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/es/projects/yuyay-analytics.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/es/projects/raaz-borg.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/cv/data-scientist-en.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/cv/data-scientist-es.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/cv/spatial-analyst-en.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/cv/spatial-analyst-es.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/cv/geospatial-data-specialist-en.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/cv/geospatial-data-specialist-es.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/cv/geospatial-data-engineer-en.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/cv/geospatial-data-engineer-es.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/cv/geospatial-data-scientist-en.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/cv/geospatial-data-scientist-es.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/cv/master-en.html</loc></url>
+  <url><loc>https://jayjayanton.github.io/Website-Portfolio/cv/master-es.html</loc></url>
 </urlset>

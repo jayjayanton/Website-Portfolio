@@ -1,0 +1,88 @@
+{
+  "name": "Jay Oliver",
+  "full_name": "Jay Antonio Oliver",
+  "role": "Científico de datos y desarrollador geoespacial",
+  "base_url": "https://jayjayanton.github.io/Website-Portfolio/",
+  "year": 2026,
+  "email": "jayjayoliver@hotmail.com",
+  "phone": "+1 (540) 406-9434",
+  "phone_url": "tel:+15404069434",
+  "linkedin": "https://www.linkedin.com/in/jay-oliver-b22552b4",
+  "github": "https://github.com/jayjayanton",
+  "cv": "cv.html",
+  "featured": [
+    "predio-ai",
+    "land-use-dynamics",
+    "orphaned-wells"
+  ],
+  "project_order": [
+    "predio-ai",
+    "land-use-dynamics",
+    "orphaned-wells",
+    "texas-rrc-wellbore",
+    "environmental-flows",
+    "quito-urban-expansion",
+    "nasa-air-quality",
+    "nasa-water-resources",
+    "carbon-storage-atlas",
+    "coal-ash-modeling",
+    "epa-emissions",
+    "colombia-deforestation",
+    "traffic-camera-pipeline",
+    "yuyay-analytics",
+    "raaz-borg"
+  ],
+  "categories": {
+    "geospatial": "Análisis geoespacial y observación de la Tierra",
+    "data-science": "Ciencia de datos y modelado",
+    "engineering": "Ingeniería de datos",
+    "web": "Aplicaciones web",
+    "vision": "Visión por computadora"
+  },
+  "progression": [
+    {
+      "label": "Bases de investigación",
+      "title": "Comenzar por la pregunta ambiental.",
+      "body": "Los proyectos de NASA DEVELOP y WWF conectaron observaciones satelitales, series temporales ambientales y factores espaciales con preguntas sobre el agua, la calidad del aire y los cambios de uso del suelo.",
+      "link": "projects/nasa-air-quality.html",
+      "link_label": "Explorar el trabajo con NASA"
+    },
+    {
+      "label": "Modelos y sistemas de datos",
+      "title": "Hacer que el análisis sea reproducible.",
+      "body": "La investigación universitaria y energética amplió el trabajo hacia la armonización de datos, el modelado predictivo, la interpretación de modelos y los procesos para grandes conjuntos de datos espaciales.",
+      "link": "projects/land-use-dynamics.html",
+      "link_label": "Explorar la investigación sobre uso del suelo"
+    },
+    {
+      "label": "Software independiente",
+      "title": "Poner los métodos al alcance de las personas.",
+      "body": "Como creador y único desarrollador de PredioAI, conecto esa experiencia analítica con el diseño de productos, las API REST, la geometría de documentos, la cartografía interactiva y la puesta en producción.",
+      "link": "projects/predio-ai.html",
+      "link_label": "Explorar PredioAI"
+    }
+  ],
+  "publications": [
+    {
+      "slug": "land-use-dynamics",
+      "journal": "Scientific Data · Nature Portfolio",
+      "year": "2025",
+      "role": "Primer autor",
+      "title": "United States multi-sector land use and land cover base maps to support human and Earth system models",
+      "description": "Un conjunto armonizado de datos de uso y cobertura del suelo de Estados Unidos que conecta distintos sistemas de clasificación y necesidades de modelado del sistema Tierra. El caso de estudio explica mi aporte al procesamiento de datos y las figuras publicadas.",
+      "url": "https://www.nature.com/articles/s41597-025-04713-6",
+      "doi": "10.1038/s41597-025-04713-6"
+    },
+    {
+      "slug": "environmental-flows",
+      "journal": "River Research and Applications",
+      "year": "2026",
+      "role": "Coautor",
+      "title": "Reconstructing Long-Term Historical Hydrologic Alteration to Support Environmental Flows in Texas",
+      "description": "Investigación en coautoría sobre hidrología de referencia y alteración hidrológica. Mi caso de estudio describe el procesamiento de cuencas y la clasificación de ríos de referencia, y distingue estos aportes de los resultados generales del artículo del equipo.",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1002/rra.70172",
+      "doi": "10.1002/rra.70172"
+    }
+  ],
+  "master_cv": "assets/Jay_Antonio_Oliver_CV.pdf"
+}

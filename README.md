@@ -2,7 +2,7 @@
 
 A professional portfolio of environmental research, predictive modeling, data engineering and independent software development. Each case study explains the problem, my contribution, the approach, the result and the evidence behind it. Technical progression is shown through the work: moving from observations and analysis to reusable data workflows and interactive applications.
 
-**[Explore the portfolio](https://jayjayanton.github.io/Website-Portfolio/)** · [Projects](projects.html) · [Research](research.html) · [About](about.html) · [Contact](contact.html) · [Choose a CV · English / Español](cv.html) · [Complete master CV](cv/master-en.html)
+**[Portfolio in English](https://jayjayanton.github.io/Website-Portfolio/)** · **[Portafolio en español](https://jayjayanton.github.io/Website-Portfolio/es/)** · [Projects](projects.html) · [Research](research.html) · [About](about.html) · [Contact](contact.html) · [Choose a CV · English / Español](cv.html) · [Complete master CV](cv/master-en.html)
 
 ## Selected work
 
@@ -39,12 +39,15 @@ node --test tests/*.mjs
 | --- | --- |
 | `content/site.json` | Site metadata, project order, categories and publication records |
 | `content/case-studies/*.json` | Canonical project summaries, contributions, methods, evidence and links |
+| `content/es/site.json`, `content/es/case-studies/*.json` | Complete Spanish counterparts with matching source facts and structure |
 | `templates/` | Shared page layouts and reusable presentation structure |
+| `templates/es/`, `tools/localization.py` | Spanish page copy, language routing and translation validation |
 | `tools/build.py` | Standard-library Python generator and freshness check |
 | `assets/css/site.css` | Shared visual system and responsive layouts |
 | `assets/js/` | Navigation, project interactions and filtering logic |
 | `images/` | Existing research figures, screenshots and labeled illustrations |
 | `index.html`, other root pages, `projects/*.html` | Generated public pages committed for GitHub Pages |
+| `es/*.html`, `es/projects/*.html` | Spanish public pages, sharing assets and CV downloads |
 | `tests/` | Offline checks for generated pages, links, content rules and filtering |
 | `content/cv.html`, `content/cv/master-es.html` | Full English and Spanish master CVs |
 | `content/cv/profiles/*.json`, `content/cv/common.json` | Paired English/Spanish role profiles and shared career facts |
@@ -85,3 +88,13 @@ Maintain the full record in `content/cv.html` and `content/cv/master-es.html`. E
 Run `npm run build`, then `python3 tools/render_cvs.py` where Chrome is available, and finally `npm run check`. The renderer reuses unchanged PDFs, using source and print-style fingerprints. `python3 tools/render_cvs.py --check` validates PDF presence and two-page limits without launching Chrome. Inspect the final PDF pages after editing; page-count checks alone do not verify layout.
 
 The [PDF workflow](.github/workflows/build-cv.yml) generates and commits the twelve downloads and their render-state file. The read-only validation workflow renders any changed or missing PDFs in its temporary checkout before checking page limits, links and content. Keep `assets/Jay_Antonio_Oliver_CV.pdf` as the English master download for existing external links.
+
+## English and Spanish throughout the portfolio
+
+The homepage, project catalogue, all fifteen case studies, research, about, contact and CV chooser are available in both languages. Existing English URLs remain unchanged; their Spanish counterparts live under `es/`. The twelve language-specific CV pages retain their established URLs. The build generates 54 public HTML pages in total.
+
+The header language control opens the corresponding page or project and preserves the current search/filter query and section anchor when JavaScript is available. Normal navigation, related projects and CV links stay in the selected language. Each language has complete static content, navigation, metadata and reciprocal `hreflang` links; reading and switching pages also work without JavaScript. No external translation service is required.
+
+Project search accepts the reviewed English and Spanish terminology on either version. Result counts, filters, empty states, buttons, captions and accessibility labels follow the page language. Original publication titles, source-variable identifiers, figures and screenshots retain their published wording; their surrounding explanations and image descriptions are translated.
+
+Edit English records and their complete Spanish counterparts together. `tools/localization.py` checks matching structure and immutable identifiers, source URLs and routing keys. Do not translate category or topic machine values; translate their displayed labels. Keep numerical results, individual/team attribution and implemented/planned boundaries consistent across languages. Extend both template sets when adding new visible copy.

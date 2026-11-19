@@ -1,0 +1,119 @@
+{
+  "slug": "raaz-borg",
+  "title": "Ra’az Borg",
+  "summary": "Sitio web bilingüe de deportes de combate con una identidad de grappling inspirada en el ciberpunk. Sus cinco páginas comparten navegación adaptable, tipografía e interacciones JavaScript. Mantenido como bifurcación de un proyecto existente, ofrece un caso de desarrollo frontend centrado en conservar un sistema visual coherente dentro de una base de código establecida.",
+  "categories": [
+    "web"
+  ],
+  "status": "Desarrollo de sitio web",
+  "status_key": "delivered",
+  "role": "Desarrollo frontend en una bifurcación existente",
+  "context": "Ra’az Undergrounds, plataforma de grappling underground de Guayaquil, Ecuador, presentada mediante una identidad visual ficticia de estilo ciberpunk. La bifurcación pública procede de daveeedlr/raaz-borg.",
+  "period": "2026",
+  "image": {
+    "src": "https://raw.githubusercontent.com/jayjayanton/raaz-borg/main/assets/squad-magenta.jpg",
+    "alt": "Imagen del equipo de Ra’az Borg utilizada en el sitio de deportes de combate",
+    "caption": "Recurso gráfico original del sitio, tomado de la bifurcación pública; es una imagen de diseño, no una captura de la interfaz renderizada.",
+    "kind": "site-asset"
+  },
+  "technologies": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Navegación adaptable",
+    "Contenido en inglés y español",
+    "Almacenamiento del navegador",
+    "GitHub Pages"
+  ],
+  "problem": "Una identidad deportiva distintiva necesita un sitio coherente entre perfiles de competidores, eventos, medios y productos. La interfaz debe conservar su carácter visual y seguir siendo utilizable en pantallas pequeñas y con contenido en inglés y español.",
+  "contribution": "Mantengo una bifurcación pública del frontend de Ra’az Borg como parte del desarrollo continuo del sitio. El repositorio documenta la interfaz actual y sus funciones, pero el registro disponible todavía no permite identificar cada cambio que realicé. Por ello, este caso conserva la atribución al proyecto original y no me adjudica la autoría exclusiva del diseño inicial ni una implementación backend verificada.",
+  "approach": [
+    {
+      "title": "Organizar el contenido en cinco páginas",
+      "body": "El frontend actual contiene Universo, Luchadores, Clashes GP, Laboratorio y medios, y Tienda. Las páginas HTML estáticas comparten recursos visuales y navegación sin requerir una etapa de compilación del frontend."
+    },
+    {
+      "title": "Reutilizar estilos y lógica de interacción",
+      "body": "El archivo compartido css/style.css proporciona la presentación adaptable, mientras js/main.js gestiona el comportamiento de la interfaz. El código visible incluye navegación móvil, apariciones al desplazarse, franjas de texto animadas y otras interacciones."
+    },
+    {
+      "title": "Facilitar la navegación bilingüe",
+      "body": "Un selector inglés/español utiliza almacenamiento del navegador para conservar el idioma elegido. La interfaz conecta la traducción del contenido con el mismo sistema compartido de navegación y presentación."
+    },
+    {
+      "title": "Documentar los límites del desarrollo",
+      "body": "Distinguir el frontend estático actual de cualquier versión local más desarrollada o prototipo backend. Las modificaciones específicas y los servicios adicionales deben documentarse cuando su código esté disponible para revisión."
+    }
+  ],
+  "outcome": "La bifurcación pública ofrece un frontend estático de cinco páginas, con interacción bilingüe e identidad visual consistente. Es el punto de partida documentado para continuar el trabajo frontend; las afirmaciones más específicas sobre mis contribuciones dependen de publicar y revisar la versión de desarrollo actualizada.",
+  "learning": "El trabajo sobre un sistema de diseño existente es más fácil de evaluar cuando se distinguen las funciones heredadas de las modificaciones nuevas. Esa trazabilidad facilita tanto la revisión técnica como la explicación del trabajo en un portafolio.",
+  "limitations": [
+    "El repositorio es una bifurcación de daveeedlr/raaz-borg. Este caso no me atribuye todo el diseño ni la funcionalidad originales.",
+    "El alcance de mis cambios se actualizará cuando la versión local más desarrollada se suba al repositorio y puedan revisarse sus diferencias.",
+    "La bifurcación pública documentada actualmente utiliza HTML/CSS/JavaScript estáticos. El código disponible no permite confirmar un backend con Node.js o PostgreSQL.",
+    "La dirección de GitHub Pages depende de la configuración de publicación de la bifurcación; el repositorio constituye la evidencia de las funciones actuales del código."
+  ],
+  "evidence": [
+    {
+      "title": "Un recurso visual de la bifurcación pública",
+      "body": "La imagen del equipo forma parte de la identidad del sitio existente. Se identifica como recurso gráfico del proyecto de origen, no como captura de una interfaz nueva.",
+      "images": [
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/raaz-borg/main/assets/squad-magenta.jpg",
+          "alt": "Imagen del equipo de Ra’az Borg utilizada en el sitio de deportes de combate",
+          "caption": "Recurso gráfico original del sitio, tomado de la bifurcación pública; es una imagen de diseño, no una captura de la interfaz renderizada.",
+          "kind": "site-asset"
+        }
+      ]
+    },
+    {
+      "title": "Estructura actual del frontend",
+      "body": "Las cinco páginas del repositorio establecen el modelo de contenido del sitio.",
+      "images": [],
+      "table": {
+        "headers": [
+          "Página",
+          "Función del contenido"
+        ],
+        "rows": [
+          [
+            "Universo",
+            "Página de inicio e identidad ficticia"
+          ],
+          [
+            "Luchadores",
+            "Presentación de competidores"
+          ],
+          [
+            "Clashes GP",
+            "Presentación de eventos"
+          ],
+          [
+            "Laboratorio y medios",
+            "Contenido multimedia y relacionado"
+          ],
+          [
+            "Tienda",
+            "Presentación de indumentaria de combate"
+          ]
+        ]
+      }
+    }
+  ],
+  "links": [
+    {
+      "label": "Explorar la bifurcación actual",
+      "url": "https://github.com/jayjayanton/raaz-borg",
+      "kind": "code"
+    },
+    {
+      "label": "Proyecto original de daveeedlr",
+      "url": "https://github.com/daveeedlr/raaz-borg",
+      "kind": "code"
+    }
+  ],
+  "related": [
+    "yuyay-analytics",
+    "predio-ai"
+  ]
+}

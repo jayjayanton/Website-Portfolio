@@ -1,0 +1,16 @@
+<section class="container page-heading"><p class="eyebrow">Mi trabajo</p><h1>Proyectos con <em>su razonamiento a la vista.</em></h1><p class="lead">Explora modelos, análisis espacial, procesos de datos y aplicaciones. Cada caso explica mi aporte, cómo funciona el trabajo y qué permiten afirmar sus resultados.</p></section>
+<section class="container project-browser" aria-label="Catálogo de proyectos">
+  <form class="project-filters" id="project-filters" role="search" hidden>
+    <div class="filter-top"><div class="search-field"><label for="project-search">Buscar proyectos, temas o herramientas</label><input id="project-search" name="q" type="search" placeholder="Prueba con FastAPI, imágenes satelitales o XGBoost" autocomplete="off"></div><div class="stage-field"><label for="project-stage">Etapa del proyecto</label><select id="project-stage" name="stage"><option value="all">Todas las etapas</option><option value="published">Publicado / en línea</option><option value="delivered">Trabajo aplicado</option><option value="development">En desarrollo</option></select></div></div>
+    <fieldset class="category-fieldset"><legend>Explorar por capacidad</legend><div class="filter-chips"><button type="button" data-category="all" aria-pressed="true">Todos los proyectos</button>$category_buttons</div></fieldset>
+    <p class="filter-help">La búsqueda y los filtros se combinan. Cada tarjeta indica si la investigación está en desarrollo.</p>
+  </form>
+  <div class="results-heading"><p id="project-count" role="status" aria-live="polite">$project_count proyectos</p><button class="text-button" type="button" data-reset-filters hidden>Quitar filtros</button></div>
+  <noscript><p class="notice">Todos los casos de estudio están disponibles a continuación. La búsqueda de proyectos está disponible al activar JavaScript.</p></noscript>
+  <h2 class="visually-hidden">Casos de estudio de los proyectos</h2>
+  <div class="project-grid" id="project-grid">$cards</div>
+  <div class="empty-state" id="empty-state" hidden><h2>No hay proyectos que coincidan con esos filtros.</h2><p>Prueba con un tema más amplio o quita los filtros para explorar todos los proyectos.</p><button class="button button-secondary" type="button" data-reset-filters>Mostrar todos los proyectos</button></div>
+</section>
+<script id="project-index" type="application/json">$project_index</script>
+<script type="module" src="assets/js/projects.js?v=$projects_version"></script>
+$contact_band

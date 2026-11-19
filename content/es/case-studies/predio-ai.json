@@ -1,0 +1,117 @@
+{
+  "slug": "predio-ai",
+  "title": "PredioAI",
+  "summary": "Concebí, diseñé y desarrollé una aplicación web que conecta planos arquitectónicos con datos prediales de Quito. Como único desarrollador, construí la interfaz, las APIs en Python, las integraciones de datos municipales y las herramientas interactivas de documentos, creando un espacio para planificar remodelaciones, realizar mediciones y analizar predios espacialmente.",
+  "categories": [
+    "geospatial",
+    "engineering",
+    "web"
+  ],
+  "status": "Aplicación en línea",
+  "status_key": "published",
+  "role": "Creador y único desarrollador",
+  "context": "Producto independiente para propietarios, especialistas en remodelación y profesionales de la construcción que trabajan con planos e información predial en Quito, Ecuador.",
+  "period": "2026",
+  "image": {
+    "src": "/images/predioai-homepage.jpg",
+    "alt": "Interfaz de PredioAI con un plano ficticio y mediciones de superficies vinculadas",
+    "caption": "La interfaz publicada utiliza un plano ficticio para mostrar el espacio de trabajo con planos y mediciones.",
+    "kind": "screenshot"
+  },
+  "technologies": [
+    "Python",
+    "FastAPI",
+    "APIs REST",
+    "React",
+    "Vite",
+    "Leaflet",
+    "ArcGIS REST",
+    "Shapely",
+    "pyproj",
+    "PyMuPDF",
+    "ezdxf",
+    "GeoJSON"
+  ],
+  "problem": "Planificar una remodelación o ampliación exige conectar información dispersa entre planos, registros catastrales, documentos municipales de planificación y mapas. Un plano resulta más útil cuando su geometría, sus medidas y los cambios propuestos pueden revisarse junto con el predio que representa.",
+  "contribution": "Llevé PredioAI desde la concepción del producto hasta su despliegue: interfaz adaptable, servicios backend, integración geoespacial, revisión de documentos, flujos de medición, pruebas y publicación. Diseñé la interacción en torno a elementos seleccionados por el usuario y mediciones que puede revisar, con búsqueda y comparación de predios como apoyo al espacio de trabajo con planos.",
+  "approach": [
+    {
+      "title": "Conectar datos públicos de predios",
+      "body": "Integrar servicios municipales de ArcGIS REST con atributos catastrales, zonificación e información de avalúos. Presentar registros con búsqueda y capas prediales en una interfaz React y Leaflet, con endpoints Python/FastAPI que conectan la aplicación con sus datos y servicios analíticos."
+    },
+    {
+      "title": "Convertir la geometría del plano en una herramienta interactiva",
+      "body": "Extraer texto nativo, trazados vectoriales y entidades CAD con PyMuPDF y ezdxf, junto con flujos compatibles de conversión DWG. Permitir al usuario revisar el plano, confirmar unidades o calibrar una longitud conocida, seleccionar elementos y calcular medidas con corrección manual."
+    },
+    {
+      "title": "Situar las propuestas en su contexto geográfico",
+      "body": "Utilizar Shapely y pyproj para operaciones geométricas, intersecciones espaciales y transformaciones de coordenadas. Incorporar figuras a escala y ubicar huellas de edificaciones sobre el mapa predial; luego comparar las propuestas con parámetros municipales revisados, incluida la información disponible sobre retiros."
+    },
+    {
+      "title": "Mantener la utilidad de los resultados fuera de la pantalla",
+      "body": "Vincular selecciones y mediciones, organizar comparaciones de predios y exportar los resultados compatibles en CSV, JSON o GeoJSON. Las verificaciones automatizadas de frontend y backend apoyan las compilaciones de producción y el despliegue mediante GitHub Actions, con el frontend en GitHub Pages y la API en Render."
+    }
+  ],
+  "outcome": "La aplicación publicada reúne exploración de predios, revisión de documentos y preparación espacial de proyectos en un mismo flujo. Demuestra cómo los servicios de datos públicos y las bibliotecas analíticas pueden convertirse en un producto interactivo que los usuarios pueden revisar, corregir y reutilizar.",
+  "learning": "La principal lección de diseño es que una interacción confiable requiere supuestos visibles: escala confirmada, geometría de origen identificable y parámetros municipales revisados. Conectar esos supuestos con mapas y mediciones es tan importante como realizar el cálculo geométrico.",
+  "limitations": [
+    "El flujo actual de planos lee geometría y texto nativos de PDF/CAD. La visión por computador para planos escaneados o basados en imágenes es una ampliación prevista; el reconocimiento automático de habitaciones no se presenta como una función implementada.",
+    "Las mediciones dependen de unidades confirmadas o de una calibración y de la revisión del usuario. Las comparaciones de planificación dependen de la información predial y los parámetros municipales proporcionados.",
+    "Los resultados apoyan la preparación de proyectos y la revisión profesional; este caso de estudio no atribuye a la aplicación la aprobación automática de permisos, presupuestos de construcción ni estimaciones de materiales."
+  ],
+  "evidence": [
+    {
+      "title": "Un plano convertido en interfaz de trabajo",
+      "body": "La aplicación en línea conecta la vista del plano con las superficies seleccionadas y sus mediciones. La demostración es ficticia y muestra la interacción; no corresponde a un proyecto de un cliente.",
+      "images": [
+        {
+          "src": "/images/predioai-homepage.jpg",
+          "alt": "Interfaz de PredioAI con un plano ficticio y mediciones de superficies vinculadas",
+          "caption": "La interfaz publicada utiliza un plano ficticio para mostrar el espacio de trabajo con planos y mediciones.",
+          "kind": "screenshot"
+        }
+      ]
+    },
+    {
+      "title": "Capacidades conectadas en toda la aplicación",
+      "body": "Cada componente técnico responde a una tarea concreta del usuario, desde localizar un predio hasta exportar una medición revisada.",
+      "images": [],
+      "table": {
+        "headers": [
+          "Tarea del usuario",
+          "Solución implementada"
+        ],
+        "rows": [
+          [
+            "Explorar el contexto del predio",
+            "Integraciones REST municipales, atributos catastrales, capas cartográficas y comparación de predios"
+          ],
+          [
+            "Revisar un plano",
+            "Texto y geometría nativos PDF/CAD, selección, calibración de escala y mediciones"
+          ],
+          [
+            "Estudiar una huella de edificación propuesta",
+            "Geometría a escala, transformaciones de coordenadas, ubicación en el mapa y comparación con parámetros revisados"
+          ],
+          [
+            "Continuar el análisis",
+            "Exportaciones compatibles de mediciones y datos espaciales en CSV, JSON y GeoJSON"
+          ]
+        ]
+      }
+    }
+  ],
+  "links": [
+    {
+      "label": "Explorar PredioAI",
+      "url": "https://jayjayanton.github.io/Predio-AI/",
+      "kind": "live"
+    }
+  ],
+  "related": [
+    "quito-urban-expansion",
+    "traffic-camera-pipeline",
+    "yuyay-analytics"
+  ]
+}

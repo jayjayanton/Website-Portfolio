@@ -1,0 +1,107 @@
+{
+  "slug": "environmental-flows",
+  "title": "Integración de datos de cuencas en la investigación sobre caudales ambientales",
+  "summary": "Automaticé la delimitación de cuencas, modelé la condición de referencia de los ríos e investigué relaciones de alteración hidrológica en ecorregiones de Texas. El trabajo combina integración de API en R con modelado en Python y contribuyó a un artículo en coautoría en River Research and Applications, distinguiendo las curvas exploratorias de ajuste de las conclusiones ecológicas validadas.",
+  "categories": [
+    "data-science",
+    "geospatial",
+    "engineering"
+  ],
+  "status": "Investigación con publicación en coautoría",
+  "status_key": "published",
+  "role": "Colaborador de investigación y coautor de la publicación",
+  "context": "McManamay Lab · Baylor University",
+  "period": "Publicación relacionada: julio de 2026",
+  "image": {
+    "src": "https://raw.githubusercontent.com/jayjayanton/Texas-Environmental-Flows-ML/main/figures/all_ecoregions_comparison.png",
+    "alt": "Comparación conjunta del R² medio entre ecorregiones de Texas",
+    "caption": "Resultado original de la investigación: comparación de las curvas de R² medio de entrenamiento entre ecorregiones de Texas. El conjunto de métricas que contribuye puede cambiar con la profundidad.",
+    "kind": "research"
+  },
+  "technologies": [
+    "Python",
+    "R",
+    "Model My Watershed API",
+    "Random Forest",
+    "Árboles de decisión",
+    "SIG",
+    "Derivadas numéricas"
+  ],
+  "problem": "La investigación sobre caudales ambientales necesita distinguir el contexto natural de las cuencas de las alteraciones humanas y comprender cómo varían los patrones hidrológicos entre regiones. Para ello se requieren límites de cuencas consistentes, información sobre ríos de referencia y análisis que diferencien el comportamiento de los modelos de la evidencia ecológica.",
+  "contribution": "Automaticé la delimitación de cuencas a partir de coordenadas de estaciones hidrométricas, desarrollé un flujo con Random Forest para distinguir ríos de referencia y no referencia, y exploré relaciones entre métricas de alteración hidrológica y variables de respuesta de peces en ecorregiones de Texas. Soy coautor del artículo relacionado de 2026 sobre la reconstrucción histórica de la alteración hidrológica.",
+  "approach": [
+    {
+      "title": "Obtener la geometría de las cuencas mediante código",
+      "body": "Utilicé R con Model My Watershed API para enviar las coordenadas de las estaciones hidrométricas, comprobar los resultados de delimitación y guardar los límites de las cuencas para el análisis espacial."
+    },
+    {
+      "title": "Modelar la condición de referencia de los ríos",
+      "body": "Utilicé atributos de cuencas y ríos en un flujo con Random Forest. El cuaderno original empleaba un regresor con salidas binarias redondeadas; el script reutilizable posterior utiliza un clasificador con separación entre entrenamiento y prueba, y tratamiento de valores faltantes dentro del flujo de modelado."
+    },
+    {
+      "title": "Explorar métricas hidrológicas y respuestas de peces",
+      "body": "Ajusté regresiones con árboles de decisión de múltiples salidas para métricas individuales de alteración hidrológica y varias variables de respuesta de peces. Repetí los modelos a distintas profundidades de árbol para examinar los cambios en el ajuste sobre los datos de entrenamiento."
+    },
+    {
+      "title": "Comparar patrones entre ecorregiones",
+      "body": "Promedié los valores de R² disponibles para las distintas métricas a cada profundidad dentro de cada ecorregión. Las derivadas numéricas permitieron identificar posibles inflexiones en las curvas medias para compararlas, sin atribuirles la condición de umbrales biológicos."
+    }
+  ],
+  "outcome": "El trabajo produjo scripts reutilizables de delimitación y modelado, figuras originales de comparación entre ecorregiones y una contribución a una publicación colaborativa revisada por pares. Las curvas exploratorias muestran diferencias en el comportamiento del ajuste; su propósito y sus limitaciones se distinguen de los resultados de modelado hidrológico publicados por el equipo completo.",
+  "learning": "Este proyecto muestra la transición desde la obtención de datos espaciales mediante una API externa hasta la construcción y evaluación de análisis estadísticos. El cambio documentado de un regresor con resultados redondeados a un clasificador también hace explícita una distinción de ingeniería: mejorar una implementación reutilizable puede cambiar sus resultados, por lo que las salidas históricas y el código revisado necesitan registros de procedencia separados.",
+  "limitations": [
+    "Las curvas de R² frente a la profundidad de los árboles utilizan datos de entrenamiento y no demuestran capacidad predictiva fuera de esa muestra.",
+    "Algunas métricas dejan de contribuir cuando los árboles ajustados dejan de crecer. Este cambio en el conjunto de métricas puede afectar la curva media y sus posibles puntos de inflexión.",
+    "Las inflexiones en las curvas de ajuste no son puntos de cambio ecológico validados de forma independiente.",
+    "El clasificador Random Forest revisado no reproduce exactamente el flujo original de regresión con redondeo. Para reproducir los resultados históricos se necesitan los datos originales de la investigación.",
+    "El artículo refleja el trabajo de todo el equipo de autores; sus medidas globales de desempeño no se presentan aquí como resultados de mi análisis exploratorio independiente de peces y métricas HIT."
+  ],
+  "evidence": [
+    {
+      "title": "Publicación de investigación en coautoría",
+      "body": "Mark B. Lueders, Ryan A. McManamay, Jay A. Oliver, David Young, Preston Bean y Kevin Mayes. Reconstructing Long-Term Historical Hydrologic Alteration to Support Environmental Flows in Texas. River Research and Applications, publicado por primera vez el 9 de julio de 2026. DOI: 10.1002/rra.70172.",
+      "images": []
+    },
+    {
+      "title": "Figuras originales de comparación entre ecorregiones",
+      "body": "Estas figuras documentan el análisis exploratorio con árboles de decisión. El promedio corresponde a los valores de ajuste disponibles a una profundidad determinada, no a las observaciones originales de peces ni a los valores hidrológicos.",
+      "images": [
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Texas-Environmental-Flows-ML/main/figures/ecoregion_4_hit_metric_curves.png",
+          "alt": "Curvas de R² de métricas HIT individuales en la ecorregión 4",
+          "caption": "Resultado original de la investigación: curvas de R² de entrenamiento de métricas individuales de alteración hidrológica según la profundidad de los árboles de decisión en la ecorregión 4.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Texas-Environmental-Flows-ML/main/figures/ecoregion_inflection_panels.png",
+          "alt": "Curvas de ajuste medio y posibles puntos de inflexión en las ecorregiones de Texas",
+          "caption": "Resultado original de la investigación: curvas de ajuste medio de entrenamiento y posibles puntos de inflexión numéricos en diez ecorregiones. No son umbrales biológicos validados.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Texas-Environmental-Flows-ML/main/figures/all_ecoregions_comparison.png",
+          "alt": "Comparación conjunta del R² medio entre ecorregiones de Texas",
+          "caption": "Resultado original de la investigación: comparación de las curvas de R² medio de entrenamiento entre ecorregiones de Texas. El conjunto de métricas que contribuye puede cambiar con la profundidad.",
+          "kind": "research"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": "Leer el artículo de investigación en coautoría",
+      "url": "https://doi.org/10.1002/rra.70172",
+      "kind": "publication"
+    },
+    {
+      "label": "Consultar el código y las notas metodológicas de la investigación",
+      "url": "https://github.com/jayjayanton/Texas-Environmental-Flows-ML",
+      "kind": "code"
+    }
+  ],
+  "related": [
+    "land-use-dynamics",
+    "nasa-water-resources",
+    "orphaned-wells"
+  ]
+}
