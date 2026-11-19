@@ -6,6 +6,22 @@ The portfolio presents Jay Oliver’s proven work and technical progression thro
 
 The site is a static publication. Canonical content and shared templates generate committed HTML, while a small amount of JavaScript provides navigation and project filtering. There is no application backend or build-time dependency installation.
 
+## Portfolio color identity
+
+The personal portfolio uses warm ivory, charcoal and indigo. This identity is independent of the brands shown inside its case studies, including PredioAI. Keep original application screenshots and research figures in their source colors.
+
+| Token | Color | Use |
+| --- | --- | --- |
+| `--canvas` | `#F7F5F2` | Warm ivory page background |
+| `--surface` | `#FFFFFF` | Cards and evidence surfaces |
+| `--ink` | `#24232B` | Charcoal headings and dark panels |
+| `--accent` | `#5146A6` | Indigo links, buttons and selected controls |
+| `--accent-dark` | `#403585` | Hover and emphasized accent text |
+| `--accent-soft` | `#EEEBFA` | Pale lavender supporting panels |
+| `--muted` | `#625F6A` | Secondary text |
+
+Use neutral borders for decoration and the stronger `--control-line` for input boundaries. Development badges use a warm amber treatment with a written status label. Dark panels use light text and focus outlines. When changing the palette, update the shared stylesheet, browser theme color and favicon, then rebuild all pages.
+
 ## Architecture
 
 `tools/build.py` uses the Python standard library to read `content/site.json`, the records in `content/case-studies/`, and the shared templates. It generates the main site pages and the existing `projects/<slug>.html` case-study URLs.
