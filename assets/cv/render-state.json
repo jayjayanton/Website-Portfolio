@@ -1,50 +1,50 @@
 {
   "data-scientist:en": {
-    "fingerprint": "17455194e8395cb6aa74d31c0cb2d204c7c1b418451682ad2d232521e1641385",
+    "fingerprint": "c0d6d42122edc38e741a4c472d2eca5ab3106fb056b05859b0e633525696a229",
     "pages": 2
   },
   "data-scientist:es": {
-    "fingerprint": "186d84f00ec125e4d2672d46e893b6525a4a0b19c6d4bb831fe325c715eddb10",
+    "fingerprint": "91313b8cefcfc7a2e242a38be9330e1c3890613c0a172f4106080250c4b27048",
     "pages": 2
   },
   "geospatial-data-engineer:en": {
-    "fingerprint": "62c5d74261058f7bf6f8f55ea584be21c869cf4bcc560ff3b8174d087278ef52",
+    "fingerprint": "c327fb6a653def40b91c389faf602fbfe81a14c60e996fc667ed485841427585",
     "pages": 2
   },
   "geospatial-data-engineer:es": {
-    "fingerprint": "084e7a8e08d8074880a54d79c79bdbd3d05f41ec1a889c4a840015b42efdcf51",
+    "fingerprint": "d4414ebb370ca4c7839de8ffca4586a5c866159d172910f88ccfae85abec96d9",
     "pages": 2
   },
   "geospatial-data-scientist:en": {
-    "fingerprint": "833767e52bcbda7bc4c818065bac5347a81215ee2da0554a320df658b03c2708",
+    "fingerprint": "b8cffb64a7c0a240361edfcd25612caf6889868633f7a76e843d3d36754ab3ba",
     "pages": 2
   },
   "geospatial-data-scientist:es": {
-    "fingerprint": "58ab002899dcb480ebe1cdc6d23b3a2ff7cf157dcb0f997c5b927fc3129c63df",
+    "fingerprint": "888e917c340939d460de54a364f01ff2dcacb9df8306631e7be45b62247c7184",
     "pages": 2
   },
   "geospatial-data-specialist:en": {
-    "fingerprint": "ec1f45f4ca3887e344972bd2a8bf4baf492867594e38273ebeaca9444f97511a",
+    "fingerprint": "ee6f18b455d8544840def37976999dfe20f9250ef794b668312e511e82618282",
     "pages": 2
   },
   "geospatial-data-specialist:es": {
-    "fingerprint": "caac943b93ce6073f55317809d51ed7860861a283df7a3a3ddde1ad0ad550731",
+    "fingerprint": "ec46c86afd84343b423dfcfc76b9779ba73a77e3b32395e1f65ede61d24ec7e1",
     "pages": 2
   },
   "master:en": {
-    "fingerprint": "a167712fc579702b7001d73751ed070b9cc32187a06441e745d0cd40ed2437bd",
+    "fingerprint": "c27b3cdf1e8c1b9abcc8321fba0e423d0a8944f9a233be1b90992ca889fd92be",
     "pages": 6
   },
   "master:es": {
-    "fingerprint": "6f119e1325cb8444762a253b180f81414d17df9516106e02cb73dc400a7361f7",
-    "pages": 7
+    "fingerprint": "197e91d8309978de36a9801a156ccc4922ad45a89099a2d09757ae01964eda24",
+    "pages": 6
   },
   "spatial-analyst:en": {
-    "fingerprint": "172e843d6bd5d7c89cb3380aa7a6a49ed21a6c6e7c961378e5a1f64500e50758",
+    "fingerprint": "9e8bf11abd588ad65edf707ef097caebe790f6850421ee59561b7d5b820ebb51",
     "pages": 2
   },
   "spatial-analyst:es": {
-    "fingerprint": "71a5ca406c70b50f83b647f947afef49fb218dff8618327123e95612c86ea408",
+    "fingerprint": "d1c6a821a69d970d7957f79e770fa91959a91d3b95ab71bd1dcff52f7494bee9",
     "pages": 2
   }
 }
