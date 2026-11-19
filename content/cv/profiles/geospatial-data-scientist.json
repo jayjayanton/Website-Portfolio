@@ -5,12 +5,12 @@
     "es": "Científico de datos geoespaciales"
   },
   "description": {
-    "en": "Spatial modeling, remote sensing and environmental applications.",
-    "es": "Modelación espacial, teledetección y aplicaciones ambientales."
+    "en": "Spatial modeling, validation and geospatial software development.",
+    "es": "Modelado espacial, validación y desarrollo geoespacial."
   },
   "summary": {
-    "en": "Geospatial data scientist with 6+ years of experience linking satellite observations, environmental records and spatial models. Develops reproducible Python and R workflows for land-cover mapping, watershed analysis and energy research. Combines peer-reviewed research with interactive geospatial application development, translating complex spatial datasets into model inputs, maps and tools for scientific and practical use.",
-    "es": "Científico de datos geoespaciales con más de 6 años de experiencia integrando observaciones satelitales, registros ambientales y modelos espaciales. Desarrolla flujos reproducibles en Python y R para cartografía de coberturas, análisis de cuencas e investigación energética. Combina publicaciones científicas y aplicaciones geoespaciales interactivas para convertir datos complejos en insumos de modelación, mapas y herramientas."
+    "en": "Geospatial data scientist with 6+ years of experience combining spatial analysis, predictive modeling and reproducible data workflows. Uses Python, R, SQL and GIS to prepare reliable model inputs, evaluate results and build interactive applications. Communicates complex methods through maps, publications and usable tools, drawing on environmental, energy and remote-sensing research.",
+    "es": "Científico de datos geoespaciales con más de seis años integrando análisis espacial, modelos predictivos y procesos reproducibles. Utiliza Python, R, SQL y SIG para preparar datos, evaluar resultados y desarrollar aplicaciones interactivas. Comunica métodos complejos mediante mapas, publicaciones y herramientas útiles, con experiencia en investigación ambiental, energética y teledetección."
   },
   "skills": [
     {
@@ -25,12 +25,12 @@
     },
     {
       "label": {
-        "en": "Remote sensing and modeling",
-        "es": "Teledetección y modelación"
+        "en": "Modeling and validation",
+        "es": "Modelado y validación"
       },
       "text": {
-        "en": "Python, R, Landsat, Sentinel-2, MODIS, VIIRS; spatial feature engineering, Random Forest, XGBoost, cross-validation and SHAP.",
-        "es": "Python, R, Landsat, Sentinel-2, MODIS, VIIRS; variables predictoras espaciales, Random Forest, XGBoost, validación cruzada y SHAP."
+        "en": "Python, R, Random Forest, XGBoost, cross-validation, SHAP; spatial feature engineering, Landsat, Sentinel-2, MODIS and VIIRS.",
+        "es": "Python, R, Random Forest, XGBoost, validación cruzada, SHAP; variables predictoras espaciales, Landsat, Sentinel-2, MODIS y VIIRS."
       }
     },
     {
@@ -75,7 +75,7 @@
         },
         {
           "en": "Harmonized NLCD, USDA Cropland Data Layer and irrigation data; implemented GCAM, CLM and LUH2 crosswalks and assessed fractional land-cover differences with spatial mean squared error.",
-          "es": "Armonicé NLCD, USDA Cropland Data Layer y datos de riego; implementé correspondencias para GCAM, CLM y LUH2 y evalué fracciones de cobertura mediante error cuadrático medio espacial."
+          "es": "Armonicé NLCD, USDA Cropland Data Layer y datos de riego; implementé correspondencias para GCAM, CLM y LUH2 y evalué diferencias entre representaciones fraccionarias de cobertura mediante error cuadrático medio espacial."
         }
       ]
     },

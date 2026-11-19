@@ -288,7 +288,7 @@ class Site:
             ]
         tools = '<div class="tool-grid">' + "".join(f'<article class="tool-group"><h3>{esc(title)}</h3><p>{esc(body)}</p>{link(label, f"projects/{slug}.html")}</article>' for title, body, slug, label in groups) + "</div>"
         body = self.template("about.html", progression=self.progression(), tool_groups=tools, contact_band=self.contact_band())
-        return self.page("about.html", self.t("About & Approach | Jay Oliver", "Perfil y enfoque de trabajo | Jay Oliver"), self.t("An environmental research foundation and an expanding technical practice. Learn how Jay Oliver connects data science, geospatial analysis and application development.", "Una base en investigación ambiental y una práctica técnica en expansión. Conoce cómo Jay Oliver conecta ciencia de datos, análisis geoespacial y desarrollo de aplicaciones."), body, "about")
+        return self.page("about.html", self.t("About & Approach | Jay Oliver", "Perfil y enfoque de trabajo | Jay Oliver"), self.t("Learn how Jay Oliver connects data science, geospatial analysis, data engineering and software development, with transferable skills grounded in research and working applications.", "Conoce cómo Jay Oliver conecta ciencia de datos, análisis geoespacial, ingeniería de datos y desarrollo de software, con competencias transferibles demostradas en investigación y aplicaciones."), body, "about")
 
     def research(self) -> str:
         publications = []

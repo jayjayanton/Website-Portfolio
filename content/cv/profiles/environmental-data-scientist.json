@@ -1,0 +1,147 @@
+{
+  "id": "environmental-data-scientist",
+  "label": {
+    "en": "Environmental Data Scientist",
+    "es": "Científico de datos ambientales"
+  },
+  "description": {
+    "en": "Environmental and energy research, land-use change and water resources.",
+    "es": "Investigación ambiental y energética, cambios de uso del suelo y recursos hídricos."
+  },
+  "summary": {
+    "en": "Environmental data scientist with 6+ years of experience in remote sensing, land-use analysis, water resources and energy research across NASA DEVELOP, WWF, USGS, Baylor University and Leidos/NETL. Builds reproducible Python and R workflows that connect satellite observations, partner-supplied ground observations and regulatory records with spatial analysis and interpretable models. First author and coauthor of published research, with experience communicating methods, uncertainty and findings through maps, datasets and technical reports.",
+    "es": "Científico de datos ambientales con más de seis años de experiencia en teledetección, uso del suelo, recursos hídricos e investigación energética en NASA DEVELOP, WWF, USGS, Baylor University y Leidos/NETL. Desarrolla flujos reproducibles en Python y R que integran observaciones satelitales, observaciones en superficie aportadas por colaboradores y registros regulatorios con análisis espacial y modelos interpretables. Primer autor y coautor de investigaciones publicadas; comunica métodos, incertidumbre y resultados mediante mapas, datos e informes técnicos."
+  },
+  "skills": [
+    {
+      "label": {
+        "en": "Environmental and spatial analysis",
+        "es": "Análisis ambiental y espacial"
+      },
+      "text": {
+        "en": "Land-use and land-cover change, watershed delineation, hydrologic alteration, air-quality analysis, spatial classification and greenhouse-gas reporting datasets.",
+        "es": "Cambios de uso y cobertura del suelo, delimitación de cuencas, alteración hidrológica, análisis de calidad del aire, clasificación espacial y datos de emisiones de gases de efecto invernadero."
+      }
+    },
+    {
+      "label": {
+        "en": "Remote sensing and GIS",
+        "es": "Teledetección y SIG"
+      },
+      "text": {
+        "en": "ArcGIS Pro, QGIS, GDAL, Rasterio, GeoPandas; Landsat, Sentinel-2, MODIS, VIIRS and CALIOP; raster/vector integration and time-series analysis.",
+        "es": "ArcGIS Pro, QGIS, GDAL, Rasterio, GeoPandas; Landsat, Sentinel-2, MODIS, VIIRS y CALIOP; integración ráster/vectorial y análisis de series temporales."
+      }
+    },
+    {
+      "label": {
+        "en": "Reproducible research",
+        "es": "Investigación reproducible"
+      },
+      "text": {
+        "en": "Python, R, SQL, REST APIs, Random Forest, XGBoost, logistic regression, cross-validation, SHAP, Git, technical reporting and bilingual communication.",
+        "es": "Python, R, SQL, API REST, Random Forest, XGBoost, regresión logística, validación cruzada, SHAP, Git, informes técnicos y comunicación bilingüe."
+      }
+    }
+  ],
+  "experience": [
+    {
+      "id": "leidos",
+      "bullets": [
+        {
+          "en": "Developed Random Forest and XGBoost models to screen for likely orphaned wells in a team-assembled inventory exceeding 7 million records, combining spatial, temporal and well-history predictors with stratified validation and SHAP interpretation.",
+          "es": "Desarrollé modelos Random Forest y XGBoost para identificar posibles pozos huérfanos en un inventario del equipo con más de 7 millones de registros, integrando variables espaciales, temporales e históricas con validación estratificada e interpretación SHAP."
+        },
+        {
+          "en": "Standardized EPA greenhouse-gas reporting data for 2010–2024 into reusable facility-level datasets and built Python/SQL pipelines for Texas wellbore and production records.",
+          "es": "Estandaricé datos de emisiones de gases de efecto invernadero de la EPA, 2010–2024, en conjuntos reutilizables por instalación y desarrollé flujos Python/SQL para registros de pozos y producción de Texas."
+        },
+        {
+          "en": "Converted more than 400 geologic rasters to standardized polygon datasets and prepared basin-specific web maps for NETL atlas publication using ArcGIS Enterprise and Experience Builder.",
+          "es": "Convertí más de 400 rásteres geológicos en conjuntos de polígonos estandarizados y preparé mapas web por cuenca para el atlas de NETL con ArcGIS Enterprise y Experience Builder."
+        },
+        {
+          "en": "Modeled ten coal-ash oxide constituents with multi-output XGBoost, comparing separate-estimator and shared-tree approaches, log-ratio transformations, grouped validation and constituent-level error diagnostics.",
+          "es": "Modelé diez óxidos de cenizas de carbón con XGBoost multisalida, comparando estimadores separados y árboles compartidos, transformaciones logarítmicas de cocientes, validación por grupos y errores por constituyente."
+        }
+      ]
+    },
+    {
+      "id": "baylor-lab",
+      "bullets": [
+        {
+          "en": "Served as primary Python developer for 30-meter U.S. land-use and land-cover basemaps covering five observation years from 2008 to 2019; published the research as first author in Scientific Data.",
+          "es": "Fui desarrollador principal en Python de mapas de uso y cobertura del suelo de Estados Unidos a 30 metros para cinco años entre 2008 y 2019; publiqué como primer autor en Scientific Data."
+        },
+        {
+          "en": "Harmonized NLCD, USDA Cropland Data Layer and irrigation data; implemented GCAM, CLM and LUH2 crosswalks and assessed fractional land-cover differences with spatial mean squared error.",
+          "es": "Armonicé NLCD, USDA Cropland Data Layer y datos de riego; implementé correspondencias para GCAM, CLM y LUH2 y evalué diferencias entre representaciones fraccionarias de cobertura mediante error cuadrático medio espacial."
+        }
+      ]
+    },
+    {
+      "id": "baylor-specialist",
+      "bullets": [
+        {
+          "en": "Automated watershed delineation in R and developed Random Forest workflows for reference-stream identification, contributing spatial preparation methods to published environmental-flow research.",
+          "es": "Automaticé la delimitación de cuencas en R y desarrollé flujos Random Forest para identificar cauces de referencia, aportando preparación espacial a investigación publicada sobre caudales ambientales."
+        },
+        {
+          "en": "Evaluated decision-tree regressions of hydrologic alteration and fish response across tree depths and regional aggregations, examining model behavior in exploratory ecological analysis.",
+          "es": "Evalué regresiones con árboles de decisión sobre alteración hidrológica y respuesta de peces, comparando profundidades y agregaciones regionales en análisis ecológicos exploratorios."
+        }
+      ]
+    },
+    {
+      "id": "usgs",
+      "bullets": [
+        {
+          "en": "Produced pixel-level land-cover change maps from more than 20 years of Landsat imagery, using R/Python raster workflows, tasseled-cap indices and transition matrices.",
+          "es": "Produje mapas de cambio de cobertura por píxel con más de 20 años de imágenes Landsat, procesamiento ráster en R/Python, índices tasseled-cap y matrices de transición."
+        }
+      ]
+    },
+    {
+      "id": "wwf",
+      "bullets": [
+        {
+          "en": "Built spatial predictors from Hansen forest-cover and environmental data for 2000–2017; compared logistic models linking forest loss with infrastructure, land use and socioeconomic conditions.",
+          "es": "Construí variables espaciales con datos forestales Hansen y ambientales de 2000–2017; comparé modelos logísticos sobre asociaciones entre pérdida forestal, infraestructura, uso del suelo y condiciones socioeconómicas."
+        }
+      ]
+    },
+    {
+      "id": "nasa",
+      "bullets": [
+        {
+          "en": "Processed more than 900 multidimensional datasets across Central America air-quality and Peru water-resource projects using Python, Linux and GDAL, preparing observations for ArcGIS Pro and statistical analysis.",
+          "es": "Procesé más de 900 conjuntos multidimensionales entre ambos proyectos de calidad del aire en Centroamérica y recursos hídricos en Perú con Python, Linux y GDAL, preparando observaciones para ArcGIS Pro y análisis estadístico."
+        },
+        {
+          "en": "Compared MODIS/VIIRS aerosol optical depth with partner-supplied San Salvador PM2.5 observations, and analyzed NDVI, precipitation, evapotranspiration and soil moisture to investigate mesquite forest decline in Lambayeque.",
+          "es": "Comparé profundidad óptica de aerosoles MODIS/VIIRS con observaciones de PM2.5 de San Salvador aportadas por colaboradores y analicé NDVI, precipitación, evapotranspiración y humedad del suelo para estudiar el deterioro de bosques de algarrobo en Lambayeque."
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "quito",
+      "bullets": [
+        {
+          "en": "Developed Sentinel-2 acquisition, temporal composites and mosaics for a Tumbaco pilot using Sentinel Hub and Copernicus Data Space; segmentation and independent accuracy assessment remain planned research stages.",
+          "es": "Desarrollé adquisición Sentinel-2, composiciones temporales y mosaicos para un piloto en Tumbaco con Sentinel Hub y Copernicus Data Space; la segmentación y evaluación independiente de exactitud son etapas previstas."
+        }
+      ]
+    },
+    {
+      "id": "predio",
+      "bullets": [
+        {
+          "en": "Created PredioAI as its sole developer, connecting Quito property data, municipal REST services and interactive maps through React and Python/FastAPI.",
+          "es": "Creé PredioAI como único desarrollador, integrando datos de predios de Quito, servicios REST municipales y mapas interactivos mediante React y Python/FastAPI."
+        }
+      ]
+    }
+  ]
+}

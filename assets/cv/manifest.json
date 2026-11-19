@@ -83,6 +83,22 @@
       "max_pages": 2
     },
     {
+      "profile": "environmental-data-scientist",
+      "language": "en",
+      "label": "Environmental Data Scientist",
+      "page": "cv/environmental-data-scientist-en.html",
+      "pdf": "assets/cv/Jay_Antonio_Oliver_Environmental_Data_Scientist_EN.pdf",
+      "max_pages": 2
+    },
+    {
+      "profile": "environmental-data-scientist",
+      "language": "es",
+      "label": "Científico de datos ambientales",
+      "page": "cv/environmental-data-scientist-es.html",
+      "pdf": "assets/cv/Jay_Antonio_Oliver_Environmental_Data_Scientist_ES.pdf",
+      "max_pages": 2
+    },
+    {
       "profile": "master",
       "language": "en",
       "label": "Master CV",

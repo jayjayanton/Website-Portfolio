@@ -43,11 +43,11 @@ class CVCollectionTests(unittest.TestCase):
         cls.collection = CVCollection(json.loads((ROOT / 'content/site.json').read_text()))
         cls.manifest = json.loads((ROOT / 'assets/cv/manifest.json').read_text())
 
-    def test_twelve_unique_documents_and_downloads(self):
+    def test_fourteen_unique_documents_and_downloads(self):
         docs = self.manifest['documents']
-        self.assertEqual(len(docs), 12)
-        self.assertEqual(len({doc['page'] for doc in docs}), 12)
-        self.assertEqual(len({doc['pdf'] for doc in docs}), 12)
+        self.assertEqual(len(docs), 14)
+        self.assertEqual(len({doc['page'] for doc in docs}), 14)
+        self.assertEqual(len({doc['pdf'] for doc in docs}), 14)
         for doc in docs:
             with self.subTest(profile=doc['profile'], language=doc['language']):
                 self.assertTrue((ROOT / doc['page']).is_file())

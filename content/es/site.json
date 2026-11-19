@@ -1,7 +1,7 @@
 {
   "name": "Jay Oliver",
   "full_name": "Jay Antonio Oliver",
-  "role": "Científico de datos y desarrollador geoespacial",
+  "role": "Científico de datos y desarrollador de software",
   "base_url": "https://jayjayanton.github.io/Website-Portfolio/",
   "year": 2026,
   "email": "jayjayoliver@hotmail.com",
@@ -33,7 +33,7 @@
     "raaz-borg"
   ],
   "categories": {
-    "geospatial": "Análisis geoespacial y observación de la Tierra",
+    "geospatial": "Análisis geoespacial y teledetección",
     "data-science": "Ciencia de datos y modelado",
     "engineering": "Ingeniería de datos",
     "web": "Aplicaciones web",
@@ -42,8 +42,8 @@
   "progression": [
     {
       "label": "Bases de investigación",
-      "title": "Comenzar por la pregunta ambiental.",
-      "body": "Los proyectos de NASA DEVELOP y WWF conectaron observaciones satelitales, series temporales ambientales y factores espaciales con preguntas sobre el agua, la calidad del aire y los cambios de uso del suelo.",
+      "title": "Comenzar por la pregunta y los datos.",
+      "body": "El trabajo con NASA DEVELOP y WWF conectó adquisición, armonización y análisis espacial de datos con investigación sobre agua, calidad del aire y cambios de uso del suelo.",
       "link": "projects/nasa-air-quality.html",
       "link_label": "Explorar el trabajo con NASA"
     },

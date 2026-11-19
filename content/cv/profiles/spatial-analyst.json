@@ -5,12 +5,12 @@
     "es": "Analista espacial"
   },
   "description": {
-    "en": "GIS, environmental mapping, remote sensing and watershed analysis.",
-    "es": "SIG, cartografía ambiental, teledetección y análisis de cuencas."
+    "en": "GIS, spatial analysis, mapping, automation and data integration.",
+    "es": "SIG, análisis espacial, cartografía, automatización e integración."
   },
   "summary": {
-    "en": "Spatial analyst with 6+ years of experience turning satellite observations and geographic data into environmental maps, watershed analyses and decision-support tools. Combines ArcGIS, Python and R with research across NASA DEVELOP, USGS, WWF, Baylor University and Leidos/NETL. Creator and sole developer of PredioAI; bilingual in English and Spanish.",
-    "es": "Analista espacial con más de seis años de experiencia en cartografía ambiental, análisis de cuencas y teledetección. Combina ArcGIS, Python y R con investigación en NASA DEVELOP, USGS, WWF, Baylor University y Leidos/NETL para transformar observaciones satelitales y datos geográficos en productos útiles. Creador y único desarrollador de PredioAI; bilingüe en inglés y español."
+    "en": "Spatial analyst with 6+ years of experience translating geographic data into maps, analyses and decision-support tools. Combines GIS, Python and R to integrate sources, automate processing and communicate results. Creator and sole developer of PredioAI; bilingual in English and Spanish, with environmental and energy research experience.",
+    "es": "Analista espacial con más de seis años transformando datos geográficos en mapas, análisis y herramientas de apoyo a decisiones. Integra fuentes, automatiza procesos y comunica resultados con SIG, Python y R. Creador y único desarrollador de PredioAI; bilingüe en inglés y español, con experiencia en investigación ambiental y energética."
   },
   "skills": [
     {

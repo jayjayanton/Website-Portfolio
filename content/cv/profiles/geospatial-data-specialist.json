@@ -9,8 +9,8 @@
     "es": "Calidad, armonización, integración y entrega de datos espaciales."
   },
   "summary": {
-    "en": "Geospatial data specialist with 6+ years of experience integrating regulatory records, satellite products and large raster/vector datasets. Builds reproducible Python, R and SQL workflows for identifier reconciliation, classification harmonization, spatial preparation and delivery. Research experience spans NASA DEVELOP, USGS, WWF, Baylor University and Leidos/NETL; creator and sole developer of PredioAI.",
-    "es": "Especialista en datos geoespaciales con más de seis años integrando registros regulatorios, productos satelitales y grandes conjuntos ráster/vectoriales. Desarrolla flujos reproducibles en Python, R y SQL para conciliar identificadores, armonizar clasificaciones y preparar datos espaciales. Experiencia investigativa en NASA DEVELOP, USGS, WWF, Baylor University y Leidos/NETL; creador y único desarrollador de PredioAI."
+    "en": "Geospatial data specialist with 6+ years of experience integrating, checking and harmonizing complex datasets. Builds reproducible Python, R and SQL workflows for identifier reconciliation, classification crosswalks and spatial processing. Delivers reusable data products with documented methods. Creator and sole developer of PredioAI, with environmental and energy research experience.",
+    "es": "Especialista en datos geoespaciales con más de seis años integrando, verificando y armonizando datos complejos. Desarrolla procesos reproducibles Python/R/SQL para conciliar identificadores, compatibilizar clasificaciones y procesar datos espaciales. Entrega productos reutilizables con métodos documentados. Creador y único desarrollador de PredioAI, con experiencia en investigación ambiental y energética."
   },
   "skills": [
     {

@@ -145,14 +145,14 @@ class BilingualPublishedSiteTests(unittest.TestCase):
             for path in sorted(cls.expected_pages)
         }
 
-    def test_all_54_public_pages_are_discoverable_and_in_the_sitemap(self):
+    def test_all_56_public_pages_are_discoverable_and_in_the_sitemap(self):
         self.assertEqual(len(self.records["en"]), 15)
         self.assertEqual(set(self.records["es"]), set(self.records["en"]))
-        self.assertEqual(len(self.expected_pages), 54)
+        self.assertEqual(len(self.expected_pages), 56)
         self.assertEqual({path.relative_to(ROOT).as_posix() for path in public_pages(ROOT)}, self.expected_pages)
         sitemap = ET.parse(ROOT / "sitemap.xml")
         urls = [item.text for item in sitemap.findall(".//{http://www.sitemaps.org/schemas/sitemap/0.9}loc")]
-        self.assertEqual(len(urls), 54)
+        self.assertEqual(len(urls), 56)
         self.assertEqual(set(urls), {self.base_url + path for path in self.expected_pages})
 
     def test_header_language_switch_and_hreflang_keep_the_current_page_or_cv_focus(self):
@@ -198,7 +198,7 @@ class BilingualPublishedSiteTests(unittest.TestCase):
 
     def test_spanish_cv_portfolio_and_case_links_remain_absolute_for_pdf_readers(self):
         documents = [item for item in self.manifest["documents"] if item["language"] == "es"]
-        self.assertEqual(len(documents), 6)
+        self.assertEqual(len(documents), 7)
         project_links = []
         for item in documents:
             path = item["page"]

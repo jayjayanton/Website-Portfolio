@@ -79,7 +79,7 @@ GitHub Pages continues to publish **the `main` branch from the repository root**
 
 ## Focused CVs and languages
 
-[Choose a CV](cv.html) opens the Geospatial Data Scientist version by default. Five focused profiles are available in English and Spanish: Data Scientist, Spatial Analyst, Geospatial Data Specialist, Geospatial Data Engineer and Geospatial Data Scientist. The complete master CV remains a sixth option in both languages. Focused PDFs have a maximum of two pages.
+[Choose a CV](cv.html) opens the Geospatial Data Scientist version by default. Five role-focused profiles emphasize transferable technical skills in English and Spanish: Data Scientist, Spatial Analyst, Geospatial Data Specialist, Geospatial Data Engineer and Geospatial Data Scientist. Environmental Data Scientist provides a dedicated specialization for environmental and energy research applications. The complete master CV remains a seventh option in both languages. Focused PDFs have a maximum of two pages.
 
 The focus menu preserves the selected language; the language switch preserves the selected profile. Both use normal links and work without JavaScript. Every selection has a permanent `cv/<profile>-<language>.html` URL, its own matching PDF, document-language metadata and reciprocal language links. Spanish is reviewed content stored alongside English; no external translation API or runtime translation service is required. Official publication titles retain their original language.
 
@@ -87,11 +87,11 @@ Maintain the full record in `content/cv.html` and `content/cv/master-es.html`. E
 
 Run `npm run build`, then `python3 tools/render_cvs.py` where Chrome is available, and finally `npm run check`. The renderer reuses unchanged PDFs, using source and print-style fingerprints. `python3 tools/render_cvs.py --check` validates PDF presence and two-page limits without launching Chrome. Inspect the final PDF pages after editing; page-count checks alone do not verify layout.
 
-The [PDF workflow](.github/workflows/build-cv.yml) generates and commits the twelve downloads and their render-state file. The read-only validation workflow renders any changed or missing PDFs in its temporary checkout before checking page limits, links and content. Keep `assets/Jay_Antonio_Oliver_CV.pdf` as the English master download for existing external links.
+The [PDF workflow](.github/workflows/build-cv.yml) generates and commits the fourteen downloads and their render-state file. The read-only validation workflow renders any changed or missing PDFs in its temporary checkout before checking page limits, links and content. Keep `assets/Jay_Antonio_Oliver_CV.pdf` as the English master download for existing external links.
 
 ## English and Spanish throughout the portfolio
 
-The homepage, project catalogue, all fifteen case studies, research, about, contact and CV chooser are available in both languages. Existing English URLs remain unchanged; their Spanish counterparts live under `es/`. The twelve language-specific CV pages retain their established URLs. The build generates 54 public HTML pages in total.
+The homepage, project catalogue, all fifteen case studies, research, about, contact and CV chooser are available in both languages. Existing English URLs remain unchanged; their Spanish counterparts live under `es/`. The fourteen language-specific CV pages live under `cv/`; all established URLs remain valid. The build generates 56 public HTML pages in total.
 
 The header language control opens the corresponding page or project and preserves the current search/filter query and section anchor when JavaScript is available. Normal navigation, related projects and CV links stay in the selected language. Each language has complete static content, navigation, metadata and reciprocal `hreflang` links; reading and switching pages also work without JavaScript. No external translation service is required.
 

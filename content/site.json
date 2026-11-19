@@ -1,7 +1,7 @@
 {
   "name": "Jay Oliver",
   "full_name": "Jay Antonio Oliver",
-  "role": "Data scientist & geospatial developer",
+  "role": "Data scientist & software developer",
   "base_url": "https://jayjayanton.github.io/Website-Portfolio/",
   "year": 2026,
   "email": "jayjayoliver@hotmail.com",
@@ -33,7 +33,7 @@
     "raaz-borg"
   ],
   "categories": {
-    "geospatial": "Geospatial & Earth observation",
+    "geospatial": "Geospatial analysis & remote sensing",
     "data-science": "Data science & modeling",
     "engineering": "Data engineering",
     "web": "Web applications",
@@ -42,8 +42,8 @@
   "progression": [
     {
       "label": "Research foundations",
-      "title": "Start with the environmental question.",
-      "body": "NASA DEVELOP and WWF projects connected satellite observations, environmental time series and spatial drivers with questions about water, air quality and land-use change.",
+      "title": "Start with the question and the data.",
+      "body": "NASA DEVELOP and WWF work connected data acquisition, harmonization and spatial analysis with research on water, air quality and land-use change.",
       "link": "projects/nasa-air-quality.html",
       "link_label": "Explore the NASA work"
     },

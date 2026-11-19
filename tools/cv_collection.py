@@ -15,7 +15,7 @@ LANGUAGES = ('en', 'es')
 UI = {
     'en': {
         'collection': 'CV collection', 'intro': 'Choose the CV that fits the role.',
-        'help': 'Five focused versions and the complete career record, available in English and Spanish.',
+        'help': 'Five role-focused CVs highlight transferable technical skills. An environmental specialization and the complete career record are also available, all in English and Spanish.',
         'focus': 'Focus', 'language': 'Language', 'role_nav': 'CV focus',
         'focused': 'Focused CV', 'master': 'Master CV', 'master_desc': 'Complete professional history, projects and publications.',
         'download': 'Download PDF', 'print': 'Print / Save PDF', 'contact': 'Contact Jay',
@@ -29,7 +29,7 @@ UI = {
     },
     'es': {
         'collection': 'Versiones del CV', 'intro': 'Elige el CV que mejor se ajuste al puesto.',
-        'help': 'Cinco versiones enfocadas y la trayectoria completa, disponibles en español e inglés.',
+        'help': 'Cinco CV por perfil profesional destacan competencias técnicas transferibles. También puedes elegir la especialidad ambiental o la trayectoria completa, en español e inglés.',
         'focus': 'Enfoque', 'language': 'Idioma', 'role_nav': 'Enfoque del CV',
         'focused': 'CV especializado', 'master': 'CV completo', 'master_desc': 'Trayectoria profesional, proyectos y publicaciones completos.',
         'download': 'Descargar PDF', 'print': 'Imprimir / Guardar PDF', 'contact': 'Contactar a Jay',

@@ -1,6 +1,6 @@
 {
   "default_profile": "geospatial-data-scientist",
-  "profile_order": ["data-scientist", "spatial-analyst", "geospatial-data-specialist", "geospatial-data-engineer", "geospatial-data-scientist", "master"],
+  "profile_order": ["data-scientist", "spatial-analyst", "geospatial-data-specialist", "geospatial-data-engineer", "geospatial-data-scientist", "environmental-data-scientist", "master"],
   "experience": {
     "leidos": {"employer": "Leidos", "role": {"en": "Geospatial Data Scientist", "es": "Científico de Datos Geoespaciales"}, "location": {"en": "Morgantown, WV · NETL research", "es": "Morgantown, WV · Investigación para NETL"}, "dates": {"en": "Feb 2024 – May 2026", "es": "feb. 2024 – may. 2026"}},
     "baylor-lab": {"employer": "Baylor University", "role": {"en": "Lab Manager / Geospatial Data Scientist", "es": "Responsable de Laboratorio / Científico de Datos Geoespaciales"}, "location": {"en": "Waco, TX", "es": "Waco, TX"}, "dates": {"en": "Apr 2023 – Feb 2024", "es": "abr. 2023 – feb. 2024"}},
