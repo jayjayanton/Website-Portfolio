@@ -165,6 +165,7 @@ class Site:
                       prefix=prefix, css_version=self.css_version, js_version=self.js_version,
                       extra_head=extra_head, body_class="page-" + ("case" if file_name.startswith("projects/") else "cv" if file_name.startswith("cv/") else Path(file_name).stem),
                       language=language, cv_current=' aria-current="page"' if active == "cv" else "",
+                      cv_href="#cv-chooser" if active == "cv" else prefix + "cv.html",
                       navigation=navigation, body=body, **{f"ui_{key}": esc(value) for key, value in ui.items()})
 
     def homepage(self) -> str:

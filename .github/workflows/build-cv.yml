@@ -21,6 +21,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Render CV catalogue
         run: python3 tools/render_cvs.py
+      - name: Enforce focused CV page limits
+        run: python3 tools/render_cvs.py --check
       - name: Commit generated PDFs
         run: |
           git config user.name "github-actions[bot]"

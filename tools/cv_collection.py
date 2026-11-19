@@ -119,12 +119,14 @@ class CVCollection:
         if profile == 'master':
             sections.insert(2, ('cv-nasa', ui['nasa']))
             sections.insert(4, ('cv-additional', ui['earlier']))
+        else:
+            sections.insert(1, sections.pop())
         index = ''.join(f'<a href="#{anchor}">{esc(label)}</a>' for anchor, label in sections)
-        return (f'<section class="container cv-picker" aria-label="{esc(ui["collection"])}">'
+        return (f'<section class="container cv-picker" id="cv-chooser" aria-label="{esc(ui["collection"])}">'
                 f'<div class="cv-picker-heading"><p class="eyebrow">{esc(ui["collection"])}</p><p class="cv-picker-title">{esc(ui["intro"])}</p><p>{esc(ui["help"])}</p></div>'
                 f'<div class="cv-picker-controls"><details class="cv-role-picker"><summary><span>{esc(ui["focus"])}</span><strong>{esc(self.label(profile, language))}</strong></summary><nav aria-label="{esc(ui["role_nav"])}">{choices}</nav></details>'
                 f'<div class="cv-language-picker"><span>{esc(ui["language"])}</span><nav aria-label="{esc(ui["language"])}">{languages}</nav></div></div>'
-                f'<div class="cv-actions actions"><a class="button" href="{prefix}{self.pdf_path(profile, language)}" download data-cv-download>{esc(ui["download"])} · {"English" if language == "en" else "Español"}</a><button class="button button-secondary" type="button" data-print>{esc(ui["print"])}</button><a class="text-link" href="{prefix}contact.html">{esc(ui["contact"])}</a></div></section>'
+                f'<div class="cv-actions actions"><a class="button" href="{prefix}{self.pdf_path(profile, language)}" download data-cv-download>{esc(ui["download"])} · {"English" if language == "en" else "Español"}</a><button class="button button-secondary" type="button" data-print hidden>{esc(ui["print"])}</button><a class="text-link" href="{prefix}contact.html">{esc(ui["contact"])}</a></div></section>'
                 f'<nav class="container cv-index" aria-label="{esc(ui["sections"])}">{index}</nav>')
 
     def header(self, profile: str, language: str) -> str:

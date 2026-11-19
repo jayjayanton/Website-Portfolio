@@ -28,6 +28,7 @@ The equivalent validation commands are:
 
 ```bash
 python3 tools/build.py --check
+python3 tools/render_cvs.py --check
 python3 -m unittest discover -s tests -v
 node --test tests/*.mjs
 ```
