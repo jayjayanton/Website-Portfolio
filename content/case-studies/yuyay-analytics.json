@@ -1,0 +1,123 @@
+{
+  "slug": "yuyay-analytics",
+  "title": "Yuyay Analytics",
+  "summary": "I designed and developed a responsive website for an environmental evaluation and analytics consultancy. The work translates multidisciplinary experience into clear services, filterable projects and evidence-linked research, using a consistent visual system, bilingual content and lightweight HTML, CSS and JavaScript.",
+  "categories": [
+    "web"
+  ],
+  "status": "Live website",
+  "status_key": "published",
+  "role": "Website designer & frontend developer",
+  "context": "A consulting website bringing together Clemencia Vela’s international environmental evaluation experience and Jay Oliver’s data science, geospatial research and software work.",
+  "period": "2026",
+  "image": {
+    "src": "https://raw.githubusercontent.com/jayjayanton/Yuyay-Analytics-/main/images/yuyay_cotopaxi_clean_hero.jpg",
+    "alt": "Andean Cotopaxi landscape used for the Yuyay Analytics homepage",
+    "caption": "Homepage hero photograph. The website uses regional landscape imagery on its interior pages.",
+    "kind": "site-asset"
+  },
+  "technologies": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Responsive UI",
+    "Project filtering",
+    "English/Spanish content",
+    "Git",
+    "GitHub Pages"
+  ],
+  "problem": "A multidisciplinary consultancy needs to explain its services without flattening distinct areas of expertise. Visitors should be able to identify relevant work, understand who contributed, and follow claims to research, evaluation reports or live examples.",
+  "contribution": "I designed the site structure, visual presentation and frontend interactions, organized research and evaluation content, integrated assets and supporting links, and deployed the website. I also added applied software examples that connect analytical capabilities to tangible tools while preserving clear attribution.",
+  "approach": [
+    {
+      "title": "Build a coherent content structure",
+      "body": "Organize Home, Services & Analytics, Projects, Countries, Publications and Contact around consistent navigation. Present the team near the end of the homepage, with supporting biography content on the About page."
+    },
+    {
+      "title": "Make experience explorable",
+      "body": "Use JavaScript project cards, country and theme filters, and keyword search to let visitors browse relevant work. Distinguish evaluation assignments, research contributions and independent software instead of implying that every example represents the same kind of engagement."
+    },
+    {
+      "title": "Connect claims to evidence",
+      "body": "Link project descriptions to public technical reports, NASA DEVELOP materials, evaluation documents, the 2025 Scientific Data publication and live software where appropriate. Include downloadable CVs and research references."
+    },
+    {
+      "title": "Create a consistent responsive presentation",
+      "body": "Combine scenic photographic heroes, regional imagery, reusable colors and typography, mobile layouts and lightweight interactions. Bilingual homepage and showcase content supports English and Spanish visitors."
+    },
+    {
+      "title": "Deliver a lightweight public website",
+      "body": "Version the static files with Git and publish through GitHub Pages. The inquiry form prepares an email in the visitor’s own email application, avoiding an implied backend email-delivery service."
+    }
+  ],
+  "outcome": "A live consulting website makes the team’s services, project history, research and software examples publicly accessible. Visitors can browse projects, filter by topic or location, follow evidence links, download CVs and begin an inquiry through their email application.",
+  "learning": "Content architecture is a technical design problem as well as an editorial one. Clear attribution, predictable filters and consistent links make a broad consulting portfolio easier to navigate and easier to trust.",
+  "limitations": [
+    "The contact form prepares an email in the visitor’s email application; it is not a backend delivery or customer-management system.",
+    "Bilingual content is implemented in the homepage and applied-analytics showcase; this case study does not claim complete translation of every interior page.",
+    "The project demonstrates website design and frontend development. Its portfolio category is Web Development, even though the consultancy presents analytical services."
+  ],
+  "evidence": [
+    {
+      "title": "Geographic storytelling within a shared visual system",
+      "body": "The Cotopaxi hero anchors the homepage’s Andean setting. Regional landscape assets carry the same visual approach into the site’s interior pages.",
+      "images": [
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Yuyay-Analytics-/main/images/yuyay_cotopaxi_clean_hero.jpg",
+          "alt": "Andean Cotopaxi landscape used for the Yuyay Analytics homepage",
+          "caption": "Homepage hero photograph. The website uses regional landscape imagery on its interior pages.",
+          "kind": "site-asset"
+        }
+      ]
+    },
+    {
+      "title": "Interactions tied to visitor needs",
+      "body": "The site’s frontend features help visitors move from a broad service description to relevant evidence or a next step.",
+      "images": [],
+      "table": {
+        "headers": [
+          "Visitor need",
+          "Website feature"
+        ],
+        "rows": [
+          [
+            "Find relevant experience",
+            "Country and theme filters, project search and interactive cards"
+          ],
+          [
+            "Understand responsibility",
+            "Named contributors and distinct evaluation, research and product descriptions"
+          ],
+          [
+            "Review supporting work",
+            "Reports, publications, CV downloads and live application links"
+          ],
+          [
+            "Explore applied tools",
+            "Bilingual PredioAI and Expense Analyzer showcase"
+          ],
+          [
+            "Start a conversation",
+            "Contact form that prepares an email inquiry"
+          ]
+        ]
+      }
+    }
+  ],
+  "links": [
+    {
+      "label": "Explore Yuyay Analytics",
+      "url": "https://jayjayanton.github.io/Yuyay-Analytics-/",
+      "kind": "live"
+    },
+    {
+      "label": "Explore the website repository",
+      "url": "https://github.com/jayjayanton/Yuyay-Analytics-",
+      "kind": "code"
+    }
+  ],
+  "related": [
+    "raaz-borg",
+    "predio-ai"
+  ]
+}

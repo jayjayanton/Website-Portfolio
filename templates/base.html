@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="$description">
+  <meta name="theme-color" content="#0f172a">
+  <title>$title</title>
+  <link rel="canonical" href="$canonical">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="$title">
+  <meta property="og:description" content="$description">
+  <meta property="og:url" content="$canonical">
+  <meta property="og:image" content="$og_image">
+  <link rel="icon" href="${prefix}assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="${prefix}assets/css/site.css?v=$css_version">
+  <script src="${prefix}assets/js/site.js?v=$js_version" defer></script>
+$extra_head
+</head>
+<body class="$body_class">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="${prefix}index.html" aria-label="Jay Oliver home"><span class="brand-mark" aria-hidden="true">JO</span><span>Jay Oliver<small>Data science &amp; geospatial development</small></span></a>
+      <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" hidden>Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">$navigation<a class="nav-cv" href="${prefix}assets/Jay_Antonio_Oliver_CV.pdf" download>Download CV</a></nav>
+    </div>
+  </header>
+  <main id="main">$body</main>
+  <footer class="site-footer">
+    <div class="container footer-inner"><div><a class="footer-name" href="${prefix}index.html">Jay Oliver</a><p>Data science, geospatial analysis &amp; useful software.</p></div><div class="footer-links"><a href="mailto:jayjayoliver@hotmail.com">Email</a><a href="https://www.linkedin.com/in/jay-oliver-b22552b4" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/jayjayanton" target="_blank" rel="noopener noreferrer">Public code</a><a href="${prefix}contact.html">Contact</a></div><p class="copyright">© 2026 Jay Oliver</p></div>
+  </footer>
+</body>
+</html>

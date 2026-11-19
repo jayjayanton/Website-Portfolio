@@ -1,0 +1,117 @@
+{
+  "slug": "predio-ai",
+  "title": "PredioAI",
+  "summary": "I conceived, designed and developed a web application connecting architectural plans with Quito property data. As its sole developer, I built the interface, Python APIs, municipal data integrations and interactive document tools, creating a workspace for renovation planning, measurements and spatial property analysis.",
+  "categories": [
+    "geospatial",
+    "engineering",
+    "web"
+  ],
+  "status": "Live application",
+  "status_key": "published",
+  "role": "Creator & sole developer",
+  "context": "Independent product for homeowners, remodelers and construction professionals working with plans and property information in Quito, Ecuador.",
+  "period": "2026",
+  "image": {
+    "src": "/images/predioai-homepage.jpg",
+    "alt": "PredioAI interface with a fictional floor plan and linked surface measurements",
+    "caption": "The deployed interface uses a fictional plan to demonstrate the drawing and measurement workspace.",
+    "kind": "screenshot"
+  },
+  "technologies": [
+    "Python",
+    "FastAPI",
+    "REST APIs",
+    "React",
+    "Vite",
+    "Leaflet",
+    "ArcGIS REST",
+    "Shapely",
+    "pyproj",
+    "PyMuPDF",
+    "ezdxf",
+    "GeoJSON"
+  ],
+  "problem": "Preparing a renovation or extension means connecting information scattered across drawings, cadastral records, municipal planning documents and maps. A plan is more useful when its geometry, measurements and proposed changes can be reviewed together with the property it describes.",
+  "contribution": "I took PredioAI from product concept through deployment, including the responsive interface, backend services, geospatial integration, document inspection, measurement workflows, testing and delivery. I designed the interaction around user-selected elements and reviewable measurements, with property discovery and comparison supporting the plan workspace.",
+  "approach": [
+    {
+      "title": "Connect public property data",
+      "body": "Integrate municipal ArcGIS REST services for cadastral attributes, zoning and valuation information. Present searchable records and parcel layers in a React and Leaflet interface, with Python/FastAPI endpoints connecting the application to its data and analytical services."
+    },
+    {
+      "title": "Make drawing geometry interactive",
+      "body": "Extract native text, vector paths and CAD entities using PyMuPDF and ezdxf, with supported DWG conversion workflows. Let users inspect a drawing, confirm units or calibrate a known length, select elements and calculate measurements with manual correction."
+    },
+    {
+      "title": "Place proposals in geographic context",
+      "body": "Use Shapely and pyproj for geometry operations, spatial intersections and coordinate transformations. Support scaled figures and footprint placement on the parcel map, then compare proposals with reviewed municipal parameters, including available setback information."
+    },
+    {
+      "title": "Keep outputs usable beyond the screen",
+      "body": "Link selections to measurements, organize property comparisons and export supported results as CSV, JSON or GeoJSON. Automated frontend and backend checks support production builds and deployment through GitHub Actions, with the frontend on GitHub Pages and the API on Render."
+    }
+  ],
+  "outcome": "A deployed application brings parcel exploration, document inspection and spatial project preparation into one workflow. It demonstrates how public data services and analytical libraries can become an interactive product that users can inspect, correct and reuse.",
+  "learning": "The central design lesson is that trustworthy interaction depends on visible assumptions: confirmed scale, identifiable source geometry and reviewed municipal parameters. Connecting those assumptions to maps and measurements is as important as performing the underlying geometric calculation.",
+  "limitations": [
+    "The current plan workflow reads native PDF/CAD geometry and text. Targeted computer vision for scanned or image-based plans is a planned extension; automatic room recognition is not presented as an implemented capability.",
+    "Measurements depend on confirmed units or calibration and user review. Planning comparisons depend on the property information and municipal parameters supplied.",
+    "Outputs support project preparation and professional review; the case study does not claim automated permit approval, construction budgets or material estimates."
+  ],
+  "evidence": [
+    {
+      "title": "A plan becomes a working interface",
+      "body": "The live application connects a drawing view with selected surfaces and measurements. The demonstration shown here is fictional and illustrates the interaction rather than a client project.",
+      "images": [
+        {
+          "src": "/images/predioai-homepage.jpg",
+          "alt": "PredioAI interface with a fictional floor plan and linked surface measurements",
+          "caption": "The deployed interface uses a fictional plan to demonstrate the drawing and measurement workspace.",
+          "kind": "screenshot"
+        }
+      ]
+    },
+    {
+      "title": "Capabilities connected across the stack",
+      "body": "Each technical component serves a visible user task, from finding a parcel to exporting a reviewed measurement.",
+      "images": [],
+      "table": {
+        "headers": [
+          "User task",
+          "Implemented approach"
+        ],
+        "rows": [
+          [
+            "Explore property context",
+            "Municipal REST integrations, cadastral attributes, map layers and parcel comparisons"
+          ],
+          [
+            "Inspect a plan",
+            "Native PDF/CAD text and geometry, selection, scale calibration and measurements"
+          ],
+          [
+            "Study a proposed footprint",
+            "Scaled geometry, coordinate transformations, map placement and reviewed parameter comparisons"
+          ],
+          [
+            "Carry the analysis forward",
+            "Supported measurement and spatial exports in CSV, JSON and GeoJSON"
+          ]
+        ]
+      }
+    }
+  ],
+  "links": [
+    {
+      "label": "Explore PredioAI",
+      "url": "https://jayjayanton.github.io/Predio-AI/",
+      "kind": "live"
+    }
+  ],
+  "related": [
+    "quito-urban-expansion",
+    "traffic-camera-pipeline",
+    "yuyay-analytics"
+  ]
+}

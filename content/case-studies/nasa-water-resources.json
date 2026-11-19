@@ -1,0 +1,144 @@
+{
+  "slug": "nasa-water-resources",
+  "title": "Linking vegetation change with water availability in Peru",
+  "summary": "I contributed satellite-data preparation and environmental time-series analysis to a NASA DEVELOP study of mesquite forest decline in Lambayeque, Peru. The team combined vegetation, rainfall, evapotranspiration and soil-moisture evidence to investigate changing conditions, while distinguishing observed associations from an established cause of forest mortality.",
+  "categories": [
+    "geospatial",
+    "engineering",
+    "data-science"
+  ],
+  "status": "NASA DEVELOP research",
+  "status_key": "delivered",
+  "role": "NASA DEVELOP team researcher · Data preparation and time-series analysis",
+  "context": "Lambayeque, Peru · Mesquite forests and water resources",
+  "image": {
+    "src": "images/water_resources_2015_maps.png",
+    "alt": "2015 precipitation, evapotranspiration, NDVI and vegetation anomaly maps",
+    "caption": "Original NASA DEVELOP 2015 maps of precipitation, evapotranspiration, vegetation greenness and vegetation anomaly. Compare the study context and legends with the 2017 figure.",
+    "kind": "research"
+  },
+  "technologies": [
+    "Python",
+    "Linux",
+    "ArcGIS Pro",
+    "Earth-observation processing",
+    "NDVI",
+    "CHIRPS",
+    "Environmental time series"
+  ],
+  "problem": "Mesquite forest decline in Lambayeque required investigation across several environmental processes. A single vegetation index or rainfall series could not explain the whole system, so the team needed to compare water availability and vegetation condition across space and time.",
+  "contribution": "I helped build the acquisition and preprocessing workflow that prepared NASA and other environmental observations for ArcGIS Pro. I also contributed to time-series analysis of NDVI, precipitation and soil moisture, bringing different datasets into a shared workflow for examining vegetation and water-resource patterns.",
+  "approach": [
+    {
+      "title": "Acquire and prepare the observations",
+      "body": "Used the shared NASA data-processing approach to automate acquisition and prepare satellite and environmental datasets for spatial analysis. The air-quality and water-resources studies used different products despite sharing processing methods."
+    },
+    {
+      "title": "Compare vegetation and hydrologic conditions",
+      "body": "Examined NDVI and vegetation anomalies alongside precipitation, evapotranspiration and soil moisture. Each variable contributes a different part of the water–vegetation picture."
+    },
+    {
+      "title": "Examine patterns through time",
+      "body": "Compared rainfall totals, evapotranspiration and soil-moisture depth series, including original 2001–2019 time-series figures. Considered how the timing and persistence of water availability coincided with vegetation conditions."
+    },
+    {
+      "title": "Interpret evidence with the study limitations",
+      "body": "Compared the original 2015 and 2017 maps as visual evidence, while considering incomplete temporal coverage, coarse pixels and differences between satellite-derived patterns and local observations."
+    }
+  ],
+  "outcome": "The team produced maps, time-series figures and a technical report documenting changing water and vegetation conditions. The poster reports declining precipitation over the study period, improved vegetation condition during wetter periods, and watershed-specific soil-moisture and evapotranspiration patterns. The analysis did not establish hydrology as the sole cause of mesquite mortality.",
+  "learning": "This project demonstrates reuse of an observation-processing foundation across a different scientific problem. It adds the discipline of matching temporal coverage, spatial resolution and physical meaning before comparing datasets, and shows how a technical workflow can support environmental interpretation without turning correlation into a causal claim.",
+  "limitations": [
+    "The analysis identifies environmental associations and does not independently determine the cause of mesquite mortality.",
+    "Incomplete temporal coverage and coarse-resolution mixed pixels constrain the comparisons; local partner observations did not always match NDVI patterns.",
+    "The 2015 and 2017 multi-panel maps have different layout and legend details. Visual comparison is not pixel-level change detection.",
+    "Modeled soil moisture is not a direct measure of mesquite root uptake, and rainfall alone does not describe water retained in the soil."
+  ],
+  "evidence": [
+    {
+      "title": "Original maps: 2015 and 2017",
+      "body": "The two historical NASA DEVELOP figures show precipitation, evapotranspiration, NDVI and vegetation anomaly. They are retained as original research outputs rather than recreated results.",
+      "images": [
+        {
+          "src": "images/water_resources_2015_maps.png",
+          "alt": "2015 precipitation, evapotranspiration, NDVI and vegetation anomaly maps",
+          "caption": "Original NASA DEVELOP 2015 maps of precipitation, evapotranspiration, vegetation greenness and vegetation anomaly. Compare the study context and legends with the 2017 figure.",
+          "kind": "research"
+        },
+        {
+          "src": "images/water_resources_2017_maps.png",
+          "alt": "2017 precipitation, evapotranspiration, NDVI and vegetation anomaly maps",
+          "caption": "Original NASA DEVELOP 2017 maps of precipitation, evapotranspiration, vegetation greenness and vegetation anomaly. The paired layouts support visual inspection, not pixel-aligned change detection.",
+          "kind": "research"
+        }
+      ]
+    },
+    {
+      "title": "Evapotranspiration and soil moisture",
+      "body": "Evapotranspiration combines surface evaporation and plant transpiration. Comparing it with moisture at several soil depths helps examine how water availability changes through time; neither variable independently establishes the cause of vegetation decline.",
+      "images": [
+        {
+          "src": "images/water_evapotranspiration_2001_2019.png",
+          "alt": "Evapotranspiration, 2001–2019",
+          "caption": "Original NASA DEVELOP technical report, Appendix A, Figure A3: evapotranspiration time series for 2001–2019 in the protected areas examined by the team.",
+          "kind": "research"
+        },
+        {
+          "src": "images/water_soil_moisture_2001_2019.png",
+          "alt": "Soil moisture by depth, 2001–2019",
+          "caption": "Original NASA DEVELOP technical report, Appendix A, Figure A4: modeled soil moisture at different depths during 2001–2019. These estimates are not direct measurements of root-water uptake.",
+          "kind": "research"
+        }
+      ]
+    },
+    {
+      "title": "Precipitation baseline",
+      "body": "The CHIRPS precipitation chart identifies wetter and drier periods for interpretation alongside the vegetation and soil-moisture series.",
+      "images": [
+        {
+          "src": "images/water_chirps_precipitation_sum_excel.jpg",
+          "alt": "Precipitation totals",
+          "caption": "Original team precipitation/NDVI analysis: CHIRPS rainfall totals provide a baseline for comparing vegetation and soil-moisture variability.",
+          "kind": "research"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": "Read the NASA technical report",
+      "url": "https://ntrs.nasa.gov/api/citations/20205000987/downloads/2020Spring_LaRC_LambayequeWater_TechPaper_FD-final.pdf",
+      "kind": "report"
+    },
+    {
+      "label": "View the team poster",
+      "url": "https://docs.google.com/presentation/d/1_GbGiPBTeLXAhpkhE5sdQCej6jyOUGg8/edit",
+      "kind": "report"
+    },
+    {
+      "label": "View the team presentation",
+      "url": "https://docs.google.com/presentation/d/15yqCWtJ0nR1L4MKz6mujwWHKWB_G_EIy/edit",
+      "kind": "report"
+    },
+    {
+      "label": "Read the project reflections",
+      "url": "https://docs.google.com/document/d/1lZo7d9DaEBFEZW-yXgez1TenCQtEdRdV/edit",
+      "kind": "report"
+    },
+    {
+      "label": "Review the water-resources research materials",
+      "url": "https://github.com/jayjayanton/NASA-Projects/tree/main/water-resources-lambayeque",
+      "kind": "code"
+    },
+    {
+      "label": "Review the shared observation-processing workflow",
+      "url": "https://github.com/jayjayanton/NASA-Projects/tree/main/eo-data-extraction-and-processing",
+      "kind": "code"
+    }
+  ],
+  "related": [
+    "nasa-air-quality",
+    "environmental-flows",
+    "colombia-deforestation"
+  ]
+}

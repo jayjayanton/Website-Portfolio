@@ -1,0 +1,35 @@
+name: Validate portfolio
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Check generated pages
+        run: python3 tools/build.py --check
+
+      - name: Check pages and content rules
+        run: python3 -m unittest discover -s tests -v
+
+      - name: Check JavaScript behavior
+        run: node --test tests/*.mjs

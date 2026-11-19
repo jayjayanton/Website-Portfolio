@@ -1,58 +1,73 @@
-# Geospatial Data Science Portfolio
+# Jay Oliver — Data Science & Geospatial Development
 
-I built this portfolio to present my work in geospatial analytics, machine learning, environmental research, and data engineering. Rather than only listing technologies, I want each project to explain the problem I worked on, the methods I used, and why the results matter.
+A professional portfolio of environmental research, predictive modeling, data engineering and independent software development. Each case study explains the problem, my contribution, the approach, the result and the evidence behind it. Technical progression is shown through the work: moving from observations and analysis to reusable data workflows and interactive applications.
 
-The site uses HTML, CSS, and JavaScript, with a black, neon cyan, and bright-pink visual theme. It has separate pages for my projects, published research, background, and contact information.
+**[Explore the portfolio](https://jayjayanton.github.io/Website-Portfolio/)** · [Projects](projects.html) · [Research](research.html) · [About](about.html) · [Contact](contact.html) · [Download CV](assets/Jay_Antonio_Oliver_CV.pdf)
 
-## Explore the site
+## Selected work
 
-- [Homepage](index.html) — introduction and featured projects.
-- [Projects](projects.html) — overview of my technical work.
-- [Research](research.html) — peer-reviewed publications and related code.
-- [About](about.html) — my background and technical tools.
-- [Contact](contact.html) — professional links.
-- [Land-use dynamics case study](projects/land-use-dynamics.html) — classification maps and harmonization methods from my 2025 *Scientific Data* publication.
+- **PredioAI:** creator and sole developer of a web application connecting architectural plans, Quito property information, REST APIs and interactive spatial analysis. The case study links to the [public application](https://jayjayanton.github.io/Predio-AI/).
+- **U.S. land-use basemaps:** first-author research published in *Scientific Data* in 2025, harmonizing 30-meter land-use information for multiple Earth system modeling frameworks.
+- **Orphaned-well screening:** geospatial feature engineering, basin-specific XGBoost models, threshold selection and interpretation, with historical validation results kept in their original context.
+- **Texas environmental flows:** watershed automation and modeling contributions to a coauthored 2026 *River Research and Applications* paper.
+- **NASA DEVELOP, WWF and NETL work:** environmental observations, spatial research and data-processing workflows, presented with clear individual and team attribution.
 
-## Land-use classification research
+## Build and preview
 
-One of the featured projects is my work on U.S. land-use and land-cover base maps for Earth system modeling. The case study explains how I worked with the MSD classification and compared representations for GCAM, LUH2, and CLM.
+Use Python 3.12 and Node.js 22 with npm. The build uses the Python standard library; the JavaScript and tests have no package dependencies. There is no install step or bundler.
 
-I organized the figures in this order:
+```bash
+npm run build
+npm run check
+npm run serve
+```
 
-1. **Sankey diagram** — shows how source land-cover classes move through the harmonization workflow.
-2. **MSD classes** — shows the distribution of land-cover classes across the conterminous United States.
-3. **GCAM–MSD** — compares GCAM land-use categories with the MSD classification.
-4. **LUH2–MSD** — shows the LUH2 land-cover representation.
-5. **CLM–MSD** — shows the CLM plant functional type representation.
+Open [http://localhost:8000](http://localhost:8000) for the local preview. `build` generates the public HTML, `check` verifies generated output and runs the Python and Node tests, and `serve` starts a static preview server.
 
-The corresponding images belong in [images/](images/) and are referenced by the [land-use case study](projects/land-use-dynamics.html).
+The equivalent validation commands are:
 
-The research was published in *Scientific Data* (Nature Portfolio, 2025): [read the paper](https://www.nature.com/articles/s41597-025-04713-6). The [research code](https://github.com/jayjayanton/oliver-mcmanamay_2025_scidata) is also available on GitHub.
+```bash
+python3 tools/build.py --check
+python3 -m unittest discover -s tests -v
+node --test tests/*.mjs
+```
 
-## Deforestation research in Colombia
+## Repository structure
 
-I also included a [Colombia deforestation case study](projects/colombia-deforestation.html) based on my WWF research examples. It includes a historical deforestation-risk map, the original GLM comparison table (Full, Stepwise, Naive and RAC), and my [portable R analysis script](scripts/colombia/colombia_glm_analysis.R). The map is labeled as a Random Forest output in the source document, while the table and R scripts cover generalized linear models; I present them as related but distinct analyses. I keep the [historical R source](scripts/colombia/wwf_Colombia_GLM_original.R) and [replication notes](scripts/colombia/README.md) alongside the portable version.
+| Location | Responsibility |
+| --- | --- |
+| `content/site.json` | Site metadata, project order, categories and publication records |
+| `content/case-studies/*.json` | Canonical project summaries, contributions, methods, evidence and links |
+| `templates/` | Shared page layouts and reusable presentation structure |
+| `tools/build.py` | Standard-library Python generator and freshness check |
+| `assets/css/site.css` | Shared visual system and responsive layouts |
+| `assets/js/` | Navigation, project interactions and filtering logic |
+| `images/` | Existing research figures, screenshots and labeled illustrations |
+| `index.html`, other root pages, `projects/*.html` | Generated public pages committed for GitHub Pages |
+| `tests/` | Offline checks for generated pages, links, content rules and filtering |
+| `content/cv.html`, `cv.html` and `assets/Jay_Antonio_Oliver_CV.pdf` | Canonical CV fragment, generated printable page and downloadable PDF |
 
-The wider [land-use dynamics page](projects/land-use-dynamics.html) now connects land-cover mapping, deforestation, water resources and vegetation health, and health and air quality. Each research stream has its own scientific context rather than being presented as one publication.
+Edit the canonical JSON and templates, then run `npm run build` and commit the regenerated HTML with the source changes. Direct changes to generated pages will be replaced by the next build. Keep the established case-study URLs and asset paths intact.
 
-## PredioAI: independent application development
+See [Design and content maintenance](docs/design-and-content.md) for the content model, evidence conventions and editing workflow.
 
-I am the creator and sole developer of [PredioAI](projects/predio-ai.html), a deployed application for architectural plans, renovation workflows and Quito property analysis. The case study covers React/Leaflet, Python/FastAPI, municipal REST API integration, geospatial analytics, native PDF/CAD geometry and user-reviewed measurements. Computer vision for image-based plans is described as a planned extension.
+## Evidence and project status
 
-The case study and project cards link to the public application only. Its screenshot is stored in this portfolio so it has no dependency on source-repository visibility.
+Published research, delivered work and projects in development are labeled separately. Original research figures, application screenshots and conceptual illustrations carry captions that explain what they show. Historical metrics retain their dataset, sample and model context; team findings are not presented as individual results.
 
-## Other featured projects
+Computer vision extensions for PredioAI and Quito urban expansion models remain described as planned work. The Yuyay Analytics website case study stays in the web category. PredioAI is attributed to Jay Oliver as its creator and sole developer, and its links point to the public application. Private implementations are not linked as public source code.
 
-My other case-study pages cover orphaned well prediction, carbon storage mapping, coal ash modeling, EPA greenhouse gas data automation, and webcam image extraction. Some of the underlying datasets and implementations are proprietary, so those projects focus on my technical contributions and permitted high-level descriptions.
+## Publications
 
-## Running the website
+- Oliver, J., and McManamay, R. A. (2025). **United States multi-sector land use and land cover base maps to support human and Earth system models.** *Scientific Data*, 12, 455. [DOI: 10.1038/s41597-025-04713-6](https://doi.org/10.1038/s41597-025-04713-6).
+- Lueders, M. B., McManamay, R. A., Oliver, J. A., Young, D., Bean, P., and Mayes, K. (2026). **Reconstructing Long-Term Historical Hydrologic Alteration to Support Environmental Flows in Texas.** *River Research and Applications*. First published July 9, 2026. [DOI: 10.1002/rra.70172](https://doi.org/10.1002/rra.70172).
 
-Clone or download this repository and open `index.html` in a browser. No backend is required. The navigation links connect to the other HTML pages.
+Case studies preserve the relevant reports, public code and research materials. Figure attribution and study limitations remain alongside the evidence.
 
-For GitHub Pages, go to **Settings → Pages**, select **Deploy from a branch**, and publish the `main` branch from the repository root.
+## Validation and publishing
 
-## Figures and attribution
+[Validate portfolio](.github/workflows/validate.yml) runs on pushes, pull requests and manual dispatch. It checks that generated pages match their sources and runs the Python and Node test suites using read-only repository access. It does not publish or commit files.
 
-The HTML expects the five PNGs listed in [images/README.md](images/README.md). **Until those PNG files are uploaded, the figure gallery will display broken image links.** The images were supplied separately from the code and are not yet committed to this repository.
+GitHub Pages continues to publish **the `main` branch from the repository root**. Commit the generated pages alongside canonical changes so deployment keeps the existing page and image URLs. No separate Pages deployment workflow is required for this build.
 
-I retain attribution to the original research and follow the publication's applicable figure-reuse terms.
+Maintain CV text in `content/cv.html` and run the build to regenerate `cv.html`. The existing [printable CV workflow](.github/workflows/build-cv.yml) remains separate from site generation: changes to the generated `cv.html`, or a manual run, render and commit `assets/Jay_Antonio_Oliver_CV.pdf`. Keep that filename stable because the site’s download links use it.

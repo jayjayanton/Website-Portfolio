@@ -1,0 +1,116 @@
+{
+  "slug": "epa-emissions",
+  "title": "EPA Greenhouse Gas Data Automation",
+  "summary": "I developed Python workflows to extract and standardize EPA greenhouse gas reporting data for 2010–2024. API-derived facility tables, FLIGHT classifications and identifier-based reconciliation were combined into reusable CSV outputs, moving from exploratory browser automation toward repeatable facility-level data preparation.",
+  "categories": [
+    "engineering"
+  ],
+  "status": "Applied data pipeline",
+  "status_key": "delivered",
+  "role": "Python data-pipeline developer",
+  "context": "Preparation of EPA Greenhouse Gas Reporting Program facility data for downstream environmental and energy research.",
+  "period": "2010–2024 reporting years",
+  "image": {
+    "src": "/images/EPA_ETL_Pipeline.png",
+    "alt": "Conceptual extraction, transformation and delivery diagram for EPA greenhouse gas data",
+    "caption": "Conceptual ETL workflow diagram, not a plot of actual emissions records.",
+    "kind": "workflow-diagram"
+  },
+  "technologies": [
+    "Python",
+    "pandas",
+    "Selenium",
+    "BeautifulSoup",
+    "EPA Envirofacts",
+    "EPA FLIGHT",
+    "CSV and Excel processing",
+    "Facility ID reconciliation"
+  ],
+  "problem": "Historical facility emissions records and sector classifications are distributed across EPA tables, reporting-year downloads and the FLIGHT interface. Assembling them consistently requires repeated acquisition, reshaping and reconciliation before the data can support analysis.",
+  "contribution": "I developed complementary scripts and an exploratory notebook for table discovery, year-specific extraction, facility-level assembly, FLIGHT classification enrichment and standardized exports. I converted much of the exploratory browser work into reusable functions with structured directories, logging and exception handling.",
+  "approach": [
+    {
+      "title": "Discover tables and assemble facility data",
+      "body": "EPA_API_Automation.py inspected Envirofacts greenhouse-gas metadata, collected table identifiers and used Selenium to download year-specific CSVs through EPA data services. pandas transformations created facility-by-gas and facility-by-process pivots, joined sector descriptors and merged facility metadata on facility_id, producing Public_Facilities_{year}.csv and intermediate tables."
+    },
+    {
+      "title": "Explore FLIGHT classifications",
+      "body": "EPA_Flight_Webscrape_11122024.ipynb used Selenium to navigate reporting-year and sector/subsector filters and download Excel exports. BeautifulSoup supported inspection of page elements. Dictionaries keyed by GHGRP facility identifiers linked FLIGHT industry classifications back to the facility tables."
+    },
+    {
+      "title": "Turn exploration into reusable extraction",
+      "body": "EPA_Flight_Database_Automation.py introduced configurable downloads, reusable functions, structured output directories, file handling, logging and exceptions. It also downloaded summary spreadsheets, identified direct-emitter records and merged selected fields by facility identifier."
+    },
+    {
+      "title": "Reconcile sources and standardize outputs",
+      "body": "Prefer available FLIGHT sector and subsector values, using EPA API classifications as a fallback where needed. Retain source-related comments, normalize field names and column order, and export facility-level CSVs for subsequent analysis."
+    },
+    {
+      "title": "Make reporting years repeatable",
+      "body": "Organize extraction, transformation and export around selectable years. The files document complementary stages and workflow evolution rather than proof that three scripts ran sequentially under one production orchestrator."
+    }
+  ],
+  "outcome": "The work produced standardized facility-level CSV outputs and documented a path from exploratory web extraction to more reusable automation. It made historical reporting information easier to assemble consistently for environmental research without claiming a measured speedup or a deployed production database.",
+  "learning": "API tables and web exports can describe the same facility differently. Identifier-based reconciliation and explicit fallback rules make those differences visible and preserve the reason a classification was chosen.",
+  "limitations": [
+    "The supplied scripts establish CSV-based outputs, not a production SQL database load or unified orchestration scheduler.",
+    "No measured processing-time savings are reported.",
+    "The case study describes methods and verified script behavior; internal implementation files and project-specific data products are not published here.",
+    "A conceptual workflow image describes the process and should not be interpreted as emissions data or a measured environmental result."
+  ],
+  "evidence": [
+    {
+      "title": "From source discovery to reusable outputs",
+      "body": "The workflow connects acquisition, facility-level transformations and delivery. The figure is explanatory rather than an empirical emissions visualization.",
+      "images": [
+        {
+          "src": "/images/EPA_ETL_Pipeline.png",
+          "alt": "Conceptual extraction, transformation and delivery diagram for EPA greenhouse gas data",
+          "caption": "Conceptual ETL workflow diagram, not a plot of actual emissions records.",
+          "kind": "workflow-diagram"
+        }
+      ]
+    },
+    {
+      "title": "What each verified file contributes",
+      "body": "The original files document a progression in implementation, with distinct acquisition and enrichment responsibilities.",
+      "images": [],
+      "table": {
+        "headers": [
+          "File or stage",
+          "Verified responsibility"
+        ],
+        "rows": [
+          [
+            "EPA_API_Automation.py",
+            "Metadata discovery, year-specific CSV downloads, facility pivots and Public_Facilities outputs"
+          ],
+          [
+            "EPA_Flight_Webscrape_11122024.ipynb",
+            "Exploratory FLIGHT filters, Excel exports and facility classification dictionaries"
+          ],
+          [
+            "EPA_Flight_Database_Automation.py",
+            "Reusable downloads, logging, file handling and facility enrichment"
+          ],
+          [
+            "Final standardization",
+            "FLIGHT/API fallback logic, source comments, field normalization and CSV export"
+          ]
+        ]
+      }
+    }
+  ],
+  "links": [
+    {
+      "label": "Explore the public project repository",
+      "url": "https://github.com/jayjayanton/EPA-GHG-Data-Pipeline",
+      "kind": "code"
+    }
+  ],
+  "related": [
+    "texas-rrc-wellbore",
+    "traffic-camera-pipeline",
+    "orphaned-wells"
+  ]
+}

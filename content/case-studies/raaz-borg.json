@@ -1,0 +1,119 @@
+{
+  "slug": "raaz-borg",
+  "title": "Ra’az Borg",
+  "summary": "A static, bilingual combat-sports website organized around a cyberpunk-inspired grappling identity. My public repository is a fork with shared styling, responsive navigation and JavaScript interactions across five pages. The case study distinguishes visible frontend features from contributions that still need to be documented.",
+  "categories": [
+    "web"
+  ],
+  "status": "Website development",
+  "status_key": "delivered",
+  "role": "Frontend development in an existing fork",
+  "context": "Ra’az Undergrounds, an underground grappling platform from Guayaquil, Ecuador, presented through a fictional cyberpunk visual identity. The public fork originates from daveeedlr/raaz-borg.",
+  "period": "2026",
+  "image": {
+    "src": "https://raw.githubusercontent.com/jayjayanton/raaz-borg/main/assets/squad-magenta.jpg",
+    "alt": "Ra’az Borg squad image used in the combat-sports website",
+    "caption": "Original site asset from the public fork; this is a design image, not a rendered-interface screenshot.",
+    "kind": "site-asset"
+  },
+  "technologies": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Responsive navigation",
+    "English/Spanish content",
+    "Browser storage",
+    "GitHub Pages"
+  ],
+  "problem": "A distinctive sports identity needs a coherent website across fighter profiles, events, media and merchandise. The interface must preserve its visual character while remaining usable on smaller screens and across English and Spanish content.",
+  "contribution": "I maintain a public fork of the Ra’az Borg frontend as part of ongoing website development. The repository establishes the current interface and its features, but the available record does not yet isolate every change I made. This case study therefore preserves upstream attribution and does not claim sole authorship of the original design or a verified backend implementation.",
+  "approach": [
+    {
+      "title": "Organize the content across five pages",
+      "body": "The current frontend contains Universe, Fighters, Clashes GP, Labs & Media, and Shop. Static HTML pages share visual assets and navigation without requiring a frontend build step."
+    },
+    {
+      "title": "Reuse styling and interaction logic",
+      "body": "A shared css/style.css file supplies responsive presentation, while js/main.js handles interface behavior. The visible code includes mobile navigation, scroll reveals, animated tickers and other page interactions."
+    },
+    {
+      "title": "Support bilingual navigation",
+      "body": "An English/Spanish toggle uses browser storage to retain the visitor’s language selection. The interface connects content translation with the same shared navigation and presentation system."
+    },
+    {
+      "title": "Document development boundaries",
+      "body": "Keep the current static frontend distinct from any more developed local version or backend prototype. Specific modifications and additional services should be documented once their code is available for review."
+    }
+  ],
+  "outcome": "The public fork provides a five-page static frontend with bilingual interaction and a consistent visual identity. It serves as the documented starting point for further frontend work; more specific contribution claims depend on the updated development version being published and reviewed.",
+  "learning": "Work on an existing design system is easiest to assess when inherited features and new modifications are clearly separated. That provenance makes both technical review and a portfolio account more useful.",
+  "limitations": [
+    "The repository is a fork of daveeedlr/raaz-borg. The case study does not attribute all original design or functionality to me.",
+    "The scope of my changes will be updated when the more developed local version is pushed and its differences can be reviewed.",
+    "The currently documented public fork is static HTML/CSS/JavaScript. A Node.js or PostgreSQL backend is not established by the available code.",
+    "The GitHub Pages address depends on the fork’s publishing configuration; the repository is the evidence for current source features."
+  ],
+  "evidence": [
+    {
+      "title": "A visual asset from the public fork",
+      "body": "The squad image is part of the existing site’s identity. It is labeled as a source asset rather than presented as a screenshot of a newly developed interface.",
+      "images": [
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/raaz-borg/main/assets/squad-magenta.jpg",
+          "alt": "Ra’az Borg squad image used in the combat-sports website",
+          "caption": "Original site asset from the public fork; this is a design image, not a rendered-interface screenshot.",
+          "kind": "site-asset"
+        }
+      ]
+    },
+    {
+      "title": "Current frontend structure",
+      "body": "The repository’s five pages establish the website’s content model.",
+      "images": [],
+      "table": {
+        "headers": [
+          "Page",
+          "Content role"
+        ],
+        "rows": [
+          [
+            "Universe",
+            "Homepage and fictional identity"
+          ],
+          [
+            "Fighters",
+            "Fighter presentation"
+          ],
+          [
+            "Clashes GP",
+            "Event presentation"
+          ],
+          [
+            "Labs & Media",
+            "Media and related content"
+          ],
+          [
+            "Shop",
+            "Combat-suit presentation"
+          ]
+        ]
+      }
+    }
+  ],
+  "links": [
+    {
+      "label": "Explore the current fork",
+      "url": "https://github.com/jayjayanton/raaz-borg",
+      "kind": "code"
+    },
+    {
+      "label": "Original project by daveeedlr",
+      "url": "https://github.com/daveeedlr/raaz-borg",
+      "kind": "code"
+    }
+  ],
+  "related": [
+    "yuyay-analytics",
+    "predio-ai"
+  ]
+}

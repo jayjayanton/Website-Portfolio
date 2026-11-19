@@ -1,0 +1,140 @@
+{
+  "slug": "traffic-camera-pipeline",
+  "title": "Traffic Camera Image Extraction",
+  "summary": "I built Python workflows to collect public roadway-camera snapshots and extract frames from live video streams. The work combines browser-assisted source discovery, downloads and video decoding to create organized imagery that could later support labeling and computer vision research.",
+  "categories": [
+    "engineering"
+  ],
+  "status": "Applied data pipeline",
+  "status_key": "delivered",
+  "role": "Python data-pipeline developer",
+  "context": "Image acquisition from TxDOT roadway cameras and frame extraction from Jackson Hole live streams. The displayed Austin snapshots illustrate the still-image collection approach.",
+  "image": {
+    "src": "/images/1.jpg",
+    "alt": "Austin traffic-camera snapshot at W Rundberg Lane",
+    "caption": "W Rundberg Lane · Public Austin camera snapshot retrieved in November 2026.",
+    "kind": "camera-image"
+  },
+  "technologies": [
+    "Python",
+    "Selenium",
+    "BeautifulSoup",
+    "Streamlink",
+    "OpenCV",
+    "FFmpeg — public refactor"
+  ],
+  "problem": "Camera imagery is useful for analysis only after individual sources can be discovered, retrieved and organized consistently. Still-image endpoints and live video streams require different acquisition methods, and a usable image collection must come before labeling or model training.",
+  "contribution": "I developed the Python acquisition workflows for still images and video frames. For TxDOT sources, I located camera names and snapshot URLs with Selenium and BeautifulSoup. For Jackson Hole streams, I used Streamlink to retrieve video segments and OpenCV to decode clips and save up to three JPEG frames per video.",
+  "approach": [
+    {
+      "title": "Discover still-image sources",
+      "body": "Use Selenium and BeautifulSoup to inspect camera listings, recover camera names and identify public snapshot URLs. Preserve the source context while downloading the images into an organized collection."
+    },
+    {
+      "title": "Handle streams as video",
+      "body": "Use Streamlink to access live video segments rather than treating a stream as a single image endpoint. Decode the retrieved clips with OpenCV and extract up to three JPEG frames from each video."
+    },
+    {
+      "title": "Keep the historical and public workflows distinct",
+      "body": "The original Baylor script preserves the OpenCV extraction approach. The reorganized script in the public repository uses FFmpeg for frame extraction, so the public refactor and original implementation are described separately."
+    },
+    {
+      "title": "Define a path to model-ready data",
+      "body": "A future detection workflow would organize and label collected frames, split data by camera and time, train a model and assess held-out scenes. Evaluation would include precision, recall, mAP and generalization across viewpoints, lighting and weather."
+    }
+  ],
+  "outcome": "Repeatable Python workflows established the image-acquisition stage needed for a labeled visual dataset. The project demonstrates collection and organization of imagery; it does not report a trained vehicle detector or object-detection results.",
+  "learning": "Data acquisition and model evaluation need to be designed together. Source identifiers and capture context help make future camera-based and time-based holdouts possible, while separating still images from streams avoids forcing different sources into one fragile collection method.",
+  "limitations": [
+    "The five displayed images were retrieved from public Austin cameras in November 2026. They are contemporary examples, not archived outputs from the original TxDOT work.",
+    "Vehicle detection and other computer vision applications are proposed next steps; no trained-model predictions or measured detection performance are presented.",
+    "Potential infrastructure-detection applications depend on suitable camera coverage and image resolution."
+  ],
+  "evidence": [
+    {
+      "title": "Five public-camera examples",
+      "body": "Each image shows a different Austin roadway or intersection. Together they illustrate the variety of scenes a still-image collection workflow must handle.",
+      "images": [
+        {
+          "src": "/images/1.jpg",
+          "alt": "Austin traffic-camera snapshot at W Rundberg Lane",
+          "caption": "W Rundberg Lane · Public Austin camera snapshot retrieved in November 2026.",
+          "kind": "camera-image"
+        },
+        {
+          "src": "/images/2.jpg",
+          "alt": "Austin traffic-camera snapshot at Airport Boulevard and Oak Springs Drive",
+          "caption": "Airport Blvd / Oak Springs Dr · Public Austin camera snapshot retrieved in November 2026.",
+          "kind": "camera-image"
+        },
+        {
+          "src": "/images/3.jpg",
+          "alt": "Austin traffic-camera snapshot at Staked Plains Drive and Lakeline Boulevard",
+          "caption": "Staked Plains / Lakeline Blvd · Public Austin camera snapshot retrieved in November 2026.",
+          "kind": "camera-image"
+        },
+        {
+          "src": "/images/4.jpg",
+          "alt": "Austin traffic-camera snapshot at 35th Street and Pecos Street",
+          "caption": "35th St / Pecos St · Public Austin camera snapshot retrieved in November 2026.",
+          "kind": "camera-image"
+        },
+        {
+          "src": "/images/5.jpg",
+          "alt": "Austin traffic-camera snapshot at Martin Luther King Jr Boulevard and Rio Grande Street",
+          "caption": "MLK Jr Blvd / Rio Grande St · Public Austin camera snapshot retrieved in November 2026.",
+          "kind": "camera-image"
+        }
+      ]
+    },
+    {
+      "title": "Acquisition methods and their outputs",
+      "body": "The methods differ by source format and implementation stage.",
+      "images": [],
+      "table": {
+        "headers": [
+          "Source or version",
+          "Acquisition method",
+          "Output"
+        ],
+        "rows": [
+          [
+            "TxDOT still-image sources",
+            "Selenium and BeautifulSoup discovery, followed by image download",
+            "Named camera snapshots"
+          ],
+          [
+            "Original Jackson Hole workflow",
+            "Streamlink segments and OpenCV decoding",
+            "Up to three JPEG frames per video"
+          ],
+          [
+            "Reorganized public script",
+            "FFmpeg frame extraction",
+            "Extracted image frames"
+          ]
+        ]
+      }
+    },
+    {
+      "title": "A proposed detection workflow",
+      "body": "Collect frames, label objects, split by camera and time, train a detector and review held-out errors. Any conceptual bounding box shown in earlier project material was manually added to explain this future workflow, not produced by a trained model.",
+      "images": []
+    }
+  ],
+  "links": [
+    {
+      "label": "Explore the image-extraction repository",
+      "url": "https://github.com/jayjayanton/Webcam-Data-Extraction",
+      "kind": "code"
+    }
+  ],
+  "related": [
+    "quito-urban-expansion",
+    "epa-emissions",
+    "predio-ai"
+  ],
+  "topics": [
+    "vision"
+  ]
+}

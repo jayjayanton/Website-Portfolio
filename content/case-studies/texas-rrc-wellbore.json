@@ -1,0 +1,124 @@
+{
+  "slug": "texas-rrc-wellbore",
+  "title": "Texas RRC Wellbore & Production Integration",
+  "summary": "I developed a Python, geospatial and SQL workflow to recover identifiers from Texas RRC legacy wellbore records, enrich an updated Well Header dataset and connect it to production data. The central challenge was carrying consistent district, well and lease identifiers across distinct sources.",
+  "categories": [
+    "engineering",
+    "geospatial"
+  ],
+  "status": "Applied data pipeline",
+  "status_key": "delivered",
+  "role": "Data engineer & geospatial data scientist",
+  "context": "Integration of Texas Railroad Commission Full Wellbore technical records, an updated team-provided Well Header dataset and production records.",
+  "image": {
+    "src": "/images/Texas RRC Wellbore Integration Workflow.png",
+    "alt": "Diagram linking Texas RRC wellbore extraction, Well Header enrichment and production integration",
+    "caption": "Illustrative three-stage integration workflow. The surviving extraction code does not contain the original Well Header merge or downstream SQL join.",
+    "kind": "workflow-diagram"
+  },
+  "technologies": [
+    "Python",
+    "Fixed-width ASCII parsing",
+    "RRC copybooks",
+    "Zoned-decimal conversion",
+    "Geospatial joins",
+    "SQL",
+    "Identifier reconciliation"
+  ],
+  "problem": "The RRC Full Wellbore distribution stores detailed regulatory information in legacy fixed-width records. Relevant identifiers and locations are distributed across record types, while existing well headers and production records use different structures. Joining them requires interpreted record layouts and carefully reconciled keys.",
+  "contribution": "I built the RK02-centered extraction and identifier-propagation workflow, used its outputs to enrich updated Well Header records and subsequently joined the enriched headers to production data with SQL. The workflow was designed to make recurring updates feasible while keeping extraction, spatial enrichment and relational joins separate.",
+  "approach": [
+    {
+      "title": "Interpret legacy records",
+      "body": "Parse the fixed-width ASCII distribution using the published record layouts. Copybook-driven field interpretation and zoned-decimal conversion recover structured values suitable for subsequent table integration."
+    },
+    {
+      "title": "Propagate RK02 identifiers",
+      "body": "Use RK02/WBCOMPL as the primary source of district, lease or RRC gas ID, and well number. Preserve provenance in DISTRICT_NO_SOURCE, LEASE_NO_SOURCE and WELL_NO_SOURCE, then use binary-search RK02 interval association to carry those identifiers into technical root-key tables, including RK13 location records. RK01 was explored for wellbore characteristics rather than used as the central join key."
+    },
+    {
+      "title": "Enrich the updated Well Header dataset",
+      "body": "Combine recovered identifiers with well locations to support spatial enrichment of the team-provided header dataset. Earlier project documentation identifies geographic proximity matching, but the original merge script is unavailable, so its precise thresholds and validation rules cannot be verified from the surviving extraction code."
+    },
+    {
+      "title": "Join production records with SQL",
+      "body": "Use the enriched headers in a separate downstream SQL stage, joining on DISTRICT_NO, WELL_NO and LEASE_NO. Validate record classification and source provenance because oil lease numbers and gas RRC IDs do not have identical meanings."
+    },
+    {
+      "title": "Design for repeatable refreshes",
+      "body": "Separate extraction, header enrichment and production integration so new releases can be processed without rebuilding the entire workflow. Quarterly refreshes were the intended cadence; available evidence does not establish a deployed scheduler."
+    }
+  ],
+  "outcome": "The workflow connected legacy technical records, well locations, updated headers and production data into a more usable research foundation. Public materials preserve a redacted historical RK02 extraction script and a separately labeled refactor, while documenting the broader integration stages and the limits of the surviving code.",
+  "learning": "A key is useful only when its meaning survives every transformation. Record boundaries, oil-versus-gas identifier semantics, provenance and ambiguous spatial matches all matter more than simply achieving a high join count.",
+  "limitations": [
+    "The original Well Header enrichment script is unavailable. Its matching tolerance, exact implementation and validation logic cannot be independently reconstructed from the extraction script.",
+    "The public repository does not include the original Well Header merge or downstream SQL join code.",
+    "Nearby coordinates do not guarantee well identity; candidate proximity matches require validation.",
+    "Oil/gas identifier semantics and RK02 record-boundary associations warrant explicit quality checks. Quarterly automation is an objective, not a verified deployed scheduler."
+  ],
+  "evidence": [
+    {
+      "title": "Three distinct integration stages",
+      "body": "The diagram explains how extracted completion identifiers feed header enrichment and then production integration. These are connected stages, not all features of one surviving Python script.",
+      "images": [
+        {
+          "src": "/images/Texas RRC Wellbore Integration Workflow.png",
+          "alt": "Diagram linking Texas RRC wellbore extraction, Well Header enrichment and production integration",
+          "caption": "Illustrative three-stage integration workflow. The surviving extraction code does not contain the original Well Header merge or downstream SQL join.",
+          "kind": "workflow-diagram"
+        }
+      ]
+    },
+    {
+      "title": "Identifier and record responsibilities",
+      "body": "The record roles explain why provenance and validation are central to the workflow.",
+      "images": [],
+      "table": {
+        "headers": [
+          "Record or stage",
+          "Role in the integration"
+        ],
+        "rows": [
+          [
+            "RK02 / WBCOMPL",
+            "Primary source for district, lease or gas ID, and well number"
+          ],
+          [
+            "RK13",
+            "Location records enriched with associated completion identifiers"
+          ],
+          [
+            "RK01",
+            "Explored for wellbore characteristics, not the main integration key"
+          ],
+          [
+            "Well Header enrichment",
+            "Spatial linkage to the updated team dataset; original merge code unavailable"
+          ],
+          [
+            "Production SQL join",
+            "Separate downstream join on district, well and lease identifiers"
+          ]
+        ]
+      }
+    }
+  ],
+  "links": [
+    {
+      "label": "Explore the wellbore integration repository",
+      "url": "https://github.com/jayjayanton/Texas-RRC-Wellbore-Integration",
+      "kind": "code"
+    },
+    {
+      "label": "Official RRC data downloads",
+      "url": "https://www.rrc.texas.gov/resource-center/research/data-sets-available-for-download/",
+      "kind": "report"
+    }
+  ],
+  "related": [
+    "orphaned-wells",
+    "epa-emissions",
+    "carbon-storage-atlas"
+  ]
+}

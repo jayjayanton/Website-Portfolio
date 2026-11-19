@@ -1,0 +1,16 @@
+<section class="container page-heading"><p class="eyebrow">The work</p><h1>Projects with <em>the reasoning included.</em></h1><p class="lead">Explore models, spatial analysis, data pipelines and applications. Each case explains what I contributed, how it works, and what the results support.</p></section>
+<section class="container project-browser" aria-label="Project catalogue">
+  <form class="project-filters" id="project-filters" role="search" hidden>
+    <div class="filter-top"><div class="search-field"><label for="project-search">Search projects, topics or tools</label><input id="project-search" name="q" type="search" placeholder="Try FastAPI, satellite imagery or XGBoost" autocomplete="off"></div><div class="stage-field"><label for="project-stage">Work stage</label><select id="project-stage" name="stage"><option value="all">All stages</option><option value="published">Published / live</option><option value="delivered">Applied work</option><option value="development">In development</option></select></div></div>
+    <fieldset class="category-fieldset"><legend>Explore by capability</legend><div class="filter-chips"><button type="button" data-category="all" aria-pressed="true">All work</button>$category_buttons</div></fieldset>
+    <p class="filter-help">Search and filters work together. Research in development is labeled on each card.</p>
+  </form>
+  <div class="results-heading"><p id="project-count" role="status" aria-live="polite">$project_count projects</p><button class="text-button" type="button" data-reset-filters hidden>Clear filters</button></div>
+  <noscript><p class="notice">All case studies are available below. Project search becomes available when JavaScript is enabled.</p></noscript>
+  <h2 class="visually-hidden">Project case studies</h2>
+  <div class="project-grid" id="project-grid">$cards</div>
+  <div class="empty-state" id="empty-state" hidden><h2>No projects match those filters.</h2><p>Try a broader topic or clear the filters to explore all the work.</p><button class="button button-secondary" type="button" data-reset-filters>Show all projects</button></div>
+</section>
+<script id="project-index" type="application/json">$project_index</script>
+<script type="module" src="assets/js/projects.js?v=$projects_version"></script>
+$contact_band

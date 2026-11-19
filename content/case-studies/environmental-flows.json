@@ -1,0 +1,107 @@
+{
+  "slug": "environmental-flows",
+  "title": "Connecting watershed data with environmental-flow research",
+  "summary": "I automated watershed delineation, modeled stream reference status and investigated hydrologic-alteration relationships across Texas ecoregions. The work combines R-based API integration with Python modeling and contributed to a coauthored River Research and Applications paper, while keeping exploratory model-fit curves distinct from validated ecological conclusions.",
+  "categories": [
+    "data-science",
+    "geospatial",
+    "engineering"
+  ],
+  "status": "Research with coauthored publication",
+  "status_key": "published",
+  "role": "Research contributor and publication coauthor",
+  "context": "McManamay Lab · Baylor University",
+  "period": "Related publication: July 2026",
+  "image": {
+    "src": "https://raw.githubusercontent.com/jayjayanton/Texas-Environmental-Flows-ML/main/figures/all_ecoregions_comparison.png",
+    "alt": "Combined Texas ecoregion mean R squared comparison",
+    "caption": "Original research output: comparison of mean training R² curves across Texas ecoregions. The set of contributing metrics can change with depth.",
+    "kind": "research"
+  },
+  "technologies": [
+    "Python",
+    "R",
+    "Model My Watershed API",
+    "Random Forest",
+    "Decision trees",
+    "GIS",
+    "Numerical derivatives"
+  ],
+  "problem": "Environmental-flow research needs to separate natural watershed context from human alteration and understand how hydrologic patterns vary across regions. That requires consistent watershed boundaries, reference-stream information and analysis that distinguishes model behavior from ecological evidence.",
+  "contribution": "I automated watershed delineation from stream-gage coordinates, developed a Random Forest workflow for reference versus non-reference streams, and explored relationships between hydrologic-alteration metrics and fish response variables across Texas ecoregions. I am a coauthor of the related 2026 paper on reconstructing historical hydrologic alteration.",
+  "approach": [
+    {
+      "title": "Retrieve watershed geometry programmatically",
+      "body": "Used R with the Model My Watershed API to submit gage coordinates, check delineation results and save watershed boundaries for spatial analysis."
+    },
+    {
+      "title": "Model reference-stream status",
+      "body": "Used watershed and stream attributes in a Random Forest workflow. The original notebook used a regressor with rounded binary outputs; the later reusable script uses a classifier with train/test separation and missing-value handling in its modeling pipeline."
+    },
+    {
+      "title": "Explore hydrologic metrics and fish responses",
+      "body": "Fitted multi-output decision-tree regressions for individual hydrologic-alteration metrics and multiple fish response variables. Repeated the models across tree depths to examine the change in training fit."
+    },
+    {
+      "title": "Compare patterns across ecoregions",
+      "body": "Averaged the available metric-level R² scores at each depth within each ecoregion. Numerical derivatives identified candidate inflections in the mean curves for comparison, rather than declaring biological thresholds."
+    }
+  ],
+  "outcome": "The work produced reusable delineation and modeling scripts, original ecoregion comparison figures and a contribution to a collaborative peer-reviewed publication. The exploratory curves make differences in fitting behavior visible; their purpose and limitations remain separate from the published team-wide hydrologic modeling results.",
+  "learning": "This project shows a progression from retrieving spatial data through an external API to building and evaluating statistical workflows around it. The documented change from a rounded regressor to a classifier also makes a useful engineering distinction explicit: improving a reusable implementation can change its results, so historical outputs and revised code need separate provenance.",
+  "limitations": [
+    "The displayed tree-depth R² curves use training data and do not establish out-of-sample predictive performance.",
+    "Some metrics stop contributing when fitted trees stop growing. The changing set of metrics can affect the mean curve and its candidate inflection points.",
+    "Inflections in model-fit curves are not independently validated ecological breakpoints.",
+    "The revised Random Forest classifier is not an exact reproduction of the original rounded-regression workflow. Original research inputs are needed to reproduce historical results.",
+    "The paper reflects the full author team; its overall performance measures are not presented here as scores from my separate exploratory fish/HIT analysis."
+  ],
+  "evidence": [
+    {
+      "title": "Coauthored research publication",
+      "body": "Mark B. Lueders, Ryan A. McManamay, Jay A. Oliver, David Young, Preston Bean and Kevin Mayes. Reconstructing Long-Term Historical Hydrologic Alteration to Support Environmental Flows in Texas. River Research and Applications, first published July 9, 2026. DOI: 10.1002/rra.70172.",
+      "images": []
+    },
+    {
+      "title": "Original ecoregion comparison figures",
+      "body": "These figures document the exploratory decision-tree analysis. The average is across model scores available at a depth, not across the raw fish observations or hydrologic values.",
+      "images": [
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Texas-Environmental-Flows-ML/main/figures/ecoregion_4_hit_metric_curves.png",
+          "alt": "Ecoregion 4 individual HIT metric R squared curves",
+          "caption": "Original research output: individual hydrologic-alteration metric training R² curves across decision-tree depths for Ecoregion 4.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Texas-Environmental-Flows-ML/main/figures/ecoregion_inflection_panels.png",
+          "alt": "Texas ecoregion mean model fit curves and candidate inflection points",
+          "caption": "Original research output: mean training-fit curves and candidate numerical inflection points across ten ecoregions. These are not validated biological thresholds.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Texas-Environmental-Flows-ML/main/figures/all_ecoregions_comparison.png",
+          "alt": "Combined Texas ecoregion mean R squared comparison",
+          "caption": "Original research output: comparison of mean training R² curves across Texas ecoregions. The set of contributing metrics can change with depth.",
+          "kind": "research"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": "Read the coauthored research paper",
+      "url": "https://doi.org/10.1002/rra.70172",
+      "kind": "publication"
+    },
+    {
+      "label": "Review the research code and workflow notes",
+      "url": "https://github.com/jayjayanton/Texas-Environmental-Flows-ML",
+      "kind": "code"
+    }
+  ],
+  "related": [
+    "land-use-dynamics",
+    "nasa-water-resources",
+    "orphaned-wells"
+  ]
+}

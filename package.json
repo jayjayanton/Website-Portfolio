@@ -1,0 +1,12 @@
+{
+  "name": "jay-oliver-portfolio",
+  "private": true,
+  "type": "module",
+  "description": "Accessible static portfolio with shared templates and evidence-based case studies.",
+  "scripts": {
+    "build": "python3 tools/build.py",
+    "check": "python3 tools/build.py --check && python3 -m unittest discover -s tests -v && node --test tests/*.mjs",
+    "serve": "python3 -m http.server 8000"
+  },
+  "engines": {"node": ">=20"}
+}

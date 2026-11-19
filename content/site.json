@@ -1,0 +1,87 @@
+{
+  "name": "Jay Oliver",
+  "full_name": "Jay Antonio Oliver",
+  "role": "Data scientist & geospatial developer",
+  "base_url": "https://jayjayanton.github.io/Website-Portfolio/",
+  "year": 2026,
+  "email": "jayjayoliver@hotmail.com",
+  "phone": "+1 (540) 406-9434",
+  "phone_url": "tel:+15404069434",
+  "linkedin": "https://www.linkedin.com/in/jay-oliver-b22552b4",
+  "github": "https://github.com/jayjayanton",
+  "cv": "assets/Jay_Antonio_Oliver_CV.pdf",
+  "featured": [
+    "predio-ai",
+    "land-use-dynamics",
+    "orphaned-wells"
+  ],
+  "project_order": [
+    "predio-ai",
+    "land-use-dynamics",
+    "orphaned-wells",
+    "texas-rrc-wellbore",
+    "environmental-flows",
+    "quito-urban-expansion",
+    "nasa-air-quality",
+    "nasa-water-resources",
+    "carbon-storage-atlas",
+    "coal-ash-modeling",
+    "epa-emissions",
+    "colombia-deforestation",
+    "traffic-camera-pipeline",
+    "yuyay-analytics",
+    "raaz-borg"
+  ],
+  "categories": {
+    "geospatial": "Geospatial & Earth observation",
+    "data-science": "Data science & modeling",
+    "engineering": "Data engineering",
+    "web": "Web applications",
+    "vision": "Computer vision"
+  },
+  "progression": [
+    {
+      "label": "Research foundations",
+      "title": "Start with the environmental question.",
+      "body": "NASA DEVELOP and WWF projects connected satellite observations, environmental time series and spatial drivers with questions about water, air quality and land-use change.",
+      "link": "projects/nasa-air-quality.html",
+      "link_label": "Explore the NASA work"
+    },
+    {
+      "label": "Models & data systems",
+      "title": "Make the analysis reproducible.",
+      "body": "University and energy research expanded the work into data harmonization, predictive modeling, model interpretation and pipelines for large spatial datasets.",
+      "link": "projects/land-use-dynamics.html",
+      "link_label": "Explore the land-use research"
+    },
+    {
+      "label": "Independent software",
+      "title": "Put the methods into people's hands.",
+      "body": "As PredioAI's creator and sole developer, I connect that analytical background with product design, REST APIs, document geometry, interactive mapping and deployment.",
+      "link": "projects/predio-ai.html",
+      "link_label": "Explore PredioAI"
+    }
+  ],
+  "publications": [
+    {
+      "slug": "land-use-dynamics",
+      "journal": "Scientific Data · Nature Portfolio",
+      "year": "2025",
+      "role": "First author",
+      "title": "United States multi-sector land use and land cover base maps to support human and Earth system models",
+      "description": "A harmonized U.S. land-use and land-cover dataset connecting multiple classification systems and Earth system modeling needs. The case study explains my data-processing contribution and the published figures.",
+      "url": "https://www.nature.com/articles/s41597-025-04713-6",
+      "doi": "10.1038/s41597-025-04713-6"
+    },
+    {
+      "slug": "environmental-flows",
+      "journal": "River Research and Applications",
+      "year": "2026",
+      "role": "Coauthor",
+      "title": "Reconstructing Long-Term Historical Hydrologic Alteration to Support Environmental Flows in Texas",
+      "description": "Coauthored research on reference hydrology and hydrologic alteration. My case study describes watershed processing and reference-stream classification, and separates those contributions from the team's paper-wide results.",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1002/rra.70172",
+      "doi": "10.1002/rra.70172"
+    }
+  ]
+}

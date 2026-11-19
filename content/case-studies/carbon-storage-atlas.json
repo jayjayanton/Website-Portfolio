@@ -1,0 +1,93 @@
+{
+  "slug": "carbon-storage-atlas",
+  "title": "Turning geologic raster collections into accessible GIS layers",
+  "summary": "I built a Python workflow to convert more than 400 geologic rasters into polygon datasets for web GIS publication. The work connected repeatable spatial processing with the NETL interactive atlas, preparing scientific data so researchers could explore basin-specific layers through an accessible mapping interface.",
+  "categories": [
+    "geospatial",
+    "engineering"
+  ],
+  "status": "Delivered GIS workflow",
+  "status_key": "delivered",
+  "role": "Geospatial data scientist · Raster-to-vector automation and data preparation",
+  "context": "Leidos research supporting DOE/NETL · Geologic data visualization",
+  "image": {
+    "src": "images/carbon-atlas-appalachian-basin.webp",
+    "alt": "Appalachian Basin interactive map showing earthquake locations, structural lineaments, and geophysical raster layers",
+    "caption": "NETL atlas screenshot: the Appalachian Basin view combines earthquake observations, structural features and geophysical layers. The application is a collaborative product; my contribution was data-processing automation.",
+    "kind": "screenshot"
+  },
+  "technologies": [
+    "Python",
+    "Raster-to-vector processing",
+    "GIS",
+    "ArcGIS Online",
+    "ArcGIS Enterprise",
+    "Web mapping"
+  ],
+  "problem": "Hundreds of geologic raster files needed to become usable web-mapping layers. Repeating conversion and preparation manually would make the collection difficult to process consistently and maintain for visualization.",
+  "contribution": "I developed the Python automation that processed more than 400 raster files into vector polygon datasets and prepared the outputs for GIS publication. My contribution focused on the processing and data-delivery workflow, rather than claiming sole authorship of the NETL atlas or every layer it displays.",
+  "approach": [
+    {
+      "title": "Process a large raster collection repeatably",
+      "body": "Applied a scripted raster-to-vector workflow across the geologic file collection, replacing repeated manual conversions with a consistent processing sequence."
+    },
+    {
+      "title": "Prepare the GIS outputs for delivery",
+      "body": "Produced vector polygon files suitable for upload and use in the web GIS environment. Data preparation connected the source rasters to layers that could be organized and explored online."
+    },
+    {
+      "title": "Support basin-based visualization",
+      "body": "Prepared outputs for the NETL interactive atlas, where thematic controls let users inspect geologic and structural information within basin-specific maps."
+    }
+  ],
+  "outcome": "The workflow prepared hundreds of geologic datasets for web-based GIS use and supported their presentation in the NETL atlas. The public application demonstrates the delivery context: users can explore basin maps, thematic layer categories and individual formation datasets. Original processing scripts are not public.",
+  "learning": "The project demonstrates the step from performing a spatial operation to delivering a repeatable data service workflow. It connects batch processing, consistent spatial outputs and publishing requirements, a transferable pattern for moving research datasets into interfaces that other people can use without running the underlying code.",
+  "limitations": [
+    "The original conversion scripts are not publicly available, so the case study documents the contribution and delivery context rather than a runnable implementation.",
+    "Atlas screenshots show a collaborative application and multiple data sources; they are not evidence that I authored every displayed dataset or the full application.",
+    "The work prepares and visualizes geologic information. It does not by itself certify a site’s suitability for carbon storage."
+  ],
+  "evidence": [
+    {
+      "title": "Public atlas delivery context",
+      "body": "These screenshots show how basin maps, thematic categories and detailed geologic layers appear in the NETL application. They document the environment supported by the raster-to-vector preparation workflow.",
+      "images": [
+        {
+          "src": "images/carbon-atlas-appalachian-basin.webp",
+          "alt": "Appalachian Basin interactive map showing earthquake locations, structural lineaments, and geophysical raster layers",
+          "caption": "NETL atlas screenshot: the Appalachian Basin view combines earthquake observations, structural features and geophysical layers. The application is a collaborative product; my contribution was data-processing automation.",
+          "kind": "screenshot"
+        },
+        {
+          "src": "images/carbon-atlas-map-layer-categories.webp",
+          "alt": "Map layer menu showing earthquake, faults and folds, structural contours, geophysical, structural feature density, and topographic categories",
+          "caption": "NETL atlas screenshot: thematic layer groups organize basin-specific datasets. Available categories vary between basins.",
+          "kind": "screenshot"
+        },
+        {
+          "src": "images/carbon-atlas-appalachian-layer-details.webp",
+          "alt": "Expanded Appalachian Basin layer tree listing fault lineaments and geological formation depth and thickness datasets",
+          "caption": "NETL atlas screenshot: expanded Appalachian layers include structural lineaments and formation-depth and thickness datasets.",
+          "kind": "screenshot"
+        }
+      ]
+    },
+    {
+      "title": "Scale of the processing contribution",
+      "body": "The documented workflow processed more than 400 geologic rasters into vector polygon files for GIS publication. No unmeasured time-saving or business-impact estimate is attached to that count.",
+      "images": []
+    }
+  ],
+  "links": [
+    {
+      "label": "Explore the NETL interactive atlas",
+      "url": "https://arcgis.netl.doe.gov/portal/apps/experiencebuilder/experience/?id=4153c92efedd49a09ad5de9a042075fb",
+      "kind": "live"
+    }
+  ],
+  "related": [
+    "land-use-dynamics",
+    "predio-ai",
+    "epa-emissions"
+  ]
+}

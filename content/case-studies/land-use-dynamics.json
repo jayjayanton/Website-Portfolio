@@ -1,0 +1,166 @@
+{
+  "slug": "land-use-dynamics",
+  "title": "A common land-use foundation for Earth system models",
+  "summary": "I developed 30-meter land-use basemaps that translate a common U.S. landscape into several modeling systems. This first-author Scientific Data publication combines geospatial processing, classification design and quantitative comparison to make heterogeneous environmental datasets usable across GCAM, CLM and LUH2.",
+  "categories": [
+    "geospatial",
+    "engineering"
+  ],
+  "status": "Published research",
+  "status_key": "published",
+  "role": "First author and geospatial researcher",
+  "context": "Baylor University · Collaborative research with Ryan A. McManamay",
+  "period": "Published March 2025",
+  "image": {
+    "src": "images/figure-02-msd-classes.png",
+    "alt": "Figure 2: MSD land-cover classes",
+    "caption": "Original research figure: spatial distribution of the detailed MSD land-use and land-cover classes.",
+    "kind": "research"
+  },
+  "technologies": [
+    "Python",
+    "ArcGIS Pro",
+    "Raster processing",
+    "NLCD",
+    "USDA Cropland Data Layer",
+    "Classification crosswalks",
+    "Spatial validation"
+  ],
+  "problem": "Human and Earth system models describe the same landscape with different classes, spatial resolutions and data structures. A regional study can inherit those inconsistencies before its own analysis begins. The project needed an empirical, spatially detailed foundation that could be translated across model frameworks.",
+  "contribution": "I developed the harmonized basemap series, combined land-cover and supporting spatial datasets, implemented Python processing scripts and ArcGIS refinements, and contributed the spatial comparisons documented in the paper. I am the first author of the resulting 2025 Scientific Data publication with Ryan A. McManamay.",
+  "approach": [
+    {
+      "title": "Build a shared classification",
+      "body": "Combined National Land Cover Database and USDA Cropland Data Layer information into a hierarchical classification that retained distinctions needed by the target modeling systems."
+    },
+    {
+      "title": "Add the land-use context",
+      "body": "Refined cultivated crops with CDL, separated irrigated and rainfed agriculture, and distinguished managed and unmanaged forest and pasture. Climate zones, ecoregions and elevation supported vegetation-class refinements."
+    },
+    {
+      "title": "Produce consistent spatial outputs",
+      "body": "Used Python for crop masking and irrigation classification, with additional land-management and climate refinements in ArcGIS Pro. Produced 30-meter products for 2008, 2011, 2013, 2016 and 2019 across the conterminous United States."
+    },
+    {
+      "title": "Translate between model systems",
+      "body": "Mapped the detailed MSD classes to GCAM, CLM and LUH2 categories. The translation accounted for thematic differences and for mutually exclusive pixels versus fractional cover in coarser grid cells."
+    },
+    {
+      "title": "Compare comparable quantities",
+      "body": "Tabulated class areas within model grids and compared mapped fractions using mean squared error. This exposed where existing model baselines agreed with, or diverged from, the empirical basemaps."
+    }
+  ],
+  "outcome": "The published dataset provides five contemporary 30-meter basemaps and interchangeable representations for multiple modeling frameworks. The accompanying code and figures document how the classes were assembled and how differences among model baselines were evaluated. Researchers can reuse this spatial foundation for regional analysis and model comparison.",
+  "learning": "This work demonstrates the transfer from spatial processing to data-system design: deciding what different schemas mean, identifying where a direct crosswalk is insufficient, and evaluating the resulting transformations. Those same methods apply when integrating incompatible operational datasets or preparing geospatial features for later modeling.",
+  "limitations": [
+    "Agreement with existing observational products is not an independent field-based accuracy assessment.",
+    "The baseline comparison pairs the 2008 MSD product with LUH2 for 2008 and CLM for 2000; the different reference years matter when interpreting discrepancies.",
+    "The class counts describe thematic detail, not predictive accuracy. Potential machine-learning uses are downstream applications, not models trained in this publication."
+  ],
+  "evidence": [
+    {
+      "title": "Published data products",
+      "body": "The research covers the conterminous United States at 30-meter resolution for 2008, 2011, 2013, 2016 and 2019. The class counts below describe the delivered representations; they are not accuracy metrics.",
+      "images": [],
+      "table": {
+        "headers": [
+          "Representation",
+          "Classes",
+          "Purpose"
+        ],
+        "rows": [
+          [
+            "MSD",
+            "259",
+            "Detailed harmonized land-use and land-cover system"
+          ],
+          [
+            "GCAM",
+            "39",
+            "GCAM-compatible land categories"
+          ],
+          [
+            "CLM",
+            "68",
+            "CLM-compatible representation in this product"
+          ],
+          [
+            "LUH2",
+            "12",
+            "LUH2-compatible land states"
+          ]
+        ]
+      }
+    },
+    {
+      "title": "Classification workflow and maps",
+      "body": "Original research figures show the source-to-class workflow and the detailed and model-specific basemap products.",
+      "images": [
+        {
+          "src": "images/figure-01-sankey-diagram.png",
+          "alt": "Figure 1: Classification workflow",
+          "caption": "Original research figure: the classification workflow from empirical land-cover inputs to harmonized MSD categories.",
+          "kind": "research"
+        },
+        {
+          "src": "images/figure-02-msd-classes.png",
+          "alt": "Figure 2: MSD land-cover classes",
+          "caption": "Original research figure: spatial distribution of the detailed MSD land-use and land-cover classes.",
+          "kind": "research"
+        },
+        {
+          "src": "images/figure-03-gcam-msd.png",
+          "alt": "Figure 3: GCAM–MSD comparison",
+          "caption": "Original research figure: national and regional examples of the harmonized GCAM representation.",
+          "kind": "research"
+        },
+        {
+          "src": "images/figure-04-luh2-msd.png",
+          "alt": "Figure 4: LUH2–MSD comparison",
+          "caption": "Original research figure: land-use representation translated into LUH2 categories.",
+          "kind": "research"
+        },
+        {
+          "src": "images/figure-05-clm-msd.png",
+          "alt": "Figure 5: CLM–MSD comparison",
+          "caption": "Original research figure: plant functional types represented for the Community Land Model.",
+          "kind": "research"
+        }
+      ]
+    },
+    {
+      "title": "Spatial disagreement between baselines",
+      "body": "Mean squared error compares matched fractions: MSE = (1 / n) × Σ(reference fraction − model fraction)². Lower values indicate closer agreement between the compared products, not proof that every land class is correct.",
+      "images": [
+        {
+          "src": "images/figure-06-mse-comparison.png",
+          "alt": "Figure 6: Spatial MSE comparison",
+          "caption": "Original spatial MSE comparison. Yellow indicates greater disagreement and dark blue closer agreement. The supplied image does not identify which model corresponds to each panel; panel labels are not inferred here.",
+          "kind": "research"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": "Read the Scientific Data paper",
+      "url": "https://www.nature.com/articles/s41597-025-04713-6",
+      "kind": "publication"
+    },
+    {
+      "label": "Explore the research dataset",
+      "url": "https://doi.org/10.57931/2246609",
+      "kind": "report"
+    },
+    {
+      "label": "Review the research code",
+      "url": "https://github.com/jayjayanton/oliver-mcmanamay_2025_scidata",
+      "kind": "code"
+    }
+  ],
+  "related": [
+    "colombia-deforestation",
+    "environmental-flows",
+    "quito-urban-expansion"
+  ]
+}

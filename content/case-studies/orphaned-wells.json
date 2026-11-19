@@ -1,0 +1,341 @@
+{
+  "slug": "orphaned-wells",
+  "title": "Screening millions of well records with geospatial machine learning",
+  "summary": "I developed a geospatial machine-learning workflow to identify likely orphaned-well candidates within a national inventory of roughly 7–8 million records. Basin-specific XGBoost models, training-based threshold selection and SHAP analysis exposed regional differences and informed a separate Appalachian experiment using additional Enverus attributes.",
+  "categories": [
+    "data-science",
+    "geospatial",
+    "engineering"
+  ],
+  "status": "Applied research",
+  "status_key": "delivered",
+  "role": "Geospatial data scientist · Label reconciliation, feature engineering and modeling",
+  "context": "Leidos research supporting DOE/NETL",
+  "image": {
+    "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/threshold_plots/threshold_curve_OOF_TRAIN_APPALACHIAN_HC.jpeg",
+    "alt": "Out-of-fold precision recall and F1 threshold curves for Appalachian",
+    "caption": "Appalachian — training out-of-fold precision, recall and F1 versus decision threshold. The selected threshold was chosen using training data.",
+    "kind": "research"
+  },
+  "technologies": [
+    "Python",
+    "XGBoost",
+    "scikit-learn",
+    "BayesSearchCV",
+    "SHAP",
+    "BallTree",
+    "Geospatial feature engineering",
+    "Cross-validation"
+  ],
+  "problem": "A national well inventory contained incomplete and inconsistent reporting, while orphaned-well prevalence and record quality differed across regions. Researchers needed a screening method that could prioritize candidate wells for further review and expose where model performance was uncertain.",
+  "contribution": "Starting from a national inventory assembled by another team, I reconciled state-specific known-orphan records and identifiers, engineered predictive features, and developed the national and basin-specific modeling workflows. I tuned XGBoost, selected decision thresholds, evaluated regional performance and produced SHAP summaries, then investigated an Enverus-enriched Appalachian model.",
+  "approach": [
+    {
+      "title": "Reconcile labels before modeling",
+      "body": "Queried state records and identifiers to associate known-orphan labels with the broader well inventory. Standardized dates and categories while handling missing or inconsistent attributes."
+    },
+    {
+      "title": "Engineer operational and spatial features",
+      "body": "Used well type, dates, state, depth, land cover and location. A haversine BallTree calculated distance to known orphans using a training-partition reference inventory, with additional distance and missingness features."
+    },
+    {
+      "title": "Adapt the model to regional differences",
+      "body": "After exploring logistic regression and Random Forest, focused on XGBoost and separate eligible basin models. A stratified 70/30 split retained holdout records; basin-specific cross-validation used three or five folds."
+    },
+    {
+      "title": "Tune probabilities and thresholds separately",
+      "body": "Used BayesSearchCV to tune XGBoost for average precision, then out-of-fold training predictions to select an F1-based threshold. Holdout evaluation included precision, recall, F1, ROC-AUC and PR-AUC."
+    },
+    {
+      "title": "Inspect errors and extend the strongest data context",
+      "body": "Used SHAP to examine feature contributions and compared metrics with positive-class support. The regional variability motivated a separate Appalachian enrichment study in an approximately 900,000-well universe with uneven Enverus coverage."
+    }
+  ],
+  "outcome": "Historical reports document substantial differences among basins. In the March baseline, Appalachian precision and recall were 68.0% and 61.2%; Fort Worth recall was 28.1% on only 32 positive holdout records. Those differences helped direct the next analysis toward regional data enrichment instead of relying on a single national score.",
+  "learning": "The documented progression runs from label reconciliation and baseline comparisons to regional modeling, threshold decisions and targeted data enrichment. It demonstrates adaptation to the evidence: performance is assessed against class prevalence, available attributes and the intended review task, with model interpretation used to guide the next investigation.",
+  "limitations": [
+    "The underlying research inventory is not public. Historical figures and metrics are preserved outputs, not results reproduced during this portfolio update.",
+    "The March baseline reports, earlier presentation checkpoint and later Enverus-enriched Appalachian work are separate snapshots. A complete numerical comparison for the enriched model is not available here.",
+    "Very high precision and small positive-class samples require independent validation and checks for duplicate records, spatial dependence and feature leakage. The reports alone neither prove nor rule out overfitting.",
+    "Training-only nearest-orphan references exclude the holdout, but preprocessing and label-derived features still require fold-specific leakage review before the historical script is reused.",
+    "Predictions support candidate screening. They do not determine legal orphan status, establish contamination or measure methane emissions."
+  ],
+  "evidence": [
+    {
+      "title": "March baseline: all 11 basin reports",
+      "body": "Class 1 precision, recall, F1 and positive support are transcribed from the original March _HC classification reports. Percentages are rounded as displayed. These are basin holdout results, not the enriched Appalachian model or the earlier presentation checkpoint.",
+      "images": [],
+      "table": {
+        "headers": [
+          "Basin",
+          "Precision",
+          "Recall",
+          "F1",
+          "Positive support"
+        ],
+        "rows": [
+          [
+            "Appalachian",
+            "68.0%",
+            "61.2%",
+            "64.4%",
+            "21,342"
+          ],
+          [
+            "Cherokee Platform",
+            "70.5%",
+            "73.2%",
+            "71.9%",
+            "10,098"
+          ],
+          [
+            "Denver",
+            "97.0%",
+            "93.5%",
+            "95.2%",
+            "4,446"
+          ],
+          [
+            "Fort Worth",
+            "69.2%",
+            "28.1%",
+            "40.0%",
+            "32"
+          ],
+          [
+            "Illinois",
+            "40.7%",
+            "55.1%",
+            "46.8%",
+            "4,189"
+          ],
+          [
+            "Michigan",
+            "81.8%",
+            "83.7%",
+            "82.8%",
+            "215"
+          ],
+          [
+            "Permian",
+            "99.4%",
+            "90.8%",
+            "94.9%",
+            "184"
+          ],
+          [
+            "Powder River",
+            "97.7%",
+            "95.9%",
+            "96.8%",
+            "15,776"
+          ],
+          [
+            "Tx–La–Ms Salt",
+            "90.4%",
+            "85.7%",
+            "88.0%",
+            "2,182"
+          ],
+          [
+            "Unknown Basin Name",
+            "77.7%",
+            "69.6%",
+            "73.4%",
+            "7,226"
+          ],
+          [
+            "Western Gulf",
+            "92.7%",
+            "81.3%",
+            "86.6%",
+            "546"
+          ]
+        ]
+      }
+    },
+    {
+      "title": "Training-based decision thresholds",
+      "body": "Eleven original out-of-fold training curves show precision, recall and F1 as the threshold changes. Threshold selection occurred on training predictions before holdout evaluation.",
+      "images": [
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/threshold_plots/threshold_curve_OOF_TRAIN_APPALACHIAN_HC.jpeg",
+          "alt": "Out-of-fold precision recall and F1 threshold curves for Appalachian",
+          "caption": "Appalachian — training out-of-fold precision, recall and F1 versus decision threshold. The selected threshold was chosen using training data.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/threshold_plots/threshold_curve_OOF_TRAIN_CHEROKEE_PLATFORM_HC.jpeg",
+          "alt": "Out-of-fold precision recall and F1 threshold curves for Cherokee Platform",
+          "caption": "Cherokee Platform — training out-of-fold precision, recall and F1 versus decision threshold. The selected threshold was chosen using training data.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/threshold_plots/threshold_curve_OOF_TRAIN_DENVER_HC.jpeg",
+          "alt": "Out-of-fold precision recall and F1 threshold curves for Denver",
+          "caption": "Denver — training out-of-fold precision, recall and F1 versus decision threshold. The selected threshold was chosen using training data.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/threshold_plots/threshold_curve_OOF_TRAIN_FORT_WORTH_HC.jpeg",
+          "alt": "Out-of-fold precision recall and F1 threshold curves for Fort Worth",
+          "caption": "Fort Worth — training out-of-fold precision, recall and F1 versus decision threshold. The selected threshold was chosen using training data.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/threshold_plots/threshold_curve_OOF_TRAIN_ILLINOIS_HC.jpeg",
+          "alt": "Out-of-fold precision recall and F1 threshold curves for Illinois",
+          "caption": "Illinois — training out-of-fold precision, recall and F1 versus decision threshold. The selected threshold was chosen using training data.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/threshold_plots/threshold_curve_OOF_TRAIN_MICHIGAN_HC.jpeg",
+          "alt": "Out-of-fold precision recall and F1 threshold curves for Michigan",
+          "caption": "Michigan — training out-of-fold precision, recall and F1 versus decision threshold. The selected threshold was chosen using training data.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/threshold_plots/threshold_curve_OOF_TRAIN_PERMIAN_HC.jpeg",
+          "alt": "Out-of-fold precision recall and F1 threshold curves for Permian",
+          "caption": "Permian — training out-of-fold precision, recall and F1 versus decision threshold. The selected threshold was chosen using training data.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/threshold_plots/threshold_curve_OOF_TRAIN_POWDER_RIVER_HC.jpeg",
+          "alt": "Out-of-fold precision recall and F1 threshold curves for Powder River",
+          "caption": "Powder River — training out-of-fold precision, recall and F1 versus decision threshold. The selected threshold was chosen using training data.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/threshold_plots/threshold_curve_OOF_TRAIN_TX-LA-MS_SALT_HC.jpeg",
+          "alt": "Out-of-fold precision recall and F1 threshold curves for Tx–La–Ms Salt",
+          "caption": "Tx–La–Ms Salt — training out-of-fold precision, recall and F1 versus decision threshold. The selected threshold was chosen using training data.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/threshold_plots/threshold_curve_OOF_TRAIN_UNKNOWN_BASIN_NAME_HC.jpeg",
+          "alt": "Out-of-fold precision recall and F1 threshold curves for Unknown Basin Name",
+          "caption": "Unknown Basin Name — training out-of-fold precision, recall and F1 versus decision threshold. The selected threshold was chosen using training data.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/threshold_plots/threshold_curve_OOF_TRAIN_WESTERN_GULF_HC.jpeg",
+          "alt": "Out-of-fold precision recall and F1 threshold curves for Western Gulf",
+          "caption": "Western Gulf — training out-of-fold precision, recall and F1 versus decision threshold. The selected threshold was chosen using training data.",
+          "kind": "research"
+        }
+      ]
+    },
+    {
+      "title": "Basin-specific model interpretation",
+      "body": "Eleven original SHAP summaries explain feature contributions to the baseline basin models. SHAP explains model behavior and does not establish causal effects.",
+      "images": [
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/shap_plots/shap_summary_APPALACHIAN_HC.jpeg",
+          "alt": "SHAP feature contribution summary for Appalachian",
+          "caption": "Appalachian. SHAP feature contributions for the basin model.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/shap_plots/shap_summary_CHEROKEE_PLATFORM_HC.jpeg",
+          "alt": "SHAP feature contribution summary for Cherokee Platform",
+          "caption": "Cherokee Platform. SHAP feature contributions for the basin model.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/shap_plots/shap_summary_DENVER_HC.jpeg",
+          "alt": "SHAP feature contribution summary for Denver",
+          "caption": "Denver. SHAP feature contributions for the basin model.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/shap_plots/shap_summary_FORT_WORTH_HC.jpeg",
+          "alt": "SHAP feature contribution summary for Fort Worth",
+          "caption": "Fort Worth. SHAP feature contributions for the basin model.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/shap_plots/shap_summary_ILLINOIS_HC.jpeg",
+          "alt": "SHAP feature contribution summary for Illinois",
+          "caption": "Illinois. SHAP feature contributions for the basin model.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/shap_plots/shap_summary_MICHIGAN_HC.jpeg",
+          "alt": "SHAP feature contribution summary for Michigan",
+          "caption": "Michigan. SHAP feature contributions for the basin model.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/shap_plots/shap_summary_PERMIAN_HC.jpeg",
+          "alt": "SHAP feature contribution summary for Permian",
+          "caption": "Permian. SHAP feature contributions for the basin model.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/shap_plots/shap_summary_POWDER_RIVER_HC.jpeg",
+          "alt": "SHAP feature contribution summary for Powder River",
+          "caption": "Powder River. SHAP feature contributions for the basin model.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/shap_plots/shap_summary_TX-LA-MS_SALT_HC.jpeg",
+          "alt": "SHAP feature contribution summary for Tx–La–Ms Salt",
+          "caption": "Tx–La–Ms Salt. SHAP feature contributions for the basin model.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/shap_plots/shap_summary_UNKNOWN_BASIN_NAME_HC.jpeg",
+          "alt": "SHAP feature contribution summary for Unknown Basin Name",
+          "caption": "Unknown Basin Name. SHAP feature contributions for the basin model.",
+          "kind": "research"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Orphaned-Wells-/main/images/shap_plots/shap_summary_WESTERN_GULF_HC.jpeg",
+          "alt": "SHAP feature contribution summary for Western Gulf",
+          "caption": "Western Gulf. SHAP feature contributions for the basin model.",
+          "kind": "research"
+        }
+      ]
+    },
+    {
+      "title": "Why precision was not enough",
+      "body": "The reported Permian holdout contained 184 positive records among 175,286 wells; Western Gulf contained 546 among 181,806. These prevalence differences, and Fort Worth’s 32 positive cases, make recall, F1 and support essential context for headline precision.",
+      "images": []
+    },
+    {
+      "title": "Appalachian enrichment concept",
+      "body": "This separate visual represents the next research phase. The displayed points and probabilities are synthetic and are not used as quantitative evidence.",
+      "images": [
+        {
+          "src": "images/Appalachian%20Basin%20Well%20Classification%20Map.png",
+          "alt": "Illustrative synthetic Appalachian Basin well classification map",
+          "caption": "Conceptual illustration of the Appalachian enrichment phase. Well locations and probabilities are synthetic; this is not a map of measured wells or model predictions.",
+          "kind": "illustration"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": "Review the historical research workflow",
+      "url": "https://github.com/jayjayanton/Orphaned-Wells-",
+      "kind": "code"
+    },
+    {
+      "label": "Inspect the original March classification reports",
+      "url": "https://github.com/jayjayanton/Orphaned-Wells-/tree/main/validation/classification_reports",
+      "kind": "report"
+    },
+    {
+      "label": "View the separate early checkpoint",
+      "url": "https://github.com/jayjayanton/Orphaned-Wells-/blob/main/validation/early_basin_holdout_metrics.csv",
+      "kind": "report"
+    }
+  ],
+  "related": [
+    "texas-rrc-wellbore",
+    "coal-ash-modeling",
+    "colombia-deforestation"
+  ]
+}

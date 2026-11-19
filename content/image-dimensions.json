@@ -1,0 +1,130 @@
+{
+  "images/1.jpg": [
+    1920,
+    1080
+  ],
+  "images/2.jpg": [
+    1920,
+    1080
+  ],
+  "images/3.jpg": [
+    1920,
+    1080
+  ],
+  "images/4.jpg": [
+    1920,
+    1080
+  ],
+  "images/5.jpg": [
+    1920,
+    1080
+  ],
+  "images/AOD_Regression.jpg": [
+    1210,
+    582
+  ],
+  "images/Appalachian Basin Well Classification Map.png": [
+    1536,
+    1024
+  ],
+  "images/Automated Webcam Extraction .jpg": [
+    1774,
+    653
+  ],
+  "images/Carbon_Storage_Image.png": [
+    3790,
+    1521
+  ],
+  "images/Coal_Ash_Concept.png": [
+    1671,
+    941
+  ],
+  "images/EPA_ETL_Pipeline.png": [
+    2172,
+    724
+  ],
+  "images/NASA_MODIS04_MODIS08_VIIRS_Regression_Comparison.jpg": [
+    1114,
+    555
+  ],
+  "images/Texas RRC Wellbore Integration Workflow.png": [
+    1752,
+    897
+  ],
+  "images/air_caliop_aqua_modis_comparison.png": [
+    1440,
+    999
+  ],
+  "images/carbon-atlas-appalachian-basin.webp": [
+    2048,
+    991
+  ],
+  "images/carbon-atlas-appalachian-layer-details.webp": [
+    796,
+    1353
+  ],
+  "images/carbon-atlas-map-layer-categories.webp": [
+    798,
+    660
+  ],
+  "images/colombia-deforestation-risk.jpg": [
+    1193,
+    1393
+  ],
+  "images/figure-01-sankey-diagram.png": [
+    1600,
+    914
+  ],
+  "images/figure-02-msd-classes.png": [
+    1600,
+    1082
+  ],
+  "images/figure-03-gcam-msd.png": [
+    1236,
+    2048
+  ],
+  "images/figure-04-luh2-msd.png": [
+    1600,
+    1029
+  ],
+  "images/figure-05-clm-msd.png": [
+    1600,
+    1029
+  ],
+  "images/figure-06-mse-comparison.png": [
+    2126,
+    2835
+  ],
+  "images/nasa-air-quality-cover.png": [
+    1672,
+    468
+  ],
+  "images/nasa-water-resources-cover.png": [
+    1672,
+    467
+  ],
+  "images/predioai-homepage.jpg": [
+    1348,
+    926
+  ],
+  "images/water_chirps_precipitation_sum_excel.jpg": [
+    533,
+    309
+  ],
+  "images/water_evapotranspiration_2001_2019.png": [
+    1545,
+    1161
+  ],
+  "images/water_resources_2015_maps.png": [
+    1605,
+    1806
+  ],
+  "images/water_resources_2017_maps.png": [
+    1605,
+    1806
+  ],
+  "images/water_soil_moisture_2001_2019.png": [
+    1629,
+    960
+  ]
+}

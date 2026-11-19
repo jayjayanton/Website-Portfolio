@@ -1,0 +1,123 @@
+{
+  "slug": "quito-urban-expansion",
+  "title": "Quito Urban Expansion",
+  "summary": "I am developing a reproducible Sentinel-2 workflow to study urban growth in Quito’s eastern valleys. Current work covers imagery acquisition, temporal compositing and spatial mosaicking; a Tumbaco pilot provides the foundation for planned built-up land segmentation, change analysis and independent validation.",
+  "categories": [
+    "geospatial",
+    "engineering",
+    "data-science"
+  ],
+  "status": "Research in development",
+  "status_key": "development",
+  "role": "Independent researcher & developer",
+  "context": "Exploratory remote-sensing research on urban development around Nayón, Cumbayá, Tumbaco and Puembo, beginning with a pilot near Tumbaco.",
+  "period": "2016–2025 imagery; research in progress",
+  "image": {
+    "src": "https://raw.githubusercontent.com/jayjayanton/Urban-Expansion-Quito/main/assets/sentinel2_2025_rgb.png",
+    "alt": "2025 Sentinel-2 true-color annual composite of the Tumbaco pilot area",
+    "caption": "2025 annual composite of the same pilot area. Apparent changes require cloud, seasonal and acquisition checks.",
+    "kind": "satellite-imagery"
+  },
+  "technologies": [
+    "Python",
+    "Sentinel-2 L2A",
+    "Sentinel Hub",
+    "Copernicus Data Space",
+    "S3",
+    "Raster processing",
+    "Spatial mosaicking",
+    "PyTorch — planned"
+  ],
+  "problem": "Development in Quito’s eastern valleys creates a need to examine where built-up land is expanding and how surrounding landscapes change. A useful analysis requires comparable observations over time before differences in imagery can be interpreted as urban change.",
+  "contribution": "I developed acquisition and processing workflows, including temporal benchmarking, a Copernicus Data Space S3 fallback, tiled extraction, spatial mosaicking, tests and sample composites. I am defining the next analytical stages around consistent grids, candidate labels, segmentation experiments and independent error analysis.",
+  "approach": [
+    {
+      "title": "Acquire repeated satellite observations",
+      "body": "Retrieve Sentinel-2 L2A imagery through Sentinel Hub or Copernicus Data Space S3. Organize extraction around repeatable periods and a defined area of interest, with fallback acquisition supporting continuity when the preferred route is unavailable."
+    },
+    {
+      "title": "Prepare comparable imagery",
+      "body": "Screen unsuitable observations, construct temporal composites and align tiles before mosaicking. Compare annual, quarterly and monthly extraction approaches to understand the tradeoff between available observations and temporal detail."
+    },
+    {
+      "title": "Develop candidate built-up mapping",
+      "body": "Planned analysis will derive spectral indices such as NDVI and NDBI, assess candidate reference labels including the ESA WorldCover built-up class, and investigate whether PyTorch CNN segmentation improves built-up mapping."
+    },
+    {
+      "title": "Separate visual change from measured change",
+      "body": "The validation plan uses independent reference samples, spatial and temporal holdouts, and error analysis. Only after that stage can built-up masks and change summaries support defensible estimates of urban expansion."
+    }
+  ],
+  "outcome": "The repository contains a working data-preparation foundation and actual annual-composite previews for the Tumbaco pilot. These establish the inputs for the next research stage; segmentation accuracy and urban expansion rates have not yet been established.",
+  "learning": "Temporal consistency is a research requirement, not just a preprocessing convenience. Cloud cover, seasonality, observation density and grid alignment can create apparent differences that a change model might otherwise mistake for urban growth.",
+  "limitations": [
+    "The displayed pilot is near Tumbaco and is not a validated map of all Quito or its valleys.",
+    "The 2016 and 2025 images are illustrative comparisons; cloud, seasonal and acquisition effects still require validation.",
+    "Computer vision segmentation, independent accuracy assessment and quantified expansion rates remain planned research outputs.",
+    "Sentinel-2 imagery supports landscape analysis rather than cadastral surveying, architectural measurement or construction approval."
+  ],
+  "evidence": [
+    {
+      "title": "Two real satellite composites",
+      "body": "These true-color exports come from the project’s annual Sentinel-2 composites. Comparing the two observations shows the research input without implying that every visible difference is confirmed land-use change.",
+      "images": [
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Urban-Expansion-Quito/main/assets/sentinel2_2016_rgb.png",
+          "alt": "2016 Sentinel-2 true-color annual composite of the Tumbaco pilot area",
+          "caption": "2016 annual composite, displayed with the B04/B03/B02 true-color band combination.",
+          "kind": "satellite-imagery"
+        },
+        {
+          "src": "https://raw.githubusercontent.com/jayjayanton/Urban-Expansion-Quito/main/assets/sentinel2_2025_rgb.png",
+          "alt": "2025 Sentinel-2 true-color annual composite of the Tumbaco pilot area",
+          "caption": "2025 annual composite of the same pilot area. Apparent changes require cloud, seasonal and acquisition checks.",
+          "kind": "satellite-imagery"
+        }
+      ]
+    },
+    {
+      "title": "What is available and what comes next",
+      "body": "The project separates implemented data engineering from analysis that still needs development and validation.",
+      "images": [],
+      "table": {
+        "headers": [
+          "Stage",
+          "Current position"
+        ],
+        "rows": [
+          [
+            "Acquisition and mosaicking",
+            "Implemented scripts, fallback acquisition, temporal benchmarks, tests and sample composites"
+          ],
+          [
+            "Spectral and label analysis",
+            "Planned consistent-grid indices and candidate built-up reference labels"
+          ],
+          [
+            "Computer vision",
+            "Planned segmentation experiments; no validated accuracy reported"
+          ],
+          [
+            "Change interpretation",
+            "Planned independent checks before calculating expansion rates"
+          ]
+        ]
+      }
+    }
+  ],
+  "links": [
+    {
+      "label": "Explore the research repository",
+      "url": "https://github.com/jayjayanton/Urban-Expansion-Quito",
+      "kind": "code"
+    }
+  ],
+  "related": [
+    "predio-ai",
+    "land-use-dynamics",
+    "traffic-camera-pipeline"
+  ],
+  "topics": [
+    "vision"
+  ]
+}

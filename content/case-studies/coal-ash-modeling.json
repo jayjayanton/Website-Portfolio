@@ -1,0 +1,108 @@
+{
+  "slug": "coal-ash-modeling",
+  "title": "Modeling coal-ash chemistry as a multi-output problem",
+  "summary": "I developed multi-output XGBoost research workflows to estimate related coal-ash constituents from shared predictors. The work progressed from separate oxide estimators to a shared-tree experiment with compositional transformation, group-aware splitting and constituent-level diagnostics, addressing how chemical targets should be modeled and evaluated together.",
+  "categories": [
+    "data-science"
+  ],
+  "status": "Applied modeling research",
+  "status_key": "delivered",
+  "role": "Data scientist · Feature engineering, multi-output modeling and evaluation",
+  "context": "Leidos research supporting DOE/NETL · Coal-ash characterization",
+  "image": {
+    "src": "images/Coal_Ash_Concept.png",
+    "alt": "Conceptual coal ash cover artwork illustrating varied mineral constituents",
+    "caption": "Conceptual cover artwork illustrating coal ash and constituent diversity. It is not a sample image, laboratory measurement or model result.",
+    "kind": "illustration"
+  },
+  "technologies": [
+    "Python",
+    "XGBoost",
+    "MultiOutputRegressor",
+    "BayesSearchCV",
+    "GroupKFold",
+    "Compositional data analysis",
+    "Regression diagnostics"
+  ],
+  "problem": "Coal ash varies in chemical composition, and related oxide percentages are not independent targets. A useful predictive workflow needs to account for multiple constituents, related samples and the interpretation of percentage-based outputs while preserving laboratory measurements as the reference.",
+  "contribution": "I explored two multi-target XGBoost approaches: separate estimators wrapped in MultiOutputRegressor, followed by a shared-tree multi-output experiment. The documented full analysis combines oxide preprocessing, engineered predictors, compositional transformation, grouped model selection and diagnostics in both transformed and percentage space.",
+  "approach": [
+    {
+      "title": "Define the chemistry targets",
+      "body": "Modeled ten oxide percentages: SiO₂, Al₂O₃, Fe₂O₃, CaO, MgO, Na₂O, K₂O, TiO₂, P₂O₅ and SO₃. Predictors included mine type, energy type, coal-mine state and selected fractional and Jin_ variables."
+    },
+    {
+      "title": "Prepare values for compositional analysis",
+      "body": "Represented below-detection measurements by half the reported limit and replaced nonpositive values with a small positive constant for log-ratio calculations. Training-data medians supplied missing target values before transformation."
+    },
+    {
+      "title": "Progress from separate estimators to shared structure",
+      "body": "The initial workflow fitted separate XGBoost estimators per oxide. The later experiment used shared tree structure with vector-valued outputs and a centered log-ratio transformation based on the components’ geometric mean."
+    },
+    {
+      "title": "Respect sample grouping during evaluation",
+      "body": "Used a group-aware 70/30 split based on Plant_Name_State_Year and five-fold GroupKFold for Bayesian tuning. A separate grouped validation subset supported early stopping. The weighted MAE objective emphasized selected lower-concentration constituents, including SO₃, Na₂O and P₂O₅."
+    },
+    {
+      "title": "Evaluate in the units that matter",
+      "body": "Calculated per-oxide MAE, RMSE and R² in transformed space, then inverse-transformed predictions to normalized percentages. Diagnostics included Aitchison distance, compositional closure, weighted percentage error and mean absolute log error."
+    }
+  ],
+  "outcome": "The result is a documented research workflow for comparing multi-output strategies and examining errors by chemical constituent. It provides a basis for investigating material composition and model suitability. No unverified numerical performance claims are added to this case study, and the research implementation and data remain private.",
+  "learning": "The progression from independent target models to shared-tree compositional modeling demonstrates how a familiar algorithm can be adapted to a new scientific constraint. The work also connects model selection to data structure: related samples need grouped evaluation, while percentage outputs require an explicit definition of the compositional whole.",
+  "limitations": [
+    "Predicted chemistry requires confirmation against laboratory measurements; it does not establish recovery economics or material suitability.",
+    "The implementation and source data are private, so this public case study presents the method rather than a reproducible benchmark.",
+    "Target imputation inside cross-validation folds remains a methodological review item.",
+    "The inverse transformation closes the ten modeled components to 100%. That normalization must match the intended compositional whole before percentage predictions are interpreted."
+  ],
+  "evidence": [
+    {
+      "title": "Two documented modeling strategies",
+      "body": "The initial and later approaches are distinct research configurations. The comparison below describes their design, not a claim that one achieved better independent performance.",
+      "images": [],
+      "table": {
+        "headers": [
+          "Approach",
+          "Target representation",
+          "Model structure"
+        ],
+        "rows": [
+          [
+            "Initial workflow",
+            "Separate oxide targets",
+            "MultiOutputRegressor with separate XGBoost estimators"
+          ],
+          [
+            "Later experiment",
+            "Centered log-ratio composition",
+            "Shared-tree multi-output XGBoost with vector-valued predictions"
+          ]
+        ]
+      }
+    },
+    {
+      "title": "Evaluation design",
+      "body": "The full analysis documents grouped splitting by plant, state and year, grouped cross-validation, a validation subset for early stopping, and per-constituent error assessment. Missing-value treatment and the chosen compositional closure remain explicit review items.",
+      "images": []
+    },
+    {
+      "title": "Illustrative project cover",
+      "body": "The cover conveys the subject of the research only; it is not empirical evidence.",
+      "images": [
+        {
+          "src": "images/Coal_Ash_Concept.png",
+          "alt": "Conceptual coal ash cover artwork illustrating varied mineral constituents",
+          "caption": "Conceptual cover artwork illustrating coal ash and constituent diversity. It is not a sample image, laboratory measurement or model result.",
+          "kind": "illustration"
+        }
+      ]
+    }
+  ],
+  "links": [],
+  "related": [
+    "orphaned-wells",
+    "environmental-flows",
+    "epa-emissions"
+  ]
+}
