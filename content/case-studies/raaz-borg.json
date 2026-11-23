@@ -1,19 +1,19 @@
 {
   "slug": "raaz-borg",
   "title": "Ra’az Borg",
-  "summary": "A bilingual combat-sports website built around a cyberpunk-inspired grappling identity. Five pages share responsive navigation, typography and JavaScript interactions. Maintained as a fork of an existing project, it provides a frontend case study in keeping a visual system coherent across an established codebase.",
+  "summary": "Bilingual grappling website for RA’AZ BORG in Quito. I extended the existing site with athlete registration and a staff review workflow.",
   "categories": [
     "web"
   ],
-  "status": "Website development",
+  "status": "Live website",
   "status_key": "delivered",
-  "role": "Frontend development in an existing fork",
-  "context": "Ra’az Undergrounds, an underground grappling platform from Guayaquil, Ecuador, presented through a fictional cyberpunk visual identity. The public fork originates from daveeedlr/raaz-borg.",
+  "role": "Freelance full-stack web developer",
+  "context": "RA’AZ BORG organizes grappling events in Quito, Ecuador.",
   "period": "2026",
   "image": {
-    "src": "https://raw.githubusercontent.com/jayjayanton/raaz-borg/main/assets/squad-magenta.jpg",
+    "src": "https://raw.githubusercontent.com/daveeedlr/raaz-borg/main/assets/squad-magenta.jpg",
     "alt": "Ra’az Borg squad image used in the combat-sports website",
-    "caption": "Original site asset from the public fork; this is a design image, not a rendered-interface screenshot.",
+    "caption": "Squad artwork from the original website.",
     "kind": "site-asset"
   },
   "technologies": [
@@ -23,14 +23,15 @@
     "Responsive navigation",
     "English/Spanish content",
     "Browser storage",
-    "GitHub Pages"
+    "Supabase Auth",
+    "PostgreSQL"
   ],
   "problem": "A distinctive sports identity needs a coherent website across fighter profiles, events, media and merchandise. The interface must preserve its visual character while remaining usable on smaller screens and across English and Spanish content.",
-  "contribution": "I maintain a public fork of the Ra’az Borg frontend as part of ongoing website development. The repository establishes the current interface and its features, but the available record does not yet isolate every change I made. This case study therefore preserves upstream attribution and does not claim sole authorship of the original design or a verified backend implementation.",
+  "contribution": "I extended the team’s existing website with a bilingual athlete portal backed by Supabase Auth and PostgreSQL. My changes were merged into the original project repository.",
   "approach": [
     {
-      "title": "Organize the content across five pages",
-      "body": "The current frontend contains Universe, Fighters, Clashes GP, Labs & Media, and Shop. Static HTML pages share visual assets and navigation without requiring a frontend build step."
+      "title": "Connect the site sections",
+      "body": "Shared navigation connects the athlete portal with fighter profiles, events, media and the shop."
     },
     {
       "title": "Reuse styling and interaction logic",
@@ -41,34 +42,31 @@
       "body": "An English/Spanish toggle uses browser storage to retain the visitor’s language selection. The interface connects content translation with the same shared navigation and presentation system."
     },
     {
-      "title": "Document development boundaries",
-      "body": "Keep the current static frontend distinct from any more developed local version or backend prototype. Specific modifications and additional services should be documented once their code is available for review."
+      "title": "Support athlete registration",
+      "body": "Athletes can register at raazborg.com, sign in and check their application status. Authorized staff can review submissions."
     }
   ],
-  "outcome": "The public fork provides a five-page static frontend with bilingual interaction and a consistent visual identity. It serves as the documented starting point for further frontend work; more specific contribution claims depend on the updated development version being published and reviewed.",
+  "outcome": "Athletes can register at raazborg.com, sign in and check their application status. Authorized staff can review submissions.",
   "learning": "Work on an existing design system is easiest to assess when inherited features and new modifications are clearly separated. That provenance makes both technical review and a portfolio account more useful.",
   "limitations": [
-    "The repository is a fork of daveeedlr/raaz-borg. The case study does not attribute all original design or functionality to me.",
-    "The scope of my changes will be updated when the more developed local version is pushed and its differences can be reviewed.",
-    "The currently documented public fork is static HTML/CSS/JavaScript. A Node.js or PostgreSQL backend is not established by the available code.",
-    "The GitHub Pages address depends on the fork’s publishing configuration; the repository is the evidence for current source features."
+    "The original project supplied the visual identity and core website. My contribution builds on that foundation."
   ],
   "evidence": [
     {
-      "title": "A visual asset from the public fork",
+      "title": "Original squad artwork",
       "body": "The squad image is part of the existing site’s identity. It is labeled as a source asset rather than presented as a screenshot of a newly developed interface.",
       "images": [
         {
-          "src": "https://raw.githubusercontent.com/jayjayanton/raaz-borg/main/assets/squad-magenta.jpg",
+          "src": "https://raw.githubusercontent.com/daveeedlr/raaz-borg/main/assets/squad-magenta.jpg",
           "alt": "Ra’az Borg squad image used in the combat-sports website",
-          "caption": "Original site asset from the public fork; this is a design image, not a rendered-interface screenshot.",
+          "caption": "Squad artwork from the original website.",
           "kind": "site-asset"
         }
       ]
     },
     {
       "title": "Current frontend structure",
-      "body": "The repository’s five pages establish the website’s content model.",
+      "body": "Selected sections of the live website.",
       "images": [],
       "table": {
         "headers": [
@@ -95,6 +93,10 @@
           [
             "Shop",
             "Combat-suit presentation"
+          ],
+          [
+            "Athlete portal",
+            "Registration and application status"
           ]
         ]
       }
@@ -102,9 +104,9 @@
   ],
   "links": [
     {
-      "label": "Explore the current fork",
-      "url": "https://github.com/jayjayanton/raaz-borg",
-      "kind": "code"
+      "label": "Visit raazborg.com",
+      "url": "https://raazborg.com/",
+      "kind": "live"
     },
     {
       "label": "Original project by daveeedlr",

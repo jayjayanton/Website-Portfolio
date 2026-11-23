@@ -1,19 +1,19 @@
 {
   "slug": "raaz-borg",
   "title": "Ra’az Borg",
-  "summary": "Sitio web bilingüe de deportes de combate con una identidad de grappling inspirada en el ciberpunk. Sus cinco páginas comparten navegación adaptable, tipografía e interacciones JavaScript. Mantenido como bifurcación de un proyecto existente, ofrece un caso de desarrollo frontend centrado en conservar un sistema visual coherente dentro de una base de código establecida.",
+  "summary": "Sitio bilingüe de grappling de RA’AZ BORG en Quito. Amplié el sitio existente con la inscripción de deportistas y la revisión de solicitudes por parte del equipo.",
   "categories": [
     "web"
   ],
-  "status": "Desarrollo de sitio web",
+  "status": "Sitio web publicado",
   "status_key": "delivered",
-  "role": "Desarrollo frontend en una bifurcación existente",
-  "context": "Ra’az Undergrounds, plataforma de grappling underground de Guayaquil, Ecuador, presentada mediante una identidad visual ficticia de estilo ciberpunk. La bifurcación pública procede de daveeedlr/raaz-borg.",
+  "role": "Desarrollador web full-stack independiente",
+  "context": "RA’AZ BORG organiza eventos de grappling en Quito, Ecuador.",
   "period": "2026",
   "image": {
-    "src": "https://raw.githubusercontent.com/jayjayanton/raaz-borg/main/assets/squad-magenta.jpg",
+    "src": "https://raw.githubusercontent.com/daveeedlr/raaz-borg/main/assets/squad-magenta.jpg",
     "alt": "Imagen del equipo de Ra’az Borg utilizada en el sitio de deportes de combate",
-    "caption": "Recurso gráfico original del sitio, tomado de la bifurcación pública; es una imagen de diseño, no una captura de la interfaz renderizada.",
+    "caption": "Imagen del equipo del sitio original.",
     "kind": "site-asset"
   },
   "technologies": [
@@ -23,14 +23,15 @@
     "Navegación adaptable",
     "Contenido en inglés y español",
     "Almacenamiento del navegador",
-    "GitHub Pages"
+    "Supabase Auth",
+    "PostgreSQL"
   ],
   "problem": "Una identidad deportiva distintiva necesita un sitio coherente entre perfiles de competidores, eventos, medios y productos. La interfaz debe conservar su carácter visual y seguir siendo utilizable en pantallas pequeñas y con contenido en inglés y español.",
-  "contribution": "Mantengo una bifurcación pública del frontend de Ra’az Borg como parte del desarrollo continuo del sitio. El repositorio documenta la interfaz actual y sus funciones, pero el registro disponible todavía no permite identificar cada cambio que realicé. Por ello, este caso conserva la atribución al proyecto original y no me adjudica la autoría exclusiva del diseño inicial ni una implementación backend verificada.",
+  "contribution": "Amplié el sitio del equipo con un portal bilingüe para deportistas que utiliza Supabase Auth y PostgreSQL. Mis cambios se integraron en el repositorio original del proyecto.",
   "approach": [
     {
-      "title": "Organizar el contenido en cinco páginas",
-      "body": "El frontend actual contiene Universo, Luchadores, Clashes GP, Laboratorio y medios, y Tienda. Las páginas HTML estáticas comparten recursos visuales y navegación sin requerir una etapa de compilación del frontend."
+      "title": "Conectar las secciones del sitio",
+      "body": "La navegación compartida conecta el portal de deportistas con los perfiles, los eventos, los medios y la tienda."
     },
     {
       "title": "Reutilizar estilos y lógica de interacción",
@@ -41,34 +42,31 @@
       "body": "Un selector inglés/español utiliza almacenamiento del navegador para conservar el idioma elegido. La interfaz conecta la traducción del contenido con el mismo sistema compartido de navegación y presentación."
     },
     {
-      "title": "Documentar los límites del desarrollo",
-      "body": "Distinguir el frontend estático actual de cualquier versión local más desarrollada o prototipo backend. Las modificaciones específicas y los servicios adicionales deben documentarse cuando su código esté disponible para revisión."
+      "title": "Facilitar la inscripción",
+      "body": "En raazborg.com los deportistas pueden inscribirse, iniciar sesión y consultar el estado de su solicitud. El personal autorizado puede revisar las solicitudes."
     }
   ],
-  "outcome": "La bifurcación pública ofrece un frontend estático de cinco páginas, con interacción bilingüe e identidad visual consistente. Es el punto de partida documentado para continuar el trabajo frontend; las afirmaciones más específicas sobre mis contribuciones dependen de publicar y revisar la versión de desarrollo actualizada.",
+  "outcome": "En raazborg.com los deportistas pueden inscribirse, iniciar sesión y consultar el estado de su solicitud. El personal autorizado puede revisar las solicitudes.",
   "learning": "El trabajo sobre un sistema de diseño existente es más fácil de evaluar cuando se distinguen las funciones heredadas de las modificaciones nuevas. Esa trazabilidad facilita tanto la revisión técnica como la explicación del trabajo en un portafolio.",
   "limitations": [
-    "El repositorio es una bifurcación de daveeedlr/raaz-borg. Este caso no me atribuye todo el diseño ni la funcionalidad originales.",
-    "El alcance de mis cambios se actualizará cuando la versión local más desarrollada se suba al repositorio y puedan revisarse sus diferencias.",
-    "La bifurcación pública documentada actualmente utiliza HTML/CSS/JavaScript estáticos. El código disponible no permite confirmar un backend con Node.js o PostgreSQL.",
-    "La dirección de GitHub Pages depende de la configuración de publicación de la bifurcación; el repositorio constituye la evidencia de las funciones actuales del código."
+    "La identidad visual y el sitio inicial provienen del proyecto original. Mi aporte amplía esa base."
   ],
   "evidence": [
     {
-      "title": "Un recurso visual de la bifurcación pública",
+      "title": "Imagen original del equipo",
       "body": "La imagen del equipo forma parte de la identidad del sitio existente. Se identifica como recurso gráfico del proyecto de origen, no como captura de una interfaz nueva.",
       "images": [
         {
-          "src": "https://raw.githubusercontent.com/jayjayanton/raaz-borg/main/assets/squad-magenta.jpg",
+          "src": "https://raw.githubusercontent.com/daveeedlr/raaz-borg/main/assets/squad-magenta.jpg",
           "alt": "Imagen del equipo de Ra’az Borg utilizada en el sitio de deportes de combate",
-          "caption": "Recurso gráfico original del sitio, tomado de la bifurcación pública; es una imagen de diseño, no una captura de la interfaz renderizada.",
+          "caption": "Imagen del equipo del sitio original.",
           "kind": "site-asset"
         }
       ]
     },
     {
       "title": "Estructura actual del frontend",
-      "body": "Las cinco páginas del repositorio establecen el modelo de contenido del sitio.",
+      "body": "Secciones del sitio web publicado.",
       "images": [],
       "table": {
         "headers": [
@@ -95,6 +93,10 @@
           [
             "Tienda",
             "Presentación de indumentaria de combate"
+          ],
+          [
+            "Portal de deportistas",
+            "Inscripción y estado de la solicitud"
           ]
         ]
       }
@@ -102,9 +104,9 @@
   ],
   "links": [
     {
-      "label": "Explorar la bifurcación actual",
-      "url": "https://github.com/jayjayanton/raaz-borg",
-      "kind": "code"
+      "label": "Visitar raazborg.com",
+      "url": "https://raazborg.com/",
+      "kind": "live"
     },
     {
       "label": "Proyecto original de daveeedlr",
