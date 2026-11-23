@@ -24,7 +24,7 @@ UI = {
         'portfolio': 'Portfolio & case studies', 'languages': 'Languages: English and Spanish.',
         'first_author': 'First author', 'coauthor': 'Coauthor', 'contribution': 'Contribution',
         'contribution_text': 'Watershed delineation, spatial data preparation and reference-stream classification.',
-        'sections': 'CV sections', 'earlier': 'Earlier experience', 'nasa': 'NASA DEVELOP',
+        'sections': 'CV sections', 'earlier': 'Earlier experience', 'evaluation': 'Program evaluation', 'nasa': 'NASA DEVELOP',
         'all_experience': 'Experience', 'all_projects': 'Software & web', 'all_education': 'Education',
     },
     'es': {
@@ -38,7 +38,7 @@ UI = {
         'portfolio': 'Portafolio y casos de estudio', 'languages': 'Idiomas: inglés y español.',
         'first_author': 'Primer autor', 'coauthor': 'Coautor', 'contribution': 'Contribución',
         'contribution_text': 'Delimitación de cuencas, preparación de datos espaciales y clasificación de cauces de referencia.',
-        'sections': 'Secciones del CV', 'earlier': 'Experiencia anterior', 'nasa': 'NASA DEVELOP',
+        'sections': 'Secciones del CV', 'earlier': 'Experiencia anterior', 'evaluation': 'Evaluación de programas', 'nasa': 'NASA DEVELOP',
         'all_experience': 'Experiencia', 'all_projects': 'Software y desarrollo web', 'all_education': 'Formación',
     },
 }
@@ -118,7 +118,8 @@ class CVCollection:
         sections = [('cv-summary', ui['summary']), ('cv-experience', ui['all_experience']), ('cv-software', ui['all_projects']), ('cv-publications', ui['publications']), ('cv-education', ui['all_education']), ('cv-skills', ui['skills'])]
         if profile == 'master':
             sections.insert(2, ('cv-nasa', ui['nasa']))
-            sections.insert(4, ('cv-additional', ui['earlier']))
+            sections.insert(3, ('cv-evaluation', ui['evaluation']))
+            sections.insert(5, ('cv-additional', ui['earlier']))
         else:
             sections.insert(1, sections.pop())
         index = ''.join(f'<a href="#{anchor}">{esc(label)}</a>' for anchor, label in sections)
